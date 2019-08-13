@@ -1,0 +1,708 @@
+@font-face {
+  font-family: 'MerriweatherSans-Regular';
+  src: url(/recursos/Type/MerriweatherSans-Regular.ttf) format("truetype");
+  font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@font-face {
+  font-family: 'MerriweatherSans-Bold';
+  src: url(/recursos/Type/MerriweatherSans-Bold.ttf) format("truetype");
+  font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@font-face {
+  font-family: 'MerriweatherSans-light';
+  src: url(/recursos/Type/MerriweatherSans-Light.ttf) format("truetype");
+  font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/*-------------------------------Estilos generales-------------------------------*/
+
+html {
+  font-family: 'MerriweatherSans-Regular';
+  font-size: 16px;
+  width: 100%;
+
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body.principal {
+  background-color: rgb(255, 255, 255);
+  padding-top: 256px;
+  /*Tamaño preliminar*/
+}
+
+body.secundario {
+  padding-top: 156px;
+  /*Tamaño preliminar*/
+}
+
+
+p {
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+a {
+  font-family: 'MerriweatherSans-Bold';
+  color: #092834;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #347B98;
+}
+
+
+
+
+/*-------------------------------Header y navegación-------------------------------*/
+
+/*----------------------------
+	       Header
+-----------------------------*/
+div.barra-superior { /*modifica barra superior*/
+  min-height: 15px;
+  background-color: #092834;
+}
+
+nav { /*alinea texto en navbar*/
+  text-align: center;
+}
+ 
+/*----------------------------
+	     input buscador
+-----------------------------*/
+
+.inputbuscador[type=text] {/*modifica el estilo de texto introducido por el usuario*/
+  font-family: 'MerriweatherSans-Regular', sans-serif;
+  color: white;
+  background-color: #092834;
+  font-size: 15px;
+  text-align: center;
+  text-decoration-color: #ffffff;
+  height: 28px;
+}
+
+.inputbuscador::placeholder { /*estilo de texto predeterminado "¿Qué quieres encontrar hoy?" */
+  font-family: 'MerriweatherSans-Regular';
+  color: #fff;
+}
+
+.fila-centrada {/*forza al input alargarse para compensar el ancho*/
+  width: 100%;
+}
+
+/*----------------------------
+	     menu de secciones 
+-----------------------------*/
+
+div.botones-pestañas { /*aplica la linea superior del menu y controla el alto*/
+  border-top: 1px solid #092834;
+  min-height: 45px;
+}
+
+.botones-pestañas a { /*estilo de botones*/
+  font-family: 'MerriweatherSans-Bold';
+  color: #092834;
+  font-size: 15px;
+}
+
+.botones-pestañas a:hover {/*estilo boton sobre*/
+  border-top: 3px solid #FF026A;
+}
+
+
+/*-------------------------------Pagina de resultados-------------------------------*/
+
+/*-------------------------------Opciones de visualización de resultados-------------------------------*/
+
+div.opciones_resultados {/*aplica la linea inferior del menu y controla el alto*/
+  border-bottom: 1px solid #092834;
+  min-height: 45px;
+}
+
+/*----------------------------
+	        Breadcrumb 
+-----------------------------*/
+
+.breadcrumb-item {/*estilo de elementos*/
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+  font-size: 15px;
+}
+
+/*----------------------------
+    Cantidad de Resultados 
+-----------------------------*/
+span.facetadorbarradenavegacion {
+  font-family: 'MerriweatherSans-Bold';
+  color: #347B98;
+}
+
+.resultados_pagina {/*estilo de opciones de dropdown*/
+  font-family: 'MerriweatherSans-Bold';
+  color: #347B98;
+  font-size: 14px;
+  height: 30px;
+  padding: 5;
+  width: 58px;
+}
+
+/*----------------------------------------
+   Barra Cambio de modo de visualización
+----------------------------------------*/
+
+.modos_visualizar {/*cambia el puntero por manita*/
+  cursor: pointer;
+}
+
+.button-group input {
+  display: none;
+}
+
+.button-group label {
+  font-size: 18px;
+  color: #092834;
+}
+
+.button-group input:hover+label,
+.button-group input:hover+label:active {/*estilo sobre*/
+  color: #347B98;
+
+}
+
+.button-group input:checked+label,
+.button-group input:checked+label:active {/*estilo activo*/
+  color: #347B98;
+
+}
+
+/*-------------------------------MENU Facetador (opciones de menu)-------------------------------*/
+
+.nav-side-menu {/*controla estilos generales de la barra de menu*/
+  font-family: 'MerriweatherSans-Regular';
+  overflow: auto;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #fff;
+
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  color: #092834;
+}
+
+.nav-side-menu .brand {
+  font-family: 'MerriweatherSans-Bold';
+  background-color: #fff;
+  color: #092834;
+  line-height: 28px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+
+.nav-side-menu .toggle-btn {/*botón hamburguesa responsivo del facetador*/
+  display: none;
+}
+
+/*----------------------------
+	        Facetas 
+-----------------------------*/
+.facetas {/*configuración de contenedor de facetas*/
+  background-color: #092834;
+  border-top: 5px solid #ffffff;
+  border-bottom: 5px solid #ffffff;
+}
+
+.out a {/*estilo general de textos*/
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 14px;
+}
+
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  background-color: #4f5b69;
+}
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #fff;
+  border: none;
+  line-height: 28px;
+  /* Margen superior contenedor de opciones */
+  margin-top: 10px;
+  /* Margen superior contenedor de opciones */
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.sub-menu li {/* estilo de menu anidado */
+  color: #347B98;
+  font-family: 'MerriweatherSans-Bold';
+}
+
+.nav-side-menu li {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+
+.nav-side-menu li:hover {
+  background-color: #0a3241;
+}
+
+/*----------------------------
+	          Autor
+-----------------------------*/
+
+.autor {
+  font-family: 'MerriweatherSans-Regular';
+  color: #347B98;
+  font-size: 11px;
+  height: 23px;
+  padding: 5;
+  /* remueve el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -mox-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  border: 1px solid #347B98;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.autor::placeholder {/* estilo de texto predeterminado "Autor" */
+  font-family: 'MerriweatherSans-Bold';
+  color: #347B98;
+}
+
+/*----------------------------
+	           Años
+-----------------------------*/
+
+.años {/*estilo rango de años*/
+  font-family: 'MerriweatherSans-Regular';
+  color: #347B98;
+  font-size: 11px;
+  height: 23px;
+  padding-left: 5px;
+  /*remueve el estilo por defecto del navegador*/
+  -webkit-appearance: none;
+  -mox-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  border: 1px solid #347B98;
+  border-radius: 4px;
+
+  cursor: pointer;
+  outline: none;
+}
+
+.años::placeholder {/* */
+  font-family: 'MerriweatherSans-Bold';
+  color: #347B98;
+}
+
+/*----------------------------
+	  Dropdown radio en menú
+-----------------------------*/
+
+.custom-select {
+  padding: 3.5px;
+}
+
+.radio_facetador {
+  font-family: 'MerriweatherSans-Bold';
+  color: #347B98;
+  font-size: 11px;
+  height: 23px;
+  padding-left: 5px;
+  /* remueve el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -mox-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  border: 1px solid #347B98;
+  border-radius: 4px;
+
+  cursor: pointer;
+  outline: none;
+}
+
+/*----------------------------
+	        Botones
+-----------------------------*/
+
+.boton_limpiar_formulario {
+  font-family: 'MerriweatherSans-Bold';
+  color: #092834;
+  background-color: #fff;
+  font-size: 11px;
+  height: 30px;
+  padding-left: 5px;
+
+  /* remueve el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -mox-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  border: 2px solid #092834;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+/*----------------------------
+	        CheckBox
+-----------------------------*/
+
+.checkbox_1 {
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  margin-right: 10px;
+}
+
+.checkbox_1>span {
+  padding: 0 .25rem;
+}
+
+.checkbox_1>input {
+  width: 13px;
+  height: 13px;
+  /* remueve el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -mox-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  background-color: #f2f2f2;
+  border: 1.5px solid #347B98;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+
+  transition-duration: 0.3s;
+}
+
+.checkbox_1>input:checked {
+  border: 2px solid #347B98;
+  background-color: #347B98;
+}
+
+/* cherckbox, verificacado estilo */
+.checkbox_1>input:checked+span::before {
+  color: #004466;
+  content: "\2713";
+  text-align: center;
+
+  display: block;
+  position: absolute;
+}
+
+.checkbox_1>input:active {
+  border: 2px solid #347B98;
+}
+
+.checkbox_1>input:focus+label::before {
+  outline: #5d9dd5 solid 1px;
+  box-shadow: 0 0px 8px #5e9ed6;
+}
+
+/*----------------------------
+	        Breakpoints
+-----------------------------*/
+
+@media (max-width: 993px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: rgb(9, 40, 52);
+    width: 40px;
+    text-align: center;
+  }
+
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+
+  #main {
+    width: calc(100% - 300px);
+    float: right;
+  }
+
+}
+
+/*-------------------------------Resultados de búsqueda-------------------------------*/
+
+/*----------------------------
+	          Tabla
+-----------------------------*/
+
+.card {
+  border: 2.6666666666666665px solid #092834;
+}
+
+.imagen-superior {
+  min-height: 139px;
+  min-width: 100%;
+  background-color: #fff;
+  margin-top: -0.5px;
+}
+
+.img-responsiva {
+  max-height: 139px;
+  object-fit: contain;
+}
+
+.label_objeto {
+  background-color: #092834;
+  width: 42px;
+  height: 70px;
+}
+
+.icono_objetodigital {
+  margin-top: 32px;
+}
+
+.boton_agregar_a_coleccion {
+  z-index: 1;
+}
+
+@media(max-width:760px) {
+  h4 {
+    font-size: 12px;
+  }
+
+  p.card-text {
+    font-family: 'MerriweatherSans-Regular';
+    margin: 0px;
+    font-size: 10px;
+    font-weight: 200;
+    line-height: normal;
+  }
+}
+
+@media(min-width:761px) {
+  h4 {
+    font-size: 15px;
+  }
+
+  p.card-text {
+    font-family: 'MerriweatherSans-Regular';
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: normal;
+  }
+}
+
+/*----------------------------
+	         Mosaico
+-----------------------------*/
+
+@media (max-width: 576px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 767px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-columns {
+    column-count: 4;
+  }
+}
+
+/*----------------------------
+	         lista
+-----------------------------*/
+
+.table th{
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 16px;
+  color: #092834;
+  border: none;
+  border-bottom: 2px solid #092834;
+  border-right: 2px solid #092834;
+}
+
+
+/*-------------------------------------------
+  Paginador (Muestra paginas de resultados)
+-------------------------------------------*/
+
+.page-link {
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 16px;
+  color: #092834;
+  border: none;
+}
+
+.page-link:hover {
+  color: #347B98;
+  background-color: rgb(255, 255, 255);
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #347B98;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/*-------------------------------Footer-------------------------------*/
+
+footer {
+  width: 100%;
+}
+
+ul.memoria-redes {
+  font-size: 30pt;
+  /*Tamaño preliminar*/
+}
+
+ul.memoria-redes li {
+  display: inline;
+  padding-left: 5px;
+  font-size: 20pt;
+}
+
+footer li {
+  list-style-type: none;
+}
+
+@media (max-width: 692px) {
+  .contenedor-izquierdo {
+    border-right: none;
+  }
+
+  .contenedor-derecho {
+    padding-top: 10px;
+  }
+
+  .contenedor-derecho img {
+    height: 50px;
+  }
+}
+
+@media (min-width: 693px) {
+  .contenedor-izquierdo {
+    border-right: 1px solid #092834;
+  }
+
+  .contenedor-derecho {
+    padding-top: 0px;
+  }
+
+  .contenedor-derecho img {
+    height: 70px;
+  }
+}
+
+/*-------------------------------Estilos irreconocibles-------------------------------*/
+.memoria-buscador input {
+  text-align: center;
+  color: firebrick;
+}
+
+div.altura-variable {
+  height: 200px;
+  /*Tamaño peculiar*/
+}
+
+div.altura-fija {
+  height: 100px;
+  /*Tamaño preliminar*/
+}
+
+div.memoria-timeline {
+  background-color: #000;
+  height: 500px;
+  /*Tamaño preliminar*/
+}
+
+div.memoria-pestañas {
+  /*Tamaño preliminar*/
+  position: sticky;
+  top: 156px;
+  /*Tamaño preliminar*/
+  background-color: gainsboro;
+  z-index: 1;
+}
