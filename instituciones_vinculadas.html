@@ -2,83 +2,41 @@
 <html lang="es">
 
 <head>
-    <title>Inicio</title>
+    <title>Instituciones Vinculadas</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="recursos/css/reset.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="recursos/css/style.css">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <!-- <link href="recursos/css/menulateral.css" rel="stylesheet" type="text/css"> -->
 
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <script type="text/javascript">
         function formReset() {
             document.getElementById("myForm").reset();
         }
     </script>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <link rel="stylesheet" href="recursos/css/style.css">
+
 </head>
 
 <body>
-
-    <!-- Inicio Landing -->
-
-    <div id="landing" class="intro" style="background-image: url(recursos/img/villa_a_caballo.jpg); 
-        background-position: center center;background-repeat: no-repeat;background-size:cover; overflow:hidden;">
-
-        <div id="bloque d-flex justify-content-center align-items-stretch">
-            <div id="mask-overlay">
-            </div>
-        </div>
-
-        <div class="col-12 pt-3 pl-3" style="z-index: 1; position:relative;top:-600px;">
-            <img src="recursos/img/Logos/logo_memorica_bl.svg" height="50px" />
-        </div>
-
-        <div class="logo_landing flex">
-
-            <div style="z-index:3; position:relative;top:-460px;">
-                <form class="form" action="resultados.html">
-                    <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador2"
-                        type="text" placeholder="México, haz memoria" aria-label="Search">
-                </form>
-            </div>
-
-            <img src="recursos/img/circulo_buscador_landing.svg "
-                style="position: relative; top:-680px; left:0px;z-index: 1;">
-
-            <a href="#home" class="scroll flex" style="z-index: 1;">
-                <p><STRONG>Inicio</STRONG></p>
-                <img src="recursos/img/Logos/scroll.svg" style="z-index: 1;" alt="">
-            </a>
-
-        </div>
-
-    </div>
-    <!--Fin Landing -->
-
-
-    <!-- ancla home -->
-
     <!-- Header con barra y buscador -->
-    <header style="z-index: 1;">
-
-        <div id="home" class="ancla flex">
-        </div>
-
+    <header>
         <!-- Barra de navegación -->
-        <div class="barra-superior">
-        </div>
-
+        <div class="barra-superior"></div>
         <nav class="navbar navbar-expand-lg navbar-light">
 
             <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica">
-                <img src="recursos/img/Logos/logo_memorica.svg" height="20px" />
+                <img src="/recursos/img/Logos/logo_memorica.svg" height="20px" />
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
@@ -90,20 +48,19 @@
             <div class="collapse navbar-collapse flex-column" id="menu">
 
                 <div class="col-12 d-flex justify-content-center p-0">
-                    <a class="navbar-brand d-none d-lg-block m-0 " href="index.html">
-                        <img src="recursos/img/Logos/logo_memorica.svg" height="45px" />
-                    </a>
+                    <a class="navbar-brand d-none d-lg-block m-0 " href="index.html"><img
+                            src="/recursos/img/Logos/logo_memorica.svg" height="45px" /></a>
                 </div>
 
                 <div class="container py-3 d-none d-lg-block">
                     <div class="row fila-centrada m-0 ">
-                        <div class="col-3 col-sm-4">
-                        </div>
+                        <div class="col-3 col-sm-4"></div>
                         <div class="col-6 col-sm-4 align-self-center">
                             <form class="form" action="resultados.html">
                                 <input id="usersSearch"
                                     class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text"
                                     placeholder="México, haz memoria" aria-label="Buscador">
+
                             </form>
                         </div>
                         <div class="col-3 col-sm-3"></div>
@@ -152,9 +109,34 @@
         </div>
     </header>
 
-    <!-- Inicio espacio para los textos -->
+    <main>
+        <!-- Barra de breadcrumb y botones de visualizador etc Opciones Resultados-->
 
-    <main style="z-index: 1;">
+        <div class="container p-0 d-flex align-items-center">
+
+            <nav class=" p-0 mb-1" aria-label="breadcrumb ">
+                <ol class="breadcrumb bg-transparent m-0 px-0 py-4">
+                    <li class="breadcrumb-item texto-breadcrum"><img src="recursos/img/inicio.svg" height="35px" /></li>
+                    <li class="breadcrumb-item texto-breadcrum"><a href="home.html">Inicio</a></li>
+                    <li class="breadcrumb-item active texto-breadcrum" aria-current="page">Instituciones Vinculadas</li>
+                </ol>
+            </nav>
+        </div>
+        
+        <!-- título  -->
+        <div class="container p-0">
+
+            <div class="col-12 px-3 px-md-0 py-1">
+                <h5> Instituciones Vinculadas </h5>
+            </div>
+            <div class="container mx-3 mx-md-0 p-0" style="border-top: 1px solid #092834;">
+                <div class="col-1" style="background-color: #FF026A; height:3px;">
+                </div>
+                <div class="col-11">
+                </div>
+            </div>
+        </div>
+
         <div class="container px-2 px-md-0">
 
             <div class="row px-3 px-md-0">
@@ -162,7 +144,7 @@
                 <div class="col-0 col-sm-0 col-lg-2 col-xl-1 ">
                 </div>
 
-
+                <!-- Espacio para los textos -->
                 <div class="col-12 col-sm-12 col-lg-8 col-xl-10 pt-5">
 
                     <p style="text-align:justify"> También denominados como Condiciones Generales de Uso, son un
@@ -181,80 +163,69 @@
                         protección de datos personales, enlaces, etc., que se tomarán para proteger la privacidad de los
                         usuarios.
 
-                        Dichas reglas y principios aportan un mayor nivel de confianza y seguridad jurídica a los
-                        usuarios del sitio web así como a sus propietarios y/o administradores, puesto que también se
-                        establece el tipo de personas a las que va dirigido y las responsabilidades que estos adquieren
-                        al hacer uso del sitio o de los servicios que en él son ofrecidos.
-
-                        Existe además otro documento conocido generalmente como "Condiciones Generales de Venta" que se
-                        utiliza para regular la adquisición de productos o servicios a través de internet, no obstante,
-                        este último no debe ser confundido con el presente documento, puesto que el presente sólo se
-                        limita a regular el acceso, funcionamiento e interacción del usuario con el sitio web, sin que
-                        se incluya las condiciones bajo las cuales se formalizará la adquisición de productos o
-                        servicios que tengan un costo o que requieran una licencia; y que se puedan obtener o adquirir a
-                        través del mismo sitio web.
-                        </br> </br>
-
-                        <strong>¿Cómo utilizar este documento? </strong></br> </br>
-
-                        El modelo incluye diversos supuestos que se pueden presentar con relación a los contenidos,
-                        productos y/o servicios se encuentren disponibles dentro del sitio, y se adapta en función de
-                        las necesidades y características del sitio web, por tanto la persona que desee utilizarlo
-                        deberá tomar en cuenta entre otras cosas, lo siguiente:
-
-                        El tipo de público al que se encuentra dirigido el sitio web, esto es, si es para todo tipo de
-                        público o si es solamente para mayores de edad;
-
-                        Si el acceso al sitio web requerirá de un registro del usuario, o por el contrario se encontrará
-                        disponible para todo público sin necesidad de registro;
-
-                        Si será necesario el pago de una contraprestación para hacer uso del sitio web, o bien este será
-                        de carácter gratuito;
-                        El modelo incluye los aspectos que resultan necesarios en materia de protección de datos
-                        personales en posesión de particulares e incluso se puede especificar el Aviso de Privacidad, en
-                        caso de que este se tenga disponible a través del mismo sitio web, todo esto aporta un gran
-                        nivel de confianza y seguridad jurídica, por lo que sería recomendable que este tipo de
-                        documentos se elaboren para todos y cada uno de los sitios web que se encuentran en internet,
-                        puesto que los mismos se consideran aceptados por el usuario al hacer uso del sitio y/o acceder
-                        a sus contenidos.
-
-                        El documento deberá estar de disponible en la ventana principal del sitio web (usualmente desde
-                        el archivo .index), no obstante, lo recomendable es que sea accesible desde cualquier parte del
-                        sitio web, a fin de que pueda ser consultado en todo momento por el usuario.
-
-                        En caso de que por el tipo de contenido, productos y/o servicios que se encuentren disponibles
-                        en el sitio web, se considere necesaria la aceptación expresa del usuario de los términos y
-                        condiciones; se deberá de tomar en cuenta que el usuario debe tener la posibilidad de visualizar
-                        el documento de forma íntegra; y se debe habilitar un medio para que el usuario exprese que se
-                        encuentra de acuerdo con los mismos (usualmente a través de un formulario).
-
-
-                        Derecho aplicable
-
-                        Capitulo segundo de la Ley Federal de Protección de Datos Personales en Posesión de
-                        Particulares.
-
-                        Código Civil Federal.
-
-                        ¿Cómo modificar el modelo?
-
-                        Completas un formulario. El documento se va redactando ante tus ojos, en base a tus respuestas.
-
-                        Al finalizar, lo recibirás en los formatos Word y PDF. Puedes modificarlo y volver a utilizarlo
+                        
                     </p> </br>
                 </div>
-
+                <!-- fin de espacio para textos -->
                 <div class="col-0 col-sm-0 col-lg-2 col-xl-1">
                 </div>
 
             </div>
         </div>
 
+        <!-- espacio para logos -->
+
+        <div class="container px-2 px-md-0">
+
+                <div class="row px-3 px-md-0">
+                    
+                        <div class="col-0 col-sm-0 col-lg-2 col-xl-1">
+                            </div>
+    
+                    <div class="col-0 col-sm-0 col-lg-4 col-xl-5 ">
+                            <a href="https://mam.inba.gob.mx/" target="_blank"><img  class="img-fluid"  src="recursos/img/logo_institucion_1.svg" height="70px" /></a>
+                    </div>
+    
+                    
+                    <div class="col-0 col-sm-0 col-lg-4 col-xl-5 ">
+                            <a href="https://estudiodiegorivera.inba.gob.mx/" target="_blank"><img class="img-fluid" alt="Responsive image" src="recursos/img/logo_institucion_2.svg" height="70px"  /></a>
+                    </div>
+                    
+                    <div class="col-0 col-sm-0 col-lg-2 col-xl-1">
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="row pt-4"> </div>
+
+            <div class="container px-2 px-md-0">
+
+                    <div class="row px-3 px-md-0">
+        
+                            <div class="col-0 col-sm-0 col-lg-2 col-xl-1">
+                                </div>
+        
+                        <div class="col-0 col-sm-0 col-lg-4 col-xl-5">
+                                <a href="https://mam.inba.gob.mx/" target="_blank"><img class="img-fluid" src="recursos/img/logo_institucion_1.svg" height="70px" /></a>
+                        </div>
+        
+                        
+                        <div class="col-0 col-sm-0 col-lg-4 col-xl-5">
+                                <a href="https://estudiodiegorivera.inba.gob.mx/" target="_blank"><img class="img-fluid" alt="Responsive image" src="recursos/img/logo_institucion_2.svg" height="70px" /></a>
+                        </div>
+                        
+                        <div class="col-0 col-sm-0 col-lg-2 col-xl-1">
+                            </div>
+        
+                    </div>
+                </div>
+
     </main>
 
     <!-- Footer -->
 
-    <footer class="footer mt-3 py-0" style="z-index: 1;">
+    <footer class="footer mt-3 py-0">
         <div class="container p-0" style="border-top: 1px solid #092834;">
             <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
             <div class="col-11"></div>
@@ -277,7 +248,7 @@
                 </div>
                 <div class="col-md-5 col-12">
                     <ul>
-                        <li><a href="documentacion_tecnicas.html">Documentación técnica</a></li>
+                        <li><a href="documentacion_tecnica.html">Documentación técnica</a></li>
                         <li><a href="como_usar_sitio.html">Cómo usar el sitio</a></li>
                         <li><a href="mapa_sitio.html">Mapa de sitio</a></li>
                         <li><a href="Contacto.html">Contacto</a></li>
@@ -295,18 +266,15 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
+    <!-- <script src="recursos/js/range_Timeline.js" crossorigin="anonymous"></script> -->
 
     <!-- Script TIMELINE -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
     </script>
-
     <script>
         $(function () {
             $("#slider-range").slider({
@@ -352,51 +320,6 @@
             return false;
         }
     </script>
-
-    <!-- Script de landing -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-    </script>
-
-    <!-- Local JS -->
-    <script type="text/javascript">
-        // header animation
-        var stickyOffset = $(".ancla").offset().top;
-
-        $(window).scroll(function () {
-            var sticky = $(".ancla"),
-                scroll = $(window).scrollTop();
-
-            if (scroll >= stickyOffset) sticky.addClass("fixed");
-            else sticky.removeClass("fixed");
-        });
-
-        // scroll button
-        $(".scroll").click(function () {
-            $('html,body').animate({
-                scrollTop: $(".ancla").offset().top
-            }, 'slow');
-        });
-
-        // no scroll behind overlay
-        // Script del flashligth inicio
-    </script>
-
-    <script type="text/javascript">
-        $(document).on('mousemove', function (e) {
-            $('#mask-overlay').css({
-                '-webkit-transform': 'translate(' + (e.pageX - 300) + 'px,' + (e.pageY - 300) + 'px)',
-                '-moz-transform': 'translate(' + (e.pageX - 300) + 'px,' + (e.pageY - 300) + 'px)',
-                '-ms-transform': 'translate(' + (e.pageX - 300) + 'px,' + (e.pageY - 300) + 'px)',
-                '-o-transform': 'translate(' + (e.pageX - 300) + 'px,' + (e.pageY - 300) + 'px)',
-                'transform': 'translate(' + (e.pageX - 300) + 'px,' + (e.pageY - 300) + 'px)'
-
-            });
-        });
-    </script>
-    <!-- // Script del flashligth fin -->
-
 
 </body>
 

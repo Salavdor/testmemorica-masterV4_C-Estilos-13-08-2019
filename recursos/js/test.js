@@ -1,182 +1,215 @@
-$(document).ready(function() {
-    var table = [];
-    var campos = [];
-    var titulos = [];
-    var big_data;
-    var url = window.location.href;
+//variables sí
+var vals = [];
+var $nivel1 = $("#nivel1");
+var $nivel2 = $("#nivel2");
+var $nivel3 = $("#nivel3");
 
-    // console.log(url);
+function generateTable(info) {
+    $(".COD_REF").text(info.COD_REF);
+    $(".TITULO").text(info.TITULO); // es este?
+    $(".NOMBRE_PRODUCTOR").text(info.NOMBRE_PRODUCTOR);
+    $(".NIVEL_DESC").text(info.NIVEL_DESC);
+    $(".padre").text(info.padre);
+    $(".FECHA_EXT_INI").text(info.FECHA_EXT_INI);
+    $(".HIST_INSTUTUC").text(info.HIST_INSTUTUC);
+    $(".LOCALIZ_ORIG").text(info.LOCALIZ_ORIG);
+    $(".VOL_UNID").text(info.VOL_UNID);
+    $(".FECHA_EXT_FIN").text(info.FECHA_EXT_FIN); //no, es este
+    $(".NOTAS").text(info.NOTAS);
+    $(".REGLAS_NORMAS").text(info.REGLAS_NORMAS);
+    $(".NOTA_ARCHIVERO").text(info.NOTA_ARCHIVERO);
+};
 
-    if (url.indexOf("192.168") >= 0)
-        var baseurl = "http://192.168.1.118/freenas/agn";
-    else if (url.indexOf("localhost") >= 0)
-        var baseurl = "http://192.168.1.104";
-    else
-        var baseurl = "http://10.255.8.49/freenas/agn"
-    $(document).ready(function () {
-        $.ajax({
-            type: 'GET',
-            url: 'data/' + $('#fondo').val() + '.json',
-            dataType: 'json',
-            success: function (data) {
-                // console.log(data);
-                big_data = data;
-                // console.log(data[origin]['hijos'][target]);
-                generateTable(data, [], "example");
-            }
-        }); // fin ajax
-    }); // fin documentready
+function generateTable2(info) {
+    $(".COD_REF2").text(info.COD_REF);
+    $(".TITULO2").text(info.TITULO);
+    $(".NOMBRE_PRODUCTOR2").text(info.NOMBRE_PRODUCTOR);
+    $(".NIVEL_DESC2").text(info.NIVEL_DESC);
+    $(".padre2").text(info.padre);
+    $(".FECHA_EXT_INI2").text(info.FECHA_EXT_INI);
+    $(".HIST_INSTUTUC2").text(info.HIST_INSTUTUC);
+    $(".LOCALIZ_ORIG2").text(info.LOCALIZ_ORIG);
+    $(".VOL_UNID2").text(info.VOL_UNID);
+    $(".FECHA_EXT_FIN2").text(info.FECHA_EXT_FIN);
+    $(".NOTAS2").text(info.NOTAS);
+    $(".REGLAS_NORMAS2").text(info.REGLAS_NORMAS);
+    $(".NOTA_ARCHIVERO2").text(info.NOTA_ARCHIVERO);
+}
 
-    function extract_object(path, arreglo, target) {
-        var return_value = Array();
-        var first_element = path.shift();
-        // console.log(first_element);
-        if (typeof first_element != 'undefined')
-            return_value = arreglo[first_element];
-        if (typeof return_value['hijos'] !== 'undefined') {
-            return_value = return_value['hijos'];
-        }
+function generateTable3(info) {
+    $(".COD_REF3").text(info.COD_REF);
+    $(".TITULO3").text(info.TITULO);
+    $(".NOMBRE_PRODUCTOR3").text(info.NOMBRE_PRODUCTOR);
+    $(".NIVEL_DESC3").text(info.NIVEL_DESC);
+    $(".padre3").text(info.padre);
+    $(".FECHA_EXT_INI3").text(info.FECHA_EXT_INI);
+    $(".HIST_INSTUTUC3").text(info.HIST_INSTUTUC);
+    $(".LOCALIZ_ORIG3").text(info.LOCALIZ_ORIG);
+    $(".VOL_UNID3").text(info.VOL_UNID);
+    $(".FECHA_EXT_FIN3").text(info.FECHA_EXT_FIN);
+    $(".NOTAS3").text(info.NOTAS);
+    $(".REGLAS_NORMAS3").text(info.REGLAS_NORMAS);
+    $(".NOTA_ARCHIVERO3").text(info.NOTA_ARCHIVERO);
+}
 
-        if (path.length >= 1) {
-            return_value = extract_object(path, return_value);
-        }
-        return return_value;
+// $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+//     primerDropdown += '<option value="">Selecciona un fondo</option>';
+//     $.each(vals, function (index, value) {
+//         $nivel1.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
+//     });
+//     $('#nivel1').html(primerDropdown);
+// });
+
+function generateDropdown(vals) {
+    $nivel2.append("<option selected disabled value=\"\">Selecciona un subfondo</option>");
+    $.each(vals, function (index, value) {
+        $nivel2.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
+    });
+};
+
+//cambio en primer dropdown
+$("#nivel1").change(function () {
+    var $dropdown = $(this);
+    var key = $dropdown.val();
+
+    function generateDropdown(vals) {
+        $nivel2.append("<option selected disabled value=\"\">Selecciona un subfondo</option>");
+        $.each(vals, function (index, value) {
+            $nivel2.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
+        });
+    };
+
+    switch (key) {
+        case 'H_MX09017AGNCL01FO001AYSE001AP':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+                $nivel2.empty();
+
+                vals = data.H_MX09017AGNCL01FO001AYSE001AP.hijos;
+                generateDropdown(vals)
+
+                $("#cedula1").removeClass("d-none");
+                $("#cedula1").addClass("d-show");
+                $("#collapseOne").addClass("show");
+                $("#cedula2").removeClass("d-show");
+                $("#cedula3").removeClass("d-show");
+
+                info = data.H_MX09017AGNCL01FO001AYSE001AP;
+                $(".cedula1titulo").text(info.TITULO);
+                generateTable(info);
+                $nivel3.empty();
+                $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+            });
+            break
+        case 'H_MX09017AGNCL01FO008RHSE002AL':
+            $.getJSON("recursos/json/MX09017AGNCL01FO008RHSE002ALSS03ALI22262.json", function (data) {
+                $nivel2.empty();
+
+                vals = data.H_MX09017AGNCL01FO008RHSE002AL.hijos;
+                generateDropdown(vals)
+
+                $("#cedula1").removeClass("d-none");
+                $("#cedula1").addClass("d-show");
+                $("#collapseOne").addClass("show");
+                $("#cedula2").removeClass("d-show");
+                $("#cedula3").removeClass("d-show");
+
+
+
+                info = data.H_MX09017AGNCL01FO008RHSE002AL;
+                $(".cedula1titulo").text(info.TITULO);
+                generateTable(info);
+
+                $nivel3.empty();
+                $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+            });
+            break
+        case '':
+            $nivel2.empty();
+            vals = ['Favor de seleccionar un fondo'];
+            $nivel2.append("<option>" + vals + "</option>");
+            $("#cedula1").removeClass("d-show");
+            $("#cedula1").addClass("d-none");
+            $("#cedula2").addClass("d-none");
+            $("#cedula2").removeClass("d-show");
+            $("#cedula3").addClass("d-none");
+            $("#cedula3").removeClass("d-show");
+
+            $nivel3.empty();
+            $('#nivel2').html('<option value="">Favor de seleccionar un fondo</option>');
+            $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+            break
     }
 
-    function generateTable(data, path_to_obj, target) {
-        // var table_id = prepare_new_table(path_to_obj);
-        console.log(path_to_obj);
-        var this_table = [];
-        var enlaces = "";
-        var campos = [];
-        var titulos = [];
-        this_table['objetos'] = '';
-
-        $.each(data, function (key, value) {
-            enlaces = "";
-            $.each(value, function (k, v) {
-                if (typeof v == "string" && typeof value['MACRODESCRIPCION'] === 'undefined' && typeof value['N_COL_INFORMES'] === 'undefined') {
-                    campos[k] = k;
-                }
-            });
-            if (typeof value['MACRODESCRIPCION'] === 'undefined' || (typeof value['hijos'] === 'undefined' && typeof value['paths'] === 'undefined')) {
-                this_table.push(value);
-            }
-        });
-
-        // console.log(this_table);
-
-        for (var key in campos) {
-            titulos.push({
-                "title": key,
-                "data": key
-            });
-        }
-
-        titulos.push({
-            "title": "objetos",
-            "data": "yo",
-            render: function (data, type, row, meta) {
-                console.log(data);
-                var u = "";
-                if (row.hijos != null) {
-                    // for (var dato in data) {
-                    u += '<button class="indice" target="' + data + '">' + data + '</button>';
-                    // }
-                    // console.log(data);
-                }
-                return u;
-            }
-        });
-
-        titulos.push({
-            "title": "paths",
-            "data": "paths",
-            render: function (data, type, row, meta) {
-                var u = "";
-                if (data != null) {
-                    for (var i = 0; i < data.length; i++) {
-                        u += ' <a href="' + baseurl + data[i].replace(/\\/g, "/") + '" target="_blank">' + baseurl + data[i] + '</a>';
-                    }
-                    // console.log(data);
-                }
-                return u;
-            }
-        });
-
-        // $('#example').html("");
-        var path_to_write = "";
-        for (var i = 0; i < path_to_obj.length; i++) {
-            // console.log(path_to_obj[i]);
-            path_to_write += path_to_obj[i] + ",";
-        }
-
-        path_to_write += target;
-
-        $("#" + target).next().val(path_to_write);
-
-        $('#' + target).DataTable({
-            data: this_table,
-            dom: 'Bfrtip',
-            buttons: [
-                'csv', 'excel'
-            ],
-            columns: titulos,
-            "initComplete": function () {
-                $(".indice").on('click', function (event) {
-                    // console.log(event.target);
-                    //el boton con el conjunto de elemetos que vamos a abrir
-                    var paths_send = Array();
-                    var boton = event.target;
-                    //id de la tabla actual
-                    var table_id = $(boton).closest("table").attr('id');
-                    //el valor objetivo que buscamos
-                    var boton_id = boton.innerHTML;
-                    //el contenido de los paths debajo de la tabla
-                    var target = $("#" + table_id).parent().next().val();
-                    //los paths separados en arreglos
-                    var paths = target.split(",");
-                    paths_send = target.split(",");
-                    for (var i = 0; i < paths.length; i++) {
-                        if (paths[i] == 'example') {
-                            paths.splice(i, 1);
-                            paths_send.splice(i, 1);
-                        }
-                    }
-
-                    paths.push(boton_id);
-                    paths_send.push(boton_id);
-
-                    // paths_send = paths;
-                    var segment_now = "";
-                    for (var i = 0; i < paths.length; i++) {
-                        if (paths[i] != segment_now) {
-                            segment_now = paths[i];
-                        } else {
-                            paths.splice(i, 1);
-                            paths_send.splice(i, 1);
-                        }
-                    }
-
-                    //La réplica de la tabla base
-                    var table = $("#example_table").html().toString();
-                    table = table.replace("aidi", boton.innerHTML);
-                    $("#tables_area").append(table);
-
-                    //la extración del arreglo base, debes mandarle el path a revisar y el arreglo grandote
-                    // paths_send.pop();
-                    var array_target = extract_object(paths_send, big_data);
-                    //la generación de la nueva tabla, debe llevar el array pequeño donde está la tabla, los nuevos paths y el nuevo target
-                    generateTable(array_target, paths, boton_id);
-                });
-
-                $(".erase-this").on('click', function () {
-                    $(this).parent().html("")
-                });
-            },
-        });
-        // console.log(this_table);
-    }
-    // function prepare_new_table(path_to_obj)
 });
-//http://10.255.8.49/freenas/agn/
+
+//cambio en segundo dropdaun
+$("#nivel2").change(function () {
+    var $dropdown = $(this);
+    var key = $dropdown.val();
+
+    function generateDropdown(vals) {
+        $nivel3.append("<option selected disabled value=\"\">Selecciona un expediente</option>");
+        $.each(vals, function (index, value) {
+            $nivel3.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
+        });
+    };
+
+    if (key != "") {
+        $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+            $nivel3.empty();
+
+            // var vals = data.key.hijos;
+            var vals = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001.hijos;
+            generateDropdown(vals)
+
+            $("#collapseOne").removeClass("show");
+            $("#collapseTwo").addClass("show");
+            $("#cedula2").removeClass("d-none");
+            $("#cedula2").addClass("d-show");
+
+            $("#buscar-fondo").removeClass("d-none");
+            $("#buscar-fondo").addClass("d-show");
+
+            $("#plus-icon-1").addClass("collapsed")
+
+            // info = data.key.hijos;
+            info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001;
+            $(".cedula2titulo").text(info.TITULO);
+            generateTable2(info);
+        });
+    } else {
+        $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+    }
+});
+
+//cambio en tercer derpdown
+$("#nivel3").change(function () {
+    var $dropdown = $(this);
+    var key = $dropdown.val();
+
+    if (key != "MX09017AGN-0000026638190") {
+        $.getJSON("recursos/json/niveltres.json", function (data) {
+            tercerDropdown += '<option value="">Selecciona un expediente</option>';
+            $.each(data, function (key) {
+                if ($dropdown == key.yo) {
+                    tercerDropdown += '<option value="' + key.yo + '">' + key.TITULO + '</option>';
+                }
+            });
+            $('#nivel3').html(tercerDropdown);
+
+            $("#collapseOne").removeClass("show");
+            $("#collapseTwo").addClass("show");
+            $("#cedula2").removeClass("d-none");
+            $("#cedula2").addClass("d-show");
+
+            $("#plus-icon-2").addClass("collapsed")
+
+            console.log(key);
+            info = key;
+            $(".cedula2titulo").text(info.TITULO);
+            generateTable2(info);
+        });
+    } else {
+        $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+    }
+});
