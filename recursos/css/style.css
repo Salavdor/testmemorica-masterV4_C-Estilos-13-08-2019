@@ -1,34 +1,34 @@
 @font-face {
   font-family: 'Lato-Regular';
-  src: url(/recursos/Type/Lato-Regular.ttf) format("truetype");
+  src: url(../Type/Lato-Regular.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
   font-family: 'Lato-Bold';
-  src: url(/recursos/Type/Lato-Bold.ttf) format("truetype");
+  src: url(../Type/Lato-Bold.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
   font-family: 'MerriweatherSans-Regular';
-  src: url(/recursos/Type/MerriweatherSans-Regular.ttf) format("truetype");
+  src: url(../Type/MerriweatherSans-Regular.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
   font-family: 'MerriweatherSans-Bold';
-  src: url(/recursos/Type/MerriweatherSans-Bold.ttf) format("truetype");
+  src: url(../Type/MerriweatherSans-Bold.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
   font-family: 'MerriweatherSans-light';
-  src: url(/recursos/Type/MerriweatherSans-Light.ttf) format("truetype");
+  src: url(../Type/MerriweatherSans-Light.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -51,6 +51,9 @@ html {
 body {
   margin: 0px;
   padding: 0px;
+  height: 100%;/*agregado x  mauro  para landing */
+  width: 100%;/*agregado x  mauro  para landing */
+ }
 }
 
 body.principal {
@@ -717,7 +720,6 @@ p.card-text {
 .breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
   font-family: 'MerriweatherSans-Regular';
   color: #092834;
-  font-size: 17px;
 }
 
 .memoria-titulo h1 { /*títulos para secciones, cuidar que no choque con el de memo*/
@@ -870,7 +872,7 @@ para la cédula
 }
 /*------------------------------Estilos de Mauricio------------------------------*/
 
-/* -------------------------agregado por mauro: estilos de páginas (estilos generales) - inicio*/
+/*agregado por mauro: estilos de páginas (estilos generales)*/
 h5 {
   font-family: 'MerriweatherSans-bold';
   color: #092834;
@@ -892,9 +894,8 @@ footer a {
   font-size: 14px;
 }
 
-/* aregado por mauro: estilos de páginas (estilos generales) - fin*/
 
-/*------------------------------- agregado por mauro para Mapa de sitio - inicio */
+/*agregado por mauro para Mapa de sitio*/
 .tipomapadesitio {
   /* para quitar negrita a los vínculos */
   font-family: 'MerriweatherSans-Regular';
@@ -902,11 +903,7 @@ footer a {
   font-size: 14px;
 }
 
-/* agregado por mauro para Mapa de sitio  - fin*/
-
-
-
-/* -----------------------Incorporadas por Mauro para landing Inicio/ */
+/*Incorporadas por Mauro para landing*/
 
 #mask-overlay {
   /* circulo sobre la foto del landing */
@@ -985,9 +982,7 @@ footer a {
   margin-bottom: 1rem;
 }
 
-/* Incorporadas por Mauro para landing - fin/ */
-
-/* -------------------------------Incorporado por Mauro para pagina contacto - inicio */
+/*Incorporado por Mauro para pagina contacto*/
 
 .contact-form {
   padding: 40px;
@@ -1049,7 +1044,7 @@ button {
   margin: 20px;
 }
 
-/* Incorporado por Mauro para pagina contacto - fin */
+/*Incorporado por Mauro para pagina contacto - fin*/
 
 footer a:hover {
   text-decoration: none;
@@ -1059,7 +1054,6 @@ footer a:hover {
 footer li {
   margin-bottom: 1px;
 }
-
 
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 1);
@@ -1098,7 +1092,7 @@ footer li {
 }
 
 
-/* ----------------------------agregado por mauro para estilo de vínculos (estilos generales) - inicio*/
+/*agregado por mauro para estilo de vínculos (estilos generales)*/
 
 a {
   font-family: 'MerriweatherSans-Bold';
@@ -1109,8 +1103,6 @@ a:hover {
   text-decoration: none;
   color: #347B98;
 }
-
-/* agregado por mauro para estilo de vínculos (estilos generales)  - fin*/
 
 /*-------------------------------Estilos irreconocibles-------------------------------*/
 .memoria-buscador input {
