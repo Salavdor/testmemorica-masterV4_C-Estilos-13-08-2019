@@ -743,12 +743,18 @@ span.facetadorbarradenavegacion {
 }
 
 th.ident{
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 16px;
+  color: #092834;
+  border: none;
+  border-right: 2px solid #092834;
+}
+
+ td.ident{
   font-family: 'MerriweatherSans-regular';
   font-size: 14px;
   color: #092834;
   border: none;
-  
- 
 }
 
 
