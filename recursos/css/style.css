@@ -54,7 +54,7 @@ body {
   height: 100%;/*agregado x  mauro  para landing */
   width: 100%;/*agregado x  mauro  para landing */
  }
-}
+
 
 p {
   font-family: 'Lato-Regular'; /*cambié a lato porque es la fuente para textos*/
@@ -82,7 +82,7 @@ a:hover {
 
 #tracker{
   position: absolute;  
-  top: calc(50vh - 290px);
+  top: calc(50vh - 570px);
   left: calc(50vw - 305px);
   border-radius: 50%;
   opacity: .98;
