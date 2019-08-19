@@ -82,8 +82,8 @@ a:hover {
 
 #tracker{
   position: absolute;  
-  top: calc(50vh - 540px);
-  left: calc(50vw - 304px);
+  top: calc(50vh - 530px);
+  left: calc(50vw - 306px);
   border-radius: 50%;
   opacity: .98;
   pointer-events: none;
