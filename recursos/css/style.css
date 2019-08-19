@@ -733,6 +733,24 @@ span.facetadorbarradenavegacion {
   border-right: 2px solid #092834;
 }
 
+.table td{
+  font-family: 'MerriweatherSans-regular';
+  font-size: 14px;
+  color: #092834;
+  border: none;
+  border-bottom: 2px solid #092834;
+ 
+}
+
+th.ident{
+  font-family: 'MerriweatherSans-regular';
+  font-size: 14px;
+  color: #092834;
+  border: none;
+  
+ 
+}
+
 
 /*-------------------------------------------
   Paginador (Muestra paginas de resultados)
