@@ -1,20 +1,34 @@
 @font-face {
+  font-family: 'Lato-Regular';
+  src: url(../Type/Lato-Regular.ttf) format("truetype");
+  font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url(../Type/Lato-Bold.ttf) format("truetype");
+  font-style: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@font-face {
   font-family: 'MerriweatherSans-Regular';
-  src: url(/recursos/Type/MerriweatherSans-Regular.ttf) format("truetype");
+  src: url(../Type/MerriweatherSans-Regular.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
   font-family: 'MerriweatherSans-Bold';
-  src: url(/recursos/Type/MerriweatherSans-Bold.ttf) format("truetype");
+  src: url(../Type/MerriweatherSans-Bold.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
   font-family: 'MerriweatherSans-light';
-  src: url(/recursos/Type/MerriweatherSans-Light.ttf) format("truetype");
+  src: url(../Type/MerriweatherSans-Light.ttf) format("truetype");
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -22,19 +36,28 @@
 /*-------------------------------Estilos generales-------------------------------*/
 
 html {
-  font-family: 'MerriweatherSans-Regular';
+  font-family: 'Lato-Regular'; /*cambié a lato porque es la fuente para textos*/
   font-size: 16px;
   width: 100%;
 
+  /* mauro */
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }
 
 body {
   margin: 0px;
   padding: 0px;
+  height: 100%;/*agregado x  mauro  para landing */
+  width: 100%;/*agregado x  mauro  para landing */
+ }
 }
 
 p {
-  font-family: 'MerriweatherSans-Regular';
+  font-family: 'Lato-Regular'; /*cambié a lato porque es la fuente para textos*/
   color: #092834;
   font-size: 14px;
 }
@@ -175,6 +198,7 @@ a:hover {
 /*----------------------------
 	       Header
 -----------------------------*/
+
 div.barra-superior { /*modifica barra superior*/
   min-height: 15px;
   background-color: #092834;
@@ -781,21 +805,415 @@ footer li {
     height: 70px;
   }
 }
+/*-----------------------------Páginas de acervos y temas-----------------------------*/
+
+p#memoria-texto-descripcion { /*texto que describe un acervo o un tema*/
+  font-family: 'Lato-Regular';
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+p.card-text {
+  font-family: 'Lato-Regular';
+}
+
+.memoria-dropdown-scroll { /*no me acuerdo qué hace, creo no hace nada*/
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+}
+
+.memoria-titulo h1 { /*títulos para secciones, cuidar que no choque con el de memo*/
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 19px;
+}
+
+.card-title { /*subtítulos de sección*/
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 18px;
+}
+
+.table { /*línea superior de la tabla, en realidad no funciona aún*/
+  border-top: 0 solid #fff !important;
+}
+
+.card-header { /*Título de cédula, sección acordeón*/
+  background-color: #f4f9e0;
+  cursor: pointer;
+  height: 3rem;
+  transition: all .2s ease-in-out .05s;
+}
+
+.card-header:hover { /*Animación de hover de título de acordeón*/
+  background-color: #B2D732;
+}
+
+.card-header h2 { /*Texto de título de cédula, sección acordeón*/
+  color: #092834;
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 18px;
+  padding: 0;
+}
+
+.memoria-dropdowns { /*Barra que contiene los dropdowns de árbol*/
+  padding: auto, 0px;
+  border: solid #B2D732;
+}
+
+.dropdown-acervo { /*Dropdown individual*/
+  -webkit-appearance: none;
+  -mox-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  /* custom styling */
+  font-family: 'MerriweatherSans-Bold';
+  color: #092834;
+  font-size: 14px;
+  height: 23px;
+  padding-left: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+}
+
+#submit {
+  padding-right: 0;
+}
+
+#buscar-fondo { /*Botón de buscar acervo*/
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 14px;
+  border: solid #092834;
+  border-radius: 0%;
+  color: #092834;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#buscar-fondo:hover { /*Animación de hover de botón de acervo*/
+  color: #fff;
+  background-color: #092834;
+}
+
+/*---------------------
+Íconos dínamicos de + y -
+para la cédula
+---------------------*/
+
+.card-header>a:before {
+  float: right !important;
+  font-family: "Font Awesome 5 Free";
+  content: "\f068";
+  padding-right: 5px;
+}
+
+.card-header>a.collapsed:before {
+  float: right !important;
+  font-family: "Font Awesome 5 Free";
+  content: "\f067";
+  padding-right: 5px;
+}
+
+.card-header>a:hover,
+.card-header>a:active,
+.card-header>a:focus {
+  text-decoration: none;
+}
+
+.card-header>a {
+  text-decoration: none;
+}
+
+/*-------------------------------Íconos-------------------------------*/
+@font-face {
+  font-family: 'fontello';
+  src: url('./Type/fontello/font/fontello.eot?46998757');
+  src: url('./Type/fontello/font/fontello.eot?46998757#iefix') format('embedded-opentype'),
+    url('./Type/fontello/font/fontello.woff?46998757') format('woff'),
+    url('./Type/fontello/font/fontello.ttf?46998757') format('truetype'),
+    url('./Type/fontello/font/fontello.svg?46998757#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.demo-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* You can be more comfortable with increased icons size */
+  font-size: 250%;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+/*------------------------------Estilos de Mauricio------------------------------*/
+
+/*agregado por mauro: estilos de páginas (estilos generales)*/
+h5 {
+  font-family: 'MerriweatherSans-bold';
+  color: #092834;
+  font-size: 17px;
+}
+
+.texto2columnas {
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+  font-size: 14px;
+  column-count: 2;
+  column-gap: 40px;
+  column-width: 240px;
+}
+
+footer a {
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+
+/*agregado por mauro para Mapa de sitio*/
+.tipomapadesitio {
+  /* para quitar negrita a los vínculos */
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+/*Incorporadas por Mauro para landing*/
+
+#mask-overlay {
+  /* circulo sobre la foto del landing */
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgba(0, 12, 19, 0.98);
+  height: 600px;
+  width: 600px;
+  transition: transform 400ms ease-out;
+
+}
+
+#bloque {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inputbuscador2[type=text] {
+  font-family: 'MerriweatherSans-Regular', 'Oswald', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: rgba(246, 247, 248, 1);
+  background-color: rgba(0, 12, 19, 0);
+  border-color: rgba(0, 12, 19, 0);
+}
+
+.inputbuscador2::placeholder {
+  font-family: 'MerriweatherSans-Regular';
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+}
+
+
+.intro {
+  width: 100%;
+  height: 100%;
+}
+
+.logo_landing {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_landing img {
+  width: 20%;
+}
+
+
+.scroll {
+  position: absolute;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5%;
+  transition: all 0.5s ease;
+  margin-bottom: -1px;
+}
+
+.scroll:hover {
+  height: 6%;
+}
+
+.scroll img {
+  height: 100%;
+  width: 100%;
+}
+
+.scroll p {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+}
+
+/*Incorporado por Mauro para pagina contacto*/
+
+.contact-form {
+  padding: 40px;
+  margin: 10px;
+  font-size: 15px;
+  font-family: 'MerriweatherSans-bold';
+  border: 3px solid #c2e01a;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-control,
+.contact-form .btn {
+  min-height: 38px;
+
+}
+
+.contact-form .form-control {
+  border: 0px;
+  border-bottom: 1px solid rgb(192, 191, 191);
+
+}
+
+.contact-form .form-control:focus {
+  box-shadow: 0 0 8px #b5b81e;
+}
+
+.contact-form .btn-primary {
+  min-width: 50px;
+  color: #000;
+  background: #fff;
+  margin-top: 20px;
+  border: none;
+}
+
+.contact-form .btn-primary:hover {
+  color: #b5b81e;
+}
+
+.contact-form .btn-primary i {
+  margin-right: 20px;
+}
+
+button {
+  color: #000;
+}
+
+.contact-form label {
+  opacity: 0.8;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.bs-example {
+  margin: 20px;
+}
+
+/*Incorporado por Mauro para pagina contacto - fin*/
+
+footer a:hover {
+  text-decoration: none;
+  color: #347B98;
+}
+
+footer li {
+  margin-bottom: 1px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 1);
+}
+
+.favicom {
+  font-size: 25px;
+}
+
+.scroll p {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.target {
+  mask: url("ejemplo_basico.svg#c1");
+  -webkit-mask: url("ejemplo_basico.svg");
+}
+
+
+.text-container {
+  height: 100%;
+  width: 100%;
+
+}
+
+.ordernow {
+  cursor: pointer;
+}
+
+
+/*agregado por mauro para estilo de vínculos (estilos generales)*/
+
+a {
+  font-family: 'MerriweatherSans-Bold';
+  color: #092834;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #347B98;
+}
 
 /*-------------------------------Estilos irreconocibles-------------------------------*/
 .memoria-buscador input {
   text-align: center;
   color: firebrick;
-}
-
-div.altura-variable {
-  height: 200px;
-  /*Tamaño peculiar*/
-}
-
-div.altura-fija {
-  height: 100px;
-  /*Tamaño preliminar*/
 }
 
 div.memoria-timeline {
@@ -811,4 +1229,10 @@ div.memoria-pestañas {
   /*Tamaño preliminar*/
   background-color: gainsboro;
   z-index: 1;
+}
+
+.memoria-dropdown-scroll { /*no me acuerdo qué hace, creo no hace nada*/
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
 }
