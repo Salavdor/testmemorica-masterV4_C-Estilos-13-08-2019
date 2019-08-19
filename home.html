@@ -26,24 +26,24 @@
 
 <!-- Inicio Landing -->
 
-    <div id="landing" class="intro  p-0 m-0" style="background-image: url(recursos/img/villa_a_caballo.jpg); 
-        overflow:hidden ; background-position: center center; background-repeat: no-repeat; background-size: cover; ">
+    <div id="landing" class="intro container-fluid p-0 m-0" style="background-image: url(recursos/img/villa_a_caballo.jpg); 
+        overflow:hidden !Important; background-position: center center; background-repeat: no-repeat; background-size: cover; z-index: 0;">
 
         <div class="col-12 pt-3 pl-3" style="z-index: 1; position: absolute;">
-            <img src="recursos/img/Logos/logo_memorica_bl.svg" height="50"/>
+            <img src="recursos/img/Logo/logo_memorica_bl.svg" height="50"/>
         </div>
 
-        <div class="col-12 d-flex  justify-content-center" style="height: 100%; top:30%;">
+        <div class="col-12 d-flex align-items-center justify-content-center" style="height: 100%;">
             <div id="tracker"></div>
             <div class="col-0 col-sm-3 "></div>
-            <div class="col-12 col-sm-6 d-flex justify-content-center circulo_buscador">
+            <div class="col-12 col-sm-6 d-flex justify-content-center circulo_buscador" style="">
                 <form class="form" action="resultados.html" style="position: relative; top:220px;">
                     <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador2" type="text" placeholder="México, haz memoria" aria-label="Search">
                 </form>
+                <!-- <img src="Recursos/img/circulo_buscador_landing.svg "> -->
             </div>
             <div class="col-0 col-sm-3"></div>
         </div>
-
         <div class="row d-flex justify-content-center">
             <a href="#home" class="scroll flex" style="z-index: 4;">
                 <p><STRONG>Inicio</STRONG></p>
@@ -71,7 +71,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
 
             <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica">
-                <img src="recursos/img/Logos/logo_memorica_ng.svg" height="20px" />
+                <img src="recursos/img/Logos/logo_memorica.svg" height="20px" />
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
@@ -84,7 +84,7 @@
 
                 <div class="col-12 d-flex justify-content-center p-0">
                     <a class="navbar-brand d-none d-lg-block m-0 " href="index.html">
-                    <img src="/recursos/img/Logos/logo_memorica_ng.svg" height="45px" />
+                    <img src="recursos/img/Logos/logo_memorica.svg" height="45px" />
                     </a>
                 </div>
 
@@ -135,6 +135,7 @@
                     <form class="form" action="resultados.html">
                         <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador"
                             type="text" placeholder="México, haz memoria" aria-label="Search">
+
                     </form>
                 </div>
                 <div class="col-0 col-sm-3"></div>
@@ -389,8 +390,8 @@
             }
             });
             TweenLite.to(tracker, .5, {
-            left: e.pageX - 600,
-            top: e.pageY - 600,
+            left: e.pageX - 300,
+            top: e.pageY - 300,
             'border': '4px solid hsl(220, 58%, 85%)'
             });
         }
@@ -402,7 +403,7 @@
             });
             TweenLite.to(tracker, .5, {
             left: e.pageX - 300,
-            top: e.pageY - 600,
+            top: e.pageY - 300,
             'border': '4px solid transparent'
             });
         }
