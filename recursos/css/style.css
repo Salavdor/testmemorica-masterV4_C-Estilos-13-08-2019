@@ -297,7 +297,7 @@ span.facetadorbarradenavegacion {
 }
 
 .button-group label {
-  font-size: 18px;
+  font-size: 14px;
   color: #092834;
 }
 
@@ -312,6 +312,27 @@ span.facetadorbarradenavegacion {
   color: #347B98;
 
 }
+.icono_modos_visualizacion {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color:#092834;
+  font-size: 150%;
+}
+
+.icono_modos_visualizacion {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color:#092834;
+  font-size: 150%;
+}
+.icono_modos_visualizacion:hover {
+ 
+  color:#347B98;
+  font-size: 150%;
+}
+
 
 /*-------------------------------MENU Facetador (opciones de menu)-------------------------------*/
 
