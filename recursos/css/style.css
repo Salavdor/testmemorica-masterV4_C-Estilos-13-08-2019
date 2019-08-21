@@ -723,6 +723,18 @@ span.facetadorbarradenavegacion {
 /*----------------------------
 	         lista
 -----------------------------*/
+.imagen-superior_lista {
+  max-height: 140px;
+  min-width: 25%;
+  background-color:none;
+  margin-top: -0.5px;
+}
+
+.img-responsiva_lista {
+  min-height: 140px;
+  object-fit: contain;
+}
+
 
 .table th{
   font-family: 'MerriweatherSans-Bold';
