@@ -101,9 +101,6 @@ a:hover {
   box-sizing: border-box;
 }
 
-
-
-
 .circulo_buscador{
   z-index:3; 
   min-height: 500px; 
@@ -290,9 +287,11 @@ span.facetadorbarradenavegacion {
 /*----------------------------------------
    Barra Cambio de modo de visualización
 ----------------------------------------*/
-
-.modos_visualizar {/*cambia el puntero por manita*/
-  cursor: pointer;
+.icono_modos_visualizacion {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color:#092834;
 }
 
 .button-group input {
@@ -300,8 +299,10 @@ span.facetadorbarradenavegacion {
 }
 
 .button-group label {
-  font-size: 18px;
+  font-size: 16px;
+  font-family: 'Lato-Regular';
   color: #092834;
+  cursor: pointer; 
 }
 
 .button-group input:hover+label,
@@ -315,6 +316,10 @@ span.facetadorbarradenavegacion {
   color: #347B98;
 
 }
+
+
+
+
 
 /*-------------------------------MENU Facetador (opciones de menu)-------------------------------*/
 
@@ -641,7 +646,7 @@ span.facetadorbarradenavegacion {
 -----------------------------*/
 
 .card {
-  border: 2.6666666666666665px solid #092834;
+  border: 2px solid #092834;
 }
 
 .imagen-superior {
@@ -659,11 +664,21 @@ span.facetadorbarradenavegacion {
 .label_objeto {
   background-color: #092834;
   width: 42px;
-  height: 70px;
+  height: 60px;
 }
 
 .icono_objetodigital {
-  margin-top: 32px;
+  position: relative;
+  top: 18px;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  font-size: 29px;
+  color: #347B98;
+  background-color: #fff;
 }
 
 .boton_agregar_a_coleccion {
@@ -678,7 +693,7 @@ span.facetadorbarradenavegacion {
   p.card-text {
     font-family: 'MerriweatherSans-Regular';
     margin: 0px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 200;
     line-height: normal;
   }
@@ -716,17 +731,29 @@ span.facetadorbarradenavegacion {
 
 @media (min-width: 992px) {
   .card-columns {
-    column-count: 4;
+    column-count: 3;
   }
 }
 
 /*----------------------------
 	         lista
 -----------------------------*/
+.imagen-superior_lista {
+  max-height: 140px;
+  min-width: 25%;
+  background-color:none;
+  margin-top: -0.5px;
+}
+
+.img-responsiva_lista {
+  min-height: 140px;
+  object-fit: contain;
+}
+
 
 .table th{
   font-family: 'MerriweatherSans-Bold';
-  font-size: 16px;
+  font-size: 14px;
   color: #092834;
   border: none;
   border-bottom: 1px solid #092834;
@@ -735,7 +762,7 @@ span.facetadorbarradenavegacion {
 
 .table td{
   font-family: 'MerriweatherSans-regular';
-  font-size: 14px;
+  font-size: 12px;
   color: #092834;
   border: none;
   border-bottom: 1px solid #092834;
@@ -744,7 +771,7 @@ span.facetadorbarradenavegacion {
 
 th.ident{
   font-family: 'MerriweatherSans-Bold';
-  font-size: 16px;
+  font-size: 14px;
   color: #092834;
   border: none;
   border-right: 1px solid #092834;
@@ -752,7 +779,7 @@ th.ident{
 
  td.ident{
   font-family: 'MerriweatherSans-regular';
-  font-size: 14px;
+  font-size: 12px;
   color: #092834;
   border: none;
 }
@@ -991,7 +1018,7 @@ para la cédula
   margin-left: .2em;
 
   /* You can be more comfortable with increased icons size */
-  font-size: 250%;
+  font-size: 400%;
 
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
@@ -1135,7 +1162,6 @@ footer a {
 .contact-form .form-control {
   border: 0px;
   border-bottom: 1px solid rgb(192, 191, 191);
-
 }
 
 .contact-form .form-control:focus {
