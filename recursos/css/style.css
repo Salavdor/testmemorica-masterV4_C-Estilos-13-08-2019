@@ -114,17 +114,7 @@ a:hover {
 }
 
 
-/* @media (min-width: 518px) {
-  .circulo_buscador {
-    top: 20px;
-  }
-}
-@media (max-width: 519px) {
-  .circulo_buscador {
-    position: relative;
-   
-  }
-} */
+
 
 #bloque{
   display: table-cell;
@@ -226,6 +216,29 @@ nav { /*alinea texto en navbar*/
 
 .fila-centrada {/*forza al input alargarse para compensar el ancho*/
   width: 100%;
+}
+
+/* //hide nasty ie clear thingie */
+.input-group.with-icon>input::-ms-clear{display:none}
+
+/* //general placement stuffs */
+.input-group.with-icon>i {
+  -webkit-transform: translateY(-2%);
+  -ms-transform: translateY();
+  transform: translateY();
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  top: 7%; 
+}
+/* //icon right (default) */
+.input-group.with-icon>i,
+.input-group.with-icon.icon-right>i{
+right: .7rem;
+}
+.input-group.with-icon>input,
+.input-group.with-icon.icon-right>input {
+padding-right: 1.7rem;
 }
 
 /*----------------------------
