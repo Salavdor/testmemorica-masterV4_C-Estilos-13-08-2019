@@ -287,9 +287,11 @@ span.facetadorbarradenavegacion {
 /*----------------------------------------
    Barra Cambio de modo de visualización
 ----------------------------------------*/
-
-.modos_visualizar {/*cambia el puntero por manita*/
-  cursor: pointer;
+.icono_modos_visualizacion {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color:#092834;
 }
 
 .button-group input {
@@ -297,8 +299,10 @@ span.facetadorbarradenavegacion {
 }
 
 .button-group label {
-  font-size: 14px;
+  font-size: 16px;
+  font-family: 'Lato-Regular';
   color: #092834;
+  cursor: pointer; 
 }
 
 .button-group input:hover+label,
@@ -312,26 +316,9 @@ span.facetadorbarradenavegacion {
   color: #347B98;
 
 }
-.icono_modos_visualizacion {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  color:#092834;
-  font-size: 150%;
-}
 
-.icono_modos_visualizacion {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  color:#092834;
-  font-size: 150%;
-}
-.icono_modos_visualizacion:hover {
- 
-  color:#347B98;
-  font-size: 150%;
-}
+
+
 
 
 /*-------------------------------MENU Facetador (opciones de menu)-------------------------------*/
@@ -677,11 +664,21 @@ span.facetadorbarradenavegacion {
 .label_objeto {
   background-color: #092834;
   width: 42px;
-  height: 70px;
+  height: 60px;
 }
 
 .icono_objetodigital {
-  margin-top: 32px;
+  position: relative;
+  top: 18px;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  font-size: 29px;
+  color: #347B98;
+  background-color: #fff;
 }
 
 .boton_agregar_a_coleccion {
