@@ -222,18 +222,18 @@ nav { /*alinea texto en navbar*/
 .input-group.with-icon>input::-ms-clear{display:none}
 
 /* //general placement stuffs */
-.input-group.with-icon>i {
-  -webkit-transform: translateY(-2%);
-  -ms-transform: translateY();
-  transform: translateY();
+.input-group.with-icon>img {
+  -webkit-transform: translate(-2vw, -16px);
+  -ms-transform: translate(-2vw, -16px);
+  transform: translate(-2vw, -16px);
   pointer-events: none;
-  position: absolute;
+  position: relative;
   z-index: 3;
-  top: 7%; 
+  top: 0%; 
 }
 /* //icon right (default) */
-.input-group.with-icon>i,
-.input-group.with-icon.icon-right>i{
+.input-group.with-icon>img,
+.input-group.with-icon.icon-right>img{
 right: .7rem;
 }
 .input-group.with-icon>input,

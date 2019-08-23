@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Los cuatro planes de Ayala</title>
+        <meta name="author" content="Rebeca Flores, Rodrigo Fernández">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Special+Elite&amp;display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <style>
+            @keyframes slidein {
+                from {
+                    margin-left: 100%;
+                    width: 300%;
+                }
+
+                to {
+                    margin-left: 0%;
+                    width: 100%;
+                }
+            }
+
+            @keyframes entrance {
+                0% {
+                    /* background-color: white; */
+                    font-size: 0.5em;
+                }
+
+                50% {
+                    /* background-color: palegoldenrod; */
+                    font-size: 1.2em;
+                }
+            }
+
+            html,
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
+                background: #ffffff;
+                margin: 0;
+                padding: 0;
+                /* padding: 40px 100px 20px 100px; */
+                /* padding: 2% 5% 2% 5%; */
+            }
+
+            /* div {
+                width: 100%;
+                height: 100%;
+            } */
+
+            span {
+                animation: entrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            h1 {
+                background-color: rgba(205, 92, 92, 0.294);
+                box-shadow: rgba(205, 92, 92, 0.527) 5px 5px;
+
+                font-family: 'Special Elite', monospace;
+                text-align: center;
+                font-size: 1.6em; /*2em*/
+            }
+
+            p {
+                font-family: 'Special Elite', monospace;
+                font-weight: bold;
+                /* animation: slidein 2s cubic-bezier(0.075, 0.82, 0.165, 1); */
+                font-size: 1.2em;/*1.5em, 1.8em*/
+                text-align: justify;
+                text-justify: inter-word;
+                padding: 0%;
+
+                line-height: 1.7em;
+            }
+
+            button {
+                /* position: sticky; */
+                width: auto;
+                height: auto;
+                font-family: 'Special Elite', monospace;
+                font-weight: bolder;
+                font-size: 1em;
+                text-align: center;
+                padding: 5%;
+                border: none;
+                margin: 0%;
+            }
+
+            button:hover {
+                /*transform: rotateX(130deg) rotateY(50deg) rotateZ(300deg); */
+                /*transform: translateZ(148);*/
+                color: rgb(126, 16, 58);
+                font-style: oblique;
+            }
+
+            #agn {
+                background-color: #19b3e6;
+            }
+
+            #unam {
+                background-color: #ffcc00;
+            }
+
+            #diario {
+                background-color: #ff1493;
+            }
+
+            #carso {
+                background-color: #afde62;
+            }
+
+            #amez {
+                background-color: #ca6a10;                
+            }
+
+            #base {
+                background-color: black;
+                color: whitesmoke;
+                
+            }
+            
+            #firma {
+                text-align: right;
+                font-style: oblique;
+                font-size: 1.5em;
+            }
+
+            #nav {
+                display: grid;
+
+                grid-template-columns: repeat(6, 1fr);
+                /* display: inline; */
+                /* overflow: hidden; */
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                height: auto;
+            }
+
+            /* #nav button {
+                
+                
+            } */
+
+            #esqueleto {
+                margin: 3% 2.5% 25% 2.5%;
+                font-size: 1.15em;
+                animation: slidein 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="nav">
+            <button id="agn" onclick="renderCases(esqueletoNegro, agn)">Fondo Genovevo de la O (AGN)</button>
+            <button id="unam" onclick="renderCases(esqueletoNegro, unam)">Fondo Zapata (AHUNAM)</button>
+            <button id="diario" onclick="renderCases(esqueletoNegro, diario)">El Diario del Hogar</button>
+            <button id="carso" onclick="renderCases(esqueletoNegro, carso)">Fondo Plan de Ayala (Carso)</button>
+            <button id="amez" onclick="renderCases(esqueletoNegro, carsoAmezcua)">Fondo Jenaro Amezcua (Carso)</button>
+            <button id="base" onclick="block.html(esqueletoNegro, false)">Base</button>
+        </div>
+        <div id="esqueleto"><p>
+            <h1>Plan de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">Mapaztlán de Ayala, estado de Morelos. Se reconoce como jefe de la revolución al heroico general Pascual Orozco y en su lugar al general don Emiliano Zapata. Adicional al Plan de San Luis Potosí. Leyes agrarias [ilegible]. Desamortización. Cumplimiento de las promesas revolucionarias. Llamamiento al pueblo.<br><br></span></span></h1><br>
+
+            Plan Libertador de los hijos del estado de Morelos, afiliados al ejército insurgente que <span style="background-color:black"><span style="background-color:black;color:#19b3e6">defiende</span></span> el cumplimiento <span style="background-color:black"><span style="background-color:black;color:#19b3e6">de San Luis</span></span> con las reformas que ha creído conveniente aumentar en beneficio de la patria mexicana.<br><br>
+
+            Los que suscribimos constituidos en junta revolucionaria para sostener y llevar a cabo las promesas que hizo <span style="background-color:black"><span style="background-color:black;color:#19b3e6">al país</span></span> la revolución de 20 de noviembre de 1910 próximo pasado, declaramos solemnemente ante la faz del mundo civilizado que nos juzga y ante la nación <span style="background-color:black"><span style="background-color:black;color:#19b3e6">que pertenecemos</span></span> y amamos, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">los propósitos</span></span> que hemos formulado para acabar con la tiranía que <span style="background-color:black"><span style="background-color:black;color:#19b3e6">oprime</span></span>, y redimir a la patria de las dictaduras que se nos imponen las cuales quedan determinadas en el siguiente plan.<br><br>
+
+            1°. Teniendo <span style="background-color:black"><span style="background-color:black;color:#19b3e6">en consideración</span></span> que el pueblo mexicano acaudillado por don Francisco I. Madero fue a derramar su sangre para reconquistar <span style="background-color:black"><span style="background-color:black;color:#19b3e6">libertades y reivindicar sus derechos conculcados, y no para que un hombre se adueñara del poder violando los sagrados</span></span> <span style="background-color:black"><span style="background-color:black;color:#19b3e6">principios que</span></span> juró defender bajo el <span style="background-color:black"><span style="background-color:black;color:#19b3e6">lema</span></span> de "Sufragio Efectivo <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y</span></span> No Reelección", <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ultrajando así la fe, la justicia</span></span> y las libertades del pueblo; teniendo en consideración: que ese hombre a que nos referimos es don Francisco I. Madero, el mismo que inició la precitada revolución, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">el que</span></span> impuso por <span style="background-color:black"><span style="background-color:black;color:#19b3e6">norma gubernativa</span></span> su voluntad e influencia al gobierno provisional del ex presidente de la república <span style="background-color:black"><span style="background-color:black;color:#19b3e6">licenciado Francisco L.</span></span> de la Barra, <span style="background-color:black"><span style="background-color:black;color:#19b3e6"></span></span><span style="background-color:black"><span style="background-color:black;color:#19b3e6">causando desgracias a la patria</span></span> de una manera solapada y ridícula, no teniendo otras miras que satisfacer sus ambiciones personales, sus desmedidos instintos de tirano y su profundo desacato al cumplimiento de las leyes preexistentes emanadas del inmortal Código <span style="background-color:black"><span style="background-color:black;color:#19b3e6">del</span></span> 57 escrito con <span style="background-color:black"><span style="background-color:black;color:#19b3e6">la sangre revolucionaria</span></span>  de Ayutla; teniendo <span style="background-color:black"><span style="background-color:black;color:#19b3e6">en cuenta</span></span>: que el llamado jefe de la revolución libertadora de México, don Francisco I. Madero<span style="background-color:black"><span style="background-color:black;color:#19b3e6">, por falta de entereza y debilidad suya</span></span>, no llevó a feliz término la revolución que gloriosamente inició con el apoyo de Dios y del pueblo, puesto que dejó en pie la mayoría <span style="background-color:black"><span style="background-color:black;color:#19b3e6">de los</span></span> poderes gubernativos y elementos corrompidos de opresión del gobierno dictatorial de Porfirio Díaz, que no son ni pueden ser <span style="background-color:black"><span style="background-color:black;color:#19b3e6">de manera alguna</span></span> representación <span style="background-color:black"><span style="background-color:black;color:#19b3e6">de la soberanía</span></span>, y <span style="background-color:black"><span style="background-color:black;color:#19b3e6">que por ser acérrimos adversarios</span></span> nuestros, y de los principios que hasta hoy defendemos, están provocando el malestar del país y abriendo nuevas heridas al seno de la patria para darle a beber su propia sangre; <span style="background-color:black"><span style="background-color:black;color:#19b3e6">teniendo también en cuesta</span></span>: que el supradicho <span style="background-color:black"><span style="background-color:black;color:#19b3e6">señor Madero</span></span>, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">actualmente</span></span> presidente de la república, trata de eludirse del cumplimiento de las promesas que hizo a la nación en el Plan de San Luis Potosí, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">siendo</span></span> las precitadas promesas a los convenios de Ciudad Juárez, ya nulificando, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">persiguiendo, encarcelando</span></span> o matando a los elementos revolucionarios que le ayudaron <span style="background-color:black"><span style="background-color:black;color:#19b3e6">a que ocupara</span></span> el alto puesto de presidente de la república por medio <span style="background-color:black"><span style="background-color:black;color:#19b3e6">de falsas</span></span> promesas <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y numerosas</span></span> intrigas a la nación; teniendo en consideración: que el tantas veces <span style="background-color:black"><span style="background-color:black;color:#19b3e6">repetido</span></span> Francisco I. Madero ha tratado de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">acallar</span></span> con la fuerza bruta de las bayonetas y <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ahogar</span></span> en sangre a los pueblos que le piden, solicitan o exigen el cumplimiento de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">las</span></span> promesas <span style="background-color:black"><span style="background-color:black;color:#19b3e6">de</span></span> la revolución llamándolos bandidos y rebeldes, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">condenándolos</span></span> a una guerra de exterminio sin conceder ni otorgar ninguna de las garantías que prescriben la razón, la justicia y la ley; <span style="background-color:black"><span style="background-color:black;color:#19b3e6">teniendo igualmente</span></span> en consideración: que el presidente de la república <span style="background-color:black"><span style="background-color:black;color:#19b3e6">Francisco I. Madero</span></span> ha hecho del sufragio efectivo una sangrienta burla al pueblo, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y imponiendo</span></span> contra la voluntad del mismo pueblo <span style="background-color:black"><span style="background-color:black;color:#19b3e6">con</span></span> la vicepresidencia de la república al licenciado José María Pino Suárez, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">o ya</span></span>  los gobernadores de los estados designados por él, como el llamado general Ambrosio Figueroa, verdugo y tirano del pueblo de Morelos, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ya</span></span> entrando en contubernio escandaloso con el partido científico, hacendados feudales y caciques opresores, enemigos de la revolución proclamada por él a fin de forjar nuevas cadenas, y <span style="background-color:black"><span style="background-color:black;color:#19b3e6">seguir</span></span> el molde de una nueva dictadura, más oprobiosa y más terrible que la de Porfirio Díaz, pues ha sido claro y patente que ha ultrajado la soberanía de los estados, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">conculcando</span></span> las leyes sin ningún respeto a vidas <span style="background-color:black"><span style="background-color:black;color:#19b3e6">e</span></span> intereses, como ha sucedido en el estado de Morelos y otros, conduciéndonos a la más horrorosa anarquía que registra la historia contemporánea; por estas consideraciones, declaramos al susodicho Francisco I. Madero inepto para realizar las promesas de la revolución de que fue autor<span style="background-color:black"><span style="background-color:black;color:#19b3e6"> por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder</span></span>, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">incapaz</span></span> <span style="background-color:black"><span style="background-color:black;color:#19b3e6">para gobernar</span></span> por no tener ningún respeto a la ley y a la justicia de los pueblos, y traidor a la patria por estar a sangre y fuego humillando a los mexicanos que desean <span style="background-color:black"><span style="background-color:black;color:#19b3e6">libertades</span></span>, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">a fin de</span></span> complacer a los científicos, hacendados y caciques que nos esclavizan, y desde hoy comenzamos a continuar la revolución principiada por él, hasta conseguir el derrocamiento de los poderes dictatoriales que existen.<br><br>
+
+            2°. Se desconoce como jefe de la revolución <span style="background-color:black"><span style="background-color:black;color:#19b3e6">al señor</span></span> Francisco I. Madero y como presidente de la república por las razones <span style="background-color:black"><span style="background-color:black;color:#19b3e6">que antes se expresan</span></span>, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">procurando</span></span> <span style="background-color:black"><span style="background-color:black;color:#19b3e6">el derrocamiento</span></span> de este funcionario.<br><br>
+
+            3°. Se reconoce como jefe de la revolución libertadora al <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ilustre ciudadano</span></span> general Pascual Orozco, segundo del caudillo don Francisco I. Madero, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y en caso</span></span> de que no acepte este delicado puesto, se reconocerá como jefe de la revolución al ciudadano <span style="background-color:black"><span style="background-color:black;color:#19b3e6">general</span></span> Emiliano Zapata.<br><br>
+
+            4°. La junta revolucionaria del estado de Morelos manifiesta a la nación bajo formal protesta: que hace suyo el Plan de San Luis Potosí con las adiciones que a continuación se expresan en beneficio de los pueblos oprimidos, y se hará defensora de los principios que defiende hasta vencer o morir.<br><br>
+
+            5°. La junta revolucionaria del estado de Morelos no admitirá transacciones ni componendas <span style="background-color:black"><span style="background-color:black;color:#19b3e6">hasta</span></span> no conseguir el <span style="background-color:black"><span style="background-color:black;color:#19b3e6">derrocamiento</span></span> de los <span style="background-color:black"><span style="background-color:black;color:#19b3e6">dictatoriales</span></span> de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">Porfirio Díaz y Francisco I. Madero</span></span> pues la nación está cansada de hombres <span style="background-color:black"><span style="background-color:black;color:#19b3e6">falsos</span></span> y traidores que hacen <span style="background-color:black"><span style="background-color:black;color:#19b3e6">promesas como</span></span> libertadores <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y que al llegar</span></span> al poder se olvidan de ellas y se constituyen en tiranos.<br><br>
+
+            6°. Como parte adicional del plan que invocamos, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y hacemos</span></span> constar que los terrenos, montes y aguas que hayan usurpado los hacendados, científicos o caciques, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">a la sombra de la justicia venal</span></span> entrarán en posesión de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">esos</span></span> bienes inmuebles desde luego los pueblos o ciudadanos que tengan sus títulos correspondientes <span style="background-color:black"><span style="background-color:black;color:#19b3e6">a esas</span></span> propiedades, de las cuales han sido despojados por la mala fe de nuestros opresores, manteniendo a todo trance con las armas en la mano la mencionada posesión, y los usurpadores que se <span style="background-color:black"><span style="background-color:black;color:#19b3e6">crean</span></span> con derecho a ellos, lo deducirán <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ante los</span></span> tribunales especiales que se establezcan <span style="background-color:black"><span style="background-color:black;color:#19b3e6">con el</span></span> triunfo de la revolución.<br><br>
+
+            7°. En virtud de que la inmensa mayoría de los pueblos y ciudadanos mexicanos, no son más dueños que del terreno que pisan, sufriendo los horrores de la miseria, sin poder <span style="background-color:black"><span style="background-color:black;color:#19b3e6">mejorar en nada</span></span> su condición social ni poder dedicarse a la industria o a la agricultura por estar monopolizados en unas cuantas manos las tierras, montes y aguas; por esta causa se expropiarán, previa indemnización, de la tercera parte de esos monopolios <span style="background-color:black"><span style="background-color:black;color:#19b3e6">a los</span></span>  poderosos propietarios de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ellos</span></span> a fin de que los pueblos y ciudadanos de México obtengan ejidos, colonias, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">fondos</span></span> legales para pueblos o campos de sembradura o de labor, y se mejore en todo y para todo la falta de prosperidad y bienestar de los mexicanos.<br><br>
+
+            8°. Los hacendados, científicos o caciques que se opongan directa o indirectamente al presente plan, se nacionalizarán sus bienes, y las dos terceras partes que a ellos <span style="background-color:black"><span style="background-color:black;color:#19b3e6">les corresponde</span></span> se destinarán para indemnizaciones de guerra, pensiones de viudas y huérfanos de las víctimas que sucumban en la lucha del presente plan.<br><br>
+
+            9°. Para <span style="background-color:black"><span style="background-color:black;color:#19b3e6">ejecutar</span></span> los procedimientos respecto a los bienes antes mencionados, se aplicarán <span style="background-color:black"><span style="background-color:black;color:#19b3e6">leyes</span></span> de <span style="background-color:black"><span style="background-color:black;color:#19b3e6">amortización</span></span> y nacionalización según convenga; <span style="background-color:black"><span style="background-color:black;color:#19b3e6">pues de norma y ejemplo pueden servirnos</span></span> las puestas en vigor por el inmortal Juárez a los bienes eclesiásticos que escarmentaron <span style="background-color:black"><span style="background-color:black;color:#19b3e6">los déspotas</span></span> y conservadores <span style="background-color:black"><span style="background-color:black;color:#19b3e6">que en todo tiempo que</span></span> han pretendido imponernos el yugo ignominioso de la opresión <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y el</span></span> retroceso.<br><br>
+
+            10°. Los jefes militares insurgentes de la república, que se levantaron con las armas en la mano a la voz de don Francisco I. Madero para defender el Plan de San Luis Potosí y que <span style="background-color:black"><span style="background-color:black;color:#19b3e6">se opongan</span></span> con fuerza armada al presente plan, se juzgarán traidores a la causa que defendieron <span style="background-color:black"><span style="background-color:black;color:#19b3e6">a la patria</span></span>, puesto que en la actualidad muchos de ellos por complacer a los tiranos, por un puñado de monedas, o por cohecho o soborno, están derramando la sangre de sus hermanos que reclaman el cumplimiento de las promesas que hizo a la nación don Francisco I. Madero.<br><br>
+
+            11°. Los gastos de guerra serán tomados conforme <span style="background-color:black"><span style="background-color:black;color:#19b3e6">al artículo 11</span></span> del Plan de San Luis Potosí, y todos los procedimientos empleados en la revolución que emprendemos, serán conforme a las instrucciones mismas que determine el mencionado plan.<br><br>
+
+            12°. Una vez triunfante la revolución <span style="background-color:black"><span style="background-color:black;color:#19b3e6">que llevamos</span></span> a la vía de la realidad, una junta de los principales jefes revolucionarios de los diferentes estados, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">nombrará o designará</span></span> un presidente interino de la república<span style="background-color:black"><span style="background-color:black;color:#19b3e6">, quien convocará a elecciones para la organización de los poderes federales</span></span>.<br><br>
+
+            13.° Los principales jefes revolucionarios de cada estado, en junta, designarán <span style="background-color:black"><span style="background-color:black;color:#19b3e6">el</span></span> gobernador provisional del estado a que correspondan, y este elevado funcionario convocará a elecciones para la debida organización de los poderes públicos, con el objeto de evitar consignas <span style="background-color:black"><span style="background-color:black;color:#19b3e6">forzosas que labran la desdicha</span></span> de los pueblos, como la tan conocida consigna de Ambrosio Figueroa en el estado de Morelos, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y otros que nos condenan</span></span> al precipicio de conflictos sangrientos sostenidos por el capricho del dictador Madero y del círculo de científicos y hacendados que <span style="background-color:black"><span style="background-color:black;color:#19b3e6">los han</span></span>  sugestionado.<br><br>
+
+            14°. Si el presidente Madero y demás elementos dictatoriales del actual y antiguo régimen desean evitar <span style="background-color:black"><span style="background-color:black;color:#19b3e6">las inmensas</span></span> desgracias que afligen a la patria<span style="background-color:black"><span style="background-color:black;color:#19b3e6"> y poseen verdaderos sentimientos de amor hacia ella</span></span>, que hagan inmediata <span style="background-color:black"><span style="background-color:black;color:#19b3e6"></span></span> renuncia de los puestos que ocupan y con eso, en algo restañarán las graves heridas que han abierto al seno de la patria; pues <span style="background-color:black"><span style="background-color:black;color:#19b3e6">que de no</span></span> hacerlo así, sobre sus cabezas caerá <span style="background-color:black"><span style="background-color:black;color:#19b3e6">la sangre y anatema</span></span> de nuestros hermanos<span style="background-color:black"><span style="background-color:black;color:#19b3e6">.</span></span><br><br>
+
+            15°. Mexicanos: considerad que la astucia <span style="background-color:black"><span style="background-color:black;color:#19b3e6">y mala fe</span></span> de un hombre está derramando sangre de una manera escandalosa por ser incapaz para gobernar; considerad, que su sistema de gobierno está agarrotando a la patria y hollando con la fuerza bruta de las bayonetas nuestras instituciones; y así como nuestras armas las levantamos para elevarlo al poder, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">las volvemos</span></span> contra él por faltar a sus compromisos con el pueblo mexicano y haber traicionado <span style="background-color:black"><span style="background-color:black;color:#19b3e6">la</span></span> revolución iniciada por él: no somos personalistas, <span style="background-color:black"><span style="background-color:black;color:#19b3e6">somos partidarios de los principios y no de los hombres.</span></span><br><br>
+
+            Pueblo mexicano: apoyad con las armas en la mano este plan, y haréis la prosperidad y bienestar de la patria.<br><br>
+
+
+            <span style="background-color:black"><span style="background-color:black;color:#19b3e6">Libertad, </span></span>Justicia y Ley.<br><br>Ayala, noviembre <span style="background-color:black"><span style="background-color:black;color:#19b3e6">25</span></span> de 1911.<br><br><br>
+
+
+            Rúbricas:<br><br><br>
+
+            <span style="background-color:black"><span style="background-color:black;color:#19b3e6">General en Jefe: Emiliano Zapata; Generales: Eufemio Zapata, Francisco Mendoza, Jesús Morales, Jesús Navarro, Otilio E. Montaño, José Trinidad Ruiz, Próculo Capistrán; Coroneles: Felipe Vaquero Cesáreo Burgos, Quintín González, Pedro Salazar, Simón Rojas, Emigdio Marmolejo, José Campos, Pioquinto Galis, Felipe Tejera, Rafael Sánchez, José Pérez, Santiago Aguilar, Margarito Martínez, Feliciano Domínguez, Manuel Vergara, Cruz Salazar, Lauro Sánchez, Amador Salazar, Lorenzo Vázquez, Catarino Perdomo, Jesús Sánchez, Domingo Romero, Zacarías Torres, Bonifacio García, Daniel Andrade, Ponciano Domínguez, Jesús Capistrán; Capitanes: Daniel Mantilla, José M. Carrillo, Francisco Alarcón, Severiano Gutiérrez; Siguen más firmas.<br><br>
+
+                Es copia fiel sacada de su original. Campamento en las Montañas de Puebla, Diciembre 11 de 1911. El General en Jefe, Emiliano Zapata. Rúbrica.</span></span>
+            </p></div>
+
+        <script>
+            
+            // CRITERIOS
+            let unam = {
+                color: `#ffcc00`,
+                1: {re: /\[\|1[^\[\|\]]*\|\]/, value: "la Villa de Ayala"},
+                2: {re: /\[\|2[^\[\|\]]*\|\]/, value: "defienden"},
+                3: {re: /\[\|3[^\[\|\]]*\|\]/, value: "del Plan de San Luis Potosí"},
+                4: {re: /\[\|4[^\[\|\]]*\|\]/, value: ""},
+                5: {re: /\[\|5[^\[\|\]]*\|\]/, value: "a que pertenecemos"},
+                6: {re: /\[\|6[^\[\|\]]*\|\]/, value: "los principios"},
+                7: {re: /\[\|7[^\[\|\]]*\|\]/, value: "nos oprime"},
+                8: {re: /\[\|8[^\[\|\]]*\|\]/, value: "en cuenta"},
+                9: {re: /\[\|9[^\[\|\]]*\|\]/, value: "sus libertades y reivindicar sus derechos"},
+                10: {re: /\[\|10[^\[\|\]]*\|\]/, value: "principios que"},
+                11: {re: /\[\|11[^\[\|\]]*\|\]/, value: "tema"},
+                12: {re: /\[\|12[^\[\|\]]*\|\]/, value: ""},
+                13: {re: /\[\|13[^\[\|\]]*\|\]/, value: "ultrajando la fe, la causa, la justicia"},
+                14: {re: /\[\|14[^\[\|\]]*\|\]/, value: "el cual"},
+                15: {re: /\[\|15[^\[\|\]]*\|\]/, value: "norma"},
+                16: {re: /\[\|16[^\[\|\]]*\|\]/, value: "licenciado don Francisco L."},
+                17: {re: /\[\|17[^\[\|\]]*\|\]/, value: "por haberle aclamado el pueblo su libertador,"},
+                18: {re: /\[\|18[^\[\|\]]*\|\]/, value: " causando con este hecho reiterados derramamientos de sangre y multiplicadas desgracias a la patria"},
+                19: {re: /\[\|19[^\[\|\]]*\|\]/, value: "de"},
+                20: {re: /\[\|20[^\[\|\]]*\|\]/, value: "la sangre de los revolucionarios"},
+                21: {re: /\[\|21[^\[\|\]]*\|\]/, value: "en consideración"},
+                22: {re: /\[\|22[^\[\|\]]*\|\]/, value: ""},
+                23: {re: /\[\|23[^\[\|\]]*\|\]/, value: "de"},
+                24: {re: /\[\|24[^\[\|\]]*\|\]/, value: "en manera alguna la legítima"},
+                25: {re: /\[\|25[^\[\|\]]*\|\]/, value: "de la soberanía nacional"},
+                26: {re: /\[\|26[^\[\|\]]*\|\]/, value: "que por ser adversarios"},
+                27: {re: /\[\|27[^\[\|\]]*\|\]/, value: "teniendo en consideración"},
+                28: {re: /\[\|28[^\[\|\]]*\|\]/, value: "señor Francisco I. Madero"},
+                29: {re: /\[\|29[^\[\|\]]*\|\]/, value: "actual"},
+                30: {re: /\[\|30[^\[\|\]]*\|\]/, value: "ciñendo"},
+                31: {re: /\[\|31[^\[\|\]]*\|\]/, value: "persiguiendo"},
+                32: {re: /\[\|32[^\[\|\]]*\|\]/, value: "a que venciera para"},
+                33: {re: /\[\|33[^\[\|\]]*\|\]/, value: "de sus falsas"},
+                34: {re: /\[\|34[^\[\|\]]*\|\]/, value: "y numerosas promesas e"},
+                35: {re: /\[\|35[^\[\|\]]*\|\]/, value: "repetido don"},
+                36: {re: /\[\|36[^\[\|\]]*\|\]/, value: "ocultar"},
+                37: {re: /\[\|37[^\[\|\]]*\|\]/, value: "de ahogar"},
+                38: {re: /\[\|38[^\[\|\]]*\|\]/, value: "sus"},
+                39: {re: /\[\|39[^\[\|\]]*\|\]/, value: "en"},
+                40: {re: /\[\|40[^\[\|\]]*\|\]/, value: "condenando"},
+                41: {re: /\[\|41[^\[\|\]]*\|\]/, value: "teniendo"},
+                42: {re: /\[\|42[^\[\|\]]*\|\]/, value: "señor don Francisco I. Madero"},
+                43: {re: /\[\|43[^\[\|\]]*\|\]/, value: "ya imponiendo"},
+                44: {re: /\[\|44[^\[\|\]]*\|\]/, value: "en"},
+                45: {re: /\[\|45[^\[\|\]]*\|\]/, value: "ya a"},
+                46: {re: /\[\|46[^\[\|\]]*\|\]/, value: "y así"},
+                47: {re: /\[\|47[^\[\|\]]*\|\]/, value: "de seguir"},
+                48: {re: /\[\|48[^\[\|\]]*\|\]/, value: "consultando"},
+                49: {re: /\[\|49[^\[\|\]]*\|\]/, value: "e"},
+                50: {re: /\[\|50[^\[\|\]]*\|\]/, value: ""},
+                51: {re: /\[\|51[^\[\|\]]*\|\]/, value: ""},
+                52: {re: /\[\|52[^\[\|\]]*\|\]/, value: "incapaz"},
+                53: {re: /\[\|53[^\[\|\]]*\|\]/, value: "para gobernante"},
+                54: {re: /\[\|54[^\[\|\]]*\|\]/, value: "sus libertades"},
+                55: {re: /\[\|55[^\[\|\]]*\|\]/, value: "por"},
+                56: {re: /\[\|56[^\[\|\]]*\|\]/, value: "al ciudadano"},
+                57: {re: /\[\|57[^\[\|\]]*\|\]/, value: "que antes expresan"},
+                58: {re: /\[\|58[^\[\|\]]*\|\]/, value: "procurando"},
+                59: {re: /\[\|59[^\[\|\]]*\|\]/, value: "el derrumbamiento"},
+                60: {re: /\[\|60[^\[\|\]]*\|\]/, value: "ilustre"},
+                61: {re: /\[\|61[^\[\|\]]*\|\]/, value: "y en caso"},
+                62: {re: /\[\|62[^\[\|\]]*\|\]/, value: "general"},
+                63: {re: /\[\|63[^\[\|\]]*\|\]/, value: "políticas hasta"},
+                64: {re: /\[\|64[^\[\|\]]*\|\]/, value: "derrumbamiento"},
+                65: {re: /\[\|65[^\[\|\]]*\|\]/, value: "elementos dictatoriales"},
+                66: {re: /\[\|66[^\[\|\]]*\|\]/, value: "Porfirio Díaz y don Francisco I. Madero"},
+                67: {re: /\[\|67[^\[\|\]]*\|\]/, value: "falaces"},
+                68: {re: /\[\|68[^\[\|\]]*\|\]/, value: "promesas de"},
+                69: {re: /\[\|69[^\[\|\]]*\|\]/, value: "pero que llegando"},
+                70: {re: /\[\|70[^\[\|\]]*\|\]/, value: "hacemos"},
+                71: {re: /\[\|71[^\[\|\]]*\|\]/, value: "a la sombra de la tiranía y de la justicia actual"},
+                72: {re: /\[\|72[^\[\|\]]*\|\]/, value: "estos"},
+                73: {re: /\[\|73[^\[\|\]]*\|\]/, value: "de esas"},
+                74: {re: /\[\|74[^\[\|\]]*\|\]/, value: "consideren"},
+                75: {re: /\[\|75[^\[\|\]]*\|\]/, value: "ante"},
+                76: {re: /\[\|76[^\[\|\]]*\|\]/, value: "al"},
+                77: {re: /\[\|77[^\[\|\]]*\|\]/, value: "mejorar"},
+                78: {re: /\[\|78[^\[\|\]]*\|\]/, value: "de los"},
+                79: {re: /\[\|79[^\[\|\]]*\|\]/, value: "ellas"},
+                80: {re: /\[\|80[^\[\|\]]*\|\]/, value: "fondos"},
+                81: {re: /\[\|81[^\[\|\]]*\|\]/, value: "les correspondan"},
+                82: {re: /\[\|82[^\[\|\]]*\|\]/, value: "ajustar"},
+                83: {re: /\[\|83[^\[\|\]]*\|\]/, value: "las leyes"},
+                84: {re: /\[\|84[^\[\|\]]*\|\]/, value: "desamortización"},
+                85: {re: /\[\|85[^\[\|\]]*\|\]/, value: "puede servir de norma y ejemplo"},
+                86: {re: /\[\|86[^\[\|\]]*\|\]/, value: "a los déspotas"},
+                87: {re: /\[\|87[^\[\|\]]*\|\]/, value: "que en todo tiempo"},
+                88: {re: /\[\|88[^\[\|\]]*\|\]/, value: "y del"},
+                89: {re: /\[\|89[^\[\|\]]*\|\]/, value: "ahora se opongan"},
+                90: {re: /\[\|90[^\[\|\]]*\|\]/, value: "y a la patria"},
+                91: {re: /\[\|91[^\[\|\]]*\|\]/, value: "a lo que prescribe el artículo XI"},
+                92: {re: /\[\|92[^\[\|\]]*\|\]/, value: "que hemos llevado"},
+                93: {re: /\[\|93[^\[\|\]]*\|\]/, value: "nombrarán o designarán"},
+                94: {re: /\[\|94[^\[\|\]]*\|\]/, value: " quien convocará a elecciones para la nueva formación del Congreso de la Unión, y éste a la vez convocará a elecciones para la organización de los demás poderes federales"},
+                95: {re: /\[\|95[^\[\|\]]*\|\]/, value: "el"},
+                96: {re: /\[\|96[^\[\|\]]*\|\]/, value: "forzosas que labran la desdicha"},
+                97: {re: /\[\|97[^\[\|\]]*\|\]/, value: "y otras que nos conducen"},
+                98: {re: /\[\|98[^\[\|\]]*\|\]/, value: "lo han"},
+                99: {re: /\[\|99[^\[\|\]]*\|\]/, value: "inmensas"},
+                100: {re: /\[\|100[^\[\|\]]*\|\]/, value: ""},
+                101: {re: /\[\|101[^\[\|\]]*\|\]/, value: "la"},
+                102: {re: /\[\|102[^\[\|\]]*\|\]/, value: "que de no"},
+                103: {re: /\[\|103[^\[\|\]]*\|\]/, value: "la sangre derramada"},
+                104: {re: /\[\|104[^\[\|\]]*\|\]/, value: "."},
+                105: {re: /\[\|105[^\[\|\]]*\|\]/, value: "y la mala fe"},
+                106: {re: /\[\|106[^\[\|\]]*\|\]/, value: "ahora las volvemos"},
+                107: {re: /\[\|107[^\[\|\]]*\|\]/, value: "la"},
+                108: {re: /\[\|108[^\[\|\]]*\|\]/, value: "somos partidarios de los principios y no de los hombres."},
+                109: {re: /\[\|109[^\[\|\]]*\|\]/, value: ""},
+                110: {re: /\[\|110[^\[\|\]]*\|\]/, value: "28"},
+                111: {
+                    "re": /\[\|111[^\[\|\]]*\|\]/,
+                    "value": `Generales: Emiliano Zapata, José T. Ruiz, O. E. Montaño, Francisco Mendoza, Jesús Morales, Eufemio Zapata, Próculo Capistrán; Coroneles: Emigdio L. Marmolejo, Pioquinto Galis, Clotilde Sosa, Julio Tapia, Manuel Vergara, Santiago Aguilar; Capitanes: Manuel Hernández, José Pineda, Ambrosio López, Apolinar Adorno, José Villanueva, Porfirio Casarez, Antonio Gutiérrez, Pedro Valvuena Huertero, Odilón Neri, Arturo Pérez, Catarino Vergara, Florentino Osorio, Camerino Menchaca, Juan Esteves (capitán primero), Margarito Camacho, Teófilo Galindo, Felipe Torres, José Ma. Carrillo, Simón Gebara, Agustín Ortiz, Jesús Escamilla, Abelino Cortés, Francisco Mercado, Sotero Guzmán, Melesio Rodríguez, Gregorio García (capitán primero), Serafín Rivera (capitán segundo); L. Franco (secretario).</br></br>Quitado el día ocho de enero de 1912 a los zapatistas capitaneados por “El Tuerto Morales”, Próculo Capistrán y Francisco Mendoza, que estaban posesionados del pueblo de Tejalpa-Acatlán, Pue.<br></br>Los zapatistas eran poco más de 600 hombres y los defensores del Gobierno, a mis órdenes, fueron 120 hombres del 16o. Cuerpo Rural.<br></br>Los zapatistas tuvieron: 19 muertos en combate y 4 fusilados, de entre los 22 prisioneros que les tomé. Mandé fusilar a esos 4 hombres por haber incendiado varias casas de comercio, en Tehuitzingo, entre ellas, la de Don Margarito García que se negó a darles 100 pesos que le exigían.<br></br> El parte dado a la Secretaría de Guerra fue hecho por el señor general Don Rafael Eguía Liz, a quien entregué un gran botín de guerra quitado a los bandidos del Sur.</br></br></br>[Agustín del Pozo, rúbrica.]`
+                }
+            }
+            
+            let carso = {
+                color: `#afde62`,
+                1: {re: /\[\|1[^\[\|\]]*\|\]/, value: "Ayala"},
+                2: {re: /\[\|2[^\[\|\]]*\|\]/, value: "defienden"},
+                3: {re: /\[\|3[^\[\|\]]*\|\]/, value: "del Plan de San Luis Potosí"},
+                4: {re: /\[\|4[^\[\|\]]*\|\]/, value: ""},
+                5: {re: /\[\|5[^\[\|\]]*\|\]/, value: "a que pertenecemos"},
+                6: {re: /\[\|6[^\[\|\]]*\|\]/, value: "los principios"},
+                7: {re: /\[\|7[^\[\|\]]*\|\]/, value: "nos oprime"},
+                8: {re: /\[\|8[^\[\|\]]*\|\]/, value: "en consideración"},
+                9: {re: /\[\|9[^\[\|\]]*\|\]/, value: "sus libertades y reivindicar sus derechos conculcados, y no para que un hombre se adueñara del poder violando los sagrados"},
+                10: {re: /\[\|10[^\[\|\]]*\|\]/, value: "principios que"},
+                11: {re: /\[\|11[^\[\|\]]*\|\]/, value: "lema"},
+                12: {re: /\[\|12[^\[\|\]]*\|\]/, value: ""},
+                13: {re: /\[\|13[^\[\|\]]*\|\]/, value: "ultrajando la fe, la causa, la justicia"},
+                14: {re: /\[\|14[^\[\|\]]*\|\]/, value: "el cual"},
+                15: {re: /\[\|15[^\[\|\]]*\|\]/, value: "norma"},
+                16: {re: /\[\|16[^\[\|\]]*\|\]/, value: "licenciado don Francisco L."},
+                17: {re: /\[\|17[^\[\|\]]*\|\]/, value: "por haberle aclamado el pueblo su libertador,"},
+                18: {re: /\[\|18[^\[\|\]]*\|\]/, value: " causando con este hecho reiterados derramamientos de sangre y multiplicadas desgracias a la patria"},
+                19: {re: /\[\|19[^\[\|\]]*\|\]/, value: "de"},
+                20: {re: /\[\|20[^\[\|\]]*\|\]/, value: "la sangre de los revolucionarios"},
+                21: {re: /\[\|21[^\[\|\]]*\|\]/, value: "en consideración"},
+                22: {re: /\[\|22[^\[\|\]]*\|\]/, value: ""},
+                23: {re: /\[\|23[^\[\|\]]*\|\]/, value: "de"},
+                24: {re: /\[\|24[^\[\|\]]*\|\]/, value: "en manera alguna la legítima"},
+                25: {re: /\[\|25[^\[\|\]]*\|\]/, value: "de la soberanía nacional"},
+                26: {re: /\[\|26[^\[\|\]]*\|\]/, value: "que por ser acérrimos adversarios"},
+                27: {re: /\[\|27[^\[\|\]]*\|\]/, value: "teniendo en consideración"},
+                28: {re: /\[\|28[^\[\|\]]*\|\]/, value: "señor Francisco I. Madero"},
+                29: {re: /\[\|29[^\[\|\]]*\|\]/, value: "actual"},
+                30: {re: /\[\|30[^\[\|\]]*\|\]/, value: "ciñendo"},
+                31: {re: /\[\|31[^\[\|\]]*\|\]/, value: "persiguiendo"},
+                32: {re: /\[\|32[^\[\|\]]*\|\]/, value: "a que ocupara"},
+                33: {re: /\[\|33[^\[\|\]]*\|\]/, value: "de sus falsas"},
+                34: {re: /\[\|34[^\[\|\]]*\|\]/, value: "y numerosas"},
+                35: {re: /\[\|35[^\[\|\]]*\|\]/, value: "repetido señor"},
+                36: {re: /\[\|36[^\[\|\]]*\|\]/, value: "ocultar"},
+                37: {re: /\[\|37[^\[\|\]]*\|\]/, value: "de ahogar"},
+                38: {re: /\[\|38[^\[\|\]]*\|\]/, value: "sus"},
+                39: {re: /\[\|39[^\[\|\]]*\|\]/, value: "en"},
+                40: {re: /\[\|40[^\[\|\]]*\|\]/, value: "condenando"},
+                41: {re: /\[\|41[^\[\|\]]*\|\]/, value: "teniendo"},
+                42: {re: /\[\|42[^\[\|\]]*\|\]/, value: "señor don Francisco I. Madero"},
+                43: {re: /\[\|43[^\[\|\]]*\|\]/, value: "ya imponiendo"},
+                44: {re: /\[\|44[^\[\|\]]*\|\]/, value: "en"},
+                45: {re: /\[\|45[^\[\|\]]*\|\]/, value: "o ya a"},
+                46: {re: /\[\|46[^\[\|\]]*\|\]/, value: "ya"},
+                47: {re: /\[\|47[^\[\|\]]*\|\]/, value: "de seguir"},
+                48: {re: /\[\|48[^\[\|\]]*\|\]/, value: "conculcando"},
+                49: {re: /\[\|49[^\[\|\]]*\|\]/, value: "e"},
+                50: {re: /\[\|50[^\[\|\]]*\|\]/, value: " por haber traicionado los principios con los cuales burló la fe del pueblo, y pudo haber escalado el poder"},
+                51: {re: /\[\|51[^\[\|\]]*\|\]/, value: ""},
+                52: {re: /\[\|52[^\[\|\]]*\|\]/, value: "incapaz"},
+                53: {re: /\[\|53[^\[\|\]]*\|\]/, value: "para gobernante"},
+                54: {re: /\[\|54[^\[\|\]]*\|\]/, value: "sus libertades"},
+                55: {re: /\[\|55[^\[\|\]]*\|\]/, value: "por"},
+                56: {re: /\[\|56[^\[\|\]]*\|\]/, value: "al ciudadano"},
+                57: {re: /\[\|57[^\[\|\]]*\|\]/, value: "que antes se expresan"},
+                58: {re: /\[\|58[^\[\|\]]*\|\]/, value: "procurando"},
+                59: {re: /\[\|59[^\[\|\]]*\|\]/, value: "el derrumbamiento"},
+                60: {re: /\[\|60[^\[\|\]]*\|\]/, value: "ilustre"},
+                61: {re: /\[\|61[^\[\|\]]*\|\]/, value: "y en caso"},
+                62: {re: /\[\|62[^\[\|\]]*\|\]/, value: "general"},
+                63: {re: /\[\|63[^\[\|\]]*\|\]/, value: "políticas hasta"},
+                64: {re: /\[\|64[^\[\|\]]*\|\]/, value: "derrumbamiento"},
+                65: {re: /\[\|65[^\[\|\]]*\|\]/, value: "elementos dictatoriales"},
+                66: {re: /\[\|66[^\[\|\]]*\|\]/, value: "Porfirio Díaz y don Francisco I. Madero"},
+                67: {re: /\[\|67[^\[\|\]]*\|\]/, value: "falaces"},
+                68: {re: /\[\|68[^\[\|\]]*\|\]/, value: "promesas de"},
+                69: {re: /\[\|69[^\[\|\]]*\|\]/, value: "pero que llegando"},
+                70: {re: /\[\|70[^\[\|\]]*\|\]/, value: "hacemos"},
+                71: {re: /\[\|71[^\[\|\]]*\|\]/, value: "a la sombra de la tiranía y de la justicia venal"},
+                72: {re: /\[\|72[^\[\|\]]*\|\]/, value: "estos"},
+                73: {re: /\[\|73[^\[\|\]]*\|\]/, value: "de esas"},
+                74: {re: /\[\|74[^\[\|\]]*\|\]/, value: "consideren"},
+                75: {re: /\[\|75[^\[\|\]]*\|\]/, value: "ante"},
+                76: {re: /\[\|76[^\[\|\]]*\|\]/, value: "al"},
+                77: {re: /\[\|77[^\[\|\]]*\|\]/, value: "mejorar"},
+                78: {re: /\[\|78[^\[\|\]]*\|\]/, value: "a los"},
+                79: {re: /\[\|79[^\[\|\]]*\|\]/, value: "ellas"},
+                80: {re: /\[\|80[^\[\|\]]*\|\]/, value: "fundos"},
+                81: {re: /\[\|81[^\[\|\]]*\|\]/, value: "les correspondan"},
+                82: {re: /\[\|82[^\[\|\]]*\|\]/, value: "ajustar"},
+                83: {re: /\[\|83[^\[\|\]]*\|\]/, value: "leyes"},
+                84: {re: /\[\|84[^\[\|\]]*\|\]/, value: "desamortización"},
+                85: {re: /\[\|85[^\[\|\]]*\|\]/, value: "pues de norma y ejemplo pueden servir"},
+                86: {re: /\[\|86[^\[\|\]]*\|\]/, value: "a los déspotas"},
+                87: {re: /\[\|87[^\[\|\]]*\|\]/, value: "que en todo tiempo"},
+                88: {re: /\[\|88[^\[\|\]]*\|\]/, value: "y del"},
+                89: {re: /\[\|89[^\[\|\]]*\|\]/, value: "ahora se opongan"},
+                90: {re: /\[\|90[^\[\|\]]*\|\]/, value: "y a la patria"},
+                91: {re: /\[\|91[^\[\|\]]*\|\]/, value: "a lo que prescribe el artículo XI"},
+                92: {re: /\[\|92[^\[\|\]]*\|\]/, value: "que hemos llevado"},
+                93: {re: /\[\|93[^\[\|\]]*\|\]/, value: "nombrarán o designarán"},
+                94: {re: /\[\|94[^\[\|\]]*\|\]/, value: " quien convocará a elecciones para la nueva formación del Congreso de la Unión, y éste a la vez convocará a elecciones para la organización de los demás poderes federales"},
+                95: {re: /\[\|95[^\[\|\]]*\|\]/, value: "el"},
+                96: {re: /\[\|96[^\[\|\]]*\|\]/, value: "forzosas que labran la desdicha"},
+                97: {re: /\[\|97[^\[\|\]]*\|\]/, value: "y otros que nos conducen"},
+                98: {re: /\[\|98[^\[\|\]]*\|\]/, value: "lo han"},
+                99: {re: /\[\|99[^\[\|\]]*\|\]/, value: "inmensas"},
+                100: {re: /\[\|100[^\[\|\]]*\|\]/, value: ""},
+                101: {re: /\[\|101[^\[\|\]]*\|\]/, value: ""},
+                102: {re: /\[\|102[^\[\|\]]*\|\]/, value: "que de no"},
+                103: {re: /\[\|103[^\[\|\]]*\|\]/, value: "la sangre derramada"},
+                104: {re: /\[\|104[^\[\|\]]*\|\]/, value: ", y"},
+                105: {re: /\[\|105[^\[\|\]]*\|\]/, value: "y la mala fe"},
+                106: {re: /\[\|106[^\[\|\]]*\|\]/, value: "ahora las volvemos"},
+                107: {re: /\[\|107[^\[\|\]]*\|\]/, value: "la"},
+                108: {re: /\[\|108[^\[\|\]]*\|\]/, value: "somos partidarios de los principios y no de los hombres."},
+                109: {re: /\[\|109[^\[\|\]]*\|\]/,value: ``},
+                110: {re: /\[\|110[^\[\|\]]*\|\]/, value: "28"},
+                111: {re: /\[\|111[^\[\|\]]*\|\]/, value: `General en jefe: Emiliano Zapata; Generales: José T. Ruiz, O. E. Montaño, Francisco Mendoza, Jesús Morales, Eufemio Zapata, Próculo Capistrán; Coroneles: Agustín Cázares, Rafael Sánchez, Cristóbal Domínguez, Santiago Aguilar (sin rango), Feliciano Domínguez, Fermín Omaña, Pedro Salazar, Jesús Sánchez, Felipe Vaquero, Cleotilde Sosa, José Ortega, Julio Tapia, Alfonso Morales (teniente coronel), Gonzalo Aldapes, Manuel Vergara, Santiago Aguilar, Amador Salazar, Cesario Burgos, Pedro Salazar, Lauro Sánchez, Quintín González, Francisco Caspeta, Petronilo Campos; Capitanes: Manuel Hernández, José Pineda, Ambrosio López, Apolinar Adorno, José Villanueva, Porfirio Casarez, Antonio Gutiérrez, Pedro Valvuena Huertero, Odilón Neri, Catarino Vergara, Arturo Pérez, Margarito Camacho, Teófilo Galindo, Felipe Torres, José Ma. Carrillo, Simón Gebara, Agustín Ortiz (capitán primero), Jesús Escamilla, Abelino Cortés, José Estudillo, Francisco Galarza, Serafín Rivera (capitán segundo); Alberto Blumenkron (teniente); L. Franco (secretario).</br></br>
+
+                Gildardo Magaña, General de División del Ejército Nacional, certifica: que este documento es auténtico o sea uno de los pocos originales que se firmaron en la época que fue proclamado.</br></br>
+
+                México, DF, 10 de noviembre de 1926.</br></br>
+                Rúbrica.-Gildardo Magaña`}
+            }            
+            
+            let carsoAmezcua = {
+                color:   `#ca6a10`,
+                0: {re: /faz/, value: " <strike>Nación</strike> faz "},
+                1: {re: /\[\|1[^\[\|\]]*\|\]/, value: "Ayala"},
+                1.5: {re: /(Plan de <span style="background-color:black"><span style="background-color:black;color:#ca6a10">Ayala<\/span><\/span>)/, value: "!!!!! $1 !!!!!"},
+                2: {re: /\[\|2[^\[\|\]]*\|\]/, value: "defienden"},
+                3: {re: /\[\|3[^\[\|\]]*\|\]/, value: "del Plan de San Luis Potosí,"},
+                4: {re: /\[\|4[^\[\|\]]*\|\]/, value: ""},
+                5: {re: /\[\|5[^\[\|\]]*\|\]/, value: "a que pertenecemos"},
+                6: {re: /\[\|6[^\[\|\]]*\|\]/, value: "los propósitos"},
+                7: {re: /\[\|7[^\[\|\]]*\|\]/, value: "nos oprime"},
+                8: {re: /\[\|8[^\[\|\]]*\|\]/, value: "en consideración"},
+                9: {re: /\[\|9[^\[\|\]]*\|\]/, value: "sus libertades y reivindicar sus derechos conculcados y no para que un hombre se adueñara del poder, violando los sagrados"},
+                10: {re: /\[\|10[^\[\|\]]*\|\]/, value: "principios que"},
+                11: {re: /\[\|11[^\[\|\]]*\|\]/, value: "lema"},
+                11.5: {re: /("Sufragio Efectivo No Reeleccion")/, value: `$1`},
+                12: {re: /\[\|12[^\[\|\]]*\|\]/, value: ""},
+                13: {re: /\[\|13[^\[\|\]]*\|\]/, value: "ultrajando la fe, la causa, la justicia"},
+                14: {re: /\[\|14[^\[\|\]]*\|\]/, value: "el cual"},
+                15: {re: /\[\|15[^\[\|\]]*\|\]/, value: "norma"},
+                16: {re: /\[\|16[^\[\|\]]*\|\]/, value: "licenciado don Francisco León"},
+                16.5: {re: /sus (ambiciones)/, value: "más que $1"},
+                17: {re: /\[\|17[^\[\|\]]*\|\]/, value: "por haberle el pueblo aclamado su libertador, "},
+                18: {re: /\[\|18[^\[\|\]]*\|\]/, value: "causando con este hecho reiterados derramamientos de sangre y multiplicadas desgracias a la patria,"},
+                19: {re: /\[\|19[^\[\|\]]*\|\]/, value: "de"},
+                20: {re: /\[\|20[^\[\|\]]*\|\]/, value: "la sangre de la revolución"},
+                21: {re: /\[\|21[^\[\|\]]*\|\]/, value: "en consideración"},
+                21.5: {re: /llevó/, value: "lleva"},
+                22: {re: /\[\|22[^\[\|\]]*\|\]/, value: ""},
+                23: {re: /\[\|23[^\[\|\]]*\|\]/, value: "de"},
+                23.5: {re: /(corrompidos) (de opresión)/, value: "$2, $1,"},
+                24: {re: /\[\|24[^\[\|\]]*\|\]/, value: "en manera alguna, la legítima"},
+                25: {re: /\[\|25[^\[\|\]]*\|\]/, value: "de la soberanía nacional"},
+                26: {re: /\[\|26[^\[\|\]]*\|\]/, value: "que, por ser acérrimos adversarios"},
+                27: {re: /\[\|27[^\[\|\]]*\|\]/, value: "teniendo en consideración"},
+                28: {re: /\[\|28[^\[\|\]]*\|\]/, value: "señor Francisco I. Madero"},
+                29: {re: /\[\|29[^\[\|\]]*\|\]/, value: "actual"},
+                30: {re: /\[\|30[^\[\|\]]*\|\]/, value: "ciñendo"},
+                31: {re: /\[\|31[^\[\|\]]*\|\]/, value: "encarcelando, persiguiendo"},
+                32: {re: /\[\|32[^\[\|\]]*\|\]/, value: "a que ocupara"},
+                33: {re: /\[\|33[^\[\|\]]*\|\]/, value: "de sus falsas"},
+                34: {re: /\[\|34[^\[\|\]]*\|\]/, value: "y numerosas"},
+                35: {re: /\[\|35[^\[\|\]]*\|\]/, value: "repetido señor"},
+                36: {re: /\[\|36[^\[\|\]]*\|\]/, value: "ocultar"},
+                37: {re: /\[\|37[^\[\|\]]*\|\]/, value: "de ahogar"},
+                38: {re: /\[\|38[^\[\|\]]*\|\]/, value: "sus"},
+                39: {re: /\[\|39[^\[\|\]]*\|\]/, value: "en"},
+                40: {re: /\[\|40[^\[\|\]]*\|\]/, value: "condenándolos"},
+                41: {re: /\[\|41[^\[\|\]]*\|\]/, value: "teniendo"},
+                42: {re: /\[\|42[^\[\|\]]*\|\]/, value: "señor don Francisco I. Madero,"},
+                42.5: {re: /sufragio/, value: `"Sufragio Efectivo"`},
+                43: {re: /\[\|43[^\[\|\]]*\|\]/, value: "ya imponiendo,"},
+                44: {re: /\[\|44[^\[\|\]]*\|\]/, value: "en"},
+                45: {re: /\[\|45[^\[\|\]]*\|\]/, value: "o ya a"},
+                46: {re: /\[\|46[^\[\|\]]*\|\]/, value: "ya"},
+                47: {re: /\[\|47[^\[\|\]]*\|\]/, value: "de seguir"},
+                48: {re: /\[\|48[^\[\|\]]*\|\]/, value: "conculcando"},
+                48.5: {re: /(contemporánea); por/, value: "$1. Por"},
+                48.75: {re: /(Madero) (inepto)/, value: "$1, $2"},
+                49: {re: /\[\|49[^\[\|\]]*\|\]/, value: "e"},
+                50: {re: /\[\|50[^\[\|\]]*\|\]/, value: " por haber traicionado los principios con los cuales burló la fe del pueblo, y pudo haber escalado el poder"},
+                51: {re: /\[\|51[^\[\|\]]*\|\]/, value: "incapaz"},
+                52: {re: /\[\|52[^\[\|\]]*\|\]/, value: "incapaz"},
+                53: {re: /\[\|53[^\[\|\]]*\|\]/, value: "para gobernar,"},
+                54: {re: /\[\|54[^\[\|\]]*\|\]/, value: "libertades"},
+                55: {re: /\[\|55[^\[\|\]]*\|\]/, value: "por"},
+                55.5: {re: /a continuar/, value: "la continuación de"},
+                56: {re: /\[\|56[^\[\|\]]*\|\]/, value: "y presidente de la república, al ciudadano"},
+                56.5: {re: / y como presidente de la república/, value: ","},
+                57: {re: /\[\|57[^\[\|\]]*\|\]/, value: "que antes se expresan"},
+                58: {re: /\[\|58[^\[\|\]]*\|\]/, value: "procurando"},
+                59: {re: /\[\|59[^\[\|\]]*\|\]/, value: "el derrocamiento"},
+                60: {re: /\[\|60[^\[\|\]]*\|\]/, value: "ilustre ciudadano"},
+                61: {re: /\[\|61[^\[\|\]]*\|\]/, value: "y en caso"},
+                62: {re: /\[\|62[^\[\|\]]*\|\]/, value: "general"},
+                63: {re: /\[\|63[^\[\|\]]*\|\]/, value: "políticas hasta"},
+                64: {re: /\[\|64[^\[\|\]]*\|\]/, value: "derrocamiento"},
+                65: {re: /\[\|65[^\[\|\]]*\|\]/, value: "elementos dictatoriales"},
+                66: {re: /\[\|66[^\[\|\]]*\|\]/, value: "Porfirio Díaz y don Francisco I. Madero,"},
+                67: {re: /\[\|67[^\[\|\]]*\|\]/, value: "falaces"},
+                68: {re: /\[\|68[^\[\|\]]*\|\]/, value: "promesas como"},
+                69: {re: /\[\|69[^\[\|\]]*\|\]/, value: "pero que al llegar"},
+                70: {re: /\[\|70[^\[\|\]]*\|\]/, value: "hacemos"},
+                71: {re: /\[\|71[^\[\|\]]*\|\]/, value: "a la sombra de la tiranía y de la justicia venal,"},
+                72: {re: /\[\|72[^\[\|\]]*\|\]/, value: "estos"},
+                72.5: {re: /(títulos) (correspondientes)/, value: "$2 $1"},
+                73: {re: /\[\|73[^\[\|\]]*\|\]/, value: "de esas"},
+                74: {re: /\[\|74[^\[\|\]]*\|\]/, value: "consideren"},
+                75: {re: /\[\|75[^\[\|\]]*\|\]/, value: "ante"},
+                76: {re: /\[\|76[^\[\|\]]*\|\]/, value: "al"},
+                77: {re: /\[\|77[^\[\|\]]*\|\]/, value: "mejorar en nada"},
+                78: {re: /\[\|78[^\[\|\]]*\|\]/, value: "a los"},
+                79: {re: /\[\|79[^\[\|\]]*\|\]/, value: "ellos,"},
+                80: {re: /\[\|80[^\[\|\]]*\|\]/, value: "fundos"},
+                81: {re: /\[\|81[^\[\|\]]*\|\]/, value: "correspondan,"},
+                81.5: {re: /(lucha) del/, value: "$1 por el"},
+                82: {re: /\[\|82[^\[\|\]]*\|\]/, value: "ejecutar"},
+                83: {re: /\[\|83[^\[\|\]]*\|\]/, value: "leyes"},
+                84: {re: /\[\|84[^\[\|\]]*\|\]/, value: "desamortización"},
+                84.5: {re: /y nacionalización /, value: ""},
+                85: {re: /\[\|85[^\[\|\]]*\|\]/, value: "pues de norma y ejemplo pueden servir"},
+                86: {re: /\[\|86[^\[\|\]]*\|\]/, value: "a los déspotas"},
+                87: {re: /\[\|87[^\[\|\]]*\|\]/, value: "que, en todo tiempo,"},
+                88: {re: /\[\|88[^\[\|\]]*\|\]/, value: "y del"},
+                89: {re: /\[\|89[^\[\|\]]*\|\]/, value: "ahora se opongan"},
+                90: {re: /\[\|90[^\[\|\]]*\|\]/, value: "y a la patria"},
+                91: {re: /\[\|91[^\[\|\]]*\|\]/, value: "a lo que prescribe el artículo XI"},
+                91.5: {re: /(instrucciones) (mismas)/, value: "$2 $1"},
+                92: {re: /\[\|92[^\[\|\]]*\|\]/, value: "que hemos llevado"},
+                93: {re: /\[\|93[^\[\|\]]*\|\]/, value: "nombrarán o designarán"},
+                94: {re: /\[\|94[^\[\|\]]*\|\]/, value: " quien convocará a elecciones para la nueva formación del Congreso de la Unión, y éste a su vez convocará a elecciones para la organización de los demás poderes federales"},
+                95: {re: /\[\|95[^\[\|\]]*\|\]/, value: "el"},
+                96: {re: /\[\|96[^\[\|\]]*\|\]/, value: "forzadas que labran la desdicha"},
+                97: {re: /\[\|97[^\[\|\]]*\|\]/, value: "y otras, que nos conducen"},
+                98: {re: /\[\|98[^\[\|\]]*\|\]/, value: "lo <strike>rodean</strike> han"},
+                99: {re: /\[\|99[^\[\|\]]*\|\]/, value: "inmensas"},
+                99.5: {re: /graves/, value: "grandes"},
+                100: {re: /\[\|100[^\[\|\]]*\|\]/, value: ""},
+                101: {re: /\[\|101[^\[\|\]]*\|\]/, value: ""},
+                102: {re: /\[\|102[^\[\|\]]*\|\]/, value: "que de no"},
+                103: {re: /\[\|103[^\[\|\]]*\|\]/, value: "la sangre derramada"},
+                104: {re: /\[\|104[^\[\|\]]*\|\]/, value: "."},
+                105: {re: /\[\|105[^\[\|\]]*\|\]/, value: "<strike>de</strike> y la mala fe"},
+                105.5: {re: /(escandalosa)/, value: "$1,"},
+                106: {re: /\[\|106[^\[\|\]]*\|\]/, value: "ahora volvámoslas"},
+                106.5: {re: /faltar/, value: "haber faltado"},
+                107: {re: /\[\|107[^\[\|\]]*\|\]/, value: "a la"},
+                107.5: {re: /por él: no /, value: "por él mismo. No "},
+                108: {re: /\[\|108[^\[\|\]]*\|\]/, value: "somos partidarios de los principios y no de los hombres."},
+                109: {re: /\[\|109[^\[\|\]]*\|\]/, value: ""},
+                110: {re: /\[\|110[^\[\|\]]*\|\]/, value: "28"},
+                111: {re: /\[\|111[^\[\|\]]*\|\]/, value: "General Emiliano Zapata.- General José Trinidad Ruiz.- General Otilio E. Montaño.- General Francisco T. Mendoza.- General Jesús Morales.- General Eufemio Zapata.- General Próculo Capistrán.- Coronel Agustín Cázares.- Coronel Rafael Sánchez.- Coronel Cristóbal Domínguez.- Coronel Santiago Aguilar.- Coronel Feliciano Domínguez.- Coronel Fermín Omaña.- Coronel Pedro Salazar.- Coronel Jesús Sánchez.- Coronel Felipe Vaquero.- Coronel Cleotilde Sosa.- Coronel José Ortega.- Coronel Julio Tapia.- Teniente coronel Alfonso Morales.- Coronel Gonzalo Aldape.- Capitanes: Manuel Hernández.- José Pineda.- Ambrosio López.- Apolinar Adorno.- José Villanueva.- Porfirio Cázarez.- Antonio Gutiérrez.- Pedro Valvuena Huertero.- O. Neró.- C. Vergara.- A. Pérez.- S. Rivera.- M. Camacho.- T. Galindo.- L. Franco.- F. Torres.- J. M. Carrillo.- S. Guevara.- A. Ortiz.- J. Escamilla.- A. Cortés.- J. Estudillo.- F. Galarza.- teniente Alberto Blumenkrón.- Coroneles: N. Vergara.- S. Aguilar.- A. Salazar.- L. Sánchez.- Q. González.- F. Caspeta.- P. Campos. Rubricados."}
+            }
+
+            let agn = {
+                color: `#19b3e6`,
+                1: {re: /\[\|1[^\[\|\]]*\|\]/, value: `Mapaztlán de Ayala, estado de Morelos. Se reconoce como jefe de la revolución al heroico general Pascual Orozco y en su lugar al general don Emiliano Zapata. Adicional al Plan de San Luis Potosí. Leyes agrarias [ilegible]. Desamortización. Cumplimiento de las promesas revolucionarias. Llamamiento al pueblo.</br></br>`},
+                2: {re: /\[\|2[^\[\|\]]*\|\]/, value: "defiende"},
+                3: {re: /\[\|3[^\[\|\]]*\|\]/, value: "de San Luis"},
+                4: {re: /\[\|4[^\[\|\]]*\|\]/, value: "al país"},
+                5: {re: /\[\|5[^\[\|\]]*\|\]/, value: "que pertenecemos"},
+                6: {re: /\[\|6[^\[\|\]]*\|\]/, value: "los propósitos"},
+                7: {re: /\[\|7[^\[\|\]]*\|\]/, value: "oprime"},
+                8: {re: /\[\|8[^\[\|\]]*\|\]/, value: "en consideración"},
+                9: {re: /\[\|9[^\[\|\]]*\|\]/, value: "libertades y reivindicar sus derechos conculcados, y no para que un hombre se adueñara del poder violando los sagrados"},
+                10: {re: /\[\|10[^\[\|\]]*\|\]/, value: "principios que"},
+                11: {re: /\[\|11[^\[\|\]]*\|\]/, value: "lema"},
+                12: {re: /\[\|12[^\[\|\]]*\|\]/, value: "y"},
+                13: {re: /\[\|13[^\[\|\]]*\|\]/, value: "ultrajando así la fe, la justicia"},
+                14: {re: /\[\|14[^\[\|\]]*\|\]/, value: "el que"},
+                15: {re: /\[\|15[^\[\|\]]*\|\]/, value: "norma gubernativa"},
+                16: {re: /\[\|16[^\[\|\]]*\|\]/, value: "licenciado Francisco L."},
+                17: {re: /\[\|17[^\[\|\]]*\|\]/, value: ""},
+                18: {re: /\[\|18[^\[\|\]]*\|\]/, value: "causando desgracias a la patria"},
+                19: {re: /\[\|19[^\[\|\]]*\|\]/, value: "del"},
+                20: {re: /\[\|20[^\[\|\]]*\|\]/, value: "la sangre revolucionaria"},
+                21: {re: /\[\|21[^\[\|\]]*\|\]/, value: "en cuenta"},
+                22: {re: /\[\|22[^\[\|\]]*\|\]/, value: ", por falta de entereza y debilidad suya"},
+                23: {re: /\[\|23[^\[\|\]]*\|\]/, value: "de los"},
+                24: {re: /\[\|24[^\[\|\]]*\|\]/, value: "de manera alguna"},
+                25: {re: /\[\|25[^\[\|\]]*\|\]/, value: "de la soberanía"},
+                26: {re: /\[\|26[^\[\|\]]*\|\]/, value: "que por ser acérrimos adversarios"},
+                27: {re: /\[\|27[^\[\|\]]*\|\]/, value: "teniendo también en cuesta"},
+                28: {re: /\[\|28[^\[\|\]]*\|\]/, value: "señor Madero"},
+                29: {re: /\[\|29[^\[\|\]]*\|\]/, value: "actualmente"},
+                30: {re: /\[\|30[^\[\|\]]*\|\]/, value: "siendo"},
+                31: {re: /\[\|31[^\[\|\]]*\|\]/, value: "persiguiendo, encarcelando"},
+                32: {re: /\[\|32[^\[\|\]]*\|\]/, value: "a que ocupara"},
+                33: {re: /\[\|33[^\[\|\]]*\|\]/, value: "de falsas"},
+                34: {re: /\[\|34[^\[\|\]]*\|\]/, value: "y numerosas"},
+                35: {re: /\[\|35[^\[\|\]]*\|\]/, value: "repetido"},
+                36: {re: /\[\|36[^\[\|\]]*\|\]/, value: "acallar"},
+                37: {re: /\[\|37[^\[\|\]]*\|\]/, value: "ahogar"},
+                38: {re: /\[\|38[^\[\|\]]*\|\]/, value: "las"},
+                39: {re: /\[\|39[^\[\|\]]*\|\]/, value: "de"},
+                40: {re: /\[\|40[^\[\|\]]*\|\]/, value: "condenándolos"},
+                41: {re: /\[\|41[^\[\|\]]*\|\]/, value: "teniendo igualmente"},
+                42: {re: /\[\|42[^\[\|\]]*\|\]/, value: "Francisco I. Madero"},
+                43: {re: /\[\|43[^\[\|\]]*\|\]/, value: "y imponiendo"},
+                44: {re: /\[\|44[^\[\|\]]*\|\]/, value: "con"},
+                45: {re: /\[\|45[^\[\|\]]*\|\]/, value: "o ya"},
+                46: {re: /\[\|46[^\[\|\]]*\|\]/, value: "ya"},
+                47: {re: /\[\|47[^\[\|\]]*\|\]/, value: "seguir"},
+                48: {re: /\[\|48[^\[\|\]]*\|\]/, value: "conculcando"},
+                49: {re: /\[\|49[^\[\|\]]*\|\]/, value: "e"},
+                50: {re: /\[\|50[^\[\|\]]*\|\]/, value: " por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder"},
+                51: {re: /\[\|51[^\[\|\]]*\|\]/, value: ""},
+                52: {re: /\[\|52[^\[\|\]]*\|\]/, value: "incapaz"},
+                53: {re: /\[\|53[^\[\|\]]*\|\]/, value: "para gobernar"},
+                54: {re: /\[\|54[^\[\|\]]*\|\]/, value: "libertades"},
+                55: {re: /\[\|55[^\[\|\]]*\|\]/, value: "a fin de"},
+                56: {re: /\[\|56[^\[\|\]]*\|\]/, value: "al señor"},
+                57: {re: /\[\|57[^\[\|\]]*\|\]/, value: "que antes se expresan"},
+                58: {re: /\[\|58[^\[\|\]]*\|\]/, value: "procurando"},
+                59: {re: /\[\|59[^\[\|\]]*\|\]/, value: "el derrocamiento"},
+                60: {re: /\[\|60[^\[\|\]]*\|\]/, value: "ilustre ciudadano"},
+                61: {re: /\[\|61[^\[\|\]]*\|\]/, value: "y en caso"},
+                62: {re: /\[\|62[^\[\|\]]*\|\]/, value: "general"},
+                63: {re: /\[\|63[^\[\|\]]*\|\]/, value: "hasta"},
+                64: {re: /\[\|64[^\[\|\]]*\|\]/, value: "derrocamiento"},
+                65: {re: /\[\|65[^\[\|\]]*\|\]/, value: "dictatoriales"},
+                66: {re: /\[\|66[^\[\|\]]*\|\]/, value: "Porfirio Díaz y Francisco I. Madero"},
+                67: {re: /\[\|67[^\[\|\]]*\|\]/, value: "falsos"},
+                68: {re: /\[\|68[^\[\|\]]*\|\]/, value: "promesas como"},
+                69: {re: /\[\|69[^\[\|\]]*\|\]/, value: "y que al llegar"},
+                70: {re: /\[\|70[^\[\|\]]*\|\]/, value: "y hacemos"},
+                71: {re: /\[\|71[^\[\|\]]*\|\]/, value: "a la sombra de la justicia venal"},
+                72: {re: /\[\|72[^\[\|\]]*\|\]/, value: "esos"},
+                73: {re: /\[\|73[^\[\|\]]*\|\]/, value: "a esas"},
+                74: {re: /\[\|74[^\[\|\]]*\|\]/, value: "crean"},
+                75: {re: /\[\|75[^\[\|\]]*\|\]/, value: "ante los"},
+                76: {re: /\[\|76[^\[\|\]]*\|\]/, value: "con el"},
+                77: {re: /\[\|77[^\[\|\]]*\|\]/, value: "mejorar en nada"},
+                78: {re: /\[\|78[^\[\|\]]*\|\]/, value: "a los"},
+                79: {re: /\[\|79[^\[\|\]]*\|\]/, value: "ellos"},
+                80: {re: /\[\|80[^\[\|\]]*\|\]/, value: "fondos"},
+                81: {re: /\[\|81[^\[\|\]]*\|\]/, value: "les corresponde"},
+                82: {re: /\[\|82[^\[\|\]]*\|\]/, value: "ejecutar"},
+                83: {re: /\[\|83[^\[\|\]]*\|\]/, value: "leyes"},
+                84: {re: /\[\|84[^\[\|\]]*\|\]/, value: "amortización"},
+                85: {re: /\[\|85[^\[\|\]]*\|\]/, value: "pues de norma y ejemplo pueden servirnos"},
+                86: {re: /\[\|86[^\[\|\]]*\|\]/, value: "los déspotas"},
+                87: {re: /\[\|87[^\[\|\]]*\|\]/, value: "que en todo tiempo que"},
+                88: {re: /\[\|88[^\[\|\]]*\|\]/, value: "y el"},
+                89: {re: /\[\|89[^\[\|\]]*\|\]/, value: "se opongan"},
+                90: {re: /\[\|90[^\[\|\]]*\|\]/, value: "a la patria"},
+                91: {re: /\[\|91[^\[\|\]]*\|\]/, value: "al artículo 11"},
+                92: {re: /\[\|92[^\[\|\]]*\|\]/, value: "que llevamos"},
+                93: {re: /\[\|93[^\[\|\]]*\|\]/, value: "nombrará o designará"},
+                94: {re: /\[\|94[^\[\|\]]*\|\]/, value: ", quien convocará a elecciones para la organización de los poderes federales"},
+                95: {re: /\[\|95[^\[\|\]]*\|\]/, value: "el"},
+                96: {re: /\[\|96[^\[\|\]]*\|\]/, value: "forzosas que labran la desdicha"},
+                97: {re: /\[\|97[^\[\|\]]*\|\]/, value: "y otros que nos condenan"},
+                98: {re: /\[\|98[^\[\|\]]*\|\]/, value: "los han"},
+                99: {re: /\[\|99[^\[\|\]]*\|\]/, value: "las inmensas"},
+                100: {re: /\[\|100[^\[\|\]]*\|\]/, value: " y poseen verdaderos sentimientos de amor hacia ella"},
+                101: {re: /\[\|101[^\[\|\]]*\|\]/, value: ""},
+                102: {re: /\[\|102[^\[\|\]]*\|\]/, value: "que de no"},
+                103: {re: /\[\|103[^\[\|\]]*\|\]/, value: "la sangre y anatema"},
+                104: {re: /\[\|104[^\[\|\]]*\|\]/, value: "."},
+                105: {re: /\[\|105[^\[\|\]]*\|\]/, value: "y mala fe"},
+                106: {re: /\[\|106[^\[\|\]]*\|\]/, value: "las volvemos"},
+                107: {re: /\[\|107[^\[\|\]]*\|\]/, value: "la"},
+                108: {re: /\[\|108[^\[\|\]]*\|\]/, value: "somos partidarios de los principios y no de los hombres."},
+                109: {re: /\[\|109[^\[\|\]]*\|\]/, value: "Libertad, "},
+                110: {re: /\[\|110[^\[\|\]]*\|\]/, value: "25"},
+                111: {re: /\[\|111[^\[\|\]]*\|\]/, value: `General en Jefe: Emiliano Zapata; Generales: Eufemio Zapata, Francisco Mendoza, Jesús Morales, Jesús Navarro, Otilio E. Montaño, José Trinidad Ruiz, Próculo Capistrán; Coroneles: Felipe Vaquero Cesáreo Burgos, Quintín González, Pedro Salazar, Simón Rojas, Emigdio Marmolejo, José Campos, Pioquinto Galis, Felipe Tejera, Rafael Sánchez, José Pérez, Santiago Aguilar, Margarito Martínez, Feliciano Domínguez, Manuel Vergara, Cruz Salazar, Lauro Sánchez, Amador Salazar, Lorenzo Vázquez, Catarino Perdomo, Jesús Sánchez, Domingo Romero, Zacarías Torres, Bonifacio García, Daniel Andrade, Ponciano Domínguez, Jesús Capistrán; Capitanes: Daniel Mantilla, José M. Carrillo, Francisco Alarcón, Severiano Gutiérrez; Siguen más firmas.</br></br>
+
+                Es copia fiel sacada de su original. Campamento en las Montañas de Puebla, Diciembre 11 de 1911. El General en Jefe, Emiliano Zapata. Rúbrica.`}
+
+            }
+            
+            let diario = {
+                color: `#ff1493`,
+                1: {re: /\[\|1[^\[\|\]]*\|\]/, value: "Ayala"},
+                2: {re: /\[\|2[^\[\|\]]*\|\]/, value: "defiende"},
+                3: {re: /\[\|3[^\[\|\]]*\|\]/, value: "del Plan de San Luis"},
+                4: {re: /\[\|4[^\[\|\]]*\|\]/, value: ""},
+                5: {re: /\[\|5[^\[\|\]]*\|\]/, value: "a que pertenecemos"},
+                6: {re: /\[\|6[^\[\|\]]*\|\]/, value: "los propósitos"},
+                7: {re: /\[\|7[^\[\|\]]*\|\]/, value: "oprime"},
+                8: {re: /\[\|8[^\[\|\]]*\|\]/, value: "en consideración"},
+                9: {re: /\[\|9[^\[\|\]]*\|\]/, value: "libertades y reivindicar sus derechos conculcados, y no para que un hombre se adueñara del poder violando los sagrados"},
+                10: {re: /\[\|10[^\[\|\]]*\|\]/, value: "principios que"},
+                11: {re: /\[\|11[^\[\|\]]*\|\]/, value: "lema"},
+                12: {re: /\[\|12[^\[\|\]]*\|\]/, value: "y"},
+                13: {re: /\[\|13[^\[\|\]]*\|\]/, value: "ultrajando así la fe, la causa, la justicia"},
+                14: {re: /\[\|14[^\[\|\]]*\|\]/, value: "el que"},
+                15: {re: /\[\|15[^\[\|\]]*\|\]/, value: "norma"},
+                16: {re: /\[\|16[^\[\|\]]*\|\]/, value: "licenciado Francisco L."},
+                17: {re: /\[\|17[^\[\|\]]*\|\]/, value: ""},
+                18: {re: /\[\|18[^\[\|\]]*\|\]/, value: "causando con este hecho reiterados derramamientos de sangre y multiplicadas desgracias a la patria"},
+                19: {re: /\[\|19[^\[\|\]]*\|\]/, value: "de"},
+                20: {re: /\[\|20[^\[\|\]]*\|\]/, value: "la sangre revolucionaria"},
+                21: {re: /\[\|21[^\[\|\]]*\|\]/, value: "en cuenta"},
+                22: {re: /\[\|22[^\[\|\]]*\|\]/, value: " por falta de entereza y debilidad suma"},
+                23: {re: /\[\|23[^\[\|\]]*\|\]/, value: "de los"},
+                24: {re: /\[\|24[^\[\|\]]*\|\]/, value: "de manera alguna la"},
+                25: {re: /\[\|25[^\[\|\]]*\|\]/, value: "de la soberanía nacional"},
+                26: {re: /\[\|26[^\[\|\]]*\|\]/, value: "que por ser acérrimos adversarios"},
+                27: {re: /\[\|27[^\[\|\]]*\|\]/, value: "teniendo también en cuenta"},
+                28: {re: /\[\|28[^\[\|\]]*\|\]/, value: "señor Francisco I. Madero"},
+                29: {re: /\[\|29[^\[\|\]]*\|\]/, value: "actual"},
+                30: {re: /\[\|30[^\[\|\]]*\|\]/, value: "siendo"},
+                31: {re: /\[\|31[^\[\|\]]*\|\]/, value: "encarcelando"},
+                32: {re: /\[\|32[^\[\|\]]*\|\]/, value: "a que ocupara"},
+                33: {re: /\[\|33[^\[\|\]]*\|\]/, value: "de falsas"},
+                34: {re: /\[\|34[^\[\|\]]*\|\]/, value: "y numerosas"},
+                35: {re: /\[\|35[^\[\|\]]*\|\]/, value: "repetido"},
+                36: {re: /\[\|36[^\[\|\]]*\|\]/, value: "acallar"},
+                37: {re: /\[\|37[^\[\|\]]*\|\]/, value: "de ahogar"},
+                38: {re: /\[\|38[^\[\|\]]*\|\]/, value: "las"},
+                39: {re: /\[\|39[^\[\|\]]*\|\]/, value: "de"},
+                40: {re: /\[\|40[^\[\|\]]*\|\]/, value: "condenándolos"},
+                41: {re: /\[\|41[^\[\|\]]*\|\]/, value: "teniendo igualmente"},
+                42: {re: /\[\|42[^\[\|\]]*\|\]/, value: "Francisco I. Madero"},
+                43: {re: /\[\|43[^\[\|\]]*\|\]/, value: "ya imponiendo"},
+                44: {re: /\[\|44[^\[\|\]]*\|\]/, value: "en"},
+                45: {re: /\[\|45[^\[\|\]]*\|\]/, value: "o ya"},
+                46: {re: /\[\|46[^\[\|\]]*\|\]/, value: "ya"},
+                47: {re: /\[\|47[^\[\|\]]*\|\]/, value: "seguir"},
+                48: {re: /\[\|48[^\[\|\]]*\|\]/, value: "conculcando"},
+                49: {re: /\[\|49[^\[\|\]]*\|\]/, value: "ni"},
+                50: {re: /\[\|50[^\[\|\]]*\|\]/, value: " por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder"},
+                51: {re: /\[\|51[^\[\|\]]*\|\]/, value: ""},
+                52: {re: /\[\|52[^\[\|\]]*\|\]/, value: "incapaz"},
+                53: {re: /\[\|53[^\[\|\]]*\|\]/, value: "para gobernar"},
+                54: {re: /\[\|54[^\[\|\]]*\|\]/, value: "libertades"},
+                55: {re: /\[\|55[^\[\|\]]*\|\]/, value: "a fin de"},
+                56: {re: /\[\|56[^\[\|\]]*\|\]/, value: "al señor"},
+                57: {re: /\[\|57[^\[\|\]]*\|\]/, value: "que antes se expresan"},
+                58: {re: /\[\|58[^\[\|\]]*\|\]/, value: "procurándose"},
+                59: {re: /\[\|59[^\[\|\]]*\|\]/, value: "el derrocamiento"},
+                60: {re: /\[\|60[^\[\|\]]*\|\]/, value: "ilustre ciudadano"},
+                61: {re: /\[\|61[^\[\|\]]*\|\]/, value: "y en caso"},
+                62: {re: /\[\|62[^\[\|\]]*\|\]/, value: "general don"},
+                63: {re: /\[\|63[^\[\|\]]*\|\]/, value: "hasta"},
+                64: {re: /\[\|64[^\[\|\]]*\|\]/, value: "derrocamiento"},
+                65: {re: /\[\|65[^\[\|\]]*\|\]/, value: "elementos dictatoriales"},
+                66: {re: /\[\|66[^\[\|\]]*\|\]/, value: "Porfirio Díaz y de Francisco I. Madero"},
+                67: {re: /\[\|67[^\[\|\]]*\|\]/, value: "falsos"},
+                68: {re: /\[\|68[^\[\|\]]*\|\]/, value: "promesas como"},
+                69: {re: /\[\|69[^\[\|\]]*\|\]/, value: "y que al llegar"},
+                70: {re: /\[\|70[^\[\|\]]*\|\]/, value: "hacemos"},
+                71: {re: /\[\|71[^\[\|\]]*\|\]/, value: "a la sombra de la justicia venal"},
+                72: {re: /\[\|72[^\[\|\]]*\|\]/, value: "esos"},
+                73: {re: /\[\|73[^\[\|\]]*\|\]/, value: "a esas"},
+                74: {re: /\[\|74[^\[\|\]]*\|\]/, value: "consideren"},
+                75: {re: /\[\|75[^\[\|\]]*\|\]/, value: "ante los"},
+                76: {re: /\[\|76[^\[\|\]]*\|\]/, value: "al"},
+                77: {re: /\[\|77[^\[\|\]]*\|\]/, value: "mejorar en nada"},
+                78: {re: /\[\|78[^\[\|\]]*\|\]/, value: "a los"},
+                79: {re: /\[\|79[^\[\|\]]*\|\]/, value: "ellos"},
+                80: {re: /\[\|80[^\[\|\]]*\|\]/, value: "fundos"},
+                81: {re: /\[\|81[^\[\|\]]*\|\]/, value: "les correspondan"},
+                82: {re: /\[\|82[^\[\|\]]*\|\]/, value: "ejecutar"},
+                83: {re: /\[\|83[^\[\|\]]*\|\]/, value: "leyes"},
+                84: {re: /\[\|84[^\[\|\]]*\|\]/, value: "desamortización"},
+                85: {re: /\[\|85[^\[\|\]]*\|\]/, value: "pues de norma y ejemplo pueden servirnos"},
+                86: {re: /\[\|86[^\[\|\]]*\|\]/, value: "los déspotas"},
+                87: {re: /\[\|87[^\[\|\]]*\|\]/, value: "que en todo tiempo"},
+                88: {re: /\[\|88[^\[\|\]]*\|\]/, value: "y el"},
+                89: {re: /\[\|89[^\[\|\]]*\|\]/, value: "se opongan"},
+                90: {re: /\[\|90[^\[\|\]]*\|\]/, value: "y a la patria"},
+                91: {re: /\[\|91[^\[\|\]]*\|\]/, value: "al artículo XI"},
+                92: {re: /\[\|92[^\[\|\]]*\|\]/, value: "que llevamos"},
+                93: {re: /\[\|93[^\[\|\]]*\|\]/, value: "nombrará o designará"},
+                94: {re: /\[\|94[^\[\|\]]*\|\]/, value: " quien convocará a elecciones para la organización de los poderes federales"},
+                95: {re: /\[\|95[^\[\|\]]*\|\]/, value: "al"},
+                96: {re: /\[\|96[^\[\|\]]*\|\]/, value: "forzosas que labran la desdicha"},
+                97: {re: /\[\|97[^\[\|\]]*\|\]/, value: "y otros que nos condenan"},
+                98: {re: /\[\|98[^\[\|\]]*\|\]/, value: "lo han"},
+                99: {re: /\[\|99[^\[\|\]]*\|\]/, value: "las inmensas"},
+                100: {re: /\[\|100[^\[\|\]]*\|\]/, value: " y poseen verdaderos sentimientos de amor hacia ella"},
+                101: {re: /\[\|101[^\[\|\]]*\|\]/, value: ""},
+                102: {re: /\[\|102[^\[\|\]]*\|\]/, value: "que de no"},
+                103: {re: /\[\|103[^\[\|\]]*\|\]/, value: "la sangre y anatema"},
+                104: {re: /\[\|104[^\[\|\]]*\|\]/, value: "."},
+                105: {re: /\[\|105[^\[\|\]]*\|\]/, value: "y mala fe"},
+                106: {re: /\[\|106[^\[\|\]]*\|\]/, value: "las volvemos"},
+                107: {re: /\[\|107[^\[\|\]]*\|\]/, value: "la"},
+                108: {re: /\[\|108[^\[\|\]]*\|\]/, value: "¡somos partidarios de los principios y no de los hombres!"},
+                109: {re: /\[\|109[^\[\|\]]*\|\]/, value: "Libertad, "},
+                110: {re: /\[\|110[^\[\|\]]*\|\]/, value: "25"},
+                111: {re: /\[\|111[^\[\|\]]*\|\]/, value: `General en Jefe: Emiliano Zapata; Generales: Eufemio Zapata, Francisco Mendoza, Jesús Morales, Jesús Navarro, Otilio E. Montaño, José Trinidad Ruiz, Próculo Capistrán; Coroneles: Felipe Vaquero Cesáreo Burgos, Quintín González, Pedro Salazar, Simón Rojas, Emigdio Marmolejo, José Campos, Pioquinto Galis, Felipe Tejera, Rafael Sánchez, José Pérez, Santiago Aguilar, Margarito Martínez, Feliciano Domínguez, Manuel Vergara, Cruz Salazar, Lauro Sánchez, Amador Salazar, Lorenzo Vázquez, Catarino Perdomo, Jesús Sánchez, Domingo Romero, Zacarías Torres, Bonifacio García, Daniel Andrade, Ponciano Domínguez, Jesús Capistrán; Capitanes: Daniel Mantilla, José M. Carrillo, Francisco Alarcón, Severiano Gutiérrez; Siguen más firmas.</br></br>
+
+    Es copia fiel sacada de su original. Campamento en las Montañas de Puebla, Diciembre 11 de 1911. El General en Jefe, Emiliano Zapata. Rúbrica.`}
+            }
+            
+
+            let cnv, container, block
+
+            function setup() {
+                
+                noCanvas()
+
+                container = select("#esqueleto")
+
+                block = createP(esqueletoNegro)
+                block.parent(container)
+
+                
+
+                /*renderCases(baseNegra, {1: {re: /\[\|(\d+)[^\|\[\]]*\|\]/gi}}, `lightpink`) */
+
+                //block.elt.innerHTML = block.elt.innerHTML.replace(/(\[\|\d+[^\[\|\]]*\|\])/gi, `<span style="background-color: black;color:pink;">$1</span>`)
+
+                //block.html(block.elt.innerHTML)
+                //renderCases(esqueleto, unam)
+
+            }
+
+            /*
+            function draw() {
+                let btnWidth = width / 10
+                let btnLWidth = width / 5
+
+                btn1.position(0, 10)
+                btn1.size(btnLWidth, 50)
+
+                btn2.position(btnLWidth, 10)
+                btn2.size(btnLWidth, 50)
+
+                btn3.position(btnLWidth * 2, 10)
+                btn3.size(btnLWidth, 50)
+
+                btn4.position(btnLWidth * 3, 10)
+                btn4.size(btnLWidth, 50)
+
+                btn5.position(btnLWidth * 4, 10)
+                btn5.size(btnLWidth, 50)
+
+                btn6.position(btnLWidth * 4, 60)
+                btn6.size(btnLWidth, 50)
+
+                //block.elt.innerHTML = block.elt.innerHTML.replace(/\[\|\d+[^\[\|\]]*\|\]/gi, `<span style="background-color: black;">XXXXXX</span>`)
+            }
+            */
+
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight)
+            }
+
+            function keyPressed() {
+                switch (key) {
+                    case `1`:
+                        renderCases(esqueletoNegro, agn) //base, versionOne
+                        break;
+                    case `2`:
+                        renderCases(esqueletoNegro, unam)
+                        break
+                    case `3`:
+                        renderCases(esqueletoNegro, diario) //base, versionOne
+                        break
+                    case `4`:
+                        renderCases(esqueletoNegro, carso)
+                        break
+                    case `4`:
+                        renderCases(esqueletoNegro, carsoAmezcua)
+                        break
+                    case 'R':
+                        block.html(esqueletoNegro, false)
+                        break
+                }
+            }
+
+            function renderCases(corpus, cases, textColor, replacer) {
+
+                let copy = corpus
+                //let copy = corpus.elt.innerHTML
+
+                var size = 0, key
+
+                for (key in cases) {
+                    if (cases.hasOwnProperty(key)) size++;
+                }
+
+                for (let obj in cases) {
+                    let res = copy.match(cases[obj].re)
+                    
+                    if (res) {
+
+                        copy = copy.replace(cases[obj].re, replacer ? replacer : `<span style="background-color:${cases.bgColor ? cases.bgColor : `black`};color:${cases.color ? cases.color : `#6FDC6F`}">${cases[obj].value}</span>`)
+                        console.log('Regex applied: ', cases[obj].re, res)
+
+                    } else console.log(`No match for ${cases[obj].re}...`)
+                }
+                //block.html(corpus, false)
+                block.html(copy, false)
+            }
+
+            /* function replacer($0, $1) {
+                //OBSOLETE? .replace($1, `<span style="color:lightpink">${$1}</span>`)
+                return `<span style="background-color:black;color:#C0FFEE">${$0}</span>`
+            } */
+
+            /* 
+            RegExp constructor for this project: re = new RegExp(`\\[\\|${}[^\\[\\|\\]]*\\|\\]`, `gi`)
+
+            regexp for capturing all black spaces...
+            const blackBoxes = /\[\|[^\[\|\]]*\|\]/gi     ooooor     /\[\|[^\|\[\]]*(?=\[\w+\])?\|\]/gi     ooooor   /\[\|  \d+  [^\|\[\]]*\|\]/gi
+            
+            regexp for capturing a specific black space...
+            const blackFun = (keyword) => `/\[\|[^\[\|\]]*\|\]/gi`
+            
+            regExp.replace function missing in core...
+            function regExpEscapeFuture(literal_string) {
+            return literal_string.replace(/[^A-Za-z0-9_]/g, '\\$&');
+            }
+
+            regex for coloring the patterns for cases settling:
+            /\[\|(\d+)([^\[\|\]]*)\|\]/ two groups...
+
+            */
+
+            const nextCase = (() => {
+                //var counter = 1
+                
+
+                return (cases, value) => {
+                    var size = 0, key
+
+                    for (key in cases) {
+                    if (cases.hasOwnProperty(key)) size++;
+                    }
+                    let index = size + 1
+                    cases[index] = { re: new RegExp(`\\[\\|${ index }[^\\[\\|\\]]*\\|\\]`), value: value }
+                    renderCases(esqueletoNegro, cases)
+                    //console.log(counter)
+                }
+            })()
+
+            const esqueletoNegro = 
+            `
+            <h1>Plan de <span style="background-color:black">[|1 la Villa de Ayala|]</span></h1><br>
+
+            Plan Libertador de los hijos del estado de Morelos, afiliados al ejército insurgente que <span style="background-color:black">[|2 defiende, defienden|]</span> el cumplimiento <span style="background-color:black">[|3 del Plan de San Luis Potosí, de San Luis, del Plan de San Luis|]</span> con las reformas que ha creído conveniente aumentar en beneficio de la patria mexicana.<br><br>
+
+            Los que suscribimos constituidos en junta revolucionaria para sostener y llevar a cabo las promesas que hizo <span style="background-color:black">[|4 al país|]</span> la revolución de 20 de noviembre de 1910 próximo pasado, declaramos solemnemente ante la faz del mundo civilizado que nos juzga y ante la nación <span style="background-color:black">[|5 a que pertenecemos, que pertenecemos|]</span> y amamos, <span style="background-color:black">[|6 los principios, los propósitos|]</span> que hemos formulado para acabar con la tiranía que <span style="background-color:black">[|7 nos oprime, oprime|]</span>, y redimir a la patria de las dictaduras que se nos imponen las cuales quedan determinadas en el siguiente plan.<br><br>
+
+            1°. Teniendo <span style="background-color:black">[|8 en consideración, en cuenta|]</span> que el pueblo mexicano acaudillado por don Francisco I. Madero fue a derramar su sangre para reconquistar <span style="background-color:black">[|9 sus libertades, libertades y reivindicar sus derechos conculcados, y no para que un hombre se adueñara del poder violando los sagrados|]</span> <span style="background-color:black">[|10 derechos, principios que, sagrados principios que|]</span> juró defender bajo el <span style="background-color:black">[|11 lema, tema|]</span> de "Sufragio Efectivo <span style="background-color:black">[|12 y|]</span> No Reelección", <span style="background-color:black">[|13 ultrajando así la fe, la causa, la justicia, ultrajando la fe, la causa, la justicia, ultrajando así la fe, la justicia|]</span> y las libertades del pueblo; teniendo en consideración: que ese hombre a que nos referimos es don Francisco I. Madero, el mismo que inició la precitada revolución, <span style="background-color:black">[|14 el cual , el que|]</span> impuso por <span style="background-color:black">[|15 norma , norma gubernativa|]</span> su voluntad e influencia al gobierno provisional del ex presidente de la república <span style="background-color:black">[|16 licenciado don Francisco , licenciado Francisco|]</span> de la Barra, <span style="background-color:black">[|17 por haberle aclamado el pueblo su libertador,|]</span><span style="background-color:black">[|18 causando con este hecho reiterados derramamientos de sangre,****y multiplicadas desgracias a la patria, causando desgracias a la patria|]</span> de una manera solapada y ridícula, no teniendo otras miras que satisfacer sus ambiciones personales, sus desmedidos instintos de tirano y su profundo desacato al cumplimiento de las leyes preexistentes emanadas del inmortal Código <span style="background-color:black">[|19 de, del|]</span> 57 escrito con <span style="background-color:black">[|20 la sangre de los revolucionarios, sangre revolucionaria|]</span>  de Ayutla; teniendo <span style="background-color:black">[|21 en consideración , en cuenta|]</span>: que el llamado jefe de la revolución libertadora de México, don Francisco I. Madero<span style="background-color:black">[|22 , por falta de entereza y debilidad suya, por falta de entereza y debilidad suma|]</span>, no llevó a feliz término la revolución que gloriosamente inició con el apoyo de Dios y del pueblo, puesto que dejó en pie la mayoría <span style="background-color:black">[|23 de, de los|]</span> poderes gubernativos y elementos corrompidos de opresión del gobierno dictatorial de Porfirio Díaz, que no son ni pueden ser <span style="background-color:black">[|24 en manera alguna la legítima, de manera alguna la|]</span> representación <span style="background-color:black">[|25 de la soberanía nacional, ni pueden ser de manera alguna la soberanía|]</span>, y <span style="background-color:black">[|26 que por ser acérrimos adversarios, que por ser adversarios|]</span> nuestros, y de los principios que hasta hoy defendemos, están provocando el malestar del país y abriendo nuevas heridas al seno de la patria para darle a beber su propia sangre; <span style="background-color:black">[|27 teniendo en consideración, teniendo también en cuesta, teniendo también en cuenta|]</span>: que el supradicho <span style="background-color:black">[|28 señor Francisco I. Madero, señor Madero|]</span>, <span style="background-color:black">[|29 actual, actualmente|]</span> presidente de la república, trata de eludirse del cumplimiento de las promesas que hizo a la nación en el Plan de San Luis Potosí, <span style="background-color:black">[|30 ciñendo, siendo|]</span> las precitadas promesas a los convenios de Ciudad Juárez, ya nulificando, <span style="background-color:black">[|31 persiguiendo, encarcelando|]</span> o matando a los elementos revolucionarios que le ayudaron <span style="background-color:black">[|32 a que ocupara, a que venciera para|]</span> el alto puesto de presidente de la república por medio <span style="background-color:black">[|33 de sus falsas, de falsas|]</span> promesas <span style="background-color:black">[|34 e, y numerosas|]</span> intrigas a la nación; teniendo en consideración: que el tantas veces <span style="background-color:black">[|35 repetido señor, repetido señor don, repetido|]</span> Francisco I. Madero ha tratado de <span style="background-color:black">[|36 ocultar, acallar|]</span> con la fuerza bruta de las bayonetas y <span style="background-color:black">[|37 de ahogar, y ahogar|]</span> en sangre a los pueblos que le piden, solicitan o exigen el cumplimiento de <span style="background-color:black">[|38 sus, las|]</span> promesas <span style="background-color:black">[|39 en, de|]</span> la revolución llamándolos bandidos y rebeldes, <span style="background-color:black">[|40 condenando, condenándolos|]</span> a una guerra de exterminio sin conceder ni otorgar ninguna de las garantías que prescriben la razón, la justicia y la ley; <span style="background-color:black">[|41 teniendo, teniendo igualmente|]</span> en consideración: que el presidente de la república <span style="background-color:black">[|42 Francisco I. Madero, señor don Francisco I. Madero|]</span> ha hecho del sufragio efectivo una sangrienta burla al pueblo, <span style="background-color:black">[|43 ya imponiendo, y imponiendo|]</span> contra la voluntad del mismo pueblo <span style="background-color:black">[|44 en, con|]</span> la vicepresidencia de la república al licenciado José María Pino Suárez, <span style="background-color:black">[|45 o ya a, ya, o ya los|]</span>  los gobernadores de los estados designados por él, como el llamado general Ambrosio Figueroa, verdugo y tirano del pueblo de Morelos, <span style="background-color:black">[|46 ya, y así|]</span> entrando en contubernio escandaloso con el partido científico, hacendados feudales y caciques opresores, enemigos de la revolución proclamada por él a fin de forjar nuevas cadenas, y <span style="background-color:black">[|47 de seguir, seguir|]</span> el molde de una nueva dictadura, más oprobiosa y más terrible que la de Porfirio Díaz, pues ha sido claro y patente que ha ultrajado la soberanía de los estados, <span style="background-color:black">[|48 conculcando, consultando|]</span> las leyes sin ningún respeto a vidas <span style="background-color:black">[|49 e, ni|]</span> intereses, como ha sucedido en el estado de Morelos y otros, conduciéndonos a la más horrorosa anarquía que registra la historia contemporánea; por estas consideraciones, declaramos al susodicho Francisco I. Madero inepto para realizar las promesas de la revolución de que fue autor<span style="background-color:black">[|50 (vacio), por haber traicionado los principios con los cuales burló la fe del pueblo, y pudo haber escalado el poder, por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder, por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder|]</span>, <span style="background-color:black">[|52 (, incapaz), de que fue autor, incapaz|]</span> <span style="background-color:black">[|53 para gobernante, para gobernar|]</span> por no tener ningún respeto a la ley y a la justicia de los pueblos, y traidor a la patria por estar a sangre y fuego humillando a los mexicanos que desean <span style="background-color:black">[|54 sus libertades, libertades|]</span>, <span style="background-color:black">[|55 por, a fin de|]</span> complacer a los científicos, hacendados y caciques que nos esclavizan, y desde hoy comenzamos a continuar la revolución principiada por él, hasta conseguir el derrocamiento de los poderes dictatoriales que existen.<br><br>
+
+            2°. Se desconoce como jefe de la revolución <span style="background-color:black">[|56 al ciudadano, al señor|]</span> Francisco I. Madero y como presidente de la república por las razones <span style="background-color:black">[|57 que antes se expresan, que antes expresan|]</span>, <span style="background-color:black">[|58 procurando, procurándose|]</span> <span style="background-color:black">[|59 el derrumbamiento, el derrocamiento|]</span> de este funcionario.<br><br>
+
+            3°. Se reconoce como jefe de la revolución libertadora al <span style="background-color:black">[|60 ilustre, ilustre ciudadano|]</span> general Pascual Orozco, segundo del caudillo don Francisco I. Madero, <span style="background-color:black">[|61 y en caso, en caso|]</span> de que no acepte este delicado puesto, se reconocerá como jefe de la revolución al ciudadano <span style="background-color:black">[|62 general, general don|]</span> Emiliano Zapata.<br><br>
+
+            4°. La junta revolucionaria del estado de Morelos manifiesta a la nación bajo formal protesta: que hace suyo el Plan de San Luis Potosí con las adiciones que a continuación se expresan en beneficio de los pueblos oprimidos, y se hará defensora de los principios que defiende hasta vencer o morir.<br><br>
+
+            5°. La junta revolucionaria del estado de Morelos no admitirá transacciones ni componendas <span style="background-color:black">[|63 políticas hasta, hasta|]</span> no conseguir el <span style="background-color:black">[|64 derrumbamiento, derrocamiento|]</span> de los <span style="background-color:black">[|65 elementos dictatoriales, dictatoriales|]</span> de <span style="background-color:black">[|66 Porfirio Díaz y don Francisco I. Madero, Díaz y Francisco, Porfirio Díaz y de Francisco I. Madero|]</span> pues la nación está cansada de hombres <span style="background-color:black">[|67 falaces, falsos|]</span> y traidores que hacen <span style="background-color:black">[|68 promesas de, promesas como|]</span> libertadores <span style="background-color:black">[|69 pero que llegando, y que al llegar|]</span> al poder se olvidan de ellas y se constituyen en tiranos.<br><br>
+
+            6°. Como parte adicional del plan que invocamos, <span style="background-color:black">[|70 hacemos, y hacemos|]</span> constar que los terrenos, montes y aguas que hayan usurpado los hacendados, científicos o caciques, <span style="background-color:black">[|71 a la sombra de la tiranía y de la justicia venal, a la sombra de la tiranía y de la justicia actual, a la sombra de la justicia venal|]</span> entrarán en posesión de <span style="background-color:black">[|72 estos, esos|]</span> bienes inmuebles desde luego los pueblos o ciudadanos que tengan sus títulos correspondientes <span style="background-color:black">[|73 de esas, a esas|]</span> propiedades, de las cuales han sido despojados por la mala fe de nuestros opresores, manteniendo a todo trance con las armas en la mano la mencionada posesión, y los usurpadores que se <span style="background-color:black">[|74 consideren , crean|]</span> con derecho a ellos, lo deducirán <span style="background-color:black">[|75 ante, ante los|]</span> tribunales especiales que se establezcan <span style="background-color:black">[|76 al, con el|]</span> triunfo de la revolución.<br><br>
+
+            7°. En virtud de que la inmensa mayoría de los pueblos y ciudadanos mexicanos, no son más dueños que del terreno que pisan, sufriendo los horrores de la miseria, sin poder <span style="background-color:black">[|77 mejorar, mejorar en nada|]</span> su condición social ni poder dedicarse a la industria o a la agricultura por estar monopolizados en unas cuantas manos las tierras, montes y aguas; por esta causa se expropiarán, previa indemnización, de la tercera parte de esos monopolios <span style="background-color:black">[|78 a los, de los|]</span>  poderosos propietarios de <span style="background-color:black">[|79 ellas, ellos|]</span> a fin de que los pueblos y ciudadanos de México obtengan ejidos, colonias, <span style="background-color:black">[|80 fundos fondos|]</span> legales para pueblos o campos de sembradura o de labor, y se mejore en todo y para todo la falta de prosperidad y bienestar de los mexicanos.<br><br>
+
+            8°. Los hacendados, científicos o caciques que se opongan directa o indirectamente al presente plan, se nacionalizarán sus bienes, y las dos terceras partes que a ellos <span style="background-color:black">[|81 les correspondan, les corresponde|]</span> se destinarán para indemnizaciones de guerra, pensiones de viudas y huérfanos de las víctimas que sucumban en la lucha del presente plan.<br><br>
+
+            9°. Para <span style="background-color:black">[|82 ajustar, ejecutar|]</span> los procedimientos respecto a los bienes antes mencionados, se aplicarán <span style="background-color:black">[|83 leyes, las leyes|]</span> de <span style="background-color:black">[|84 desamortización, amortización|]</span> y nacionalización según convenga; <span style="background-color:black">[|85 de norma y ejemplo pueden servir, puede servir de norma y ejemplo, pueden servirnos|]</span> las puestas en vigor por el inmortal Juárez a los bienes eclesiásticos que escarmentaron <span style="background-color:black">[|86 a los déspotas, los déspotas|]</span> y conservadores <span style="background-color:black">[|87 que en todo tiempo, que|]</span> han pretendido imponernos el yugo ignominioso de la opresión <span style="background-color:black">[|88 y del, y el|]</span> retroceso.<br><br>
+
+            10°. Los jefes militares insurgentes de la república, que se levantaron con las armas en la mano a la voz de don Francisco I. Madero para defender el Plan de San Luis Potosí y que <span style="background-color:black">[|89 ahora se opongan,  se opongan|]</span> con fuerza armada al presente plan, se juzgarán traidores a la causa que defendieron <span style="background-color:black">[|90 y a la patria, a la patria|]</span>, puesto que en la actualidad muchos de ellos por complacer a los tiranos, por un puñado de monedas, o por cohecho o soborno, están derramando la sangre de sus hermanos que reclaman el cumplimiento de las promesas que hizo a la nación don Francisco I. Madero.<br><br>
+
+            11°. Los gastos de guerra serán tomados conforme <span style="background-color:black">[|91 a lo que prescribe el artículo XI, al artículo 11, artículo XI|]</span> del Plan de San Luis Potosí, y todos los procedimientos empleados en la revolución que emprendemos, serán conforme a las instrucciones mismas que determine el mencionado plan.<br><br>
+
+            12°. Una vez triunfante la revolución <span style="background-color:black">[|92 que hemos llevado, que llevamos|]</span> a la vía de la realidad, una junta de los principales jefes revolucionarios de los diferentes estados, <span style="background-color:black">[|93 nombrarán o designarán, nombrará o designará|]</span> un presidente interino de la república<span style="background-color:black">[|94 que convocará a elecciones, quien convocará a elecciones, quien convocará a elecciones para la organización de los poderes federales, quien convocará a elecciones para la nueva formación del Congreso de la Unión, y éste a la vez convocará a elecciones para la organización de los demás poderes federales|]</span>.<br><br>
+
+            13.° Los principales jefes revolucionarios de cada estado, en junta, designarán <span style="background-color:black">[|95 el, al|]</span> gobernador provisional del estado a que correspondan, y este elevado funcionario convocará a elecciones para la debida organización de los poderes públicos, con el objeto de evitar consignas <span style="background-color:black">[|96 forzosas que labran la desdicha, forzadas que labran la desdicha|]</span> de los pueblos, como la tan conocida consigna de Ambrosio Figueroa en el estado de Morelos, <span style="background-color:black">[|97 y otras que nos conducen, y otros que nos condenan|]</span> al precipicio de conflictos sangrientos sostenidos por el capricho del dictador Madero y del círculo de científicos y hacendados que <span style="background-color:black">[|98 lo han, los han|]</span>  sugestionado.<br><br>
+
+            14°. Si el presidente Madero y demás elementos dictatoriales del actual y antiguo régimen desean evitar <span style="background-color:black">[|99 inmensas, las inmensas|]</span> desgracias que afligen a la patria<span style="background-color:black">[|100 y poseen verdaderos sentimientos, y poseen verdaderos sentimientos de amor hacia ella|]</span>, que hagan inmediata <span style="background-color:black">[|101 la|]</span> renuncia de los puestos que ocupan y con eso, en algo restañarán las graves heridas que han abierto al seno de la patria; pues <span style="background-color:black">[|102 que de no, de no|]</span> hacerlo así, sobre sus cabezas caerá <span style="background-color:black">[|103 la sangre derramada, la sangre y anatema|]</span> de nuestros hermanos<span style="background-color:black">[|104 . O _,_y|]</span><br><br>
+
+            15°. Mexicanos: considerad que la astucia <span style="background-color:black">[|105 y la mala fe, y mala fe|]</span> de un hombre está derramando sangre de una manera escandalosa por ser incapaz para gobernar; considerad, que su sistema de gobierno está agarrotando a la patria y hollando con la fuerza bruta de las bayonetas nuestras instituciones; y así como nuestras armas las levantamos para elevarlo al poder, <span style="background-color:black">[|106 las volvemos, ahora las volvemos|]</span> contra él por faltar a sus compromisos con el pueblo mexicano y haber traicionado <span style="background-color:black">[|107 la, a la|]</span> revolución iniciada por él: no somos personalistas, <span style="background-color:black">[|108 ¡somos partidarios de los principios y no de los hombres!, somos partidarios de los principios y no de los hombres|]</span><br><br>
+
+            Pueblo mexicano: apoyad con las armas en la mano este plan, y haréis la prosperidad y bienestar de la patria.<br><br>
+
+
+            <span style="background-color:black">[|109 Libertad, |]</span>Justicia y Ley.<br><br>Ayala, noviembre <span style="background-color:black">[|110 28, 25|]</span> de 1911.<br><br><br>
+
+
+            Rúbricas:<br><br><br>
+
+            <span style="background-color:black">[|111!
+
+            General en jefe: Emiliano Zapata; Generales: José F. Ruiz, O. E. Montaño, Francisco Mendoza, Jesús Morales, Eufemio Zapata, Próculo Capistrán; Coroneles: Agustín Cázares, Rafael Sánchez, Cristóbal Domínguez, Santiago Aguilar (sin rango), Feliciano Domínguez, Fermín Omaña, Pedro Salazar, Jesús Sánchez, Felipe Vaquero, Cleotilde Sosa, José Ortega, Julio Tapia, Alfonso Morales (teniente coronel), Gonzalo Aldapes, Manuel Vergara, Santiago Aguilar, Amador Salazar, Cesario Burgos, Pedro Salazar, Lauro Sánchez, Quintín González, Francisco Caspeta, Petronilo Campos; Capitanes: Manuel Hernández, José Pineda, Ambrosio López, Apolinar Adorno, José Villanueva, Porfirio Casarez, Antonio Gutiérrez, Pedro Valvuena Huertero, Odilón Neri, Catarino Vergara, Arturo Pérez, Margarito Camacho, Teófilo Galindo, Felipe Torres, José Ma. Carrillo, Simón Gebara, Agustín Ortiz (capitán primero), Jesús Escamilla, Abelino Cortés, José Estudillo, Francisco Galarza, Serafín Rivera (capitán segundo); Alberto Blumenkron (teniente); L. Franco (secretario).<br><br>|]</span>
+            `
+
+
+            /* const esqueleto =
+                `
+            <h1>Plan de <span style="background-color: black;color:pink;">[|1 Ayala, la Villa de Ayala, Mapaztlán de Ayala, estado de Morelos. Se reconoce como jefe de la revolución al heroico general Pascual Orozco y en su lugar al general don Emiliano Zapata. Adicional al Plan de San Luis Potosí. Leyes agrarias (ilegible). Desamortización. Cumplimiento de las promesas revolucionarias. Llamamiento al pueblo.|]</span></h1><br>
+
+            Plan Libertador de los hijos del estado de Morelos, afiliados al ejército insurgente que <span style="background-color: black;color:pink;">[|2 defiende, defienden|]</span> el cumplimiento <span style="background-color: black;color:pink;">[|3 del Plan de San Luis Potosí, de San Luis, del Plan de San Luis|]</span> con las reformas que ha creído conveniente aumentar en beneficio de la patria mexicana.<br><br>
+
+            Los que suscribimos constituidos en junta revolucionaria para sostener y llevar a cabo las promesas que hizo <span style="background-color: black;color:pink;">[|4 al país|]</span> la revolución de 20 de noviembre de 1910 próximo pasado, declaramos solemnemente ante la faz del mundo civilizado que nos juzga y ante la nación <span style="background-color: black;color:pink;">[|5 a que pertenecemos, que pertenecemos|]</span> y amamos, <span style="background-color: black;color:pink;">[|6 los principios, los propósitos|]</span> que hemos formulado para acabar con la tiranía que <span style="background-color: black;color:pink;">[|7 nos oprime, oprime|]</span>, y redimir a la patria de las dictaduras que se nos imponen las cuales quedan determinadas en el siguiente plan.<br><br>
+
+            1°. Teniendo <span style="background-color: black;color:pink;">[|8 en consideración, en cuenta|]</span> que el pueblo mexicano acaudillado por don Francisco I. Madero fue a derramar su sangre para reconquistar <span style="background-color: black;color:pink;">[|9 sus libertades, libertades y reivindicar sus derechos conculcados, y no para que un hombre se adueñara del poder violando los sagrados|]</span> <span style="background-color: black;color:pink;">[|10 derechos, principios que, sagrados principios que|]</span> juró defender bajo el <span style="background-color: black;color:pink;">[|11 lema, tema|]</span> de "Sufragio Efectivo <span style="background-color: black;color:pink;">[|12 y|]</span> No Reelección", <span style="background-color: black;color:pink;">[|13 ultrajando así la fe, la causa, la justicia, ultrajando la fe, la causa, la justicia, ultrajando así la fe, la justicia|]</span> y las libertades del pueblo; teniendo en consideración: que ese hombre a que nos referimos es don Francisco I. Madero, el mismo que inició la precitada revolución, <span style="background-color: black;color:pink;">[|14 el cual , el que|]</span> impuso por <span style="background-color: black;color:pink;">[|15 norma , norma gubernativa|]</span> su voluntad e influencia al gobierno provisional del ex presidente de la república <span style="background-color: black;color:pink;">[|16 licenciado don Francisco , licenciado Francisco|]</span> L. de la Barra, <span style="background-color: black;color:pink;">[|17 por haberle aclamado el pueblo su libertador,|]</span><span style="background-color: black;color:pink;">[|18 causando con este hecho reiterados derramamientos de sangre,****y multiplicadas desgracias a la patria, causando desgracias a la patria|]</span> de una manera solapada y ridícula, no teniendo otras miras que satisfacer sus ambiciones personales, sus desmedidos instintos de tirano y su profundo desacato al cumplimiento de las leyes preexistentes emanadas del inmortal Código <span style="background-color: black;color:pink;">[|19 de, del|]</span> 57 escrito con <span style="background-color: black;color:pink;">[|20 la sangre de los revolucionarios, sangre revolucionaria|]</span>  de Ayutla; teniendo <span style="background-color: black;color:pink;">[|21 en consideración , en cuenta|]</span>: que el llamado jefe de la revolución libertadora de México, don Francisco I. Madero<span style="background-color: black;color:pink;">[|22 , por falta de entereza y debilidad suya, por falta de entereza y debilidad suma|]</span>, no llevó a feliz término la revolución que gloriosamente inició con el apoyo de Dios y del pueblo, puesto que dejó en pie la mayoría <span style="background-color: black;color:pink;">[|23 de, de los|]</span> poderes gubernativos y elementos corrompidos de opresión del gobierno dictatorial de Porfirio Díaz, que no son ni pueden ser <span style="background-color: black;color:pink;">[|24 en manera alguna la legítima, de manera alguna la|]</span> representación <span style="background-color: black;color:pink;">[|25 de la soberanía nacional, ni pueden ser de manera alguna la soberanía|]</span>, y <span style="background-color: black;color:pink;">[|26 que por ser acérrimos adversarios, que por ser adversarios|]</span> nuestros, y de los principios que hasta hoy defendemos, están provocando el malestar del país y abriendo nuevas heridas al seno de la patria para darle a beber su propia sangre; <span style="background-color: black;color:pink;">[|27 teniendo en consideración, teniendo también en cuesta, teniendo también en cuenta|]</span>: que el supradicho <span style="background-color: black;color:pink;">[|28 señor Francisco I. Madero, señor Madero|]</span>, <span style="background-color: black;color:pink;">[|29 actual, actualmente|]</span> presidente de la república, trata de eludirse del cumplimiento de las promesas que hizo a la nación en el Plan de San Luis Potosí, <span style="background-color: black;color:pink;">[|30 ciñendo, siendo|]</span> las precitadas promesas a los convenios de Ciudad Juárez, ya nulificando, <span style="background-color: black;color:pink;">[|31 persiguiendo, encarcelando|]</span> o matando a los elementos revolucionarios que le ayudaron <span style="background-color: black;color:pink;">[|32 a que ocupara, a que venciera para|]</span> el alto puesto de presidente de la república por medio <span style="background-color: black;color:pink;">[|33 de sus falsas, de falsas|]</span> promesas <span style="background-color: black;color:pink;">[|34 e, y numerosas|]</span> intrigas a la nación; teniendo en consideración: que el tantas veces <span style="background-color: black;color:pink;">[|35 repetido señor, repetido señor don, repetido|]</span> Francisco I. Madero ha tratado de <span style="background-color: black;color:pink;">[|36 ocultar, acallar|]</span> con la fuerza bruta de las bayonetas y <span style="background-color: black;color:pink;">[|37 de ahogar, y ahogar|]</span> en sangre a los pueblos que le piden, solicitan o exigen el cumplimiento de <span style="background-color: black;color:pink;">[|38 sus, las|]</span> promesas <span style="background-color: black;color:pink;">[|39 en, de|]</span> la revolución llamándolos bandidos y rebeldes, <span style="background-color: black;color:pink;">[|40 condenando, condenándolos|]</span> a una guerra de exterminio sin conceder ni otorgar ninguna de las garantías que prescriben la razón, la justicia y la ley; <span style="background-color: black;color:pink;">[|41 teniendo, teniendo igualmente|]</span> en consideración: que el presidente de la república <span style="background-color: black;color:pink;">[|42 Francisco I. Madero, señor don Francisco I. Madero|]</span> ha hecho del sufragio efectivo una sangrienta burla al pueblo, <span style="background-color: black;color:pink;">[|43 ya imponiendo, y imponiendo|]</span> contra la voluntad del mismo pueblo <span style="background-color: black;color:pink;">[|44 en, con|]</span> la vicepresidencia de la república al licenciado José María Pino Suárez, <span style="background-color: black;color:pink;">[|45 o ya a, ya, o ya los|]</span>  los gobernadores de los estados designados por él, como el llamado general Ambrosio Figueroa, verdugo y tirano del pueblo de Morelos, <span style="background-color: black;color:pink;">[|46 ya, y así|]</span> entrando en contubernio escandaloso con el partido científico, hacendados feudales y caciques opresores, enemigos de la revolución proclamada por él a fin de forjar nuevas cadenas, y <span style="background-color: black;color:pink;">[|47 de seguir, seguir|]</span> el molde de una nueva dictadura, más oprobiosa y más terrible que la de Porfirio Díaz, pues ha sido claro y patente que ha ultrajado la soberanía de los estados, <span style="background-color: black;color:pink;">[|48 conculcando, consultando|]</span> las leyes sin ningún respeto a vidas <span style="background-color: black;color:pink;">[|49 e, ni|]</span> intereses, como ha sucedido en el estado de Morelos y otros, conduciéndonos a la más horrorosa anarquía que registra la historia contemporánea; por estas consideraciones, declaramos al susodicho Francisco I. Madero inepto para realizar las promesas de la revolución de que fue autor<span style="background-color: black;color:pink;">[|50 (vacio), por haber traicionado los principios con los cuales burló la fe del pueblo, y pudo haber escalado el poder, por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder, por haber traicionado los principios con los cuales burló la voluntad del pueblo, y pudo escalar el poder|]</span>, <span style="background-color: black;color:pink;">[|52 (, incapaz), de que fue autor, incapaz|]</span> <span style="background-color: black;color:pink;">[|53 para gobernante, para gobernar|]</span> por no tener ningún respeto a la ley y a la justicia de los pueblos, y traidor a la patria por estar a sangre y fuego humillando a los mexicanos que desean <span style="background-color: black;color:pink;">[|54 sus libertades, libertades|]</span>, <span style="background-color: black;color:pink;">[|55 por, a fin de|]</span> complacer a los científicos, hacendados y caciques que nos esclavizan, y desde hoy comenzamos a continuar la revolución principiada por él, hasta conseguir el derrocamiento de los poderes dictatoriales que existen.<br><br>
+
+            2°. Se desconoce como jefe de la revolución <span style="background-color: black;color:pink;">[|56 al ciudadano, al señor|]</span> Francisco I. Madero y como presidente de la república por las razones <span style="background-color: black;color:pink;">[|57 que antes se expresan, que antes expresan|]</span>, <span style="background-color: black;color:pink;">[|58 procurando, procurándose|]</span> <span style="background-color: black;color:pink;">[|59 el derrumbamiento, el derrocamiento|]</span> de este funcionario.<br><br>
+            
+            3°. Se reconoce como jefe de la revolución libertadora al <span style="background-color: black;color:pink;">[|60 ilustre, ilustre ciudadano|]</span> general Pascual Orozco, segundo del caudillo don Francisco I. Madero, <span style="background-color: black;color:pink;">[|61 y en caso, en caso|]</span> de que no acepte este delicado puesto, se reconocerá como jefe de la revolución al ciudadano <span style="background-color: black;color:pink;">[|62 general, general don|]</span> Emiliano Zapata.<br><br>
+
+            4°. La junta revolucionaria del estado de Morelos manifiesta a la nación bajo formal protesta: que hace suyo el Plan de San Luis Potosí con las adiciones que a continuación se expresan en beneficio de los pueblos oprimidos, y se hará defensora de los principios que defiende hasta vencer o morir.<br><br>
+
+            5°. La junta revolucionaria del estado de Morelos no admitirá transacciones ni componendas <span style="background-color: black;color:pink;">[|63 políticas hasta, hasta|]</span> no conseguir el <span style="background-color: black;color:pink;">[|64 derrumbamiento, derrocamiento|]</span> de los <span style="background-color: black;color:pink;">[|65 elementos dictatoriales, dictatoriales|]</span> de <span style="background-color: black;color:pink;">[|66 Porfirio Díaz y don Francisco I. Madero, Díaz y Francisco, Porfirio Díaz y de Francisco I. Madero|]</span> pues la nación está cansada de hombres <span style="background-color: black;color:pink;">[|67 falaces, falsos|]</span> y traidores que hacen <span style="background-color: black;color:pink;">[|68 promesas de, promesas como|]</span> libertadores <span style="background-color: black;color:pink;">[|69 pero que llegando, y que al llegar|]</span> al poder se olvidan de ellas y se constituyen en tiranos.<br><br>
+
+            6°. Como parte adicional del plan que invocamos, <span style="background-color: black;color:pink;">[|70 hacemos, y hacemos|]</span> constar que los terrenos, montes y aguas que hayan usurpado los hacendados, científicos o caciques <span style="background-color: black;color:pink;">[|71 a la sombra de la tiranía y de la justicia venal, a la sombra de la tiranía y de la justicia actual, a la sombra de la justicia venal|]</span> entrarán en posesión de <span style="background-color: black;color:pink;">[|72 estos, esos|]</span> bienes inmuebles desde luego los pueblos o ciudadanos que tengan sus títulos correspondientes <span style="background-color: black;color:pink;">[|73 de esas, a esas|]</span> propiedades, de las cuales han sido despojados por la mala fe de nuestros opresores, manteniendo a todo trance con las armas en la mano la mencionada posesión, y los usurpadores que se <span style="background-color: black;color:pink;">[|74 consideren , crean|]</span> con derecho a ellos, lo deducirán <span style="background-color: black;color:pink;">[|75 ante, ante los|]</span> tribunales especiales que se establezcan <span style="background-color: black;color:pink;">[|76 al, con el|]</span> triunfo de la revolución.<br><br>
+
+            7°. En virtud de que la inmensa mayoría de los pueblos y ciudadanos mexicanos, no son más dueños que del terreno que pisan, sufriendo los horrores de la miseria sin poder <span style="background-color: black;color:pink;">[|77 mejorar, mejorar en nada|]</span> su condición social ni poder dedicarse a la industria o a la agricultura por estar monopolizados en unas cuantas manos las tierras, montes y aguas; por esta causa se expropiarán previa indemnización de la tercera parte de esos monopolios <span style="background-color: black;color:pink;">[|78 a los, de los|]</span>  poderosos propietarios de <span style="background-color: black;color:pink;">[|79 ellas, ellos|]</span> a fin de que los pueblos y ciudadanos de México obtengan ejidos, colonias, <span style="background-color: black;color:pink;">[|80 fundos fondos|]</span> legales para pueblos o campos de sembradura o de labor, y se mejore en todo y para todo la falta de prosperidad y bienestar de los mexicanos.<br><br>
+
+            8°. Los hacendados, científicos o caciques que se opongan directa o indirectamente al presente plan, se nacionalizarán sus bienes y las dos terceras partes que a ellos <span style="background-color: black;color:pink;">[|81 les correspondan, les corresponde|]</span> se destinarán para indemnizaciones de guerra, pensiones de viudas y huérfanos de las víctimas que sucumban en la lucha del presente plan.<br><br>
+
+            9°. Para <span style="background-color: black;color:pink;">[|82 ajustar, ejecutar|]</span> los procedimientos respecto a los bienes antes mencionados, se aplicarán <span style="background-color: black;color:pink;">[|83 leyes, las leyes|]</span> de <span style="background-color: black;color:pink;">[|84 desamortización, amortización|]</span> y nacionalización según convenga; <span style="background-color: black;color:pink;">[|85 de norma y ejemplo pueden servir, puede servir de norma y ejemplo, pueden servirnos|]</span> las puestas en vigor por el inmortal Juárez a los bienes eclesiásticos que escarmentaron <span style="background-color: black;color:pink;">[|86 a los déspotas, los déspotas|]</span> y conservadores, <span style="background-color: black;color:pink;">[|87 que en todo tiempo, que|]</span> han pretendido imponernos el yugo ignominioso de la opresión <span style="background-color: black;color:pink;">[|88 y del, y el|]</span> retroceso.<br><br>
+
+            10°. Los jefes militares insurgentes de la república, que se levantaron con las armas en la mano a la voz de don Francisco I. Madero para defender el Plan de San Luis Potosí y que <span style="background-color: black;color:pink;">[|89 ahora se opongan,  se opongan|]</span> con fuerza armada al presente plan, se juzgarán traidores a la causa que defendieron <span style="background-color: black;color:pink;">[|90 y a la patria, a la patria|]</span>, puesto que en la actualidad muchos de ellos por complacer a los tiranos, por un puñado de monedas, o por cohecho o soborno, están derramando la sangre de sus hermanos que reclaman el cumplimiento de las promesas que hizo a la nación don Francisco I. Madero.<br><br>
+
+            11°. Los gastos de guerra serán tomados conforme <span style="background-color: black;color:pink;">[|91 a lo que prescribe el artículo XI, al artículo 11, artículo XI|]</span> del Plan de San Luis Potosí, y todos los procedimientos empleados en la revolución que emprendemos, serán conforme a las instrucciones mismas que determine el mencionado plan.<br><br>
+
+            12°. Una vez triunfante la revolución <span style="background-color: black;color:pink;">[|92 que hemos llevado, que llevamos|]</span> a la vía de la realidad, una junta de los principales jefes revolucionarios de los diferentes estados, <span style="background-color: black;color:pink;">[|93 nombrarán o designarán, nombrará o designará|]</span> un presidente interino de la república<span style="background-color: black;color:pink;">[|94 que convocará a elecciones, quien convocará a elecciones, quien convocará a elecciones para la organización de los poderes federales, quien convocará a elecciones para la nueva formación del Congreso de la Unión, y éste a la vez convocará a elecciones para la organización de los demás poderes federales|]</span>.<br><br>
+
+            13.° Los principales jefes revolucionarios de cada estado en junta designarán <span style="background-color: black;color:pink;">[|95 el, al|]</span> gobernador provisional del estado a que correspondan, y este elevado funcionario convocará a elecciones para la debida organización de los poderes públicos, con el objeto de evitar consignas <span style="background-color: black;color:pink;">[|96 forzosas que labran la desdicha, forzadas que labran la desdicha|]</span> de los pueblos, como la tan conocida consigna de Ambrosio Figueroa en el estado de Morelos, <span style="background-color: black;color:pink;">[|97 y otras que nos conducen, y otros que nos condenan|]</span> al precipicio de conflictos sangrientos sostenidos por el capricho del dictador Madero y el círculo de científicos y hacendados que <span style="background-color: black;color:pink;">[|98 lo han, los han|]</span>  sugestionado.<br><br>
+
+            14°. Si el presidente Madero y demás elementos dictatoriales, del actual y antiguo régimen desean evitar <span style="background-color: black;color:pink;">[|99 inmensas, las inmensas|]</span> desgracias que afligen a la patria<span style="background-color: black;color:pink;">[|100 y poseen verdaderos sentimientos, y poseen verdaderos sentimientos de amor hacia ella|]</span>, que hagan inmediata <span style="background-color: black;color:pink;">[|101 la|]</span> renuncia de los puestos que ocupan y con eso, en algo restañarán las graves heridas que han abierto al seno de la patria; pues <span style="background-color: black;color:pink;">[|102 que de no, de no|]</span> hacerlo así, sobre sus cabezas caerá <span style="background-color: black;color:pink;">[|103 la sangre derramada, la sangre y anatema|]</span> de nuestros hermanos<span style="background-color: black;color:pink;">[|104 . O _,_y|]</span><br><br>
+
+            15°. Mexicanos: considerad que la astucia <span style="background-color: black;color:pink;">[|105 y la mala fe, y mala fe|]</span> de un hombre está derramando sangre de una manera escandalosa por ser incapaz para gobernar; considerad, que su sistema de gobierno está agarrotando a la patria y hollando con la fuerza bruta de las bayonetas nuestras instituciones; y así como nuestras armas las levantamos para elevarlo al poder, <span style="background-color: black;color:pink;">[|106 las volvemos, ahora las volvemos|]</span> contra él por faltar a sus compromisos con el pueblo mexicano y haber traicionado <span style="background-color: black;color:pink;">[|107 la, a la|]</span> revolución iniciada por él: no somos personalistas, <span style="background-color: black;color:pink;">[|108 ¡somos partidarios de los principios y no de los hombres!, somos partidarios de los principios y no de los hombres|]</span><br><br>
+
+            Pueblo mexicano: apoyad con las armas en la mano este plan, y haréis la prosperidad y bienestar de la patria.<br></br>
+
+
+            <span style="background-color: black;color:pink;">[|109 Libertad, |]</span>Justicia y Ley.<br></br>Ayala, noviembre <span style="background-color: black;color:pink;">[|110 28, 25|]</span> de 1911.<br><br><br>
+
+
+            Rúbricas:<br><br><br>
+
+            <span style="background-color: black;color:pink;">[|111!
+            
+            General en jefe: Emiliano Zapata; Generales: José F. Ruiz, O. E. Montaño, Francisco Mendoza, Jesús Morales, Eufemio Zapata, Próculo Capistrán; Coroneles: Agustín Cázares, Rafael Sánchez, Cristóbal Domínguez, Santiago Aguilar (sin rango), Feliciano Domínguez, Fermín Omaña, Pedro Salazar, Jesús Sánchez, Felipe Vaquero, Cleotilde Sosa, José Ortega, Julio Tapia, Alfonso Morales (teniente coronel), Gonzalo Aldapes, Manuel Vergara, Santiago Aguilar, Amador Salazar, Cesario Burgos, Pedro Salazar, Lauro Sánchez, Quintín González, Francisco Caspeta, Petronilo Campos; Capitanes: Manuel Hernández, José Pineda, Ambrosio López, Apolinar Adorno, José Villanueva, Porfirio Casarez, Antonio Gutiérrez, Pedro Valvuena Huertero, Odilón Neri, Catarino Vergara, Arturo Pérez, Margarito Camacho, Teófilo Galindo, Felipe Torres, José Ma. Carrillo, Simón Gebara, Agustín Ortiz (capitán primero), Jesús Escamilla, Abelino Cortés, José Estudillo, Francisco Galarza, Serafín Rivera (capitán segundo); Alberto Blumenkron (teniente); L. Franco (secretario).<br><br>
+
+            Gildardo Magaña, General de División del Ejército Nacional, certifica: que este documento es auténtico o sea uno de los pocos originales que se firmaron en la época que fue proclamado.<br><br>
+
+            México, DF, 10 de noviembre de 1926.<br>
+
+            Rúbrica.-Gildardo Magaña,<br><br> 
+
+            (&lt;=antes corchete!   Generales: Emiliano Zapata, José F.  Ruiz, O. E. Montaño, Francisco Mendoza, Jesús Morales, Eufemio Zapata, Próculo Capistrán; Coroneles: Emigdio L. Marmolejo, Pioquinto Galis, Clotilde Sosa, Julio Tapia, Manuel Vergara, Santiago Aguilar; Capitanes: Manuel Hernández, José Pineda, Ambrosio López, Apolinar Adorno, José Villanueva, Porfirio Casarez, Antonio Gutiérrez, Pedro Valvuena Huertero, Odilón Neri, Arturo Pérez,  Catarino Vergara, Florentino Osorio, Camerino Menchaca, Juan Esteves (capitán primero), Margarito Camacho, Teófilo Galindo, Felipe Torres, José Ma. Carrillo, Simón Gebara, Agustín Ortiz, Jesús Escamilla, Abelino Cortés, Francisco Mercado, Sotero Guzmán, Melesio Rodríguez, Gregorio García (capitán primero), Serafín Rivera (capitán segundo); L. Franco (secretario).<br><br>
+            Quitado el día ocho de enero de 1912 a los zapatistas capitaneados por “El Tuerto Morales”, Próculo Capistrán y Francisco Mendoza, que estaban posesionados del pueblo de Tejalpa-Acatlán, Pue. Los zapatistas eran poco más de 600 hombres y los defensores del Gobierno, a mis órdenes, fueron 120 hombres del 16o. Cuerpo Rural. Los zapatistas tuvieron: 19 muertos en combate y 4 fusilados, de entre los 22 prisioneros que les tomé. Mandé fusilar a esos 4 hombres por haber incendiado varias casas de comercio, en Tehuitzingo, entre ellas, la de Don Margarito García que se negó a darles 100 pesos que le exigían. El parte dado a la Secretaría de Guerra fue hecho por el señor general Don Rafael Eguía Liz, a quien entregué un gran botín de guerra quitado a los bandidos del Sur. Agustín del Pozo.   =&gt;antes corchete!),<br><br>
+
+            General en Jefe: Emiliano Zapata; Generales: Eufemio Zapata, Francisco Mendoza, Jesús Morales, Jesús Navarro, Otilio E. Montaño, José Trinidad Ruiz, Próculo Capistrán; Coroneles: Felipe Vaquero Cesáreo Burgos, Quintín González, Pedro Salazar, Simón Rojas, Emigdio Marmolejo, José Campos, Pioquinto Galis, Felipe Tejera, Rafael Sánchez, José Pérez, Santiago Aguilar, Margarito Martínez, Feliciano Domínguez, Manuel Vergara, Cruz Salazar, Lauro Sánchez, Amador Salazar, Lorenzo Vázquez, Catarino Perdomo, Jesús Sánchez, Domingo Romero, Zacarías Torres, Bonifacio García, Daniel Andrade, Ponciano Domínguez, Jesús Capistrán; Capitanes: Daniel Mantilla, José M. Carrillo, Francisco Alarcón, Severiano Gutiérrez; Siguen más firmas.<br><br>
+
+            Es copia fiel sacada de su original. Campamento en las Montañas de Puebla, Diciembre 11 de 1911. El General en Jefe, Emiliano Zapata. Rúbrica., General en Jefe: Emiliano Zapata; Generales: Eufemio Zapata, Francisco Mendoza, Jesús Morales, Jesús Navarro, Otilio E. Montaño, José Trinidad Ruiz, Próculo Capistrán; Coroneles: Felipe Vaquero Cesáreo Burgos, Quintín González, Pedro Salazar, Simón Rojas, Emigdio Marmolejo, José Campos, Pioquinto Galis, Felipe Tejera, Rafael Sánchez, José Pérez, Santiago Aguilar, Margarito Martínez, Feliciano Domínguez, Manuel Vergara, Cruz Salazar, Lauro Sánchez, Amador Salazar, Lorenzo Vázquez, Catarino Perdomo, Jesús Sánchez, Domingo Romero, Zacarías Torres, Bonifacio García, Daniel Andrade, Ponciano Domínguez, Jesús Capistrán; Capitanes: Daniel Mantilla, José M. Carrillo, Francisco Alarcón, Severiano Gutiérrez; y siguen más firmas.<br><br>
+
+            Es copia fiel sacada de su original. Campamento de las Montañas de Puebla, Diciembre 11 de 1911. El General en Jefe, Emiliano Zapata. Rúbrica.|]</span>
+            ` */
+
+        </script>
+    
+
+    </body></html>
