@@ -223,11 +223,12 @@ nav { /*alinea texto en navbar*/
 
 /* //general placement stuffs */
 .input-group.with-icon>img {
-  -webkit-transform: translate(-2vw, -16px);
-  -ms-transform: translate(-2vw, -16px);
-  transform: translate(-2vw, -16px);
+  /* -webkit-transform: translate(-1vw, -225px);
+  -ms-transform: translate(-1vw, -225px);
+  transform: translate(-1.5vw, 0px); */
   pointer-events: none;
   position: relative;
+  width: 16px;
   z-index: 3;
   top: 0%; 
 }
