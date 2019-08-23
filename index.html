@@ -26,7 +26,7 @@
 
 <!-- Inicio Landing -->
 
-    <div id="landing" class="intro  p-0 m-0" style="background-image: url(recursos/img/villa_a_caballo.jpg); 
+    <div id="landing" class="intro  p-0 m-0" style=" url(http://static.jsbin.com/images/jsbin_static.png);
         overflow:hidden ; background-position: center center; background-repeat: no-repeat; background-size: cover; ">
 
         <div class="col-12 pt-3 pl-3" style="z-index: 1;">
@@ -55,7 +55,41 @@
     </div>
    
 <!--Fin Landing -->
+    <script type="text/javascript">
+        // $(function() {
+        // var landing = $('#landing');
+        // var backgrounds = ['url(recursos/img/revolucion_1.jpg)', 'url(recursos/img/revolucion_1.jpg)'];
+        // var current = 0;
 
+        // function nextBackground() {
+        // landing.css(
+        // 'background',
+        //     backgrounds[current = ++current % backgrounds.length]
+        // );
+
+        // setTimeout(nextBackground, 5000);
+        // }
+        // setTimeout(nextBackground, 5000);
+        // landing.css('background', backgrounds[0]);
+        // });
+        $(function() {
+        var body = $('body');
+        var backgrounds = ['url(http://static.jsbin.com/images/jsbin_static.png)', 'url(http://static.jsbin.com/images/popout.png)'];
+        var current = 0;
+
+        function nextBackground() {
+        body.css(
+        'background',
+            backgrounds[current = ++current % backgrounds.length]
+        );
+
+        setTimeout(nextBackground, 5000);
+        }
+        setTimeout(nextBackground, 5000);
+        body.css('background', backgrounds[0]);
+        });
+    </script>
+    
 
 <!-- ancla home -->
     
