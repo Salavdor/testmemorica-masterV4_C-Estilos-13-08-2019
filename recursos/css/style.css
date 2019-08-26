@@ -99,6 +99,7 @@ a:hover {
   width: 600px;
   box-shadow:0 0 0 9999px rgba(0,12,19,0.98);
   box-sizing: border-box;
+  filter: blur(1px);
 }
 
 .circulo_buscador{
@@ -144,6 +145,8 @@ a:hover {
   width: 100%;
   height: 100%;
   display: grid;
+  
+  transition: 1s linear;
 }
 
 .logo_landing {
@@ -1109,10 +1112,10 @@ footer a {
   display: flex;
 }
 
-
 .intro {
   width: 100%;
   height: 100%;
+  overflow:hidden ; 
 }
 
 .logo_landing {

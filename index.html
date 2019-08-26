@@ -465,27 +465,30 @@
             run();
     </script>
     
-    <!--Fin Landing -->
+    <!--Cambio de foto Landing -->
     <script type="text/javascript">
         
         $(function() {
         var landing = $('#landing');
-        var backgrounds = ['url(recursos/img/revolucion_1.jpg)', 'url(recursos/img/revolucion_2.jpg)','url(recursos/img/villa_a_caballo.jpg)'];
+        var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)','url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'];
         var current = 0;
 
         function nextBackground() {
-        landing.css(
-        'background',
+        landing.css( 
+            'background',
             backgrounds[current = ++current % backgrounds.length]
         );
+        landing.css('background-size', 'cover');
         setTimeout(nextBackground, 5000);
         }
         setTimeout(nextBackground, 5000);
         landing.css('background', backgrounds[0]);
+        landing.css('background-size', 'cover');
+
         });
 
     </script>
-
+   
 
 </body>
 
