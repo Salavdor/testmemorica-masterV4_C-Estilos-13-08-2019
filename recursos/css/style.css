@@ -1235,6 +1235,13 @@ button {
 
 /*Incorporado por Mauro para pagina contacto - fin*/
 
+/*Incorporado por Mauro para destacados Inicio*/
+
+.destacado{
+  border: 3px solid  #092834;
+  
+}
+
 footer a:hover {
   text-decoration: none;
   color: #347B98;
