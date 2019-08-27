@@ -383,14 +383,14 @@
                 scale: 0
             }
             });
-            TweenLite.to(tracker, .5, {
+            TweenLite.to(tracker, .3, {
             left: e.pageX - 300,
             top: e.pageY - 500,
             'border': '4px solid hsl(220, 58%, 85%)'
             });
         }
         else {   
-            TweenLite.to(trackerAfterRule, .3, {
+            TweenLite.to(trackerAfterRule, 5, {
             cssRule: {
                 scale: 1
             }
@@ -470,7 +470,7 @@
         
         $(function() {
         var landing = $('#landing');
-        var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)','url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'];
+        var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)','url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)'];
         var current = 0;
 
         function nextBackground() {
