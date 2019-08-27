@@ -246,20 +246,23 @@ padding-right: 1.7rem;
 	     menu de secciones 
 -----------------------------*/
 
-div.botones-pestañas { /*aplica la linea superior del menu y controla el alto*/
+div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
   border-top: 1px solid #092834;
   min-height: 45px;
 }
 
-.botones-pestañas a { /*estilo de botones*/
+.botones-pestanas a { /*estilo de botones*/
   font-family: 'MerriweatherSans-Bold';
   color: #092834;
   font-size: 15px;
 }
 
-.botones-pestañas a:hover {/*estilo boton sobre*/
+.botones-pestanas a:hover,
+.botones-pestanas a:active {
+  /*estilo boton sobre*/
   border-top: 3px solid #FF026A;
 }
+
 
 
 /*-------------------------------Pagina de resultados-------------------------------*/
@@ -893,11 +896,6 @@ p.card-text {
   color: #092834;
 }
 
-.memoria-titulo h1 { /*títulos para secciones, cuidar que no choque con el de memo*/
-  font-family: 'MerriweatherSans-Bold';
-  font-size: 19px;
-}
-
 .card-title { /*subtítulos de sección*/
   font-family: 'MerriweatherSans-Bold';
   font-size: 18px;
@@ -1005,6 +1003,15 @@ para la cédula
     url('./Type/fontello/font/fontello.svg?46998757#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+.icon-compartir {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  color: #347B98;
+  font-size: 170%;
 }
 
 .demo-icon {
@@ -1286,7 +1293,7 @@ div.memoria-timeline {
   /*Tamaño preliminar*/
 }
 
-div.memoria-pestañas {
+div.memoria-pestanas {
   /*Tamaño preliminar*/
   position: sticky;
   top: 156px;
