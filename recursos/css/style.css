@@ -85,7 +85,7 @@ a:hover {
   top: calc(50vh - 75%);
   left: calc(50vw - 307px);
   border-radius: 50%;
-  opacity: .98;
+  /* opacity: .98; */
   pointer-events: none;
   box-sizing: border-box;
 }
@@ -95,11 +95,27 @@ a:hover {
   top: 0;
   left: 0;
   border-radius: 50%;
-  height: 600px;
-  width: 600px;
   box-shadow:0 0 0 9999px rgba(0,12,19,0.98);
   box-sizing: border-box;
+  filter: blur(1px);
 }
+@media(min-width: 400px){
+  #tracker:after{
+    height: 600px;
+    width: 600px;
+  }
+}
+
+@media(max-width: 399px){
+  #tracker:after{
+    height: 400px;
+    width: 400px;
+  }
+}
+
+
+
+
 
 .circulo_buscador{
   z-index:3; 
@@ -114,17 +130,7 @@ a:hover {
 }
 
 
-/* @media (min-width: 518px) {
-  .circulo_buscador {
-    top: 20px;
-  }
-}
-@media (max-width: 519px) {
-  .circulo_buscador {
-    position: relative;
-   
-  }
-} */
+
 
 #bloque{
   display: table-cell;
@@ -137,12 +143,13 @@ a:hover {
   text-align: center;
   color: rgba(246, 247, 248,1 );
   background-color:  rgba(0,12,19,0);
-  border-color: rgba(0,12,19,0);
+  border-color: 1px solid #FFF;
 }
 
 .inputbuscador2::placeholder {
   font-family: 'MerriweatherSans-Regular';
   color: #fff;
+  border-color: 1px solid #FFF;
 }
  
 .flex {
@@ -154,6 +161,8 @@ a:hover {
   width: 100%;
   height: 100%;
   display: grid;
+  
+  transition: 1s linear;
 }
 
 .logo_landing {
@@ -226,6 +235,30 @@ nav { /*alinea texto en navbar*/
 
 .fila-centrada {/*forza al input alargarse para compensar el ancho*/
   width: 100%;
+}
+
+/* //hide nasty ie clear thingie */
+.input-group.with-icon>input::-ms-clear{display:none}
+
+/* //general placement stuffs */
+.input-group.with-icon>img {
+  /* -webkit-transform: translate(-1vw, -225px);
+  -ms-transform: translate(-1vw, -225px);
+  transform: translate(-1.5vw, 0px); */
+  pointer-events: none;
+  position: relative;
+  width: 16px;
+  z-index: 3;
+  top: 0%; 
+}
+/* //icon right (default) */
+.input-group.with-icon>img,
+.input-group.with-icon.icon-right>img{
+right: .7rem;
+}
+.input-group.with-icon>input,
+.input-group.with-icon.icon-right>input {
+padding-right: 1.7rem;
 }
 
 /*----------------------------
@@ -1095,10 +1128,10 @@ footer a {
   display: flex;
 }
 
-
 .intro {
   width: 100%;
   height: 100%;
+  overflow:hidden ; 
 }
 
 .logo_landing {

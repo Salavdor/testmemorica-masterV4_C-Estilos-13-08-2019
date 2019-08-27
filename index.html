@@ -26,22 +26,22 @@
 
 <!-- Inicio Landing -->
 
-    <div id="landing" class="intro  p-0 m-0" style="background-image: url(recursos/img/villa_a_caballo.jpg); 
+    <div id="landing" class="intro  p-0 m-0" style="
         overflow:hidden ; background-position: center center; background-repeat: no-repeat; background-size: cover; ">
 
-        <div class="col-12 pt-3 pl-3" style="z-index: 1;">
+        <div class="col-12 pt-4 pl-5" style="z-index: 1;">
             <img src="recursos/img/Logos/logo_memorica_bl.svg" height="50"/>
         </div>
 
         <div class="col-12 d-flex align-items-center justify-content-center" style="height: 100%;">
             <div id="tracker"></div>
-            <div class="col-0 col-sm-3 "></div>
-            <div class="col-12 col-sm-6 d-flex justify-content-center circulo_buscador">
-                <form class="form" action="resultados.html" style="position: relative; top:220px;">
-                    <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador2" type="text" placeholder="México, haz memoria" aria-label="Search">
+            <div class="col-1 col-sm-3 "></div>
+            <div class="col-10 col-sm-6 d-flex justify-content-center circulo_buscador">
+                <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html" style="position: relative; top:220px;">
+                    <input id="usersSearch" class="form-control rounded-pill  inputbuscador2" type="text" placeholder="México, haz memoria" aria-label="Search" style="max-width: 400px;">
                 </form>
             </div>
-            <div class="col-0 col-sm-3"></div>
+            <div class="col-1 col-sm-3"></div>
         </div>
 
         <div class="row d-flex justify-content-center">
@@ -53,8 +53,8 @@
            
     </div>
    
-<!--Fin Landing -->
 
+    
 
 <!-- ancla home -->
     
@@ -62,6 +62,8 @@
     <header>
 
         <div id="home" class="ancla flex"></div>
+
+        
 
         <!-- Barra de navegación -->
         <div class="barra-superior"></div>
@@ -88,10 +90,11 @@
                     <div class="row fila-centrada m-0 ">
                         <div class="col-3 col-sm-4"></div>
                         <div class="col-6 col-sm-4 align-self-center">
-                            <form class="form" action="resultados.html">
+                            <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html">
                                 <input id="usersSearch"
                                     class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text"
                                     placeholder="México, haz memoria" aria-label="Buscador">
+                                    <img src="/recursos/img/Logos/lupita.svg" alt="lupa" style="left: -22px">    
                             </form>
                         </div>
                         <div class="col-3 col-sm-4"></div>
@@ -125,9 +128,9 @@
             <div class="row fila-centrada ">
                 <div class="col-0 col-sm-3"></div>
                 <div class="col-12 col-sm-6 align-self-center">
-                    <form class="form" action="resultados.html">
-                        <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador"
-                            type="text" placeholder="México, haz memoria" aria-label="Search">
+                    <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html">
+                        <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text" placeholder="México, haz memoria" aria-label="Search">
+                        <img src="/recursos/img/Logos/lupita.svg" alt="lupa" style="left: -22px">
                     </form>
                 </div>
                 <div class="col-0 col-sm-3"></div>
@@ -139,7 +142,6 @@
 
     <main style="z-index: 1000; background-color: #fff;">
         <div class="container px-2 px-md-0">
-
             <div class="row px-3 px-md-0">
 
                 <div class="col-0 col-sm-0 col-lg-2 col-xl-1 ">
@@ -369,40 +371,134 @@
     <!-- <script  src="./script.js"></script> -->
     <script type="text/javascript">
         
-        var tracker = document.getElementById("tracker");
+        // var tracker = document.getElementById("tracker");
         var trackerAfterRule = CSSRulePlugin.getRule("#tracker:after");
-        var btnIsHovered = false;
+        // var btnIsHovered = false;
 
         document.querySelector(".intro").onmousemove = function(e) {
-        if(btnIsHovered) {
-            TweenLite.to(trackerAfterRule, .4, {
-            cssRule: {
-                scale: 0
-            }
-            });
-            TweenLite.to(tracker, .5, {
-            left: e.pageX - 300,
-            top: e.pageY - 500,
-            'border': '4px solid hsl(220, 58%, 85%)'
-            });
-        }
-        else {   
-            TweenLite.to(trackerAfterRule, .3, {
-            cssRule: {
-                scale: 1
-            }
-            });
+            // TweenLite.to(trackerAfterRule, 5, {
+            // cssRule: {
+            //     scale: 1
+            // }
+            // });
             TweenLite.to(tracker, .5, {
             left: e.pageX - 300,
             top: e.pageY - 500,
             'border': '4px solid transparent'
             });
-        }
+        // if(btnIsHovered) {
+            // TweenLite.to(trackerAfterRule, .4, {
+            // cssRule: {
+            //     scale: 0
+            // }
+            // });
+            // TweenLite.to(tracker, .3, {
+
+            // left: e.pageX - 300,
+            // top: e.pageY - 500,
+            // 'border': '4px solid hsl(220, 58%, 85%)'
+            // });
+        // }
+        // else {   
+        //     TweenLite.to(trackerAfterRule, 5, {
+        //     cssRule: {
+        //         scale: 1
+        //     }
+        //     });
+        //     TweenLite.to(tracker, .5, {
+        //     left: e.pageX - 300,
+        //     top: e.pageY - 500,
+        //     'border': '4px solid transparent'
+        //     });
+        // }
         };
         
     </script>
-    <!-- // Script del flashligth fin -->
+    <!-- Script Animación input  -->
+    <script type="text/javascript">
+                    // Agregar algo al Placeholder
+            function addToPlaceholder(toAdd, el) {
+                el.attr('placeholder', el.attr('placeholder') + toAdd);
+                // Retraso entre frases
+                return new Promise(resolve => setTimeout(resolve, 100));
+            }
 
+            // Limpia el Placeholder al escribir
+            function clearPlaceholder(el) {
+                el.attr("placeholder", "");
+            }
+
+            // Imprime una frase
+            function printPhrase(phrase, el) {
+                return new Promise(resolve => {
+                    // Borra frase antes la siguiente frase
+                    clearPlaceholder(el);
+                    let letters = phrase.split('');
+                    // For each letter in phrase
+                    letters.reduce(
+                        (promise, letter, index) => promise.then(_ => {
+                            // Resolve promise when all letters are typed
+                            if (index === letters.length - 1) {
+                                // Delay before start next phrase "typing"
+                                setTimeout(resolve, 1000);
+                            }
+                            return addToPlaceholder(letter, el);
+                        }),
+                        Promise.resolve()
+                    );
+                });
+            } 
+
+            // Print given phrases to element
+            function printPhrases(phrases, el) {
+                // For each phrase
+                // wait for phrase to be typed
+                // before start typing next
+                phrases.reduce(
+                    (promise, phrase) => promise.then(_ => printPhrase(phrase, el)), 
+                    Promise.resolve()
+                );
+            }
+
+            // Start typing
+            function run() {
+                let phrases = [
+                    "México, haz memoria",
+                    "La Mémorica de México",
+                    "Haz memoria",
+                    "¿Que quieres encontrar?"
+                ];
+
+                printPhrases(phrases, $('#usersSearch'));
+            }
+
+            run();
+    </script>
+    
+    <!--Cambio de foto Landing -->
+    <script type="text/javascript">
+        
+        $(function() {
+        var landing = $('#landing');
+        var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)','url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'];
+        var current = 0;
+
+        function nextBackground() {
+        landing.css( 
+            'background',
+            backgrounds[current = ++current % backgrounds.length]
+        );
+        landing.css('background-size', 'cover');
+        setTimeout(nextBackground, 40000);
+        }
+        setTimeout(nextBackground, 40000);
+        landing.css('background', backgrounds[0]);
+        landing.css('background-size', 'cover');
+
+        });
+
+    </script>
+   
 
 </body>
 
