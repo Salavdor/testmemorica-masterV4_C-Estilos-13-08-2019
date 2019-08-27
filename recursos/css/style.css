@@ -141,15 +141,16 @@ a:hover {
   font-family: 'MerriweatherSans-Regular','Oswald', sans-serif;
   font-size: 25px;
   text-align: center;
+  border: 1px solid #FFF;
   color: rgba(246, 247, 248,1 );
   background-color:  rgba(0,12,19,0);
-  border-color: 1px solid #FFF;
+  
 }
 
 .inputbuscador2::placeholder {
   font-family: 'MerriweatherSans-Regular';
   color: #fff;
-  border-color: 1px solid #FFF;
+  
 }
  
 .flex {
