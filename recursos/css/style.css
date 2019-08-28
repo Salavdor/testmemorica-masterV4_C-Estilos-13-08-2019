@@ -327,6 +327,13 @@ span.facetadorbarradenavegacion {
   padding: 5;
   width: 58px;
 }
+.resultados_pagina:focus {
+  outline: none;
+  outline-width: 0;
+  border-color: #347B98;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 /*----------------------------------------
    Barra Cambio de modo de visualización
@@ -336,6 +343,7 @@ span.facetadorbarradenavegacion {
   font-style: normal;
   font-weight: normal;
   color:#092834;
+  font-size: 20px;
 }
 
 .button-group input {
@@ -708,8 +716,8 @@ span.facetadorbarradenavegacion {
 
 .label_objeto {
   background-color: #092834;
-  width: 42px;
-  height: 60px;
+  width: 34px;
+  height: 55px;
 }
 
 .icono_objetodigital {
@@ -721,7 +729,7 @@ span.facetadorbarradenavegacion {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  font-size: 29px;
+  font-size: 25px;
   color: #347B98;
   background-color: #fff;
 }
@@ -1281,7 +1289,7 @@ button {
 /*Incorporado por Mauro para destacados Inicio*/
 
 .destacado{
-  border: 3px solid  #092834;
+  border: 2px solid  #092834;
   
 }
 
@@ -1369,3 +1377,46 @@ div.memoria-pestanas {
   max-height: 300px;
   overflow-x: hidden;
 }
+
+/* ----------------------------------------- página de objeto mensual (slider) INICIO---------------------------- */
+section {
+	width: 100%;
+	/* margin: 70px auto; */
+   
+}
+
+/* Simple Slider */
+.white-back{
+	/* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+	background: #fff;
+}
+.simple blockquote p {
+  /* margin-top:7%;
+	border-top: 1px solid #ccc; */
+	/* border-bottom: 1px solid #ccc; */
+	color: #01050a;
+	padding: 15px;
+	/* font-size: 1.25em; */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #347b98;
+}
+
+.slick-dots li button:before{
+  color: #163642;
+}
+
+.agrandafoto{
+  max-width: 340px;
+}
+
+
+.agrandafoto:hover{
+  max-width: 380px;
+  transition: 0.1s linear; 
+}
+
+
+
+/* ----------------------------------------- página de objeto mensual (slider) FIN---------------------------- */
