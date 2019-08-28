@@ -327,6 +327,13 @@ span.facetadorbarradenavegacion {
   padding: 5;
   width: 58px;
 }
+.resultados_pagina:focus {
+  outline: none;
+  outline-width: 0;
+  border-color: #347B98;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 /*----------------------------------------
    Barra Cambio de modo de visualización
@@ -336,6 +343,7 @@ span.facetadorbarradenavegacion {
   font-style: normal;
   font-weight: normal;
   color:#092834;
+  font-size: 20px;
 }
 
 .button-group input {
@@ -708,8 +716,8 @@ span.facetadorbarradenavegacion {
 
 .label_objeto {
   background-color: #092834;
-  width: 42px;
-  height: 60px;
+  width: 34px;
+  height: 55px;
 }
 
 .icono_objetodigital {
@@ -721,7 +729,7 @@ span.facetadorbarradenavegacion {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  font-size: 29px;
+  font-size: 25px;
   color: #347B98;
   background-color: #fff;
 }
