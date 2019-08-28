@@ -85,7 +85,7 @@ a:hover {
   top: calc(50vh - 75%);
   left: calc(50vw - 307px);
   border-radius: 50%;
-  opacity: .98;
+  /* opacity: .98; */
   pointer-events: none;
   box-sizing: border-box;
 }
@@ -95,11 +95,27 @@ a:hover {
   top: 0;
   left: 0;
   border-radius: 50%;
-  height: 600px;
-  width: 600px;
   box-shadow:0 0 0 9999px rgba(0,12,19,0.98);
   box-sizing: border-box;
+  filter: blur(1px);
 }
+@media(min-width: 400px){
+  #tracker:after{
+    height: 600px;
+    width: 600px;
+  }
+}
+
+@media(max-width: 399px){
+  #tracker:after{
+    height: 400px;
+    width: 400px;
+  }
+}
+
+
+
+
 
 .circulo_buscador{
   z-index:3; 
@@ -125,14 +141,23 @@ a:hover {
   font-family: 'MerriweatherSans-Regular','Oswald', sans-serif;
   font-size: 25px;
   text-align: center;
+  border: 1px solid #FFF;
   color: rgba(246, 247, 248,1 );
   background-color:  rgba(0,12,19,0);
-  border-color: rgba(0,12,19,0);
+  
 }
 
 .inputbuscador2::placeholder {
   font-family: 'MerriweatherSans-Regular';
   color: #fff;
+}
+
+.inputbuscador2:focus {
+  outline: none;
+  outline-width: 0;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
  
 .flex {
@@ -144,6 +169,8 @@ a:hover {
   width: 100%;
   height: 100%;
   display: grid;
+  
+  transition: 1s linear;
 }
 
 .logo_landing {
@@ -409,9 +436,9 @@ span.facetadorbarradenavegacion {
   border: none;
   line-height: 28px;
   /* Margen superior contenedor de opciones */
-  margin-top: 10px;
+  /* margin-top: 10px; */
   /* Margen superior contenedor de opciones */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-left: 0px;
 }
 
@@ -424,7 +451,7 @@ span.facetadorbarradenavegacion {
 }
 
 .sub-menu li {/* estilo de menu anidado */
-  color: #347B98;
+  color: #092834;
   font-family: 'MerriweatherSans-Bold';
 }
 
@@ -454,7 +481,7 @@ span.facetadorbarradenavegacion {
 
 .autor {
   font-family: 'MerriweatherSans-Regular';
-  color: #347B98;
+  color: #092834;
   font-size: 11px;
   height: 23px;
   padding: 5;
@@ -464,7 +491,7 @@ span.facetadorbarradenavegacion {
   -o-appearance: none;
   appearance: none;
 
-  border: 1px solid #347B98;
+  border: 1px solid #092834;
   border-radius: 4px;
   cursor: pointer;
   outline: none;
@@ -472,7 +499,7 @@ span.facetadorbarradenavegacion {
 
 .autor::placeholder {/* estilo de texto predeterminado "Autor" */
   font-family: 'MerriweatherSans-Bold';
-  color: #347B98;
+  color: #092834;
 }
 
 /*----------------------------
@@ -481,7 +508,7 @@ span.facetadorbarradenavegacion {
 
 .años {/*estilo rango de años*/
   font-family: 'MerriweatherSans-Regular';
-  color: #347B98;
+  color: #092834;
   font-size: 11px;
   height: 23px;
   padding-left: 5px;
@@ -491,7 +518,7 @@ span.facetadorbarradenavegacion {
   -o-appearance: none;
   appearance: none;
 
-  border: 1px solid #347B98;
+  border: 1px solid #092834;
   border-radius: 4px;
 
   cursor: pointer;
@@ -500,7 +527,7 @@ span.facetadorbarradenavegacion {
 
 .años::placeholder {/* */
   font-family: 'MerriweatherSans-Bold';
-  color: #347B98;
+  color: #092834;
 }
 
 /*----------------------------
@@ -513,7 +540,7 @@ span.facetadorbarradenavegacion {
 
 .radio_facetador {
   font-family: 'MerriweatherSans-Bold';
-  color: #347B98;
+  color: #092834;
   font-size: 11px;
   height: 23px;
   padding-left: 5px;
@@ -523,7 +550,7 @@ span.facetadorbarradenavegacion {
   -o-appearance: none;
   appearance: none;
 
-  border: 1px solid #347B98;
+  border: 1px solid #092834;
   border-radius: 4px;
 
   cursor: pointer;
@@ -563,6 +590,7 @@ span.facetadorbarradenavegacion {
   padding: 0.5rem;
   position: relative;
   margin-right: 10px;
+  
 }
 
 .checkbox_1>span {
@@ -579,7 +607,7 @@ span.facetadorbarradenavegacion {
   appearance: none;
 
   background-color: #f2f2f2;
-  border: 1.5px solid #347B98;
+  border: 1.4px solid #092834;
   border-radius: 4px;
   cursor: pointer;
   outline: none;
@@ -588,13 +616,13 @@ span.facetadorbarradenavegacion {
 }
 
 .checkbox_1>input:checked {
-  border: 2px solid #347B98;
-  background-color: #347B98;
+  /* border: 2px solid #092834; */
+  background-color: #092834;
 }
 
 /* cherckbox, verificacado estilo */
 .checkbox_1>input:checked+span::before {
-  color: #004466;
+  color: #092834;
   content: "\2713";
   text-align: center;
 
@@ -602,13 +630,13 @@ span.facetadorbarradenavegacion {
   position: absolute;
 }
 
-.checkbox_1>input:active {
-  border: 2px solid #347B98;
-}
+/* .checkbox_1>input:active {
+  border: 1.6px solid #092834;
+} */
 
 .checkbox_1>input:focus+label::before {
-  outline: #5d9dd5 solid 1px;
-  box-shadow: 0 0px 8px #5e9ed6;
+  outline: #092834 solid 1px;
+  box-shadow: 0 0px 8px #092834;
 }
 
 /*----------------------------
@@ -1126,10 +1154,10 @@ footer a {
   display: flex;
 }
 
-
 .intro {
   width: 100%;
   height: 100%;
+  overflow:hidden ; 
 }
 
 .logo_landing {
@@ -1232,6 +1260,13 @@ button {
 }
 
 /*Incorporado por Mauro para pagina contacto - fin*/
+
+/*Incorporado por Mauro para destacados Inicio*/
+
+.destacado{
+  border: 3px solid  #092834;
+  
+}
 
 footer a:hover {
   text-decoration: none;

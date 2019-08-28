@@ -29,20 +29,19 @@
     <div id="landing" class="intro  p-0 m-0" style="
         overflow:hidden ; background-position: center center; background-repeat: no-repeat; background-size: cover; ">
 
-        <div class="col-12 pt-3 pl-3" style="z-index: 1;">
+        <div class="col-12 pt-4 pl-5" style="z-index: 1;">
             <img src="recursos/img/Logos/logo_memorica_bl.svg" height="50"/>
         </div>
 
         <div class="col-12 d-flex align-items-center justify-content-center" style="height: 100%;">
             <div id="tracker"></div>
-            <div class="col-0 col-sm-3 "></div>
-            <div class="col-12 col-sm-6 d-flex justify-content-center circulo_buscador">
+            <div class="col-1 col-sm-3 "></div>
+            <div class="col-10 col-sm-6 d-flex justify-content-center circulo_buscador">
                 <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html" style="position: relative; top:220px;">
-                    <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador2" type="text" placeholder="México, haz memoria" aria-label="Search" style="max-width: 400px;">
-                    
+                    <input id="usersSearch" class="form-control rounded-pill  inputbuscador2" type="text" placeholder="México, haz memoria" aria-label="Search" style="max-width: 400px;">
                 </form>
             </div>
-            <div class="col-0 col-sm-3"></div>
+            <div class="col-1 col-sm-3"></div>
         </div>
 
         <div class="row d-flex justify-content-center">
@@ -279,35 +278,46 @@
     <!-- <script  src="./script.js"></script> -->
     <script type="text/javascript">
         
-        var tracker = document.getElementById("tracker");
+        // var tracker = document.getElementById("tracker");
         var trackerAfterRule = CSSRulePlugin.getRule("#tracker:after");
-        var btnIsHovered = false;
+        // var btnIsHovered = false;
 
         document.querySelector(".intro").onmousemove = function(e) {
-        if(btnIsHovered) {
-            TweenLite.to(trackerAfterRule, .4, {
-            cssRule: {
-                scale: 0
-            }
-            });
-            TweenLite.to(tracker, .5, {
-            left: e.pageX - 300,
-            top: e.pageY - 500,
-            'border': '4px solid hsl(220, 58%, 85%)'
-            });
-        }
-        else {   
-            TweenLite.to(trackerAfterRule, .3, {
-            cssRule: {
-                scale: 1
-            }
-            });
+            // TweenLite.to(trackerAfterRule, 5, {
+            // cssRule: {
+            //     scale: 1
+            // }
+            // });
             TweenLite.to(tracker, .5, {
             left: e.pageX - 300,
             top: e.pageY - 500,
             'border': '4px solid transparent'
             });
-        }
+        // if(btnIsHovered) {
+            // TweenLite.to(trackerAfterRule, .4, {
+            // cssRule: {
+            //     scale: 0
+            // }
+            // });
+            // TweenLite.to(tracker, .3, {
+
+            // left: e.pageX - 300,
+            // top: e.pageY - 500,
+            // 'border': '4px solid hsl(220, 58%, 85%)'
+            // });
+        // }
+        // else {   
+        //     TweenLite.to(trackerAfterRule, 5, {
+        //     cssRule: {
+        //         scale: 1
+        //     }
+        //     });
+        //     TweenLite.to(tracker, .5, {
+        //     left: e.pageX - 300,
+        //     top: e.pageY - 500,
+        //     'border': '4px solid transparent'
+        //     });
+        // }
         };
         
     </script>
@@ -372,27 +382,30 @@
             run();
     </script>
     
-    <!--Fin Landing -->
+    <!--Cambio de foto Landing -->
     <script type="text/javascript">
         
         $(function() {
         var landing = $('#landing');
-        var backgrounds = ['url(recursos/img/revolucion_1.jpg)', 'url(recursos/img/revolucion_2.jpg)','url(recursos/img/villa_a_caballo.jpg)'];
+        var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)','url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'];
         var current = 0;
 
         function nextBackground() {
-        landing.css(
-        'background',
+        landing.css( 
+            'background',
             backgrounds[current = ++current % backgrounds.length]
         );
-        setTimeout(nextBackground, 5000);
+        landing.css('background-size', 'cover');
+        setTimeout(nextBackground, 40000);
         }
-        setTimeout(nextBackground, 5000);
+        setTimeout(nextBackground, 40000);
         landing.css('background', backgrounds[0]);
+        landing.css('background-size', 'cover');
+
         });
 
     </script>
-
+   
 
 </body>
 
