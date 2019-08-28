@@ -150,7 +150,14 @@ a:hover {
 .inputbuscador2::placeholder {
   font-family: 'MerriweatherSans-Regular';
   color: #fff;
-  
+}
+
+.inputbuscador2:focus {
+  outline: none;
+  outline-width: 0;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
  
 .flex {
@@ -266,20 +273,23 @@ padding-right: 1.7rem;
 	     menu de secciones 
 -----------------------------*/
 
-div.botones-pestañas { /*aplica la linea superior del menu y controla el alto*/
+div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
   border-top: 1px solid #092834;
   min-height: 45px;
 }
 
-.botones-pestañas a { /*estilo de botones*/
+.botones-pestanas a { /*estilo de botones*/
   font-family: 'MerriweatherSans-Bold';
   color: #092834;
   font-size: 15px;
 }
 
-.botones-pestañas a:hover {/*estilo boton sobre*/
+.botones-pestanas a:hover,
+.botones-pestanas a:active {
+  /*estilo boton sobre*/
   border-top: 3px solid #FF026A;
 }
+
 
 
 /*-------------------------------Pagina de resultados-------------------------------*/
@@ -426,9 +436,9 @@ span.facetadorbarradenavegacion {
   border: none;
   line-height: 28px;
   /* Margen superior contenedor de opciones */
-  margin-top: 10px;
+  /* margin-top: 10px; */
   /* Margen superior contenedor de opciones */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-left: 0px;
 }
 
@@ -441,7 +451,7 @@ span.facetadorbarradenavegacion {
 }
 
 .sub-menu li {/* estilo de menu anidado */
-  color: #347B98;
+  color: #092834;
   font-family: 'MerriweatherSans-Bold';
 }
 
@@ -471,7 +481,7 @@ span.facetadorbarradenavegacion {
 
 .autor {
   font-family: 'MerriweatherSans-Regular';
-  color: #347B98;
+  color: #092834;
   font-size: 11px;
   height: 23px;
   padding: 5;
@@ -481,7 +491,7 @@ span.facetadorbarradenavegacion {
   -o-appearance: none;
   appearance: none;
 
-  border: 1px solid #347B98;
+  border: 1px solid #092834;
   border-radius: 4px;
   cursor: pointer;
   outline: none;
@@ -489,7 +499,7 @@ span.facetadorbarradenavegacion {
 
 .autor::placeholder {/* estilo de texto predeterminado "Autor" */
   font-family: 'MerriweatherSans-Bold';
-  color: #347B98;
+  color: #092834;
 }
 
 /*----------------------------
@@ -498,7 +508,7 @@ span.facetadorbarradenavegacion {
 
 .años {/*estilo rango de años*/
   font-family: 'MerriweatherSans-Regular';
-  color: #347B98;
+  color: #092834;
   font-size: 11px;
   height: 23px;
   padding-left: 5px;
@@ -508,7 +518,7 @@ span.facetadorbarradenavegacion {
   -o-appearance: none;
   appearance: none;
 
-  border: 1px solid #347B98;
+  border: 1px solid #092834;
   border-radius: 4px;
 
   cursor: pointer;
@@ -517,7 +527,7 @@ span.facetadorbarradenavegacion {
 
 .años::placeholder {/* */
   font-family: 'MerriweatherSans-Bold';
-  color: #347B98;
+  color: #092834;
 }
 
 /*----------------------------
@@ -530,7 +540,7 @@ span.facetadorbarradenavegacion {
 
 .radio_facetador {
   font-family: 'MerriweatherSans-Bold';
-  color: #347B98;
+  color: #092834;
   font-size: 11px;
   height: 23px;
   padding-left: 5px;
@@ -540,7 +550,7 @@ span.facetadorbarradenavegacion {
   -o-appearance: none;
   appearance: none;
 
-  border: 1px solid #347B98;
+  border: 1px solid #092834;
   border-radius: 4px;
 
   cursor: pointer;
@@ -580,6 +590,7 @@ span.facetadorbarradenavegacion {
   padding: 0.5rem;
   position: relative;
   margin-right: 10px;
+  
 }
 
 .checkbox_1>span {
@@ -596,7 +607,7 @@ span.facetadorbarradenavegacion {
   appearance: none;
 
   background-color: #f2f2f2;
-  border: 1.5px solid #347B98;
+  border: 1.4px solid #092834;
   border-radius: 4px;
   cursor: pointer;
   outline: none;
@@ -605,13 +616,13 @@ span.facetadorbarradenavegacion {
 }
 
 .checkbox_1>input:checked {
-  border: 2px solid #347B98;
-  background-color: #347B98;
+  /* border: 2px solid #092834; */
+  background-color: #092834;
 }
 
 /* cherckbox, verificacado estilo */
 .checkbox_1>input:checked+span::before {
-  color: #004466;
+  color: #092834;
   content: "\2713";
   text-align: center;
 
@@ -619,13 +630,13 @@ span.facetadorbarradenavegacion {
   position: absolute;
 }
 
-.checkbox_1>input:active {
-  border: 2px solid #347B98;
-}
+/* .checkbox_1>input:active {
+  border: 1.6px solid #092834;
+} */
 
 .checkbox_1>input:focus+label::before {
-  outline: #5d9dd5 solid 1px;
-  box-shadow: 0 0px 8px #5e9ed6;
+  outline: #092834 solid 1px;
+  box-shadow: 0 0px 8px #092834;
 }
 
 /*----------------------------
@@ -913,11 +924,6 @@ p.card-text {
   color: #092834;
 }
 
-.memoria-titulo h1 { /*títulos para secciones, cuidar que no choque con el de memo*/
-  font-family: 'MerriweatherSans-Bold';
-  font-size: 19px;
-}
-
 .card-title { /*subtítulos de sección*/
   font-family: 'MerriweatherSans-Bold';
   font-size: 18px;
@@ -925,6 +931,7 @@ p.card-text {
 
 .table { /*línea superior de la tabla, en realidad no funciona aún*/
   border-top: 0 solid #fff !important;
+  border-bottom: 0 solid #fff !important;
 }
 
 .card-header { /*Título de cédula, sección acordeón*/
@@ -1027,6 +1034,15 @@ para la cédula
   font-style: normal;
 }
 
+.icon-compartir {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  color: #347B98;
+  font-size: 170%;
+}
+
 .demo-icon {
   font-family: "fontello";
   font-style: normal;
@@ -1123,6 +1139,15 @@ footer a {
 .inputbuscador2::placeholder {
   font-family: 'MerriweatherSans-Regular';
   color: #fff;
+}
+
+.inputbuscador2:focus {
+  outline: none;
+  outline-width: 0;
+  border: 2px solid;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .flex {
@@ -1313,7 +1338,7 @@ div.memoria-timeline {
   /*Tamaño preliminar*/
 }
 
-div.memoria-pestañas {
+div.memoria-pestanas {
   /*Tamaño preliminar*/
   position: sticky;
   top: 156px;

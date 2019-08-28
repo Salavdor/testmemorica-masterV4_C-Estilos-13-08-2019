@@ -1,129 +1,132 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>MEMORICA - Cédula</title>
-        <link rel="stylesheet" href="recursos/css/reset.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <link rel="stylesheet" href="recursos/css/style.css">
-    </head>
 
-    <body class="secundario">
-        <!-- Header con barra y buscador -->
-        <header>
-            <!-- Barra de navegación -->
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MEMORICA - Cédula</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="recursos/css/style.css">
 
-                <a class="navbar-brand d-lg-none" href="index.html">Memórica</a>
+    <!-- fuente de íconos -->
+    <link rel="stylesheet" href="recursos/Type/fontello/css/fontello-embedded.css">
+</head>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+<body>
+    <!-- Header con barra y buscador -->
+    <header>
+        <!-- Barra de navegación -->
+        <div class="barra-superior"></div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica">
+                <img src="recursos/img/Logos/logo_memorica.svg" height="20px" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
                 aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- menu que se colapsa   -->
-                <div class="collapse navbar-collapse justify-content-between" id="menu">
+            <!-- menu que se colapsa   -->
+            <div class="collapse navbar-collapse flex-column" id="menu">
 
-                    <div class="col-4">
-                        <ul class="navbar-nav"></ul>
-                    </div>
-
-                    <div class="col-4 d-flex justify-content-center">
-                        <a class="navbar-brand d-none d-lg-block" href="index.html">Memórica</a>
-                    </div>
-
-                    <div class="col-4 d-flex justify-content-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link justify-content-end" href="#">iniciar sesion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fab fa-megaport fa-x3"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    
+                <div class="col-12 d-flex justify-content-center p-0">
+                    <a class="navbar-brand d-none d-lg-block m-0 " href="index.html"><img
+                            src="recursos/img/Logos/logo_memorica.svg" height="45px" /></a>
                 </div>
-            </nav>
 
-            <!--Buscador-->
-            <div class="container-fluid memoria-buscador altura-fija d-flex justify-content-center">
-                <div class="row fila-centrada">
-                    <div class="col-0 col-sm-3"></div>
-                    <div class="col-12 col-sm-6 align-self-center">
-                        <form class="form" action="resultados.html">
-                            <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input" type="text"
-                                placeholder="¿Qué quieres encontrar hoy?" aria-label="Search">
-                            <!-- <input id='searchButton' type='button' value='busquele'> -->
-                        </form>
+                <div class="container py-3 d-none d-lg-block">
+                    <div class="row fila-centrada m-0 ">
+                        <div class="col-3 col-sm-4"></div>
+                        <div class="col-6 col-sm-4 align-self-center">
+                            <form class="form" action="resultados.html">
+                                <input id="usersSearch"
+                                    class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text"
+                                    placeholder="México, haz memoria" aria-label="Buscador">
+                            </form>
+                        </div>
+                        <div class="col-3 col-sm-4"></div>
                     </div>
-                    <div class="col-0 col-sm-3"></div>
                 </div>
-            </div>
-        </header>
 
-        <!-- Pestañas -->
-        <div class="memoria-pestañas">
-            <div class="container py-2 d-none d-lg-block">
-                <nav class="justify-content-center nav nav-pills nav-justified">
-                    <a class="nav-item nav-link" href="#">Haz memoria</a>
-                    <a class="nav-item nav-link" href="acervos.html">Acervos</a>
-                    <a class="nav-item nav-link" href="temas.html">Temas</a>
-                    <a class="nav-item nav-link" href="#">Exposiciones</a>
-                    <a class="nav-item nav-link" href="#">Miscelánea</a>
-                    <a class="nav-item nav-link" href="#">Breves</a>
-                </nav>
-            </div>
-
-            <div class="container py-2 d-sm-block d-lg-none">
-                <div class="justify-content-center navbar navbar-expand-lg navbar-light bg-light">
-                    <a data-toggle="collapse" href="#memoria-pestañas-dropdown">Secciones</a>
-                </div>
-                <div class="collapse mb-3" id="memoria-pestañas-dropdown">
-                    <div class="card card-body">
-                        <nav class="flex-column justify-content-center nav nav-pills nav-justified">
-                            <a class="nav-item nav-link" href="#">Haz memoria</a>
+                <div class="container botones-pestanas">
+                    <ul class="navbar-nav d-flex justify-content-between pestanas">
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="haz_memoria.html">Haz memoria</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-item nav-link" href="acervos.html">Acervos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-item nav-link" href="temas.html">Temas</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-item nav-link" href="#">Exposiciones</a>
-                            <a class="nav-item nav-link" href="#">Miscelánea</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="miscelanea.html">Miscelánea</a>
+                        </li>
+                        <!-- <li class="nav-item">
                             <a class="nav-item nav-link" href="#">Breves</a>
-                        </nav>
-                    </div>
+                        </li> -->
+                    </ul>
                 </div>
+            </div>
+        </nav>
+
+        <!--Buscador-->
+        <div class="container-fluid memoria-buscador d-flex justify-content-center pt-3 d-block d-lg-none">
+            <div class="row fila-centrada ">
+                <div class="col-0 col-sm-3"></div>
+                <div class="col-12 col-sm-6 align-self-center">
+                    <form class="form" action="resultados.html">
+                        <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador"
+                            type="text" placeholder="México, haz memoria" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col-0 col-sm-3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container px-0">
+        <!-- Breadcrumb -->
+        <div class="row mt-3 mt-lg-0 mb-2">
+            <div class="col-lg-6 col-md-6 col-12 p-0 d-flex justify-content-lg-start align-items-start">
+                <nav class="p-0 mb-1" aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent m-0 px-3 py-2 d-flex align-items-center">
+                        <li class="breadcrumb-item texto-breadcrum"><a href="index.html"><img
+                                    src="recursos/img/inicio.svg" height="35px"></a></li>
+                        <li class="breadcrumb-item texto-breadcrum"><a href="index.html">Regresar al inicio</a></li>
+                        <li class="breadcrumb-item texto-breadcrum"><a href="#">bread</a></li>
+                        <li class="breadcrumb-item active texto-breadcrum" aria-current="page">crumb</li>
+                    </ol>
+                </nav>
             </div>
         </div>
 
-        <main class="container">
-            <nav id="siteBreadcrumb" aria-label="breadcrumb">
-                <ol class="breadcrumb mt-3">
-                    <li class="breadcrumb-item"><a href="index.html">Regresa al inicio</a></li>
-                    <li class="breadcrumb-item"><a href="resultados.html">Búsqueda</a></li>
-                    <li class="breadcrumb-item active">Cédula</li>
-                </ol>
-            </nav>
+        <div class="memoria-titulo" style="border-bottom: 1pt solid #092834;">
+            <h5>Título de objeto</h5>
+            <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+        </div>
 
-            <div class="d-flex justify-content-between">
-                <h1 class="d-none d-lg-block">Título de objeto</h1>
-                <h2 class="d-sm-block d-lg-none">Título de objeto</h2>
-                <button type="button" class="btn btn-primary">Descargar</button>
+        <!-- Visualizador -->
+        <div class="memoria-visualizador m-4">
+            <div class="uv" data-locale="en-GB:English (GB),cy-GB:Cymraeg"
+                data-config="https://adore.ugent.be/IIIF/UV/config"
+                data-uri="https://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91"
+                data-collectionindex="0" data-manifestindex="0" data-sequenceindex="0" data-canvasindex="0"
+                data-zoom="-10480,-838,27173,16751" data-rotation="0"
+                style="width:100%; height:500px; background-color: #000">
             </div>
+            <script type="text/javascript" id="embedUV" src="universalviewer-2.0.2/dist/uv-2.0.2/lib/embed.js"></script>
+        </div>
 
-            <!-- Visualizador -->
-            <div class="memoria-visualizador mb-4">
-                <div class="uv" data-locale="en-GB:English (GB),cy-GB:Cymraeg" data-config="https://adore.ugent.be/IIIF/UV/config"
-                    data-uri="https://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91"
-                    data-collectionindex="0" data-manifestindex="0" data-sequenceindex="0" data-canvasindex="0"
-                    data-zoom="-10480,-838,27173,16751" data-rotation="0" style="width:100%; height:500px; background-color: #000">
-                </div>
-                <script type="text/javascript" id="embedUV" src="universalviewer-2.0.2/dist/uv-2.0.2/lib/embed.js"></script>
-            </div>
-            
-            <!-- 
+        <!-- 
                 universal viewer local de prueba 
                 <div class="uv" data-locale="en-GB:English (GB),cy-GB:Cymraeg"
                     data-config="https://adore.ugent.be/IIIF/UV/config"
@@ -133,47 +136,245 @@
                 <script type="text/javascript" id="embedUV" src="universalviewer-2.0.2/dist/uv-2.0.2/lib/embed.js"></script>
             -->
 
-            <!-- Cédula de objeto -->
-            <div class="d-flex justify-content-between mb-3">
-                <h2 class="d-none d-lg-block">Ficha técnica</h2>
-                <h3 class="d-sm-block d-lg-none">Ficha técnica</h3>
-                <div class="d-flex justify-content-between">
-                    <h5>Compartir:</h5>
-                    <a href="#"> <i class="fab fa-facebook-f"></i> </a>
-                    <a href="#"> <i class="fab fa-twitter"></i> </a>
+        <!-- Cédula de objeto -->
+        <div class="memoria-titulo d-flex align-items-center justify-content-between" style="border-bottom: 1pt solid #092834;">
+            <h5 class="mb-0">Ficha técnica</h5>
+            <div class="col-3 pr-0 d-flex align-items-center justify-content-end">
+                <i class="icon-compartir"></i>
+                <h5 class="mb-0 ">Compartir</h5>
+            </div>
+        </div>
+        <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+
+        <!-- Cédulas de fondos, subfondos, etc. -->
+        <div class="m-4">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link rounded-0 active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="true">Fondo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-0" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                        aria-controls="profile" aria-selected="false">Subfondo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-0" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                        aria-controls="contact" aria-selected="false">Serie o Volumen</a>
+                </li>
+            </ul>
+
+            <div class="tab-content border-right border-bottom border-left collapse show border-0" id="myTabContent">
+                <div class="tab-pane show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Número identificador</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                    exercitationem
+                                    ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Título</th>
+                                <td>Reprehenderit dolor exercitationem ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Título alternativo</th>
+                                <td>Voluptatibus sit ratione aliquam.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Autor/Creador</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Grupo etnolingüistico</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tipo de BHC</th>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fondo/Colección</th>
+                                <td>Atatatatatatatatatatatata</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Serie/volumen</th>
+                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Lugar</th>
+                                <td>Corporis quae et rerum exercitationem sint illo.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fecha de creación</th>
+                                <td>Ea temporibus vero delectus eius quia beatae.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fecha relevante</th>
+                                <td> Illo iure reiciendis est.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Periodo histórico/artístico</th>
+                                <td>Quo molestiae ex aut velit eos rem quam.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fecha de edición</th>
+                                <td>Velit veritatis expedita et.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Versión de</th>
+                                <td>Voluptatibus sit ratione aliquam.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tabla de contenidos</th>
+                                <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane p-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Creador del recurso digital</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                    exercitationem
+                                    ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Descripción</th>
+                                <td>Reprehenderit dolor exercitationem ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fuente original</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Forma parte de</th>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tipo de objeto digital</th>
+                                <td>Atatatatatatatatatatatata</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Formato</th>
+                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Formato relacionado</th>
+                                <td>Corporis quae et rerum exercitationem sint illo.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dimensiones/Extensión</th>
+                                <td>Ea temporibus vero delectus eius quia beatae.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Siguiente archivo en la secuencia</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                    exercitationem
+                                    ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fecha de creación</th>
+                                <td>Reprehenderit dolor exercitationem ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Declaración de uso</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Referencia (IIIF Manifest)</th>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">IIIF URL</th>
+                                <td>Atatatatatatatatatatatata</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">URI</th>
+                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane p-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Descripción</th>
+                                <td>Reprehenderit dolor exercitationem ex.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fuente original</th>
+                                <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Forma parte de</th>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tipo de objeto digital</th>
+                                <td>Atatatatatatatatatatatata</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Formato</th>
+                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Formato relacionado</th>
+                                <td>Corporis quae et rerum exercitationem sint illo.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dimensiones/Extensión</th>
+                                <td>Ea temporibus vero delectus eius quia beatae.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">IIIF URL</th>
+                                <td>Atatatatatatatatatatatata</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">URI</th>
+                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <div>
+                <a class="btn btn-dark btn-block rounded-0" data-toggle="collapse" href="#myTabContent" role="button"
+                    aria-expanded="false" aria-controls="myTabContent">
+                    Abrir/Cerrar
+                </a>
+            </div>
+        </div>
 
-            <!-- Cédulas de fondos, subfondos, etc. -->
-            <div class="mb-4">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                            aria-selected="true">Fondo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                            aria-selected="false">Subfondo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                            aria-selected="false">Serie o Volumen</a>
-                    </li>
-                </ul>
+        <!-- cedula colapsable de objeto -->
 
-                <div class="tab-content border-right border-bottom border-left collapse show" id="myTabContent">
-                    <div class="tab-pane show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <table class="table table-borderless">
+        <div class="accordion m-4 rounded-0">
+            <div id="cedula1" class="card border-0 rounded-0 mb-4">
+                <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
+                    id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <h2 class="mb-0 btn btn-link cedula1titulo">
+                        Bien de interés común (BHC)
+                    </h2>
+                    <a id="plus-icon-1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne"></a>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                    <div class="card-body">
+                        <table class="table table-hover">
                             <tbody>
                                 <tr>
                                     <th scope="row">Número identificador</th>
-                                    <!--Obligatorio-->
-                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem
-                                        ex.</td>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Título</th>
-                                    <!--Obligatorio-->
                                     <td>Reprehenderit dolor exercitationem ex.</td>
                                 </tr>
                                 <tr>
@@ -182,27 +383,22 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Autor/Creador</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Grupo etnolingüistico</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipo de BHC</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Fondo/Colección</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Serie/volumen</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                                 <tr>
@@ -211,7 +407,6 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Fecha de creación</th>
-                                    <!--Obligatorio-->
                                     <td>Ea temporibus vero delectus eius quia beatae.</td>
                                 </tr>
                                 <tr>
@@ -234,17 +429,91 @@
                                     <th scope="row">Tabla de contenidos</th>
                                     <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">Descripción</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Institución que resguarda el BHC</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Institución de procedencia</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Editor</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Referencia</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dimensiones/Duración</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Formato</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Material</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Idioma</th>
+                                    <td>Corporis quae et rerum exercitationem sint illo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Relacionado con</th>
+                                    <td>Ea temporibus vero delectus eius quia beatae.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ID siguiente en la secuencia</th>
+                                    <td> Illo iure reiciendis est.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Reemplazado por</th>
+                                    <td>Quo molestiae ex aut velit eos rem quam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Titular</th>
+                                    <td>Velit veritatis expedita et.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Palabras clave</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th class="ident" scope="row">URI del BHC</th>
+                                    <td class="ident">Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
 
-                    <div class="tab-pane p-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <table class="table table-borderless">
+            <div id="cedula2" class="card border-0 rounded-0 mb-4">
+                <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
+                    id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
+                    <h2 class="mb-0 btn btn-link cedula2titulo">
+                        Recurso digital
+                    </h2>
+                    <a id="plus-icon-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo"></a>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+                    <div class="card-body">
+                        <table class="table table-hover">
                             <tbody>
                                 <tr>
                                     <th scope="row">Creador del recurso digital</th>
-                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem
-                                        ex.</td>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Descripción</th>
@@ -256,17 +525,14 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Forma parte de</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipo de objeto digital</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Formato</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                                 <tr>
@@ -279,8 +545,8 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Siguiente archivo en la secuencia</th>
-                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem
-                                        ex.</td>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Fecha de creación</th>
@@ -288,31 +554,266 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Declaración de uso</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Referencia (IIIF Manifest)</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">IIIF URL</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">URI</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
 
-                    <div class="tab-pane p-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div id="cedula3" class="card border-0 rounded-0 mb-4">
+                <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
+                    id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    <h2 class="mb-0 btn btn-link cedula3titulo">
+                        Título del expediente
+                    </h2>
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree"></a>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th class="border-right" scope="row">Número identificador</th>
+                                    <td class="COD_REF3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Título</th>
+                                    <td class="TITULO3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Autor/Creador</th>
+                                    <td class="NOMBRE_PRODUCTOR3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Tipo de BHC</th>
+                                    <td class="NIVEL_DESC3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">ID Fondo/Colección</th>
+                                    <td class="padre3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Fecha de creación</th>
+                                    <td class="FECHA_EXT_INI3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Descripción</th>
+                                    <td class="HIST_INSTUTUC3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Institución que resguarda el BHC</th>
+                                    <td class="LOCALIZ_ORIG3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Dimensiones/Duración</th>
+                                    <td class="VOL_UNID3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Fecha de inicio</th>
+                                    <td class="FECHA_EXT_INI3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Fecha de finalización</th>
+                                    <td class="FECHA_EXT_FIN3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Nota</th>
+                                    <td class="NOTAS2"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Etiqueta de la declaracion de uso</th>
+                                    <td class="REGLAS_NORMAS3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Nota</th>
+                                    <td class="NOTA_ARCHIVERO3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cédula vieja -->
+        <div class="accordion mb-4">
+            <div class="card">
+                <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Bien de interés común
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                    <div class="card-body">
                         <table class="table table-borderless">
                             <tbody>
+                                <tr>
+                                    <th scope="row">Número identificador</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Título</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Título alternativo</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Autor/Creador</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Grupo etnolingüistico</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tipo de BHC</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fondo/Colección</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Serie/volumen</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Lugar</th>
+                                    <td>Corporis quae et rerum exercitationem sint illo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha de creación</th>
+                                    <td>Ea temporibus vero delectus eius quia beatae.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha relevante</th>
+                                    <td> Illo iure reiciendis est.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Periodo histórico/artístico</th>
+                                    <td>Quo molestiae ex aut velit eos rem quam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha de edición</th>
+                                    <td>Velit veritatis expedita et.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Versión de</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tabla de contenidos</th>
+                                    <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Descripción</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Institución que resguarda el BHC</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Institución de procedencia</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Editor</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Referencia</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dimensiones/Duración</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Formato</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Material</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Idioma</th>
+                                    <td>Corporis quae et rerum exercitationem sint illo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Relacionado con</th>
+                                    <td>Ea temporibus vero delectus eius quia beatae.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ID siguiente en la secuencia</th>
+                                    <td> Illo iure reiciendis est.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Reemplazado por</th>
+                                    <td>Quo molestiae ex aut velit eos rem quam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Titular</th>
+                                    <td>Velit veritatis expedita et.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Palabras clave</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">URI del BHC</th>
+                                    <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Recurso digital
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Creador del recurso digital</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
                                 <tr>
                                     <th scope="row">Descripción</th>
                                     <td>Reprehenderit dolor exercitationem ex.</td>
@@ -323,17 +824,14 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Forma parte de</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipo de objeto digital</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Formato</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                                 <tr>
@@ -345,352 +843,220 @@
                                     <td>Ea temporibus vero delectus eius quia beatae.</td>
                                 </tr>
                                 <tr>
+                                    <th scope="row">Siguiente archivo en la secuencia</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha de creación</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Declaración de uso</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Referencia (IIIF Manifest)</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
                                     <th scope="row">IIIF URL</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">URI</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <div>
-                    <a class="btn btn-dark btn-block" data-toggle="collapse" href="#myTabContent" role="button" aria-expanded="false"
-                        aria-controls="myTabContent">
-                        Abrir/Cerrar
-                    </a>
-                </div>
             </div>
+        </div>
 
-            <div class="accordion mb-4">
-                <div class="card">
-                    <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Bien de interés común
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
-                        <div class="card-body">
-                            <table class="table table-borderless">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Número identificador</th> <!--Obligatorio-->
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Título</th> <!--Obligatorio-->
-                                        <td>Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Título alternativo</th>
-                                        <td>Voluptatibus sit ratione aliquam.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Autor/Creador</th> <!--Obligatorio-->
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Grupo etnolingüistico</th> <!--Obligatorio-->
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Tipo de BHC</th> <!--Obligatorio-->
-                                        <td>42</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fondo/Colección</th> <!--Obligatorio-->
-                                        <td>Atatatatatatatatatatatata</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Serie/volumen</th> <!--Obligatorio-->
-                                        <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Lugar</th>
-                                        <td>Corporis quae et rerum exercitationem sint illo.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fecha de creación</th> <!--Obligatorio-->
-                                        <td>Ea temporibus vero delectus eius quia beatae.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fecha relevante</th>
-                                        <td> Illo iure reiciendis est.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Periodo histórico/artístico</th>
-                                        <td>Quo molestiae ex aut velit eos rem quam.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fecha de edición</th>
-                                        <td>Velit veritatis expedita et.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Versión de</th>
-                                        <td>Voluptatibus sit ratione aliquam.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Tabla de contenidos</th>
-                                        <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Descripción</th>
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Institución que resguarda el BHC</th> <!--Obligatorio-->
-                                        <td>Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Institución de procedencia</th> <!--Obligatorio-->
-                                        <td>Voluptatibus sit ratione aliquam.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Editor</th>
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Referencia</th>
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Dimensiones/Duración</th>
-                                        <td>42</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Formato</th>
-                                        <td>Atatatatatatatatatatatata</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Material</th>
-                                        <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Idioma</th> <!--Obligatorio-->
-                                        <td>Corporis quae et rerum exercitationem sint illo.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Relacionado con</th>
-                                        <td>Ea temporibus vero delectus eius quia beatae.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">ID siguiente en la secuencia</th>
-                                        <td> Illo iure reiciendis est.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Reemplazado por</th>
-                                        <td>Quo molestiae ex aut velit eos rem quam.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Titular</th> <!--Obligatorio-->
-                                        <td>Velit veritatis expedita et.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Palabras clave</th>
-                                        <td>Voluptatibus sit ratione aliquam.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">URI del BHC</th>
-                                        <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header" id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Recurso digital
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
-                        <div class="card-body">
-                            <table class="table table-borderless">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Creador del recurso digital</th>
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Descripción</th>
-                                        <td>Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fuente original</th>
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Forma parte de</th> <!--Obligatorio-->
-                                        <td>42</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Tipo de objeto digital</th> <!--Obligatorio-->
-                                        <td>Atatatatatatatatatatatata</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Formato</th> <!--Obligatorio-->
-                                        <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Formato relacionado</th>
-                                        <td>Corporis quae et rerum exercitationem sint illo.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Dimensiones/Extensión</th>
-                                        <td>Ea temporibus vero delectus eius quia beatae.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Siguiente archivo en la secuencia</th>
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fecha de creación</th>
-                                        <td>Reprehenderit dolor exercitationem ex.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Declaración de uso</th> <!--Obligatorio-->
-                                        <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Referencia (IIIF Manifest)</th> <!--Obligatorio-->
-                                        <td>42</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">IIIF URL</th> <!--Obligatorio-->
-                                        <td>Atatatatatatatatatatatata</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">URI</th> <!--Obligatorio-->
-                                        <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--
+        <!--
             <div class=" mb-3 d-flex justify-content-between">
                 <button type="button" class="btn btn-primary">Anterior</button>
                 <button type="button" class="btn btn-primary">Previo</button>
             </div>
             -->
 
-            <!-- objetoz relazionadoz -->
-            <div class="memoria-relacionados">
-                
-                <h2 class="d-none d-lg-block">Objetos relacionados</h1>
-                <h3 class="d-sm-block d-lg-none">Objetos relacionados</h2>
-                <div class="row mx-1">
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="recursos/img/placeholder-600x400.png" alt="">
-                            <div class="card-img-overlay">
-                                <h3><span class="badge badge-secondary">Noticias</span></h3>
-                            </div>
-                            <div class="card-body bg-light rounded">
-                                <h5 class="card-title mb-0">Featured post</h5>
-                                <p class="card-text">Eos nostrum voluptatem qui earum rerum qui.</p>
-                                <a href="#" class="card-link">Continue reading</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="recursos/img/placeholder-600x400.png" alt="">
-                            <div class="card-img-overlay">
-                                <h3><span class="badge badge-secondary">Noticias</span></h3>
-                            </div>
-                            <div class="card-body bg-light rounded">
-                                <h5 class="card-title mb-0">Featured post</h5>
-                                <p class="card-text">Eos nostrum voluptatem qui earum rerum qui.</p>
-                                <a href="#" class="card-link">Continue reading</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="recursos/img/placeholder-600x400.png" alt="">
-                            <div class="card-img-overlay">
-                                <h3><span class="badge badge-secondary">Noticias</span></h3>
-                            </div>
-                            <div class="card-body bg-light rounded">
-                                <h5 class="card-title mb-0">Featured post</h5>
-                                <p class="card-text">Eos nostrum voluptatem qui earum rerum qui.</p>
-                                <a href="#" class="card-link">Continue reading</a>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="recursos/img/placeholder-600x400.png" alt="">
-                            <div class="card-img-overlay">
-                                <h3><span class="badge badge-secondary">Noticias</span></h3>
-                            </div>
-                            <div class="card-body bg-light rounded">
-                                <h5 class="card-title mb-0">Featured post</h5>
-                                <p class="card-text">Eos nostrum voluptatem qui earum rerum qui.</p>
-                                <a href="#" class="card-link">Continue reading</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- objetoz relazionadoz -->
+        <div class="memoria-relacionados">
 
+            <div class="memoria-titulo" style="border-bottom: 1pt solid #092834;">
+                <h5>Objetos relacionados</h5>
+            </div>
+            <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
             
-        </main>
+            <div class="row m-4">
+                <div class="col-sm-4 col-6 p-2 mb-2">
+                    <div class="card rounded-0">
+                        <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                            <img class="card-img img-responsiva" alt="" src="recursos/img/Saxofon.jpg">
+                            <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                <a class="card-img-overlay" href="cedula.html"></a>
+                                <span class="label_objeto badge  p-2 align-self-start rounded-0">
+                                    <i class="fas fa-cube fa-2x text-light icono_objetodigital" aria-hidden="true"></i>
+                                </span>
+                                <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                    <a href="#">
+                                        <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
 
-        <!--atún sellado de mi casa, y un limón-->
-        <footer class="footer mt-auto ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <ul>
-                            <li><a href="#">Coordinación</a></li>
-                            <li><a href="#">Instituciones vinculadas</a></li>
-                            <li><a href="#">Marco jurídico</a></li>
-                            <li><a href="#">Aviso de privacidad</a></li>
-                        </ul>
+                        <a href="cedula.html">
+                            <div class="px-3 pt-0 pb-2" style="min-height: auto;">
+                                <div class="col-12 p-0">
+                                    <svg height="6px" width="33px">
+                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                    </svg>
+                                </div>
+                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                    <h4>Plan libertador de Morelos </h4>
+                                </a>
+                                <p class="card-text limitado">Construcción maya en el antiguo sitio arqueológico
+                                    de
+                                    Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                    arqueológico de Uxmal, en el estado de Yucatán.</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <ul>
-                            <li><a href="#">Mapa de sitio</a></li>
-                            <li><a href="#">Documentación técnica</a></li>
-                            <li><a href="#">Contacto</a></li>
-                            <li><a href="#">Cómo usar el sitio</a></li>
-                        </ul>
+                </div>
+
+                <div class="col-sm-4 col-6 p-2 mb-2">
+                    <div class="card rounded-0">
+                        <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                            <img class="card-img img-responsiva" alt="" src="recursos/img/Saxofon.jpg">
+                            <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                <a class="card-img-overlay" href="cedula.html"></a>
+                                <span class="label_objeto badge  p-2 align-self-start rounded-0">
+                                    <i class="fas fa-cube fa-2x text-light icono_objetodigital" aria-hidden="true"></i>
+                                </span>
+                                <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                    <a href="#">
+                                        <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <a href="cedula.html">
+                            <div class="px-3 pt-0 pb-2" style="min-height: auto;">
+                                <div class="col-12 p-0">
+                                    <svg height="6px" width="33px">
+                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                    </svg>
+                                </div>
+                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                    <h4>Plan libertador de Morelos </h4>
+                                </a>
+                                <p class="card-text limitado">Construcción maya en el antiguo sitio arqueológico
+                                    de
+                                    Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                    arqueológico de Uxmal, en el estado de Yucatán.</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-md-1 col-sm-12 justify-content-end"></div>
-                    <div class="col-md-3 col-sm-12 d-flex justify-content-start flex-column">
-                        <ul class="memoria-redes">
-                            <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
-                            <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
-                            <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
-                        </ul>
+                </div>
+
+                <div class="col-sm-4 col-6 p-2 mb-2">
+                    <div class="card rounded-0">
+                        <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                            <img class="card-img img-responsiva" alt="" src="recursos/img/Saxofon.jpg">
+                            <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                <a class="card-img-overlay" href="cedula.html"></a>
+                                <span class="label_objeto badge  p-2 align-self-start rounded-0">
+                                    <i class="fas fa-cube fa-2x text-light icono_objetodigital" aria-hidden="true"></i>
+                                </span>
+                                <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                    <a href="#">
+                                        <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <a href="cedula.html">
+                            <div class="px-3 pt-0 pb-2" style="min-height: auto;">
+                                <div class="col-12 p-0">
+                                    <svg height="6px" width="33px">
+                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                    </svg>
+                                </div>
+                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                    <h4>Plan libertador de Morelos </h4>
+                                </a>
+                                <p class="card-text limitado">Construcción maya en el antiguo sitio arqueológico
+                                    de
+                                    Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                    arqueológico de Uxmal, en el estado de Yucatán.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
 
-        <!-- JavaScripts -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="recursos/js/main.js"></script>
-    </body>
+
+    </main>
+
+    <!--atún sellado de mi casa, y un limón-->
+    <footer class="footer mt-3 py-0">
+        <div class="container p-0" style="border-top: 1px solid #092834;">
+            <!-- SEPARADOR -->
+
+            <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+
+            <div class="row pt-2 pb-5" style="width: 100%;">
+                <div class="col-12 d-flex justify-content-start flex-column">
+                    <ul class="memoria-redes">
+                        <li><a class="favicom" href="#"><i class="fab fa-facebook-f 5x"></i></a></li>
+                        <li style="color: #092834">|</li>
+                        <li><a class="favicom" href="#"><i class="fab fa-twitter"></i> </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-12 contenedor-izquierdo pr-0">
+                    <ul>
+                        <li><a href="terminos_condiciones.html">Términos y condiciones</a></li>
+                        <li><a href="aviso_privacidad.html">Aviso de privacidad</a></li>
+                        <li><a href="marco_juridico.html">Marco jurídico</a></li>
+                        <li><a href="coordinacion.html">Coordinación</a></li>
+                        <li><a href="instituciones_vinculadas.html">Instituciones vinculadas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-12">
+                    <ul>
+                        <li><a href="documentacion_tecnica.html">Documentación técnica</a></li>
+                        <li><a href="como_usar_sitio.html">Cómo usar el sitio</a></li>
+                        <li><a href="mapa_sitio.html">Mapa de sitio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-12 d-flex justify-content-center pt-3" style="width: 100%;">
+                    <img src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="70px">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="recursos/js/main.js"></script>
+</body>
+
 </html>
