@@ -801,8 +801,8 @@ span.facetadorbarradenavegacion {
   font-size: 14px;
   color: #092834;
   border: none;
-  border-bottom: 1px solid #092834;
-  border-right: 1px solid #092834;
+  border-bottom: 1px solid rgba(9, 40, 52, .5);
+  border-right: 1px solid rgba(9, 40, 52, .5);
 }
 
 .table td{
@@ -810,7 +810,7 @@ span.facetadorbarradenavegacion {
   font-size: 12px;
   color: #092834;
   border: none;
-  border-bottom: 1px solid #092834;
+  border-bottom: 1px solid rgba(9, 40, 52, .5);
  
 }
 
@@ -819,7 +819,7 @@ th.ident{
   font-size: 14px;
   color: #092834;
   border: none;
-  border-right: 1px solid #092834;
+  border-right: 1px solid rgba(9, 40, 52, .5);
 }
 
  td.ident{
@@ -913,10 +913,15 @@ p.card-text {
   font-family: 'Lato-Regular';
 }
 
-.memoria-dropdown-scroll { /*no me acuerdo qué hace, creo no hace nada*/
-  height: auto;
-  max-height: 300px;
-  overflow-x: hidden;
+.abrir-y-cerrar a {
+  color: #092834;
+  background-color: #f4f9e0;
+  transition: all .2s ease-in-out .05s;
+}
+
+.abrir-y-cerrar a:hover {
+  /*Animación de hover de título de acordeón*/
+  background-color: #B2D732;
 }
 
 .breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
@@ -929,9 +934,21 @@ p.card-text {
   font-size: 18px;
 }
 
-.table { /*línea superior de la tabla, en realidad no funciona aún*/
-  border-top: 0 solid #fff !important;
-  border-bottom: 0 solid #fff !important;
+#myTab a.active {
+  color: #092834;
+  background-color: #f4f9e0;
+  border: none;
+  border-bottom: .0px solid #B2D732;
+  transition: all .2s ease-in-out .05s;
+}
+
+#myTab a:hover {
+  color: #092834;
+  background-color: #B2D732;
+}
+
+ul#myTab {
+  border-bottom: 2px solid #B2D732;
 }
 
 .card-header { /*Título de cédula, sección acordeón*/
@@ -945,10 +962,10 @@ p.card-text {
   background-color: #B2D732;
 }
 
-.card-header h2 { /*Texto de título de cédula, sección acordeón*/
+.card-header h5 { /*Texto de título de cédula, sección acordeón*/
   color: #092834;
   font-family: 'MerriweatherSans-Bold';
-  font-size: 18px;
+  font-size: 16px;
   padding: 0;
 }
 
