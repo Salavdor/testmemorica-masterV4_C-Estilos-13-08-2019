@@ -165,18 +165,16 @@
 
             <div class="tab-content border-right border-bottom border-left collapse show border-0" id="myTabContent">
                 <div class="tab-pane show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <table class="table table-borderless">
+                    <table class="table table-hover">
                         <tbody>
                             <tr>
                                 <th scope="row">Número identificador</th>
-                                <!--Obligatorio-->
                                 <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
                                     exercitationem
                                     ex.</td>
                             </tr>
                             <tr>
                                 <th scope="row">Título</th>
-                                <!--Obligatorio-->
                                 <td>Reprehenderit dolor exercitationem ex.</td>
                             </tr>
                             <tr>
@@ -185,27 +183,22 @@
                             </tr>
                             <tr>
                                 <th scope="row">Autor/Creador</th>
-                                <!--Obligatorio-->
                                 <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                             </tr>
                             <tr>
                                 <th scope="row">Grupo etnolingüistico</th>
-                                <!--Obligatorio-->
                                 <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                             </tr>
                             <tr>
                                 <th scope="row">Tipo de BHC</th>
-                                <!--Obligatorio-->
                                 <td>42</td>
                             </tr>
                             <tr>
                                 <th scope="row">Fondo/Colección</th>
-                                <!--Obligatorio-->
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
                                 <th scope="row">Serie/volumen</th>
-                                <!--Obligatorio-->
                                 <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                             <tr>
@@ -214,7 +207,6 @@
                             </tr>
                             <tr>
                                 <th scope="row">Fecha de creación</th>
-                                <!--Obligatorio-->
                                 <td>Ea temporibus vero delectus eius quia beatae.</td>
                             </tr>
                             <tr>
@@ -260,17 +252,14 @@
                             </tr>
                             <tr>
                                 <th scope="row">Forma parte de</th>
-                                <!--Obligatorio-->
                                 <td>42</td>
                             </tr>
                             <tr>
                                 <th scope="row">Tipo de objeto digital</th>
-                                <!--Obligatorio-->
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
                                 <th scope="row">Formato</th>
-                                <!--Obligatorio-->
                                 <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                             <tr>
@@ -293,22 +282,18 @@
                             </tr>
                             <tr>
                                 <th scope="row">Declaración de uso</th>
-                                <!--Obligatorio-->
                                 <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                             </tr>
                             <tr>
                                 <th scope="row">Referencia (IIIF Manifest)</th>
-                                <!--Obligatorio-->
                                 <td>42</td>
                             </tr>
                             <tr>
                                 <th scope="row">IIIF URL</th>
-                                <!--Obligatorio-->
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
                                 <th scope="row">URI</th>
-                                <!--Obligatorio-->
                                 <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                         </tbody>
@@ -328,17 +313,14 @@
                             </tr>
                             <tr>
                                 <th scope="row">Forma parte de</th>
-                                <!--Obligatorio-->
                                 <td>42</td>
                             </tr>
                             <tr>
                                 <th scope="row">Tipo de objeto digital</th>
-                                <!--Obligatorio-->
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
                                 <th scope="row">Formato</th>
-                                <!--Obligatorio-->
                                 <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                             <tr>
@@ -351,12 +333,10 @@
                             </tr>
                             <tr>
                                 <th scope="row">IIIF URL</th>
-                                <!--Obligatorio-->
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
                                 <th scope="row">URI</th>
-                                <!--Obligatorio-->
                                 <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                         </tbody>
@@ -364,37 +344,37 @@
                 </div>
             </div>
             <div>
-                <a class="btn btn-dark btn-block" data-toggle="collapse" href="#myTabContent" role="button"
+                <a class="btn btn-dark btn-block rounded-0" data-toggle="collapse" href="#myTabContent" role="button"
                     aria-expanded="false" aria-controls="myTabContent">
                     Abrir/Cerrar
                 </a>
             </div>
         </div>
 
-        <div class="accordion mb-4">
-            <div class="card">
-                <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            Bien de interés común
-                        </button>
+        <!-- cedula colapsable de objeto -->
+
+        <div class="accordion m-4 rounded-0">
+            <div id="cedula1" class="card border-0 rounded-0 mb-4">
+                <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
+                    id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <h2 class="mb-0 btn btn-link cedula1titulo">
+                        Bien de interés común (BHC)
                     </h2>
+                    <a id="plus-icon-1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne"></a>
                 </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
                     <div class="card-body">
-                        <table class="table table-borderless">
+                        <table class="table table-hover">
                             <tbody>
                                 <tr>
                                     <th scope="row">Número identificador</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
                                         exercitationem ex.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Título</th>
-                                    <!--Obligatorio-->
                                     <td>Reprehenderit dolor exercitationem ex.</td>
                                 </tr>
                                 <tr>
@@ -403,27 +383,22 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Autor/Creador</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Grupo etnolingüistico</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipo de BHC</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Fondo/Colección</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Serie/volumen</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                                 <tr>
@@ -432,7 +407,6 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Fecha de creación</th>
-                                    <!--Obligatorio-->
                                     <td>Ea temporibus vero delectus eius quia beatae.</td>
                                 </tr>
                                 <tr>
@@ -462,12 +436,10 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Institución que resguarda el BHC</th>
-                                    <!--Obligatorio-->
                                     <td>Reprehenderit dolor exercitationem ex.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Institución de procedencia</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatibus sit ratione aliquam.</td>
                                 </tr>
                                 <tr>
@@ -492,7 +464,6 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Idioma</th>
-                                    <!--Obligatorio-->
                                     <td>Corporis quae et rerum exercitationem sint illo.</td>
                                 </tr>
                                 <tr>
@@ -509,7 +480,305 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Titular</th>
-                                    <!--Obligatorio-->
+                                    <td>Velit veritatis expedita et.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Palabras clave</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th class="ident" scope="row">URI del BHC</th>
+                                    <td class="ident">Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cedula2" class="card border-0 rounded-0 mb-4">
+                <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
+                    id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
+                    <h2 class="mb-0 btn btn-link cedula2titulo">
+                        Recurso digital
+                    </h2>
+                    <a id="plus-icon-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo"></a>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Creador del recurso digital</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Descripción</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fuente original</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Forma parte de</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tipo de objeto digital</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Formato</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Formato relacionado</th>
+                                    <td>Corporis quae et rerum exercitationem sint illo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dimensiones/Extensión</th>
+                                    <td>Ea temporibus vero delectus eius quia beatae.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Siguiente archivo en la secuencia</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha de creación</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Declaración de uso</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Referencia (IIIF Manifest)</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">IIIF URL</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">URI</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cedula3" class="card border-0 rounded-0 mb-4">
+                <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
+                    id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    <h2 class="mb-0 btn btn-link cedula3titulo">
+                        Título del expediente
+                    </h2>
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree"></a>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th class="border-right" scope="row">Número identificador</th>
+                                    <td class="COD_REF3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Título</th>
+                                    <td class="TITULO3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Autor/Creador</th>
+                                    <td class="NOMBRE_PRODUCTOR3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Tipo de BHC</th>
+                                    <td class="NIVEL_DESC3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">ID Fondo/Colección</th>
+                                    <td class="padre3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Fecha de creación</th>
+                                    <td class="FECHA_EXT_INI3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Descripción</th>
+                                    <td class="HIST_INSTUTUC3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Institución que resguarda el BHC</th>
+                                    <td class="LOCALIZ_ORIG3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Dimensiones/Duración</th>
+                                    <td class="VOL_UNID3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Fecha de inicio</th>
+                                    <td class="FECHA_EXT_INI3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Fecha de finalización</th>
+                                    <td class="FECHA_EXT_FIN3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Nota</th>
+                                    <td class="NOTAS2"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Etiqueta de la declaracion de uso</th>
+                                    <td class="REGLAS_NORMAS3"></td>
+                                </tr>
+                                <tr>
+                                    <th class="border-right" scope="row">Nota</th>
+                                    <td class="NOTA_ARCHIVERO3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cédula vieja -->
+        <div class="accordion mb-4">
+            <div class="card">
+                <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Bien de interés común
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Número identificador</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Título</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Título alternativo</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Autor/Creador</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Grupo etnolingüistico</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tipo de BHC</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fondo/Colección</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Serie/volumen</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Lugar</th>
+                                    <td>Corporis quae et rerum exercitationem sint illo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha de creación</th>
+                                    <td>Ea temporibus vero delectus eius quia beatae.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha relevante</th>
+                                    <td> Illo iure reiciendis est.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Periodo histórico/artístico</th>
+                                    <td>Quo molestiae ex aut velit eos rem quam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fecha de edición</th>
+                                    <td>Velit veritatis expedita et.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Versión de</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tabla de contenidos</th>
+                                    <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Descripción</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at. Reprehenderit dolor
+                                        exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Institución que resguarda el BHC</th>
+                                    <td>Reprehenderit dolor exercitationem ex.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Institución de procedencia</th>
+                                    <td>Voluptatibus sit ratione aliquam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Editor</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Referencia</th>
+                                    <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dimensiones/Duración</th>
+                                    <td>42</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Formato</th>
+                                    <td>Atatatatatatatatatatatata</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Material</th>
+                                    <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Idioma</th>
+                                    <td>Corporis quae et rerum exercitationem sint illo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Relacionado con</th>
+                                    <td>Ea temporibus vero delectus eius quia beatae.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ID siguiente en la secuencia</th>
+                                    <td> Illo iure reiciendis est.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Reemplazado por</th>
+                                    <td>Quo molestiae ex aut velit eos rem quam.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Titular</th>
                                     <td>Velit veritatis expedita et.</td>
                                 </tr>
                                 <tr>
@@ -555,17 +824,14 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Forma parte de</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Tipo de objeto digital</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Formato</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                                 <tr>
@@ -587,22 +853,18 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Declaración de uso</th>
-                                    <!--Obligatorio-->
                                     <td>Voluptatem nam et cumque repudiandae possimus eos at.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Referencia (IIIF Manifest)</th>
-                                    <!--Obligatorio-->
                                     <td>42</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">IIIF URL</th>
-                                    <!--Obligatorio-->
                                     <td>Atatatatatatatatatatatata</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">URI</th>
-                                    <!--Obligatorio-->
                                     <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                                 </tr>
                             </tbody>
@@ -622,17 +884,12 @@
         <!-- objetoz relazionadoz -->
         <div class="memoria-relacionados">
 
-            <div class="memoria-titulo d-flex align-items-center justify-content-between"
-                style="border-bottom: 1pt solid #092834;">
-                <h5 class="mb-0">Objetos relacionados</h5>
-                <div class="col-3 pr-0 d-flex align-items-center justify-content-end">
-                    <i class="icon-compartir"></i>
-                    <h5 class="mb-0 ">Compartir</h5>
-                </div>
+            <div class="memoria-titulo" style="border-bottom: 1pt solid #092834;">
+                <h5>Objetos relacionados</h5>
             </div>
             <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
-
-            <div class="row m-1">
+            
+            <div class="row m-4">
                 <div class="col-sm-4 col-6 p-2 mb-2">
                     <div class="card rounded-0">
                         <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
