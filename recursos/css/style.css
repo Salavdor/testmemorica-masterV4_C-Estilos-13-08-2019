@@ -702,18 +702,6 @@ span.facetadorbarradenavegacion {
   border: 2px solid #092834;
 }
 
-.imagen-superior {
-  min-height: 139px;
-  min-width: 100%;
-  background-color: #fff;
-  margin-top: -0.5px;
-}
-
-.img-responsiva {
-  max-height: 139px;
-  object-fit: contain;
-}
-
 .label_objeto {
   background-color: #092834;
   width: 34px;
@@ -738,11 +726,10 @@ span.facetadorbarradenavegacion {
   z-index: 1;
 }
 
-@media(max-width:760px) {
+@media(max-width:767px) {
   h4 {
     font-size: 12px;
   }
-
   p.card-text {
     font-family: 'MerriweatherSans-Regular';
     margin: 0px;
@@ -750,19 +737,41 @@ span.facetadorbarradenavegacion {
     font-weight: 200;
     line-height: normal;
   }
+  .imagen-superior {
+    min-height: 100px;
+    min-width: 100%;
+    background-color: #fff;
+    margin-top: -0.5px;
+  }
+  
+  .img-responsiva {
+    max-height: 100px;
+    object-fit: contain;
+  }
+
 }
 
-@media(min-width:761px) {
+@media(min-width:768px) {
   h4 {
     font-size: 15px;
   }
-
   p.card-text {
     font-family: 'MerriweatherSans-Regular';
     margin: 0px;
     font-size: 14px;
     font-weight: 200;
     line-height: normal;
+  }
+  .imagen-superior {
+    min-height: 139px;
+    min-width: 100%;
+    background-color: #fff;
+    margin-top: -0.5px;
+  }
+  
+  .img-responsiva {
+    max-height: 139px;
+    object-fit: contain;
   }
 }
 
