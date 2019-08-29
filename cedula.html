@@ -140,8 +140,10 @@
         <div class="memoria-titulo d-flex align-items-center justify-content-between" style="border-bottom: 1pt solid #092834;">
             <h5 class="mb-0">Ficha técnica</h5>
             <div class="col-3 pr-0 d-flex align-items-center justify-content-end">
-                <i class="icon-compartir"></i>
-                <h5 class="mb-0 ">Compartir</h5>
+                <a href="#"><i class="icon-compartir"></i></a>
+                <a href="#">
+                    <h5 class="mb-0 ">Compartir</h5>
+                </a>
             </div>
         </div>
         <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
@@ -226,8 +228,8 @@
                                 <td>Voluptatibus sit ratione aliquam.</td>
                             </tr>
                             <tr>
-                                <th scope="row">Tabla de contenidos</th>
-                                <td>Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
+                                <th class="ident" scope="row">Tabla de contenidos</th>
+                                <td class="ident">Qui neque voluptatem aut aliquid corporis aut nam architecto.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -293,8 +295,8 @@
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
-                                <th scope="row">URI</th>
-                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                <th class="ident" scope="row">URI</th>
+                                <td class="ident">Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -336,15 +338,15 @@
                                 <td>Atatatatatatatatatatatata</td>
                             </tr>
                             <tr>
-                                <th scope="row">URI</th>
-                                <td>Assumenda quo nemo enim laboriosam a veniam et qui.</td>
+                                <th class="ident" scope="row">URI</th>
+                                <td class="ident">Assumenda quo nemo enim laboriosam a veniam et qui.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div>
-                <a class="btn btn-dark btn-block rounded-0" data-toggle="collapse" href="#myTabContent" role="button"
+            <div class="abrir-y-cerrar">
+                <a class="btn  btn-block rounded-0" data-toggle="collapse" href="#myTabContent"
                     aria-expanded="false" aria-controls="myTabContent">
                     Abrir/Cerrar
                 </a>
@@ -352,15 +354,14 @@
         </div>
 
         <!-- cedula colapsable de objeto -->
-
-        <div class="accordion m-4 rounded-0">
+        <div class="accordion m-4 pb-1 rounded-0">
             <div id="cedula1" class="card border-0 rounded-0 mb-4">
                 <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
                     id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne">
-                    <h2 class="mb-0 btn btn-link cedula1titulo">
+                    <h5 class="mb-0 btn btn-link cedula1titulo">
                         Bien de interés común (BHC)
-                    </h2>
+                    </h5>
                     <a id="plus-icon-1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne"></a>
                 </div>
@@ -500,9 +501,9 @@
                 <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
                     id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                     aria-controls="collapseTwo">
-                    <h2 class="mb-0 btn btn-link cedula2titulo">
+                    <h5 class="mb-0 btn btn-link cedula2titulo">
                         Recurso digital
-                    </h2>
+                    </h5>
                     <a id="plus-icon-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
                         aria-expanded="false" aria-controls="collapseTwo"></a>
                 </div>
@@ -578,9 +579,9 @@
                 <div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
                     id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                     aria-controls="collapseThree">
-                    <h2 class="mb-0 btn btn-link cedula3titulo">
+                    <h5 class="mb-0 btn btn-link cedula3titulo">
                         Título del expediente
-                    </h2>
+                    </h5>
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
                         aria-expanded="false" aria-controls="collapseThree"></a>
                 </div>
@@ -652,7 +653,7 @@
         </div>
 
         <!-- Cédula vieja -->
-        <div class="accordion mb-4">
+        <!-- <div class="accordion mb-4">
             <div class="card">
                 <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
@@ -872,7 +873,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!--
             <div class=" mb-3 d-flex justify-content-between">
