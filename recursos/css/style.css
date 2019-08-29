@@ -930,6 +930,7 @@ p.card-text {
 .breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
   font-family: 'MerriweatherSans-Regular';
   color: #092834;
+  font-size: 14px;
 }
 
 .card-title { /*subtítulos de sección*/
