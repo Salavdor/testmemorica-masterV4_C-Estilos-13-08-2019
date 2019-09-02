@@ -209,7 +209,7 @@ a:hover {
 
 
 /*----------------------------
-         Header
+            Header
 -----------------------------*/
 
 div.barra-superior { /*modifica barra superior*/
@@ -288,8 +288,6 @@ div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
   /*estilo boton sobre*/
   border-top: 3px solid #FF026A;
 }
-
-
 
 /*-------------------------------Pagina de resultados-------------------------------*/
 
@@ -813,6 +811,7 @@ span.facetadorbarradenavegacion {
 
 
 .table th{
+  width: 30%;
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
@@ -822,6 +821,7 @@ span.facetadorbarradenavegacion {
 }
 
 .table td{
+  width: 70%;
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
@@ -831,6 +831,7 @@ span.facetadorbarradenavegacion {
 }
 
 th.ident{
+  
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
@@ -839,6 +840,7 @@ th.ident{
 }
 
  td.ident{
+  
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
@@ -940,6 +942,14 @@ p.card-text {
   background-color: #B2D732;
 }
 
+.abrir-y-cerrar a:focus {
+  outline: none;
+  outline-width: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
 .breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
   font-family: 'MerriweatherSans-Regular';
   color: #092834;
@@ -951,12 +961,16 @@ p.card-text {
   font-size: 18px;
 }
 
+#myTab a {
+  border: none;
+  border-bottom: 1px solid #B2D732;
+  transition: all .2s ease-in-out .05s;
+}
+
 #myTab a.active {
   color: #092834;
   background-color: #f4f9e0;
-  border: none;
-  border-bottom: .0px solid #B2D732;
-  transition: all .2s ease-in-out .05s;
+  border-bottom: 1px solid #B2D732;
 }
 
 #myTab a:hover {
