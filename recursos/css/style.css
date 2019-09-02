@@ -75,6 +75,14 @@ a:hover {
 
 
 
+
+h5 {
+  font-family: 'MerriweatherSans-bold';
+  color: #092834;
+  font-size: 17px;
+}
+
+
 /*-------------------------------Header y navegación-------------------------------*/
 /*----------------------------
 	      landing Page
@@ -100,21 +108,15 @@ a:hover {
   filter: blur(1px);
 }
 
-.logo_landing {
-  height: 25px;
-  /* width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-}
+
 
 @media(min-width: 400px){
   #tracker:after{
     height: 600px;
     width: 600px;
   }
-  .logo_landing {
-    height: 50px;
+  .logo_landing{
+    height: 40px;
   }
 }
 
@@ -123,7 +125,9 @@ a:hover {
     height: 400px;
     width: 400px;
   }
-  
+  .logo_landing{
+    height: 20px;
+  }
 }
 
 
@@ -178,11 +182,12 @@ a:hover {
  }
  
  
+ 
  .intro {
   width: 100%;
   height: 100%;
   display: grid;
-  
+  overflow:hidden ;
   transition: 1s linear;
 }
 
@@ -211,9 +216,15 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+.scroll p {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+
+}
+
 
 /*----------------------------
-            Header
+         Header
 -----------------------------*/
 
 div.barra-superior { /*modifica barra superior*/
@@ -292,6 +303,8 @@ div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
   /*estilo boton sobre*/
   border-top: 3px solid #FF026A;
 }
+
+
 
 /*-------------------------------Pagina de resultados-------------------------------*/
 
@@ -814,7 +827,6 @@ span.facetadorbarradenavegacion {
 }
 
 .table th{
-  width: 30%;
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
@@ -824,7 +836,6 @@ span.facetadorbarradenavegacion {
 }
 
 .table td{
-  width: 70%;
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
@@ -834,7 +845,6 @@ span.facetadorbarradenavegacion {
 }
 
 th.ident{
-  
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
@@ -843,7 +853,6 @@ th.ident{
 }
 
  td.ident{
-  
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
@@ -893,6 +902,21 @@ ul.memoria-redes li {
 
 footer li {
   list-style-type: none;
+}
+
+footer a {
+  font-family: 'MerriweatherSans-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #347B98;
+}
+
+footer li {
+  margin-bottom: 1px;
 }
 
 @media (max-width: 692px) {
@@ -945,14 +969,6 @@ p.card-text {
   background-color: #B2D732;
 }
 
-.abrir-y-cerrar a:focus {
-  outline: none;
-  outline-width: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-
 .breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
   font-family: 'MerriweatherSans-Regular';
   color: #092834;
@@ -964,16 +980,12 @@ p.card-text {
   font-size: 18px;
 }
 
-#myTab a {
-  border: none;
-  border-bottom: 1px solid #B2D732;
-  transition: all .2s ease-in-out .05s;
-}
-
 #myTab a.active {
   color: #092834;
   background-color: #f4f9e0;
-  border-bottom: 1px solid #B2D732;
+  border: none;
+  border-bottom: .0px solid #B2D732;
+  transition: all .2s ease-in-out .05s;
 }
 
 #myTab a:hover {
@@ -1131,11 +1143,7 @@ para la cédula
 /*------------------------------Estilos de Mauricio------------------------------*/
 
 /*agregado por mauro: estilos de páginas (estilos generales)*/
-h5 {
-  font-family: 'MerriweatherSans-bold';
-  color: #092834;
-  font-size: 17px;
-}
+
 
 .texto2columnas {
   font-family: 'MerriweatherSans-Regular';
@@ -1146,12 +1154,10 @@ h5 {
   column-width: 240px;
 }
 
-footer a {
-  font-family: 'MerriweatherSans-Regular';
-  color: #092834;
-  font-size: 14px;
-}
 
+/*---------------------
+     Mapa de sitio
+---------------------*/
 
 /*agregado por mauro para Mapa de sitio*/
 .tipomapadesitio {
@@ -1161,95 +1167,61 @@ footer a {
   font-size: 14px;
 }
 
-/*Incorporadas por Mauro para landing*/
 
-#mask-overlay {
-  /* circulo sobre la foto del landing */
-  border-radius: 50%;
-  box-shadow: 0 0 0 9999px rgba(0, 12, 19, 0.98);
-  height: 600px;
-  width: 600px;
-  transition: transform 400ms ease-out;
 
+
+
+
+
+/*---------------------
+     objeto mensual
+---------------------*/
+
+
+section {
+	width: 100%;
+	/* margin: 70px auto; */
+   
 }
 
-#bloque {
-  display: table-cell;
-  vertical-align: middle;
+/* Simple Slider */
+.white-back{
+	/* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+	background: #fff;
+}
+.simple blockquote p {
+  /* margin-top:7%;
+	border-top: 1px solid #ccc; */
+	/* border-bottom: 1px solid #ccc; */
+	color: #01050a;
+	padding: 15px;
+	/* font-size: 1.25em; */
 }
 
-.inputbuscador2[type=text] {
-  font-family: 'MerriweatherSans-Regular', 'Oswald', sans-serif;
-  font-size: 25px;
-  text-align: center;
-  color: rgba(246, 247, 248, 1);
-  background-color: rgba(0, 12, 19, 0);
-  border-color: rgba(0, 12, 19, 0);
+.slick-dots li.slick-active button:before {
+  color: #347b98;
 }
 
-.inputbuscador2::placeholder {
-  font-family: 'MerriweatherSans-Regular';
-  color: #fff;
+.slick-dots li button:before{
+  color: #163642;
 }
 
-.inputbuscador2:focus {
-  outline: none;
-  outline-width: 0;
-  border: 2px solid;
-  border-color: inherit;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.flex {
-  display: flex;
-}
-
-.intro {
-  width: 100%;
-  height: 100%;
-  overflow:hidden ; 
-}
-
-.logo_landing {
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo_landing img {
-  width: 20%;
+.agrandafoto{
+  max-width: 340px;
 }
 
 
-.scroll {
-  position: absolute;
-  bottom: 0;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 5%;
-  transition: all 0.5s ease;
-  margin-bottom: -1px;
+.agrandafoto:hover{
+  max-width: 380px;
+  transition: 0.1s linear; 
 }
 
-.scroll:hover {
-  height: 6%;
-}
 
-.scroll img {
-  height: 100%;
-  width: 100%;
-}
 
-.scroll p {
-  color: rgb(255, 255, 255);
-  margin-bottom: 1rem;
-}
 
-/*Incorporado por Mauro para pagina contacto*/
+/*---------------------
+    pagina contacto
+---------------------*/
 
 .contact-form {
   padding: 30px;
@@ -1310,23 +1282,17 @@ button {
   margin: 20px;
 }
 
-/*Incorporado por Mauro para pagina contacto - fin*/
 
-/*Incorporado por Mauro para destacados Inicio*/
+/*---------------------
+    destacados Inicio
+---------------------*/
 
 .destacado{
   border: 2px solid  #092834;
   
 }
 
-footer a:hover {
-  text-decoration: none;
-  color: #347B98;
-}
 
-footer li {
-  margin-bottom: 1px;
-}
 
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 1);
@@ -1336,11 +1302,7 @@ footer li {
   font-size: 25px;
 }
 
-.scroll p {
-  color: rgb(255, 255, 255);
-  margin-bottom: 1rem;
 
-}
 
 .fixed {
   position: fixed;
@@ -1365,17 +1327,7 @@ footer li {
 }
 
 
-/*agregado por mauro para estilo de vínculos (estilos generales)*/
 
-a {
-  font-family: 'MerriweatherSans-Bold';
-  color: #092834;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #347B98;
-}
 
 /*-------------------------------Estilos irreconocibles-------------------------------*/
 .memoria-buscador input {
@@ -1404,45 +1356,3 @@ div.memoria-pestanas {
   overflow-x: hidden;
 }
 
-/* ----------------------------------------- página de objeto mensual (slider) INICIO---------------------------- */
-section {
-	width: 100%;
-	/* margin: 70px auto; */
-   
-}
-
-/* Simple Slider */
-.white-back{
-	/* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
-	background: #fff;
-}
-.simple blockquote p {
-  /* margin-top:7%;
-	border-top: 1px solid #ccc; */
-	/* border-bottom: 1px solid #ccc; */
-	color: #01050a;
-	padding: 15px;
-	/* font-size: 1.25em; */
-}
-
-.slick-dots li.slick-active button:before {
-  color: #347b98;
-}
-
-.slick-dots li button:before{
-  color: #163642;
-}
-
-.agrandafoto{
-  max-width: 340px;
-}
-
-
-.agrandafoto:hover{
-  max-width: 380px;
-  transition: 0.1s linear; 
-}
-
-
-
-/* ----------------------------------------- página de objeto mensual (slider) FIN---------------------------- */
