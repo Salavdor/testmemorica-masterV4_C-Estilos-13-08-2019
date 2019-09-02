@@ -99,10 +99,22 @@ a:hover {
   box-sizing: border-box;
   filter: blur(1px);
 }
+
+.logo_landing {
+  height: 25px;
+  /* width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
 @media(min-width: 400px){
   #tracker:after{
     height: 600px;
     width: 600px;
+  }
+  .logo_landing {
+    height: 50px;
   }
 }
 
@@ -111,6 +123,7 @@ a:hover {
     height: 400px;
     width: 400px;
   }
+  
 }
 
 
@@ -173,16 +186,6 @@ a:hover {
   transition: 1s linear;
 }
 
-.logo_landing {
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
 .scroll {
   position: absolute;
   bottom: 0;
@@ -210,7 +213,7 @@ a:hover {
 
 
 /*----------------------------
-         Header
+            Header
 -----------------------------*/
 
 div.barra-superior { /*modifica barra superior*/
@@ -290,8 +293,6 @@ div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
   border-top: 3px solid #FF026A;
 }
 
-
-
 /*-------------------------------Pagina de resultados-------------------------------*/
 
 /*-------------------------------Opciones de visualización de resultados-------------------------------*/
@@ -327,6 +328,13 @@ span.facetadorbarradenavegacion {
   padding: 5;
   width: 58px;
 }
+.resultados_pagina:focus {
+  outline: none;
+  outline-width: 0;
+  border-color: #347B98;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 /*----------------------------------------
    Barra Cambio de modo de visualización
@@ -336,6 +344,7 @@ span.facetadorbarradenavegacion {
   font-style: normal;
   font-weight: normal;
   color:#092834;
+  font-size: 20px;
 }
 
 .button-group input {
@@ -694,22 +703,10 @@ span.facetadorbarradenavegacion {
   border: 2px solid #092834;
 }
 
-.imagen-superior {
-  min-height: 139px;
-  min-width: 100%;
-  background-color: #fff;
-  margin-top: -0.5px;
-}
-
-.img-responsiva {
-  max-height: 139px;
-  object-fit: contain;
-}
-
 .label_objeto {
   background-color: #092834;
-  width: 42px;
-  height: 60px;
+  width: 34px;
+  height: 55px;
 }
 
 .icono_objetodigital {
@@ -721,7 +718,7 @@ span.facetadorbarradenavegacion {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  font-size: 29px;
+  font-size: 25px;
   color: #347B98;
   background-color: #fff;
 }
@@ -730,11 +727,10 @@ span.facetadorbarradenavegacion {
   z-index: 1;
 }
 
-@media(max-width:760px) {
+@media(max-width:767px) {
   h4 {
     font-size: 12px;
   }
-
   p.card-text {
     font-family: 'MerriweatherSans-Regular';
     margin: 0px;
@@ -742,19 +738,41 @@ span.facetadorbarradenavegacion {
     font-weight: 200;
     line-height: normal;
   }
+  .imagen-superior {
+    min-height: 100px;
+    min-width: 100%;
+    background-color: #fff;
+    margin-top: -0.5px;
+  }
+  
+  .img-responsiva {
+    max-height: 100px;
+    object-fit: contain;
+  }
+
 }
 
-@media(min-width:761px) {
+@media(min-width:768px) {
   h4 {
     font-size: 15px;
   }
-
   p.card-text {
     font-family: 'MerriweatherSans-Regular';
     margin: 0px;
     font-size: 14px;
     font-weight: 200;
     line-height: normal;
+  }
+  .imagen-superior {
+    min-height: 139px;
+    min-width: 100%;
+    background-color: #fff;
+    margin-top: -0.5px;
+  }
+  
+  .img-responsiva {
+    max-height: 139px;
+    object-fit: contain;
   }
 }
 
@@ -797,32 +815,36 @@ span.facetadorbarradenavegacion {
 
 
 .table th{
+  width: 30%;
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
   border: none;
-  border-bottom: 1px solid #092834;
-  border-right: 1px solid #092834;
+  border-bottom: 1px solid rgba(9, 40, 52, .5);
+  border-right: 1px solid rgba(9, 40, 52, .5);
 }
 
 .table td{
+  width: 70%;
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
   border: none;
-  border-bottom: 1px solid #092834;
+  border-bottom: 1px solid rgba(9, 40, 52, .5);
  
 }
 
 th.ident{
+  
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
   border: none;
-  border-right: 1px solid #092834;
+  border-right: 1px solid rgba(9, 40, 52, .5);
 }
 
  td.ident{
+  
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
@@ -913,15 +935,29 @@ p.card-text {
   font-family: 'Lato-Regular';
 }
 
-.memoria-dropdown-scroll { /*no me acuerdo qué hace, creo no hace nada*/
-  height: auto;
-  max-height: 300px;
-  overflow-x: hidden;
+.abrir-y-cerrar a {
+  color: #092834;
+  background-color: #f4f9e0;
+  transition: all .2s ease-in-out .05s;
 }
+
+.abrir-y-cerrar a:hover {
+  /*Animación de hover de título de acordeón*/
+  background-color: #B2D732;
+}
+
+.abrir-y-cerrar a:focus {
+  outline: none;
+  outline-width: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 
 .breadcrumb-item a { /*estilos para breadcrumb, cuidar que no choque con el de memo*/
   font-family: 'MerriweatherSans-Regular';
   color: #092834;
+  font-size: 14px;
 }
 
 .card-title { /*subtítulos de sección*/
@@ -929,9 +965,25 @@ p.card-text {
   font-size: 18px;
 }
 
-.table { /*línea superior de la tabla, en realidad no funciona aún*/
-  border-top: 0 solid #fff !important;
-  border-bottom: 0 solid #fff !important;
+#myTab a {
+  border: none;
+  border-bottom: 1px solid #B2D732;
+  transition: all .2s ease-in-out .05s;
+}
+
+#myTab a.active {
+  color: #092834;
+  background-color: #f4f9e0;
+  border-bottom: 1px solid #B2D732;
+}
+
+#myTab a:hover {
+  color: #092834;
+  background-color: #B2D732;
+}
+
+ul#myTab {
+  border-bottom: 2px solid #B2D732;
 }
 
 .card-header { /*Título de cédula, sección acordeón*/
@@ -945,10 +997,10 @@ p.card-text {
   background-color: #B2D732;
 }
 
-.card-header h2 { /*Texto de título de cédula, sección acordeón*/
+.card-header h5 { /*Texto de título de cédula, sección acordeón*/
   color: #092834;
   font-family: 'MerriweatherSans-Bold';
-  font-size: 18px;
+  font-size: 16px;
   padding: 0;
 }
 
