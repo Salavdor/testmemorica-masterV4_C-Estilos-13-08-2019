@@ -841,7 +841,6 @@ span.facetadorbarradenavegacion {
   color: #092834;
   border: none;
   border-bottom: 1px solid rgba(9, 40, 52, .5);
- 
 }
 
 th.ident{
@@ -850,6 +849,7 @@ th.ident{
   color: #092834;
   border: none;
   border-right: 1px solid rgba(9, 40, 52, .5);
+  width: 30%;
 }
 
  td.ident{
@@ -857,6 +857,7 @@ th.ident{
   font-size: 12px;
   color: #092834;
   border: none;
+  width: 70%;
 }
 
 
