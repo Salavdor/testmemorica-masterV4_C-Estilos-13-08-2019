@@ -1112,7 +1112,6 @@ para la cédula
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  speak: none;
   color: #347B98;
   font-size: 170%;
 }
@@ -1121,7 +1120,6 @@ para la cédula
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  speak: none;
   color: #FFF;
   display: inline-block;
   text-decoration: inherit;
@@ -1367,7 +1365,6 @@ div.memoria-pestanas {
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
 /* ----------------------------------------- página de objeto mensual (slider) INICIO---------------------------- */
 section {
 	width: 100%;
@@ -1410,5 +1407,3 @@ section {
 
 
 /* ----------------------------------------- página de objeto mensual (slider) FIN---------------------------- */
-=======
->>>>>>> 89ce7c6022054b9de0d47210f261e7eb4574235e
