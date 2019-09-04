@@ -833,7 +833,7 @@ span.facetadorbarradenavegacion {
   object-fit: contain;
 }
 
-.table th{
+.table th {
   font-family: 'MerriweatherSans-Bold';
   font-size: 14px;
   color: #092834;
@@ -842,7 +842,7 @@ span.facetadorbarradenavegacion {
   border-right: 1px solid rgba(9, 40, 52, .5);
 }
 
-.table td{
+.table td {
   font-family: 'MerriweatherSans-regular';
   font-size: 12px;
   color: #092834;
@@ -850,21 +850,27 @@ span.facetadorbarradenavegacion {
   border-bottom: 1px solid rgba(9, 40, 52, .5);
 }
 
-th.ident{
-  font-family: 'MerriweatherSans-Bold';
-  font-size: 14px;
-  color: #092834;
+th.ident {
   border: none;
   border-right: 1px solid rgba(9, 40, 52, .5);
-  width: 30%;
+  min-width: 30%;
+  max-width: 30% !important;
 }
 
- td.ident{
-  font-family: 'MerriweatherSans-regular';
-  font-size: 12px;
-  color: #092834;
+ td.ident {
   border: none;
-  width: 70%;
+  min-width: 70% !important;
+  max-width: 70%;
+}
+
+@media (max-width: 576px) {
+  .table th {
+    font-size: 11px;
+  }
+
+  .table td {
+    font-size: 11px;
+  }
 }
 
 
@@ -988,12 +994,16 @@ p.card-text {
   font-size: 18px;
 }
 
+#myTab a {
+  border: none;
+  border-bottom: 1px solid #B2D732;
+  transition: all .2s ease-in-out .05s;
+}
+
 #myTab a.active {
   color: #092834;
   background-color: #f4f9e0;
-  border: none;
-  border-bottom: .0px solid #B2D732;
-  transition: all .2s ease-in-out .05s;
+  border-bottom: 1px solid #B2D732;
 }
 
 #myTab a:hover {
@@ -1109,7 +1119,6 @@ para la cédula
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  speak: none;
   color: #347B98;
   font-size: 170%;
 }
@@ -1118,7 +1127,6 @@ para la cédula
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  speak: none;
   color: #FFF;
   display: inline-block;
   text-decoration: inherit;
@@ -1364,7 +1372,6 @@ div.memoria-pestanas {
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
 /* ----------------------------------------- página de objeto mensual (slider) INICIO---------------------------- */
 section {
 	width: 100%;
@@ -1407,5 +1414,3 @@ section {
 
 
 /* ----------------------------------------- página de objeto mensual (slider) FIN---------------------------- */
-=======
->>>>>>> 89ce7c6022054b9de0d47210f261e7eb4574235e
