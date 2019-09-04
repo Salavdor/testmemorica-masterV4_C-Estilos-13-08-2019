@@ -474,29 +474,49 @@
     </script>
     
     <!--Cambio de foto Landing -->
-    <script type="text/javascript">
-        
-        $(function() {
-        var landing = $('#landing');
-        var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)', 'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)','url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)','url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'];
-        var current = 0;
+    <!-- <script type="text/javascript">
+        $(function () {
+            var landing = $('#landing');
+            var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)',
+                'url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'
+            ];
+            var current = 0;
 
-        function nextBackground() {
-        landing.css( 
-            'background',
-            backgrounds[current = ++current % backgrounds.length]
-        );
-        landing.css('background-size', 'cover');
-        setTimeout(nextBackground, 4000);
-        }
-        setTimeout(nextBackground, 4000);
-        landing.css('background', backgrounds[0]);
-        landing.css('background-size', 'cover');
-
+            function nextBackground() {
+                landing.css(
+                    'background',
+                    backgrounds[current = ++current % backgrounds.length]
+                );
+                landing.css('background-size', 'cover');
+                setTimeout(nextBackground, 4000);
+            }
+            setTimeout(nextBackground, 4000);
+            landing.css('background', backgrounds[0]);
+            landing.css('background-size', 'cover');
         });
-
-    </script>
+    </script> -->
    
+
+   <script type="text/javascript">
+       $(function () {
+           var landing = $('#landing');
+           var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)',
+                'url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'
+            ];
+
+           var bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+           landing.css('background', bg);
+           landing.css('background-size', 'cover');
+       });
+   </script>
 
 </body>
 
