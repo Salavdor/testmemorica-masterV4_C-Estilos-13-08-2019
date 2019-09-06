@@ -179,15 +179,15 @@ h5 {
  
 .flex {
   display: flex;
- }
+}
  
  
  
- .intro {
+.intro {
   width: 100%;
   height: 100%;
   display: grid;
-  overflow:hidden ;
+  overflow: hidden;
   transition: 1s linear;
 }
 

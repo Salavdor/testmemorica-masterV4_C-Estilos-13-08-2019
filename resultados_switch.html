@@ -1,0 +1,1721 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Resultados</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!-- <link href="recursos/css/menulateral.css" rel="stylesheet" type="text/css"> -->
+        
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        
+
+        <!-- fuente de íconos -->
+	    <link rel="stylesheet" href="recursos/Type/fontello/css/fontello-embedded.css">
+
+        
+
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script type="text/javascript">
+            function formReset()
+            {
+            document.getElementById("myForm").reset();
+            }
+        </script>
+
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <link rel="stylesheet" href="recursos/css/jPages.css">
+        <script src="recursos/js/jPages.js"></script>
+        <link rel="stylesheet" href="recursos/css/animate.css">
+
+        <link rel="stylesheet" href="recursos/css/style.css">
+
+        <script src="recursos/js/memoricasdk.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Header con barra y buscador -->
+        <header>
+            <!-- Barra de navegación -->   
+            <div class="barra-superior"></div>       
+            <nav class="navbar navbar-expand-lg navbar-light">
+                
+                <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica"><img src="/recursos/img/Logos/Memorica.svg" height="30px"/></a>
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- menu que se colapsa   -->
+                <div class="collapse navbar-collapse flex-column" id="menu">
+        
+                    <div class="col-12 d-flex justify-content-center">
+                        <a class="navbar-brand d-none d-lg-block " href="index.html"><img src="/recursos/img/Logos/Memorica.svg" height="62px"/></a>
+                    </div>
+
+                    <div class="container py-3 d-none d-lg-block">
+                        <div class="row">
+                            <div class="col-3 col-sm-3"></div>
+                            <div class="col-6 col-sm-6 align-self-center">
+                                <form class="form" action="resultados.html">
+                                    <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text" placeholder="¿Qué quieres encontrar hoy?" aria-label="Buscador">
+                                    <!-- <input id='searchButton' type='button' value='busquele'> -->
+                                </form>
+                            </div>    
+                            <div class="col-3 col-sm-3"></div>
+                        </div>
+                    </div>
+
+                    
+        
+                    <div class="container botones-pestanas">
+
+                        <ul class="navbar-nav d-flex justify-content-between pestanas">
+                            <li class="nav-item">
+                                    <a class="nav-item nav-link" href="#">Haz memoria</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-item nav-link" href="acervos.html">Acervos</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-item nav-link" href="temas.html">Temas</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-item nav-link" href="#">Exposiciones</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-item nav-link" href="#">Miscelánea</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-item nav-link" href="#">Breves</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+            <!--Buscador-->
+            <div class="container-fluid d-flex justify-content-center p-3 d-block d-lg-none">
+                <div class="row fila-centrada ">
+                    <div class="col-0 col-sm-3"></div>
+                    <div class="col-12 col-sm-6 align-self-center">
+                        <form class="form" action="resultados.html">
+                            <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text" placeholder="¿Qué quieres encontrar hoy?" aria-label="Search">
+                            
+                        </form>
+                    </div>
+                    <div class="col-0 col-sm-3"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Barra de breadcrumb y botones de visualizador etc Opciones Resultados-->
+            
+                <div class="container">
+                    <div class="row opciones_resultados">
+                        <div class="col-lg-3 col-md-4 col-12 p-0 d-flex justify-content-lg-start align-items-end">
+                            <nav class="p-0 mb-0" aria-label="breadcrumb">
+                                <ol class="breadcrumb bg-transparent m-0 px-3 py-1 d-flex align-items-center">
+                                    <li class="breadcrumb-item texto-breadcrum"><a href="index.html"><img
+                                                src="recursos/img/inicio.svg" height="35px"></a></li>
+                                    <li class="breadcrumb-item texto-breadcrum"><a href="index.html">Inicio</a></li>
+                                    <li class="breadcrumb-item texto-breadcrum"><a href="#">Resultados</a></li>
+                                    
+                                </ol>
+                            </nav>  
+                        </div>
+                        <div class="col-lg-5 col-md-8 col-12 d-flex justify-content-between px-3 py-2">
+                            <div class="d-flex align-items-end">
+                                    <p class="mb-1"><span class="facetadorbarradenavegacion">1</span>-<span class="facetadorbarradenavegacion">8</span> de <span class="facetadorbarradenavegacion">75</span> resultados</p>
+                            </div>
+                            
+                            
+                            <div class="d-flex justify-content-center align-items-end">
+                                <p class="mb-1">Mostrar</p>
+                                <select class="resultados_pagina form-control mx-3 m-0 p-1" id="resultsPerPage">
+                                    <option>20</option>
+                                    <option>50</option>
+                                    <option>100</option>
+                                </select>
+                                <p class="mb-1">por pagina</p>
+                            </div>    
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-end justify-content-center py-2">
+                            <div class="button-group round toggle d-flex align-items-end" >
+                                  
+                                    <input type="radio" id="r1" name="r-group">
+                                    <label class="button  px-3 mb-0 " for="r1">Mosaico <i class="icono_modos_visualizacion">&#xe80b;</i></label>
+                                    <span style="color: #092834; font-size: 20px;">|</span>
+                                    <input type="radio" id="r2" name="r-group">
+                                    <label class="button px-3 mb-0 " for="r2">Tabla <i class="icono_modos_visualizacion">&#xe810;</i></label>
+                                    <span style="color: #092834; font-size: 20px;">|</span>
+                                    <input type="radio" id="r3" name="r-group">
+                                    <label class="button px-3 mb-0 " for="r3">Lista <i class="icono_modos_visualizacion">&#xe80a;</i></label>
+                            </div>      
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            
+
+            <!--linea de tiempo rango-->
+
+            <!-- <div class="py-2 px-3 container" >
+                <div class="row d-flex justify-content-between">
+                    <input type="text" id="añoinicio" readonly style="border:0; font-weight:bold; width: 40px;" min="0000" max="20219">
+                    <input type="text" id="añofin" readonly style="border:0; font-weight:bold; width: 40px;" min="0000" max="2019">
+                </div>
+                <div class="" id="slider-range"></div>
+                
+            </div> -->
+
+            
+
+            <!--Contenedor-->
+
+            <div class="container p-0 mt-3">
+
+                <div class="row p-0 m-0">
+                     <!--MENU Facetador-->
+                    <div class="col-sm-0 col-md-0 col-lg-3 px-0">
+                        <div class="nav-side-menu">
+                            <div class="brand px-4 d-block d-lg-none">
+                                    Filtrar Búsqueda       
+                            </div>
+                            <i class="fas fa-sliders-h fa-2x toggle-btn" data-toggle="collapse"
+                                data-target="#menu-content"></i>
+                            
+                                <form id="myForm">
+                                    <div class="menu-list">
+                                        <ul id="menu-content" class="menu-content collapse out bg-transparent">
+                                            <li data-toggle="collapse" data-target="#autor" class="collapsed facetas px-3 d-flex justify-content-between">
+                                                <a href="#"> Autor </a><a href="#"> + </a>
+                                            </li>
+                                            <ul class="sub-menu collapse" id="autor">
+                                                    <li><input type="search" class="form-control autor" placeholder="Escriba el nombre del Autor"
+                                                        aria-controls="dataTable"></li>
+                                            </ul>
+                                            <li data-toggle="collapse" data-target="#tipo-de-objeto-digital" class="collapsed facetas px-3 d-flex justify-content-between">
+                                                <a href="#"> Tipo de objeto digital</a><a href="#"> + </a>
+                                            </li>
+                                            <ul class="sub-menu collapse" id="tipo-de-objeto-digital">
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input"> Imagen
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input"> Texto
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input"> Video
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input"> Audio
+                                                </li>
+                                                
+                                            </ul>
+                                            <li data-toggle="collapse" data-target="#tipo-de-objeto" class="collapsed facetas px-3 d-flex justify-content-between">
+                                                <a href="#"> Tipo de objeto</a> <a href="#"> + </a>
+                                            </li>
+                                            <ul class="sub-menu collapse results" id="tipo-de-objeto">
+                                                
+                                            </ul>
+                                            <ul class="sub-menu collapse" id="tipo-de-objeto">
+                                                <li><button class="btn btn-light boton_limpiar_formulario" id="loadmorebtn">
+                                                    <img src="ajax-loader.gif" class="ani_image" style="float:left">
+                                                    &nbsp; Cargar más
+                                                </button></li>
+                                            </ul>
+            
+            
+                                            <li data-toggle="collapse" data-target="#fecha" class="collapsed facetas px-3 d-flex justify-content-between">
+                                                <a href="#">Busqueda por fecha</a> <a href="#"> + </a>
+                                            </li>
+                                            <ul class="sub-menu collapse" id="fecha">
+                                                <li>
+                                                        
+                                                            <span class="filterTitle">Rango en años</span> 
+
+                                                            <div> 
+                                                            <span class="sr-only"><label for="Año inicio">Año inicio</label></span>
+                                                            <input class="años" type="number" data-ng-value="" name="anneeDebut" id="añoinicio" data-ng-required="false" data-ng-model="$ctrl.anneeStart" data-ng-change="$ctrl.setPeriodeAnnees()" autocomplete="off" placeholder="0000"  min="0000" max="2019">
+                                                            -
+                                                            <span class="sr-only"><label for="Año final">Año final</label></span>
+                                                            <input class="años" type="number" data-ng-value="" name="anneeDebut" id="añofin" data-ng-required="false" data-ng-model="$ctrl.anneeStart" data-ng-change="$ctrl.setPeriodeAnnees()" autocomplete="off" placeholder="2019"  min="0000" max="2019">
+                                                            
+                                                            </div>
+                                                        
+                                                </li>        
+                                                <!-- <li>Siglo
+                                                    <select class="custom-select radio_facetador" id="inputGroupSelect01">
+                                                        <option selected>Cualquiera</option>
+                                                        <option value="1">XIV</option>
+                                                        <option value="2">XV</option>
+                                                        <option value="3">XVI</option>
+                                                        <option value="4">XVII</option>
+                                                    </select></li>
+                                                <li>Periodo
+                                                        <select class="custom-select radio_facetador" id="inputGroupSelect01">
+                                                            <option selected>Cualquiera</option>
+                                                            <option value="1">Neoclásico</option>
+                                                            <option value="2">Virreinato</option>
+                                                            <option value="3">Prehistórico</option>
+                                                </select></li>     -->
+                                               
+                                            </ul>
+                                            <li data-toggle="collapse" data-target="#institucion" class="collapsed facetas px-3 d-flex justify-content-between">
+                                                <a href="#">Institución de procedencia</a> <a href="#"> + </a>
+                                            </li>
+                                            <ul class="sub-menu collapse" id="institucion">
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 1
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 2
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 3
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 4
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 5
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 6
+                                                </li>
+                                                <li class="checkbox_1"><input type="checkbox" aria-label="Checkbox for following text input">
+                                                    Institución 7
+                                                </li>
+                                            </ul>
+                                            <li data-toggle="collapse" data-target="#derechos" class="collapsed facetas px-3 d-flex justify-content-between">
+                                                <a href="#"></i>Derechos de Uso</a> <a href="#"> + </a>
+                                            </li>
+                                            <ul class="sub-menu collapse" id="derechos">
+                                                <li><select class="custom-select radio_facetador" id="inputGroupSelect01">
+                                                    <option selected>Cualquiera</option>
+                                                    <option value="1">Derechos Reservados</option>
+                                                    <option value="2">Uso Educativo</option>
+                                                    <option value="3">Dominio Público</option>
+                                                    <option value="4">Uso no restringido o permitido</option>
+                                                    <option value="5">Obras de Titular no identificado o identificable</option>
+                                                    <option value="3">Obras Anónimas</option>   
+                                                </select>
+                                                </li>
+                                            </ul>
+                                            <li data-toggle="collapse" class="collapsed facetas px-3 d-flex justify-content-between" style="background-color: white;">
+                                                <input class="boton_limpiar_formulario" type="reset" value="Limpiar formulario" onclick="formReset()" value="Reset">
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Contenedor Resultados-->
+                    
+                    <div class="col-12 col-lg-9 p-0" id="main" style="width: 100%;">
+                        <div class="row m-1">
+                            <div class="col-0 col-lg-1"></div>
+
+                            <div class="col-12 col-lg-10 p-0">
+                                <div class="row m-0 p-0" id="memoricaResultadosBusqueda">
+                                    
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/Saxofon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt=""
+                                                    src="recursos/img/balafon.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2">
+                                        <div class="card rounded-0">
+                                            <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                                <img class="card-img img-responsiva" alt="" src="recursos/img/Oboe.jpg">
+                                                <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="pt-0 pb-2 px-sm-3 px-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                    </svg>
+                                                </div>
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado"
+                                                    style="max-height: 35px; overflow: hidden; z-index: 1;">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-0 col-lg-1"></div>
+                                     
+                        </div> 
+
+                        <div class="row d-flex justify-content-center pt-3 m-0 mt-3" >
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">«</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+				</div>
+			</div>
+		</main>
+        <!-- Footer -->
+		<!-- atún sellado de mi casa, y un limón -->
+        <footer class="footer mt-3 py-0">
+            <div class="container p-0" style="border-top: 1px solid #092834;">
+                <!-- SEPARADOR -->
+                <div class="col-1" style="background-color: #FF026A; height:3px;"></div><div class="col-11"></div>
+                <!-- ---- -->
+                <div class="row p-0 my-4" style="margin-left: 0px; margin-right: 0px;">
+                        <div class="col-12 d-flex justify-content-start flex-column">
+                                <ul class="memoria-redes">
+                                    <li><a href="#"> <i class="fab fa-facebook-f 3x"></i> </a></li>
+                                    <li style="color: #092834">|</li>
+                                    <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                </ul>
+                        </div>
+                        <div class="col-md-4 col-12 contenedor-izquierdo">
+                            <ul>
+                                <li><a href="#">Términos y condiciones</a></li>
+                                <li><a href="#">Aviso de privacidad</a></li>
+                                <li><a href="#">Marco jurídico</a></li>
+                                <li><a href="#">Coordinación</a></li>
+                                <li><a href="#">Instituciones vinculadas</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <ul>
+                                <li><a href="#">Documentación técnica</a></li>
+                                <li><a href="#">Cómo usar el sitio</a></li>
+                                <li><a href="#">Mapa de sitio</a></li>
+                            </ul>
+                        </div>
+                    <div class="col-md-4 co-12 d-flex justify-content-center align-self-center pt-3">
+                            <img class="img-fluid" src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="60px"/>
+                    </div>
+                   
+                </div>
+            </div>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" >
+        </script>
+        <!-- <script src="recursos/js/range_Timeline.js" crossorigin="anonymous"></script> -->
+
+        <!-- reductor de texto -->
+        <script type="text/javascript">
+                function shorten(text, maxLength, delimiter, overflow) {
+                    delimiter = delimiter || "&hellip;";
+                    overflow = overflow || false;
+                    var ret = text;
+                    if (ret.length > maxLength) {
+                        var breakpoint = overflow ? maxLength + ret.substr(maxLength).indexOf(" ") : ret.substr(0, maxLength).lastIndexOf(" ");
+                        ret = ret.substr(0, breakpoint) + delimiter;
+                    }
+                    return ret;
+                }
+
+               
+                $(document).ready(function () {
+                    
+                
+
+                    var $descripcion = $(".limitado");
+                    var text = $descripcion.text();
+                    $descripcion.text(shorten(text, 100, "...", false));
+                });
+        </script>
+
+        <!-- Api Buscador -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // buscador de taÃ±amo variable
+                $(window).on('scroll', function () {
+                    var scrollTop = $(window).scrollTop();
+                    if (scrollTop > 100) {
+                        $('.altura-variable').stop().animate({
+                            height: "100px"
+                        }, 15);
+                    } else {
+                        $('.altura-variable').stop().animate({
+                            height: "200px"
+                        }, 15);
+                    }
+                });
+
+                // bÃºsqueda coqueta
+                $('#searchButton').click(function () {
+                    var search = $('#usersSearch').val();
+                    $.post('../searchusers.php', {
+                        search: search
+                    }, function (response) {
+                        $('#userSearchResultsTable').html(response);
+                    });
+                })
+
+                $('#usersSearch').keypress(function (e) {
+                    if (e.which == 13) { //Enter key pressed
+                        $('#searchButton').click(); //Trigger search button click event
+                    }
+                });
+
+                // agrega icono de menos para elementos colapsables que estÃ¡n abiertos por default
+                // $(".collapse.show").each(function () {
+                //     $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+                // });
+
+                // // cambia entre Ã­conos de mÃ¡s y menos con el show o hide del collapse
+                // $(".collapse").on('show.bs.collapse', function () {
+                //     $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+                // }).on('hide.bs.collapse', function () {
+                //     $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+                // });
+            });
+        </script>
+        <!-- invoca a buscador -->
+        <script>
+            $(document).ready(function() {
+                window.memorica = new Memoricasdk(window);
+                window.memorica.init({"apiName":"search","baseUrl":"http://10.15.4.58:8080/api/search","requestParams": {"q":"ferrocarril"}});
+            });
+        </script>
+            <!-- listado de resultados -->
+        <script>
+            function getItemDOM(item) {
+                if (item) {
+                    var listItemContent =
+                        '<div class="card"><img src="__itemImage__" class="card-img-top"><div class="card-body"><h5 class="card-title"><a href="__itemUrl__">__itemTitleTitle__</a></h5><p class="card-text">__itemDescription__</p></div></div>';
+                    var propmap = {
+                        __itemImage__: 'recursos/img/Saxofon.jpg',
+                        __itemTitleTitle__: item.bhc.titulo || "",
+                        __itemDescription__: item.bhc.descripcion || "",
+                        __itemUrl__: item._self || "#"
+                    };
+                    return memorica.getDOMElement(listItemContent, propmap);
+                }
+            }
+
+            $(document).ready(function () {
+                memorica.search(memorica.requestParams.q, {},
+                    function (data) {
+                        if (data) {
+                            document.getElementById("searchQuery").innerHTML = '"' + memorica.requestParams
+                                .q + '"';
+                            document.getElementById("totalRecords").innerHTML = data.total;
+                            var listElement = document.getElementById("memoricaResultadosBusqueda");
+
+                            data.records.forEach(function (item) {
+                                $(listElement).append(getItemDOM(item));
+                            });
+                        }
+                    },
+                    function (error) {
+                        var containerDiv = document.getElementById("memoricaResultadosBusqueda");
+                        $(containerDiv).innerHTML = "<p>La curaduría que buscas no existe</p>";
+                    });
+            });
+
+            $(function(){
+                $("div.holder").jPages({
+                    containerID : "memoricaResultadosBusqueda"
+                });
+            });
+
+        </script>
+
+    </body>
+</html>
+<!-- 
+                  ,--.    ,--.
+                 ((O ))--((O ))
+               ,'_`--'____`--'_`.
+              _:  ____________  :_
+             | | ||::::::::::|| | |
+             | | ||::::::::::|| | |
+             | | ||::::::::::|| | |
+             |_| |/__________\| |_|
+               |________________|
+            __..-'            `-..__
+         .-| : .----------------. : |-.
+       ,\ || | |\______________/| | || /.
+      /`.\:| | ||  __  __  __  || | |;/,'\
+     :`-._\;.| || '--''--''--' || |,:/_.-':
+     |    :  | || .----------. || |  :    |
+     |    |  | || '-MALANDRO-' || |  |    |
+     |    |  | ||   _   _   _  || |  |    |
+     :,--.;  | ||  (_) (_) (_) || |  :,--.;
+     (`-'|)  | ||______________|| |  (|`-')
+      `--'   | |/______________\| |   `--'
+             |____________________|
+              `.________________,'
+               (_______)(_______)
+               (_______)(_______)
+               (_______)(_______)
+               (_______)(_______)
+              |        ||        |
+              '--------''--------'
+-->
