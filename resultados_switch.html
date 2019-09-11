@@ -1661,22 +1661,22 @@
 
             $(document).ready(function () {
                 memorica.search(memorica.requestParams.q, {},
-                    function (data) {
-                        if (data) {
-                            document.getElementById("searchQuery").innerHTML = '"' + memorica.requestParams
-                                .q + '"';
-                            document.getElementById("totalRecords").innerHTML = data.total;
-                            var listElement = document.getElementById("memoricaResultadosBusqueda");
+                function (data) {
+                    if (data) {
+                        document.getElementById("searchQuery").innerHTML = '"' + memorica.requestParams
+                            .q + '"';
+                        document.getElementById("totalRecords").innerHTML = data.total;
+                        var listElement = document.getElementById("memoricaResultadosBusqueda");
 
-                            data.records.forEach(function (item) {
-                                $(listElement).append(getItemDOM(item));
-                            });
-                        }
-                    },
-                    function (error) {
-                        var containerDiv = document.getElementById("memoricaResultadosBusqueda");
-                        $(containerDiv).innerHTML = "<p>La curaduría que buscas no existe</p>";
-                    });
+                        data.records.forEach(function (item) {
+                            $(listElement).append(getItemDOM(item));
+                        });
+                    }
+                },
+                function (error) {
+                    var containerDiv = document.getElementById("memoricaResultadosBusqueda");
+                    $(containerDiv).innerHTML = "<p>La curaduría que buscas no existe</p>";
+                });
             });
 
             $(function(){
