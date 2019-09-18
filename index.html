@@ -31,17 +31,19 @@
         background-repeat: no-repeat;
         background-size: cover;">
 
-        <div class="col-12 pt-2 pt-sm-3 pl-2 pl-sm-4" style="z-index: 1;">
+        <div class="col-12 pt-0 pt-5 pl-5" style="z-index: 1;">
             <img class="logo_landing" src="recursos/img/Logos/logo_memorica_bl.svg"/>
         </div>
 
-        <div class="col-12 d-flex align-items-center justify-content-center" style="height: 100%;">
+        <div class="col-12 d-flex align-items-center justify-content-center" style="height: 80%">
             <div id="tracker"></div>
             
             <div class="col-1 col-sm-3"></div>
             <div class="col-10 col-sm-6 d-flex justify-content-center circulo_buscador">
-                <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html" style="position: relative; top:220px;">
-                    <input id="usersSearch" class="form-control rounded-pill inputbuscador2" type="text" placeholder="México, haz memoria" aria-label="Search" style="max-width: 400px;">
+                <form class="input-group with-icon form d-flex justify-content-center"
+                    action="/{user@getLanguage}/{topic@getWebSiteId}/Resultados" style="position: relative; top:220px;">
+                    <input id="usersSearch" name="q" class="form-control rounded-pill  inputbuscador2" type="text"
+                        placeholder="México, haz memoria" aria-label="Search" style="max-width: 400px;">
                 </form>
             </div>
             <div class="col-1 col-sm-3"></div>
@@ -492,7 +494,7 @@
                     "México, haz memoria",
                     "La Mémorica de México",
                     "Haz memoria",
-                    "¿Que quieres encontrar?"
+                    "¿Qué quieres encontrar?"
                 ];
 
                 printPhrases(phrases, $('#usersSearch'));

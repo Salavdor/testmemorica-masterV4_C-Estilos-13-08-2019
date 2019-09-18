@@ -89,8 +89,8 @@ h5 {
 -----------------------------*/
 
 #tracker{
-  position: absolute;  
-  top: calc(50vh - 75%);
+  position: absolute;
+  top: calc(50vh - 52%);
   left: calc(50vw - 307px);
   border-radius: 50%;
   /* opacity: .98; */
@@ -107,32 +107,16 @@ h5 {
   box-shadow:0 0 0 9999px rgba(0,12,19,0.98);
   box-sizing: border-box;
   filter: blur(1px);
+  height: 600px;
+  width: 600px;
+}
+
+.logo_landing {
+  height: 60px;
 }
 
 
-
-@media(min-width: 400px){
-  #tracker:after{
-    height: 600px;
-    width: 600px;
-  }
-  .logo_landing{
-    height: 40px;
-  }
-}
-
-@media(max-width: 399px){
-  #tracker:after{
-    height: 400px;
-    width: 400px;
-  }
-  .logo_landing{
-    height: 20px;
-  }
-}
-
-
-@media(min-width: 400px) {
+@media(max-width: 888px) {
   #tracker:after {
     height: 600px;
     width: 600px;
@@ -154,16 +138,16 @@ h5 {
   }
 }
 
-@media(min-width: 767px) {
+/* @media(min-width: 767px) {
   .logo_landing {
     height: 40px;
   }
-}
+} */
 
 .circulo_buscador {
   z-index: 3;
   min-height: 500px;
-  max-height: 500px;
+  
   background-image: url(../img/circulo_buscador_landing.svg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -171,8 +155,6 @@ h5 {
   /* overflow:hidden;  */
   /* top: 20px; */
 }
-
-
 
 
 #bloque {
@@ -283,7 +265,9 @@ nav { /*alinea texto en navbar*/
 }
 
 /* //hide nasty ie clear thingie */
-.input-group.with-icon>input::-ms-clear{display:none}
+.input-group.with-icon>input::-ms-clear {
+  display: none
+}
 
 /* //general placement stuffs */
 .input-group.with-icon>img {

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MEMORICA - Acervo Individual</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="recursos/css/style.css">
+
+	<!-- fuente de íconos -->
+	<link rel="stylesheet" href="recursos/Type/fontello/css/fontello-embedded.css">
+</head>
+
+<body>
+	<!-- Header con barra y buscador -->
+	<header>
+		<!-- Barra de navegación -->
+		<div class="barra-superior"></div>
+		<nav class="navbar navbar-expand-lg navbar-light">
+
+			<a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica">
+				<img src="recursos/img/Logos/logo_memorica.svg" height="20px" />
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+				aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- menu que se colapsa   -->
+			<div class="collapse navbar-collapse flex-column" id="menu">
+
+				<div class="col-12 d-flex justify-content-center p-0">
+					<a class="navbar-brand d-none d-lg-block m-0 " href="index.html"><img
+							src="recursos/img/Logos/logo_memorica.svg" height="45px" /></a>
+				</div>
+
+				<div class="container py-3 d-none d-lg-block">
+					<div class="row fila-centrada m-0 ">
+						<div class="col-3 col-sm-4"></div>
+						<div class="col-6 col-sm-4 align-self-center">
+							<form class="form" action="resultados.html">
+								<input id="usersSearch"
+									class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text"
+									placeholder="México, haz memoria" aria-label="Buscador">
+							</form>
+						</div>
+						<div class="col-3 col-sm-4"></div>
+					</div>
+				</div>
+
+				<div class="container botones-pestanas">
+					<ul class="navbar-nav d-flex justify-content-between pestanas">
+						<li class="nav-item">
+							<a class="nav-item nav-link" href="haz_memoria.html">Haz memoria</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" href="acervos.html">Acervos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" href="temas.html">Temas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" href="exposiciones.html">Exposiciones</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-item nav-link" href="miscelanea.html">Miscelánea</a>
+						</li>
+						<!-- <li class="nav-item">
+                            <a class="nav-item nav-link" href="#">Breves</a>
+                        </li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!--Buscador-->
+		<div class="container-fluid memoria-buscador d-flex justify-content-center pt-3 d-block d-lg-none">
+			<div class="row fila-centrada ">
+				<div class="col-0 col-sm-3"></div>
+				<div class="col-12 col-sm-6 align-self-center">
+					<form class="form" action="resultados.html">
+						<input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador"
+							type="text" placeholder="México, haz memoria" aria-label="Search">
+					</form>
+				</div>
+				<div class="col-0 col-sm-3"></div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Cuerpo de página -->
+	<main class="container">
+
+		<!-- Breadcrumb -->
+		<div class="row mt-3 mt-lg-0 mb-2">
+			<div class="col-lg-6 col-md-6 col-12 p-0 d-flex justify-content-lg-start align-items-start">
+				<nav class="p-0 mb-1" aria-label="breadcrumb">
+					<ol class="breadcrumb bg-transparent m-0 px-3 py-2 d-flex align-items-center">
+						<li class="breadcrumb-item texto-breadcrum"><a href="index.html"><img src="recursos/img/inicio.svg"
+									height="35px"></a></li>
+						<li class="breadcrumb-item texto-breadcrum"><a href="index.html">Regresar al inicio</a></li>
+						<li class="breadcrumb-item texto-breadcrum"><a href="#">bread</a></li>
+						<li class="breadcrumb-item active texto-breadcrum" aria-current="page"><a>crumb</a></li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+
+		<div class="memoria-titulo" style="border-bottom: 1pt solid #092834;">
+			<h5>Centro Académico de la Memoria de Nuestra América</h5>
+		</div>
+		<div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+
+		<!-- Nombre y descripción del acervo -->
+		<div class="descripcion card my-3 p-3 border-0">
+			<div class="row no-gutters">
+				<div class="col-md-5">
+					<img class="card-img rounded-0" style="height: 100%;" src="recursos/img/placeholder-600x400.png" alt="">
+				</div>
+				<div class="col-md-7">
+					<div class="card-body p-0 pt-4 p-md-4">
+						<h2 class="card-title mb-2">Centro Académico de la Memoria de Nuestra América</h2>
+						<div class="col-1" style="background-color: #B2D732; height:5px;"></div>
+						<p id="memoria-texto-descripcion" class="card-text mt-4 mt-md-5">
+							Rerum enim itaque id. Perferendis et itaque molestias. Eum quidem eos
+							aut laudantium officia dolorum. Porro nihil maxime et reprehenderit nesciunt deserunt neque.
+							Provident ipsam rem consequatur qui culpa rerum accusamus. Quo veritatis culpa animi quae
+							natus laborum molestiae.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- objetos del acervo -->
+		<div class="row p-0 m-0">
+			<div class="col-sm-0 col-md-0 col-lg-3 px-0"></div>
+			<div class="col-12 col-lg-9 p-0" id="main" style="width: 100%;">
+				<div class="row m-1">
+					<div class="col-12 col-lg-10 p-0">
+						<div class="row m-0 p-0">
+							<div class=" m-2 p-0">
+								<div class="row  no-gutters">
+
+									<div class="card rounded-0 col-3 col-md-2 imagen-superior_lista">
+										<div class="d-flex align-self-center p-0" style="overflow: hidden;">
+											<img class="card-img" alt="" src="recursos/img/Saxofon.jpg" style="object-fit: cover;">
+											<div class="card-img-overlay p-0 d-flex justify-content-between imagen-superior_lista">
+												<a class="card-img-overlay" href="cedula.html"></a>
+												<span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+													<i class="icono_objetodigital m-0 rounded-circle" aria-hidden="true">&#xe809;</i>
+												</span>
+												<span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+													<a href="#">
+														<!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+													</a>
+												</span>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="col-12 col-md-9 px-2">
+										<svg height="6px" width="33px">
+											<rect width="45px" height="5px" style="fill: #FF026A;" />
+										</svg>
+										<table class="table table-hover">
+											<tbody>
+												<tr>
+													<th scope="row" class="p-2">Título</th>
+													<td class="p-2 pl-3">Manuscrito de Carvajal</td>
+												</tr>
+												<tr>
+													<th scope="row" class="p-2">Título atribuído</th>
+													<td class="p-2 pl-3">Manuscrito de Carvajal</td>
+												</tr>
+												<tr>
+													<th scope="row" class="p-2">Autor</th>
+													<td class="p-2 pl-3">Anónimo</td>
+												</tr>
+												<tr>
+													<th scope="row" class="p-2">Fecha de creación
+														del BHC</th>
+													<td class="p-2 pl-3">18 de junio de 1989</td>
+												</tr>
+												<tr>
+													<th scope="row" class="p-2">Lugar de creación</th>
+													<td class="p-2 pl-3">México</td>
+												</tr>
+												<tr>
+													<th scope="row" class="p-2">Descripción</th>
+													<td class="p-2 pl-3">Pirámide más alta y de mayor relevancia histórica
+														en la zona arqueológica de Palenque, en el estado
+														de Chiapas.</td>
+												</tr>
+												<tr>
+													<th scope="row" class="p-2">Institución
+														que resguarda</th>
+													<td class="p-2 pl-3">Museo Nacional de Antropoligía</td>
+												</tr>
+												<tr>
+													<th scope="row" class="ident p-2">Identificador</th>
+													<td class="ident p-2 pl-3">AMN38936</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<!-- Footer -->
+	<!-- atún sellado de mi casa, y un limón -->
+	<footer class="footer mt-3 py-0">
+		<div class="container p-0" style="border-top: 1px solid #092834;">
+			<!-- SEPARADOR -->
+
+			<div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+
+			<div class="row pt-2 pb-5" style="width: 100%;">
+				<div class="col-12 d-flex justify-content-start flex-column">
+					<ul class="memoria-redes">
+						<li><a class="favicom" href="#"><i class="fab fa-facebook-f 5x"></i></a></li>
+						<li style="color: #092834">|</li>
+						<li><a class="favicom" href="#"><i class="fab fa-twitter"></i> </a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-12 contenedor-izquierdo pr-0">
+					<ul>
+						<li><a href="terminos_condiciones.html">Términos y condiciones</a></li>
+						<li><a href="aviso_privacidad.html">Aviso de privacidad</a></li>
+						<li><a href="marco_juridico.html">Marco jurídico</a></li>
+						<li><a href="coordinacion.html">Coordinación</a></li>
+						<li><a href="instituciones_vinculadas.html">Instituciones vinculadas</a></li>
+					</ul>
+				</div>
+				<div class="col-md-5 col-12">
+					<ul>
+						<li><a href="documentacion_tecnica.html">Documentación técnica</a></li>
+						<li><a href="como_usar_sitio.html">Cómo usar el sitio</a></li>
+						<li><a href="mapa_sitio.html">Mapa de sitio</a></li>
+						<li><a href="contacto.html">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 col-12 d-flex justify-content-center pt-3" style="width: 100%;">
+					<img src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="70px">
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="recursos/js/main.js"></script>
+	<script src="recursos/js/test.js"></script>
+
+</body>
+
+</html>
