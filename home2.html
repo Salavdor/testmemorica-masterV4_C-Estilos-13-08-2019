@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Inicio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="recursos/css/style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <script type="text/javascript">
+        function formReset() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Inicio Landing -->
+
+    <div id="landing" class="intro p-0 m-0" style="
+        overflow:hidden; background: rgba(0, 0, 0, 1); background-position: center center; background-repeat: no-repeat;
+        background-size: cover;">
+
+        <div class="col-12 pt-2 pt-sm-3 pl-2 pl-sm-4" style="z-index: 1;">
+            <img class="logo_landing" src="recursos/img/Logos/logo_memorica_bl.svg" />
+        </div>
+
+        <div class="col-12 d-flex align-items-center justify-content-center" style="height: 100%;">
+            <div id="tracker"></div>
+            <div class="col-1 col-sm-3"></div>
+            <div class="col-10 col-sm-6 d-flex justify-content-center circulo_buscador">
+                <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html"
+                    style="position: relative; top:220px;">
+                    <input id="usersSearch" class="form-control rounded-pill  inputbuscador2" type="text"
+                        placeholder="México, haz memoria" aria-label="Search" style="max-width: 400px;">
+                </form>
+            </div>
+            <div class="col-1 col-sm-3"></div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <a href="#home" class="scroll flex" style="z-index: 4;">
+                <p><STRONG>Inicio</STRONG></p>
+                <img src="recursos/img/Logos/scroll.svg" style="z-index: 5;" alt="">
+            </a>
+        </div>
+    </div>
+
+
+    <!-- ancla home -->
+
+    <!-- Header con barra y buscador -->
+    <header>
+
+        <div id="home" class="ancla flex"></div>
+
+        <!-- Barra de navegación -->
+        <div class="barra-superior"></div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica">
+                <img src="recursos/img/Logos/logo_memorica.svg" height="20px" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- menu que se colapsa   -->
+            <div class="collapse navbar-collapse flex-column" id="menu">
+
+                <div class="col-12 d-flex justify-content-center p-0">
+                    <a class="navbar-brand d-none d-lg-block m-0 " href="index.html"><img
+                            src="recursos/img/Logos/logo_memorica.svg" height="45px" /></a>
+                </div>
+
+                <div class="container py-3 d-none d-lg-block">
+                    <div class="row fila-centrada m-0 ">
+                        <div class="col-3 col-sm-4"></div>
+                        <div class="col-6 col-sm-4 align-self-center">
+                            <form class="input-group with-icon form d-flex justify-content-center"
+                                action="resultados.html">
+                                <input id="usersSearch"
+                                    class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text"
+                                    placeholder="México, haz memoria" aria-label="Buscador">
+                                <img src="/recursos/img/Logos/lupita.svg" alt="lupa" style="left: -22px">
+                            </form>
+                        </div>
+                        <div class="col-3 col-sm-4"></div>
+                    </div>
+                </div>
+
+                <div class="container botones-pestanas">
+                    <ul class="navbar-nav d-flex justify-content-between pestanas">
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="haz_memoria.html">Haz memoria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="acervos.html">Acervos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="temas.html">Temas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="exposiciones.html">Exposiciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="miscelanea.html">Miscelánea</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--Buscador-->
+        <div class="container-fluid memoria-buscador d-flex justify-content-center pt-3 d-block d-lg-none">
+            <div class="row fila-centrada ">
+                <div class="col-0 col-sm-3"></div>
+                <div class="col-12 col-sm-6 align-self-center">
+                    <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html">
+                        <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador"
+                            type="text" placeholder="México, haz memoria" aria-label="Search">
+                        <img src="/recursos/img/Logos/lupita.svg" alt="lupa" style="left: -22px">
+
+                    </form>
+                </div>
+                <div class="col-0 col-sm-3"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inicio espacio para los textos -->
+
+    <main style="z-index: 1000; background-color: #fff;">
+        <div class="container  pt-5" style="overflow: hidden;">
+
+            <div class="row p-0 m-0">
+                <div class="col-12 col-lg-9 px-sm-2 px-0"
+                    style="min-height: 500px; background-color: rgb(250, 252, 252);">
+                    <div class="col-12 p-0 mb-2 " style=" background-color:#092834;">
+                        <a href="#" target="_blank">
+                            <div class="row p-0 m-0">
+                                <div class="col-6 col-lg-4 p-0 m-0" style="overflow: hidden;">
+                                    <img class="card-img" alt="" src="recursos/img/cuando_muere_una_lengua.jpg"
+                                        style="width: 300px; object-fit:cover;">
+                                </div>
+
+                                <div class="col-6 col-lg-8 p-0 pl-4 d-flex align-items-center"
+                                    style="background-color:#092834;">
+                                    <div>
+                                        <h4 class="d-block d-lg-none" style="color:white;">Tema</h4>
+                                        <h3 class="d-block d-lg-none" style="color:white;">Cuando muere una lengua</h3>
+                                        <h5 class="d-none d-lg-block" style="color:white;">Tema</h5>
+                                        <h1 class="d-none d-lg-block" style="color:white;">Cuando muere una lengua</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="#" target="_blank">
+                     <div class="row pr-0 m-0" >
+                        
+                        <div class="col-12 col-sm-8 mb-2 px-0 pb-2" style=" overflow: hidden; max-height: 350px; background-color:rgb(252, 250, 249);">
+                                
+                            <div style="position: absolute; " class="overlay">
+                                        <h4 class="d-block d-lg-none m-3" style="color:white"></br>Exposición</h4>
+                                        <h3 class="d-block d-lg-none m-3" style="color:white">100 años de </br>El Automovil Gris</h3>
+                                        <h5 class="d-none d-lg-block m-3" style="color:white"></br>Exposición</h5>
+                                        <h1 class="d-none d-lg-block m-3" style="color:white">100 años de </br>El Automovil Gris</h1>
+                                    </div>
+                                        <img class="card-img" alt=""
+                                    src="recursos/img/expo_100_años_del_automovil_gris.jpg"
+                                    style="width:100%; object-fit:cover;">
+                                     
+                          
+                        </div>
+                        <div class="col-12 col-sm-4 mb-2 pl-2 pr-0"
+                        style="max-height: 350px; ">
+                           <div style="border: 4px solid #b2d732; height: 100%;"> 
+
+                                <img class="card-img" alt=""
+                                src="recursos/img/el_adolecente_huasteco3.jpg"
+                                style="max-height: 200px; width:100%; object-fit:cover;">
+                                <div >
+                                        <h4 class="d-block d-lg-none m-3" style="color:#092834">Objeto mensual</h4>
+                                        <h3 class="d-block d-lg-none m-3" style="color:#347b98">Adolecente Huasteco</h3>
+                                        <h5 class="d-none d-lg-block m-3" style="color:#092834">Objeto mensual</h5>
+                                        <h3 class="d-none d-lg-block m-3" style="color:#347b98">Adolecente Huasteco</h3>
+                                    </div> 
+                        
+                        
+                        
+                        
+                        </div>
+
+                        </div>
+                    </div></a>
+                </div>
+
+                <div class="col-12 col-lg-3 m-0 px-2 mb-2" style="min-height: 500px; background-color:#347b98;">
+
+                    <img class="card-img mt-2" alt="" src="recursos/img/archivo_general_de_la_nacion.jpg" style="width:500px; object-fit:cover;">
+
+                    <h4 class="d-block d-lg-none m-3" style="color:#092834;">Acervo</h4>
+                    <h3 class="d-block d-lg-none m-3" style="color:white;"><strong>Archivo General de la Nación</strong></h3>
+                    <h5 class="d-none d-lg-block m-3" style="color:#092834">Acervo</h5>
+                    <h1 class="d-none d-lg-block m-3" style="color:white"><strong>Archivo General de la Nación</strong></h1>
+                          
+
+
+                </div>
+
+
+            </div>
+            <a href="#" target="_blank">
+            <div class="row m-0 pl-sm-2 pl-0">
+                <div class="col-12 col-sm-6 m-0  pb-2"
+                    style=" border: 4px solid #FF026A; max-height: 250px; background-color:rgb(255, 255, 255);">
+
+                    <div>
+                        <h4 class="d-block d-lg-none m-3" style="color:#092834;"></br>Guías Didácticas</h4>
+                        <h3 class="d-block d-lg-none m-3" style="color:#092834;">¿quién era </br>Emiliano Zapata?</h3>
+                        <h5 class="d-none d-lg-block m-3" style="color:#092834;"></br>Guías Didácticas</h5>
+                        <h1 class="d-none d-lg-block m-3" style="color:#092834;">¿quién era </br>Emiliano Zapata?</h1>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-6 p-0 m-0" style="max-height: 250px; background-color:rgb(255, 255, 255);">
+                    <img class="card-img" alt="" src="recursos/img/zapata3.png" style="width:100%; object-fit:cover;">
+                </div>
+            </div></a>
+                           
+        </div>
+        <div class="row pb-5">
+                <div class="col-12" style="  max-height: 250px;">
+               
+            </div>
+            
+        </div> 
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="footer mt-3 py-0" style="z-index: 1;">
+        <div class="container p-0" style="border-top: 1px solid #092834;">
+            <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+            <div class="col-11"></div>
+            <div class="row  pt-2 pb-5">
+                <div class="col-12 d-flex justify-content-start flex-column">
+                    <ul class="memoria-redes">
+                        <li><a class="favicom" href="#"> <i class="fab fa-facebook-f 5x "></i> </a></li>
+                        <li style="color: #092834">|</li>
+                        <li><a class="favicom" href="#"> <i class="fab fa-twitter"></i> </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-12 contenedor-izquierdo pr-0">
+                    <ul>
+                        <li><a href="terminos_condiciones.html">Términos y condiciones</a></li>
+                        <li><a href="aviso_privacidad.html">Aviso de privacidad</a></li>
+                        <li><a href="marco_juridico.html">Marco jurídico</a></li>
+                        <li><a href="coordinacion.html">Coordinación</a></li>
+                        <li><a href="instituciones_vinculadas.html">Instituciones vinculadas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-12">
+                    <ul>
+                        <li><a href="documentacion_tecnica.html">Documentación técnica</a></li>
+                        <li><a href="como_usar_sitio.html">Cómo usar el sitio</a></li>
+                        <li><a href="mapa_sitio.html">Mapa de sitio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 co-12 d-flex justify-content-center  pt-3">
+                    <img src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="70px" />
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+
+    <!-- Script TIMELINE -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+    </script>
+
+    <script>
+        $(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 2019,
+                values: [0, 2019],
+                slide: function (event, ui) {
+                    $("#añoinicio").val(ui.values[0]);
+                    $("#añofin").val(+ui.values[1]);
+                }
+            });
+            $("#añoinicio").val($("#slider-range").slider("values", 0));
+            $("#añofin").val($("#slider-range").slider("values", 1));
+        });
+    </script>
+
+
+    <!-- Script MAS RESULTADOS -->
+    <script>
+        var mipagina = 1;
+        micontenido(mipagina);
+        $('#loadmorebtn').click(function (e) {
+            mipagina++;
+            micontenido(mipagina);
+            return false;
+        })
+
+        function micontenido(mipagina) {
+            $('.ani_image').show()
+            $.post('data.php', {
+                page: mipagina
+            }, function (data) {
+                if (data.trim().length == 0) {
+                    $('#loadmorebtn').text("No hay mas resultados").prop("disabled", true)
+                }
+                $('.results').append(data)
+                $("html, body").animate({
+                    scrollTop: $("#loadmorebtn").offset().top / 1.7
+                }, 800)
+                $('.ani_image').hide()
+            })
+            return false;
+        }
+    </script>
+
+    <!-- Script de landing -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+
+    <!-- Local JS -->
+    <script type="text/javascript">
+        // header animation
+        var stickyOffset = $(".ancla").offset().top;
+
+        $(window).scroll(function () {
+            var sticky = $(".ancla"),
+                scroll = $(window).scrollTop();
+
+            if (scroll >= stickyOffset) sticky.addClass("fixed");
+            else sticky.removeClass("fixed");
+        });
+
+        // scroll button
+        $(".scroll").click(function () {
+            $('html,body').animate({
+                scrollTop: $(".ancla").offset().top
+            }, 'slow');
+        });
+
+        // no scroll behind overlay
+        // Script del flashligth inicio
+    </script>
+
+    <!-- Dependencias del landing -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSRulePlugin.min.js'></script>
+    <!-- <script  src="./script.js"></script> -->
+    <script type="text/javascript">
+        // var tracker = document.getElementById("tracker");
+        var trackerAfterRule = CSSRulePlugin.getRule("#tracker:after");
+        // var btnIsHovered = false;
+
+        document.querySelector(".intro").onmousemove = function (e) {
+            // TweenLite.to(trackerAfterRule, 5, {
+            // cssRule: {
+            //     scale: 1
+            // }
+            // });
+            TweenLite.to(tracker, .5, {
+                left: e.pageX - 300,
+                top: e.pageY - 500,
+                'border': '4px solid transparent'
+            });
+            // if(btnIsHovered) {
+            // TweenLite.to(trackerAfterRule, .4, {
+            // cssRule: {
+            //     scale: 0
+            // }
+            // });
+            // TweenLite.to(tracker, .3, {
+
+            // left: e.pageX - 300,
+            // top: e.pageY - 500,
+            // 'border': '4px solid hsl(220, 58%, 85%)'
+            // });
+            // }
+            // else {   
+            //     TweenLite.to(trackerAfterRule, 5, {
+            //     cssRule: {
+            //         scale: 1
+            //     }
+            //     });
+            //     TweenLite.to(tracker, .5, {
+            //     left: e.pageX - 300,
+            //     top: e.pageY - 500,
+            //     'border': '4px solid transparent'
+            //     });
+            // }
+        };
+    </script>
+    <!-- Script Animación input  -->
+    <script type="text/javascript">
+        // Agregar algo al Placeholder
+        function addToPlaceholder(toAdd, el) {
+            el.attr('placeholder', el.attr('placeholder') + toAdd);
+            // Retraso entre frases
+            return new Promise(resolve => setTimeout(resolve, 100));
+        }
+
+        // Limpia el Placeholder al escribir
+        function clearPlaceholder(el) {
+            el.attr("placeholder", "");
+        }
+
+        // Imprime una frase
+        function printPhrase(phrase, el) {
+            return new Promise(resolve => {
+                // Borra frase antes la siguiente frase
+                clearPlaceholder(el);
+                let letters = phrase.split('');
+                // For each letter in phrase
+                letters.reduce(
+                    (promise, letter, index) => promise.then(_ => {
+                        // Resolve promise when all letters are typed
+                        if (index === letters.length - 1) {
+                            // Delay before start next phrase "typing"
+                            setTimeout(resolve, 1000);
+                        }
+                        return addToPlaceholder(letter, el);
+                    }),
+                    Promise.resolve()
+                );
+            });
+        }
+
+        // Print given phrases to element
+        function printPhrases(phrases, el) {
+            // For each phrase
+            // wait for phrase to be typed
+            // before start typing next
+            phrases.reduce(
+                (promise, phrase) => promise.then(_ => printPhrase(phrase, el)),
+                Promise.resolve()
+            );
+        }
+
+        // Start typing
+        function run() {
+            let phrases = [
+                "México, haz memoria",
+                "La Mémorica de México",
+                "Haz memoria",
+                "¿Que quieres encontrar?"
+            ];
+
+            printPhrases(phrases, $('#usersSearch'));
+        }
+
+        run();
+    </script>
+
+    <!--Cambio de foto Landing -->
+    <!-- <script type="text/javascript">
+        $(function () {
+            var landing = $('#landing');
+            var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)',
+                'url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'
+            ];
+            var current = 0;
+
+            function nextBackground() {
+                landing.css(
+                    'background',
+                    backgrounds[current = ++current % backgrounds.length]
+                );
+                landing.css('background-size', 'cover');
+                setTimeout(nextBackground, 4000);
+            }
+            setTimeout(nextBackground, 4000);
+            landing.css('background', backgrounds[0]);
+            landing.css('background-size', 'cover');
+        });
+    </script> -->
+
+
+    <script type="text/javascript">
+        $(function () {
+            var landing = $('#landing');
+            var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)',
+                'url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)',
+                'url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'
+            ];
+
+            var bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            landing.css('background', bg);
+            landing.css('background-size', 'cover');
+        });
+    </script>
+
+</body>
+
+</html>
