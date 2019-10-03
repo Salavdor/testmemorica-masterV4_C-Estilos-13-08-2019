@@ -9,6 +9,11 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
 		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- bootstrap table -->
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/filter-control/bootstrap-table-filter-control.css">
+
 	<link rel="stylesheet" href="recursos/css/style.css">
 
 	<!-- fuente de íconos -->
@@ -137,86 +142,106 @@
 		</div>
 
 		<!-- objetos del acervo -->
-		<div class="row p-0 m-0">
-			<div class="col-sm-0 col-md-0 col-lg-3 px-0"></div>
-			<div class="col-12 col-lg-9 p-0" id="main" style="width: 100%;">
-				<div class="row m-1">
-					<div class="col-12 col-lg-10 p-0">
-						<div class="row m-0 p-0">
-							<div class=" m-2 p-0">
-								<div class="row  no-gutters">
-
-									<div class="card rounded-0 col-3 col-md-2 imagen-superior_lista">
-										<div class="d-flex align-self-center p-0" style="overflow: hidden;">
-											<img class="card-img" alt="" src="recursos/img/Saxofon.jpg" style="object-fit: cover;">
-											<div class="card-img-overlay p-0 d-flex justify-content-between imagen-superior_lista">
-												<a class="card-img-overlay" href="cedula.html"></a>
-												<span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
-													<i class="icono_objetodigital m-0 rounded-circle" aria-hidden="true">&#xe809;</i>
-												</span>
-												<span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
-													<a href="#">
-														<!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
-													</a>
-												</span>
-											</div>
-										</div>
-									</div>
-
-
-									<div class="col-12 col-md-9 px-2">
-										<svg height="6px" width="33px">
-											<rect width="45px" height="5px" style="fill: #FF026A;" />
-										</svg>
-										<table class="table table-hover">
-											<tbody>
-												<tr>
-													<th scope="row" class="p-2">Título</th>
-													<td class="p-2 pl-3">Manuscrito de Carvajal</td>
-												</tr>
-												<tr>
-													<th scope="row" class="p-2">Título atribuído</th>
-													<td class="p-2 pl-3">Manuscrito de Carvajal</td>
-												</tr>
-												<tr>
-													<th scope="row" class="p-2">Autor</th>
-													<td class="p-2 pl-3">Anónimo</td>
-												</tr>
-												<tr>
-													<th scope="row" class="p-2">Fecha de creación
-														del BHC</th>
-													<td class="p-2 pl-3">18 de junio de 1989</td>
-												</tr>
-												<tr>
-													<th scope="row" class="p-2">Lugar de creación</th>
-													<td class="p-2 pl-3">México</td>
-												</tr>
-												<tr>
-													<th scope="row" class="p-2">Descripción</th>
-													<td class="p-2 pl-3">Pirámide más alta y de mayor relevancia histórica
-														en la zona arqueológica de Palenque, en el estado
-														de Chiapas.</td>
-												</tr>
-												<tr>
-													<th scope="row" class="p-2">Institución
-														que resguarda</th>
-													<td class="p-2 pl-3">Museo Nacional de Antropoligía</td>
-												</tr>
-												<tr>
-													<th scope="row" class="ident p-2">Identificador</th>
-													<td class="ident p-2 pl-3">AMN38936</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="container">
+			<table id="table" data-toggle="table"  data-show-search-clear-button="true"
+				data-filter-control="true" data-pagination="true" data-pagination-v-align="bottom"
+				data-search-align="right" class="border-0" data-locale="es-MX">
+				<thead id="titulos" class="border-0">
+					<tr class="pb-5">
+						<th data-field="titulo" data-filter-control="select" data-sortable="true">Tipo de objeto</th>
+						<th data-field="ID" data-filter-control="input" data-sortable="true">Identificador</th>
+						<th data-field="tipo" data-filter-control="input" data-sortable="true">Título</th>
+						<th data-field="descripcion" data-filter-control="input" >Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714901</td>
+						<td>Allende</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714902</td>
+						<td>Zócalo</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714903</td>
+						<td>San Cosme</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714904</td>
+						<td>Normal</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714905</td>
+						<td>Salto del Agua</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714906</td>
+						<td>Cuatro Caminos</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe812;</i> Video</td>
+						<td>MXNAGN0123714907</td>
+						<td>Portales</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714908</td>
+						<td>Pino Suárez</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714909</td>
+						<td>Revolución</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe812;</i> Video</td>
+						<td>MXNAGN0123714910</td>
+						<td>Hidalgo</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714911</td>
+						<td>Xola</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe812;</i> Video</td>
+						<td>MXNAGN0123714912</td>
+						<td>Viaducto</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714913</td>
+						<td>Tacuba</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714914</td>
+						<td>Nativitas</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-
 	</main>
 
 	<!-- Footer -->
@@ -269,10 +294,15 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!--bootstrap table-->
+	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/export/bootstrap-table-export.js"></script>
+	
 	<script src="recursos/js/main.js"></script>
 	<script src="recursos/js/test.js"></script>
-
+	
 </body>
 
 </html>

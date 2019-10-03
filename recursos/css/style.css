@@ -73,9 +73,6 @@ a:hover {
 }
 
 
-
-
-
 h5 {
   font-family: 'MerriweatherSans-bold';
   color: #092834;
@@ -394,12 +391,7 @@ span.facetadorbarradenavegacion {
 .button-group input:checked+label,
 .button-group input:checked+label:active {/*estilo activo*/
   color: #347B98;
-
 }
-
-
-
-
 
 /*-------------------------------MENU Facetador (opciones de menu)-------------------------------*/
 
@@ -971,7 +963,7 @@ footer li {
 
 p#memoria-texto-descripcion { /*texto que describe un acervo o un tema*/
   font-family: 'Lato-Regular';
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.2;
 }
 
@@ -1418,6 +1410,47 @@ section {
   transition: 0.1s linear; 
 }
 
-
-
 /* ----------------------------------------- página de objeto mensual (slider) FIN---------------------------- */
+
+/* ---------------------------tabla de acervo único nivel--------------------------- */
+
+#titulos th {
+  border: none;
+  height: 65px;
+  border-bottom: 1px solid #092834;
+  padding-bottom: 1rem;
+}
+
+.pagination-info {
+  font-family: 'Lato-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+.page-list {
+  font-family: 'Lato-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+.dropdown-toggle {
+  /*estilo de opciones de dropdown*/
+  font-family: 'MerriweatherSans-Bold';
+  color: #347B98;
+  background-color: #FFF;
+  font-size: 14px;
+  height: 35px;
+  padding: 5;
+  margin-right: 3px;
+}
+
+.dropdown-item {
+  font-family: 'Lato-Regular';
+  color: #092834;
+  font-size: 14px;
+}
+
+.clearfix div.float-right {
+  display: none;
+}
+

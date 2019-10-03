@@ -2,7 +2,10 @@
 var vals = [];
 var $nivel1 = $("#nivel1");
 var $nivel2 = $("#nivel2");
-var $nivel3 = $("#nivel3");
+
+function generateDescription(info) {
+    $(".HIST_INSTUTUC").text(info.HIST_INSTUTUC);
+};
 
 function generateTable(info) {
     $(".COD_REF").text(info.COD_REF);
@@ -18,53 +21,6 @@ function generateTable(info) {
     $(".NOTAS").text(info.NOTAS);
     $(".REGLAS_NORMAS").text(info.REGLAS_NORMAS);
     $(".NOTA_ARCHIVERO").text(info.NOTA_ARCHIVERO);
-};
-
-function generateTable2(info) {
-    $(".COD_REF2").text(info.COD_REF);
-    $(".TITULO2").text(info.TITULO);
-    $(".NOMBRE_PRODUCTOR2").text(info.NOMBRE_PRODUCTOR);
-    $(".NIVEL_DESC2").text(info.NIVEL_DESC);
-    $(".padre2").text(info.padre);
-    $(".FECHA_EXT_INI2").text(info.FECHA_EXT_INI);
-    $(".HIST_INSTUTUC2").text(info.HIST_INSTUTUC);
-    $(".LOCALIZ_ORIG2").text(info.LOCALIZ_ORIG);
-    $(".VOL_UNID2").text(info.VOL_UNID);
-    $(".FECHA_EXT_FIN2").text(info.FECHA_EXT_FIN);
-    $(".NOTAS2").text(info.NOTAS);
-    $(".REGLAS_NORMAS2").text(info.REGLAS_NORMAS);
-    $(".NOTA_ARCHIVERO2").text(info.NOTA_ARCHIVERO);
-}
-
-function generateTable3(info) {
-    $(".COD_REF3").text(info.COD_REF);
-    $(".TITULO3").text(info.TITULO);
-    $(".NOMBRE_PRODUCTOR3").text(info.NOMBRE_PRODUCTOR);
-    $(".NIVEL_DESC3").text(info.NIVEL_DESC);
-    $(".padre3").text(info.padre);
-    $(".FECHA_EXT_INI3").text(info.FECHA_EXT_INI);
-    $(".HIST_INSTUTUC3").text(info.HIST_INSTUTUC);
-    $(".LOCALIZ_ORIG3").text(info.LOCALIZ_ORIG);
-    $(".VOL_UNID3").text(info.VOL_UNID);
-    $(".FECHA_EXT_FIN3").text(info.FECHA_EXT_FIN);
-    $(".NOTAS3").text(info.NOTAS);
-    $(".REGLAS_NORMAS3").text(info.REGLAS_NORMAS);
-    $(".NOTA_ARCHIVERO3").text(info.NOTA_ARCHIVERO);
-}
-
-// $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-//     primerDropdown += '<option value="">Selecciona un fondo</option>';
-//     $.each(vals, function (index, value) {
-//         $nivel1.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
-//     });
-//     $('#nivel1').html(primerDropdown);
-// });
-
-function generateDropdown(vals) {
-    $nivel2.append("<option selected disabled value=\"\">Selecciona un subfondo</option>");
-    $.each(vals, function (index, value) {
-        $nivel2.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
-    });
 };
 
 //cambio en primer dropdown
@@ -87,17 +43,21 @@ $("#nivel1").change(function () {
                 vals = data.H_MX09017AGNCL01FO001AYSE001AP.hijos;
                 generateDropdown(vals)
 
-                $("#cedula1").removeClass("d-none");
-                $("#cedula1").addClass("d-show");
-                $("#collapseOne").addClass("show");
-                $("#cedula2").removeClass("d-show");
-                $("#cedula3").removeClass("d-show");
+                $("#dropdowns").removeClass("col-sm-6");
+                $("#dropdowns").addClass("col-sm-12");
+
+                $("#nivel2").removeClass("d-none");
+                $("#nivel2").addClass("d-show");
+
+                $("#fondo-descripcion").removeClass("d-none");
+                $("#fondo-descripcion").addClass("d-show");
+
+                $("#objetos").removeClass("d-show");
+                $("#objetos").addClass("d-none");
 
                 info = data.H_MX09017AGNCL01FO001AYSE001AP;
                 $(".cedula1titulo").text(info.TITULO);
-                generateTable(info);
-                $nivel3.empty();
-                $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+                generateDescription(info);
             });
             break
         case 'H_MX09017AGNCL01FO008RHSE002AL':
@@ -107,109 +67,170 @@ $("#nivel1").change(function () {
                 vals = data.H_MX09017AGNCL01FO008RHSE002AL.hijos;
                 generateDropdown(vals)
 
-                $("#cedula1").removeClass("d-none");
-                $("#cedula1").addClass("d-show");
-                $("#collapseOne").addClass("show");
-                $("#cedula2").removeClass("d-show");
-                $("#cedula3").removeClass("d-show");
+                $("#dropdowns").removeClass("col-sm-6");
+                $("#dropdowns").addClass("col-sm-12");
 
+                $("#nivel2").removeClass("d-none");
+                $("#nivel2").addClass("d-show");
 
+                $("#fondo-descripcion").removeClass("d-none");
+                $("#fondo-descripcion").addClass("d-show");
+
+                $("#objetos").removeClass("d-show");
+                $("#objetos").addClass("d-none");
 
                 info = data.H_MX09017AGNCL01FO008RHSE002AL;
                 $(".cedula1titulo").text(info.TITULO);
-                generateTable(info);
-
-                $nivel3.empty();
-                $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+                generateDescription(info);
             });
             break
         case '':
             $nivel2.empty();
             vals = ['Favor de seleccionar un fondo'];
             $nivel2.append("<option>" + vals + "</option>");
-            $("#cedula1").removeClass("d-show");
-            $("#cedula1").addClass("d-none");
-            $("#cedula2").addClass("d-none");
-            $("#cedula2").removeClass("d-show");
-            $("#cedula3").addClass("d-none");
-            $("#cedula3").removeClass("d-show");
 
-            $nivel3.empty();
+            $("#dropdowns").removeClass("col-sm-12");
+            $("#dropdowns").addClass("col-sm-6");
+
+            $("#nivel2").removeClass("d-show");
+            $("#nivel2").addClass("d-none");
+
+            $("#fondo-descripcion").removeClass("d-show");
+            $("#fondo-descripcion").addClass("d-none");
+
+            $("#objetos").removeClass("d-show");
+            $("#objetos").addClass("d-none");
+
             $('#nivel2').html('<option value="">Favor de seleccionar un fondo</option>');
-            $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+            
             break
     }
-
 });
 
-//cambio en segundo dropdaun
+//cambio en segundo dropdown
 $("#nivel2").change(function () {
     var $dropdown = $(this);
     var key = $dropdown.val();
 
-    function generateDropdown(vals) {
-        $nivel3.append("<option selected disabled value=\"\">Selecciona un expediente</option>");
-        $.each(vals, function (index, value) {
-            $nivel3.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
-        });
-    };
+    //iteración??
+    // let subfondos = [];
 
-    if (key != "") {
-        $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-            $nivel3.empty();
+    // subfondos.forEach(function (subfondo, index) {
+    //     console.log(`El fondo ${index+1} es ${subfondo}`);
+    // });
 
-            // var vals = data.key.hijos;
-            var vals = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001.hijos;
-            generateDropdown(vals)
+    //iteración 2
+    // info = data.H_MX09017AGNCL01FO008RHSE002AL.hijos.H_MX09017AGNCL01FO008RHSE002ALSS01ALV;
 
-            $("#collapseOne").removeClass("show");
-            $("#collapseTwo").addClass("show");
-            $("#cedula2").removeClass("d-none");
-            $("#cedula2").addClass("d-show");
+    // let subfondos = [];
 
-            $("#buscar-fondo").removeClass("d-none");
-            $("#buscar-fondo").addClass("d-show");
+    // subfondos.push(info.TITULO);
 
-            $("#plus-icon-1").addClass("collapsed")
+    // subfondos.forEach(function (subfondo, index) {
+    //     console.log(`El fondo ${index + 1} es ${subfondo}`);
+    // });
 
-            // info = data.key.hijos;
-            info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001;
-            $(".cedula2titulo").text(info.TITULO);
-            generateTable2(info);
-        });
-    } else {
-        $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
-    }
-});
+    switch (key) {
+        case 'H-MX09017AGNCL01FO008RHSE002ALSS01ALV':
+            $.getJSON("recursos/json/MX09017AGNCL01FO008RHSE002ALSS03ALI22262.json", function (data) {
 
-//cambio en tercer derpdown
-$("#nivel3").change(function () {
-    var $dropdown = $(this);
-    var key = $dropdown.val();
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
 
-    if (key != "MX09017AGN-0000026638190") {
-        $.getJSON("recursos/json/niveltres.json", function (data) {
-            tercerDropdown += '<option value="">Selecciona un expediente</option>';
-            $.each(data, function (key) {
-                if ($dropdown == key.yo) {
-                    tercerDropdown += '<option value="' + key.yo + '">' + key.TITULO + '</option>';
-                }
+                // info = data.H_MX09017AGNCL01FO008RHSE002AL.hijos.H_MX09017AGNCL01FO008RHSE002ALSS01ALV;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
             });
-            $('#nivel3').html(tercerDropdown);
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI001':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
 
-            $("#collapseOne").removeClass("show");
-            $("#collapseTwo").addClass("show");
-            $("#cedula2").removeClass("d-none");
-            $("#cedula2").addClass("d-show");
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
 
-            $("#plus-icon-2").addClass("collapsed")
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI002':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
 
-            console.log(key);
-            info = key;
-            $(".cedula2titulo").text(info.TITULO);
-            generateTable2(info);
-        });
-    } else {
-        $('#nivel3').html('<option value="">Favor de seleccionar un subfondo</option>');
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI002;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI003':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI003;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI004':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI004;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI005':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI005;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI006':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI006;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI007':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI007;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case 'H-MX09017AGNCL01FO001AYSE001APUI008':
+            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
+
+                $("#objetos").removeClass("d-none");
+                $("#objetos").addClass("d-show");
+
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI008;
+                // $(".cedula1titulo").text(info.TITULO);
+                // generateTable(info);
+            });
+            break
+        case '':
+            break
     }
 });
