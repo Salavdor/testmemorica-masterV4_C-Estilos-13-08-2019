@@ -72,7 +72,6 @@ a:hover {
   color: #347B98;
 }
 
-
 h5 {
   font-family: 'MerriweatherSans-bold';
   color: #092834;
@@ -110,7 +109,7 @@ h5 {
 
 .logo_landing {
   height: 60px;
-}
+} 
 
 
 @media(max-width: 888px) {
@@ -896,6 +895,119 @@ th.ident {
   border-color: #fff;
 }
 
+/*!-------------------- Paginador Carousel -------------------- */
+
+.paginador {
+  padding: 1px 2px 1px 1px;
+  /* width: 150px; */
+}
+
+.pagi {
+  height: 50px;
+  /* width: 150px; */
+  position: relative;
+  
+}
+.pagi:before, .pagi:after {
+  bottom: 0;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 30%;
+  z-index: 1;
+}
+.pagi:before {
+  background: linear-gradient(50deg, rgb(255, 255, 255),  rgba(255, 255, 255, 0));
+  left: 0;
+}
+.pagi:after {
+  background: linear-gradient(50deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  right: 0;
+}
+
+
+.pagi:hover .cell:after {
+  opacity: 1;
+  transition-duration: 64ms;
+}
+
+.text {
+  color: #092834;
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 56px;
+  opacity: 0.8;
+  -webkit-transform: scale(0.55);
+          transform: scale(0.55);
+  transition-duration: 150ms;
+  transition-property: color, opacity, text-shadow, -webkit-transform;
+  transition-property: color, opacity, text-shadow, transform;
+  transition-property: color, opacity, text-shadow, transform, -webkit-transform;
+}
+.is-selected .text {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  color: #347B98;
+}
+
+
+/* ---- previous/next buttons ---- */
+
+
+.flickity-prev-next-button:hover {
+  background: none;
+}
+.flickity-prev-next-button:hover:before {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(45deg);
+          transform: scale(1) rotate(45deg);
+  transition-duration: 64ms;
+}
+.flickity-prev-next-button:hover:after {
+  transition-duration: 64ms;
+}
+
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.flickity-prev-next-button:active {
+  
+  opacity: 1;
+}
+.flickity-prev-next-button:active:before {
+  -webkit-transform: scale(1) translateX(-1px) translateY(3px) rotate(45deg);
+          transform: scale(1) translateX(-1px) translateY(3px) rotate(45deg);
+  transition-duration: 64ms;
+}
+.flickity-prev-next-button:active:after {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0px 0 #262626, 0 0px 0 #1f1f1f, 0 0px 0 #1a1a1a, 0 0px 0 #141414, 0 5px 4px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1) translateX(-1px) translateY(3px) rotate(45deg);
+          transform: scale(1) translateX(-1px) translateY(3px) rotate(45deg);
+  transition-duration: 64ms;
+}
+
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+
+.flickity-prev-next-button.next {
+  right: -40px;
+}
+
+.flickity-prev-next-button svg {
+  opacity: 0.5;
+  height: 15px;
+  top: 16px;
+}
+
+/* .flickity-prev-next-button svg {
+  display: none;
+} */
 /*-------------------------------Footer-------------------------------*/
 
 footer {
@@ -1375,7 +1487,6 @@ div.memoria-pestanas {
 section {
 	width: 100%;
 	/* margin: 70px auto; */
-   
 }
 
 /* Simple Slider */
@@ -1403,7 +1514,6 @@ section {
 .agrandafoto{
   max-width: 340px;
 }
-
 
 .agrandafoto:hover{
   max-width: 380px;
@@ -1454,3 +1564,84 @@ section {
   display: none;
 }
 
+/*!-------------------- Paginador Carousel -------------------- */
+
+.paginador {
+  padding: 1px 2px 1px 1px;
+  /* width: 150px; */
+}
+
+.pagi {
+  height: 50px;
+  /* width: 150px; */
+  position: relative;
+
+}
+
+.pagi:before,
+.pagi:after {
+  bottom: 0;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 30%;
+  z-index: 1;
+}
+
+.pagi:before {
+  background: linear-gradient(50deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+  left: 0;
+}
+
+.pagi:after {
+  background: linear-gradient(50deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  right: 0;
+}
+
+
+.pagi:hover .cell:after {
+  opacity: 1;
+  transition-duration: 64ms;
+}
+
+.selecter {
+  color: #092834;
+  font-family: 'MerriweatherSans-Bold';
+  font-size: 0.75rem;
+  /* font-weight: 500; */
+  line-height: 56px;
+  opacity: 0.8;
+  transition-duration: 150ms;
+  transition-property: color, opacity, text-shadow, -webkit-transform;
+  transition-property: color, opacity, text-shadow, transform;
+  transition-property: color, opacity, text-shadow, transform, -webkit-transform;
+}
+
+.is-selected .selecter {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  color: #347B98;
+}
+
+/* ---------------------------tabla de acervo único nivel  FIN--------------------------- */
+
+/* ----------------------------------------- modals INICIO---------------------------- */
+  
+  .liga-destacada{
+    font-family: 'MerriweatherSans-Bold';
+    color: #ff026a;  
+    font-size: 80%;
+    text-decoration: underline;
+  }
+
+  .liga-destacada2{
+    font-family: 'MerriweatherSans-Bold';
+    color: #347b98;  
+    font-size: 85%;
+    font-style: oblique;
+    text-decoration: underline;
+  }
+
+  /* ----------------------------------------- modals FIN---------------------------- */

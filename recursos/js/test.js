@@ -25,8 +25,7 @@ function generateTable(info) {
 
 //cambio en primer dropdown
 $("#nivel1").change(function () {
-    var $dropdown = $(this);
-    var key = $dropdown.val();
+    var key = $(this).val();
 
     function generateDropdown(vals) {
         $nivel2.append("<option selected disabled value=\"\">Selecciona un subfondo</option>");
@@ -102,15 +101,13 @@ $("#nivel1").change(function () {
             $("#objetos").addClass("d-none");
 
             $('#nivel2').html('<option value="">Favor de seleccionar un fondo</option>');
-            
             break
     }
 });
 
 //cambio en segundo dropdown
 $("#nivel2").change(function () {
-    var $dropdown = $(this);
-    var key = $dropdown.val();
+    var key = $(this).val();
 
     //iteración??
     // let subfondos = [];
@@ -119,16 +116,15 @@ $("#nivel2").change(function () {
     //     console.log(`El fondo ${index+1} es ${subfondo}`);
     // });
 
-    //iteración 2
-    // info = data.H_MX09017AGNCL01FO008RHSE002AL.hijos.H_MX09017AGNCL01FO008RHSE002ALSS01ALV;
-
+    //iteración??
     // let subfondos = [];
 
-    // subfondos.push(info.TITULO);
+    // subfondos.push(vals);
 
     // subfondos.forEach(function (subfondo, index) {
     //     console.log(`El fondo ${index + 1} es ${subfondo}`);
     // });
+
 
     switch (key) {
         case 'H-MX09017AGNCL01FO008RHSE002ALSS01ALV':
@@ -138,7 +134,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO008RHSE002AL.hijos.H_MX09017AGNCL01FO008RHSE002ALSS01ALV;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -149,7 +144,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -160,7 +154,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI002;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -171,7 +164,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI003;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -182,7 +174,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI004;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -193,7 +184,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI005;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -204,7 +194,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI006;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -215,7 +204,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI007;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
@@ -226,7 +214,6 @@ $("#nivel2").change(function () {
                 $("#objetos").addClass("d-show");
 
                 // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI008;
-                // $(".cedula1titulo").text(info.TITULO);
                 // generateTable(info);
             });
             break
