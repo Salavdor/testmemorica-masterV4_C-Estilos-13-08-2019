@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Resultados</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- <link href="recursos/css/menulateral.css" rel="stylesheet" type="text/css"> -->
+
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- fuente de íconos -->
+    <link rel="stylesheet" href="recursos/Type/fontello/css/fontello-embedded.css">
+    <!-- paginador -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/flickity.css'>
+
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script type="text/javascript">
+        function formReset() {
+            document.getElementById("myForm").reset();
+
+        }
+    </script>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="recursos/css/style.css">
+
+
+
+
+</head>
+
+<body>
+    <!-- Header con barra y buscador -->
+    <header>
+        <!-- Barra de navegación -->
+        <div class="barra-superior"></div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica"><img
+                    src="/recursos/img/Logos/Memorica.svg" height="30px" /></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- menu que se colapsa   -->
+            <div class="collapse navbar-collapse flex-column" id="menu">
+
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="navbar-brand d-none d-lg-block " href="index.html"><img
+                            src="/recursos/img/Logos/Memorica.svg" height="62px" /></a>
+                </div>
+
+                <div class="container py-3 d-none d-lg-block">
+                    <div class="row">
+                        <div class="col-3 col-sm-3"></div>
+                        <div class="col-6 col-sm-6 align-self-center">
+                            <form class="form" action="resultados.html">
+                                <input id="requestParams" name="q"
+                                    class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="search"
+                                    placeholder="¿Qué quieres encontrar hoy?" aria-label="Buscador">
+                                <!-- <input id='searchButton' type='button' value='busquele'> -->
+                            </form>
+                        </div>
+                        <div class="col-3 col-sm-3"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="container botones-pestanas">
+
+
+                    <ul class="navbar-nav d-flex justify-content-between pestanas">
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="#">Haz memoria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="acervos.html">Acervos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="temas.html">Temas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="#">Exposiciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="#">Miscelánea</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="#">Breves</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--Buscador-->
+        <div class="container-fluid d-flex justify-content-center p-3 d-block d-lg-none">
+            <div class="row fila-centrada ">
+                <div class="col-0 col-sm-3"></div>
+                <div class="col-12 col-sm-6 align-self-center">
+                    <form class="form" action="resultados.html">
+                        <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador"
+                            type="text" placeholder="¿Qué quieres encontrar hoy?" aria-label="Search">
+
+                    </form>
+                </div>
+                <div class="col-0 col-sm-3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Barra de breadcrumb y botones de visualizador etc Opciones Resultados-->
+
+        <div class="container">
+            <div class="row opciones_resultados">
+                <div class="col-lg-3 col-md-4 col-12 p-0 d-flex justify-content-lg-start align-items-end">
+                    <nav class="p-0 mb-0" aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-transparent m-0 px-3 py-1 d-flex align-items-center">
+                            <li class="breadcrumb-item texto-breadcrum"><a href="index.html"><img
+                                        src="recursos/img/inicio.svg" height="35px"></a></li>
+                            <li class="breadcrumb-item texto-breadcrum"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item texto-breadcrum"><a href="#">Resultados</a></li>
+
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-5 col-md-8 col-12 d-flex justify-content-between px-3 py-2">
+                    <div class="d-flex align-items-end">
+                        <p class="mb-1"><span class="facetadorbarradenavegacion">1</span>-<span
+                                class="facetadorbarradenavegacion">8</span> de <span
+                                class="facetadorbarradenavegacion">75</span> resultados</p>
+                    </div>
+
+
+                    <div class="d-flex justify-content-center align-items-end">
+                        <p class="mb-1">Mostrar</p>
+                        <select class="resultados_pagina form-control mx-3 m-0 p-1" id="exampleFormControlSelect1">
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                        <p class="mb-1">por pagina</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-lg-end justify-content-center py-2">
+                    <div class="button-group round toggle d-flex align-items-end ">
+
+
+
+
+
+                        <input type="radio" id="r1" name="r-group" value="Mosaico"
+                            onclick="Visualisaciones(this.value);">
+                        <label class="button  px-3 mb-0 " for="r1">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 104.73 30">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #092834
+                                        }
+                                    </style>
+                                </defs>
+                                <title>Recurso 6</title>
+                                <g id="Capa_2" data-name="Capa 2">
+                                    <g id="Capa_1-2" data-name="Capa 1">
+                                        <g id="BUENOS">
+                                            <rect class="cls-1" x="94.12" y="6.99" width="3.03" height="3.03"
+                                                rx="0.65" />
+                                            <rect class="cls-1" x="82.31" y="12.91" width="3.03" height="10.12"
+                                                rx="0.8" />
+                                            <rect class="cls-1" x="88.21" y="19.99" width="3.03" height="3.03"
+                                                rx="0.65" />
+                                            <path class="cls-1"
+                                                d="M89.73,0a15,15,0,1,0,15,15A15,15,0,0,0,89.73,0ZM87.28,7.27A1.27,1.27,0,0,1,88.55,6h2.36a1.27,1.27,0,0,1,1.27,1.27h0v9.19a1.27,1.27,0,0,1-1.27,1.27H88.55a1.27,1.27,0,0,1-1.27-1.27h0Zm-5.91,0A1.27,1.27,0,0,1,82.64,6H85a1.27,1.27,0,0,1,1.27,1.27V9.6A1.27,1.27,0,0,1,85,10.87H82.64A1.27,1.27,0,0,1,81.37,9.6h0Zm5,15A1.8,1.8,0,0,1,84.54,24H83.11a1.81,1.81,0,0,1-1.8-1.8V13.7a1.79,1.79,0,0,1,1.79-1.79h1.44a1.8,1.8,0,0,1,1.8,1.79Zm5.91.14A1.66,1.66,0,0,1,90.59,24H88.87a1.66,1.66,0,0,1-1.66-1.66V20.65A1.67,1.67,0,0,1,88.87,19h1.72a1.66,1.66,0,0,1,1.66,1.66Zm5.84.39a1.26,1.26,0,0,1-1.3,1.2H94.46a1.27,1.27,0,0,1-1.27-1.27h0v-9.2a1.27,1.27,0,0,1,1.27-1.27h2.36a1.27,1.27,0,0,1,1.27,1.27h0Zm.06-13.39A1.65,1.65,0,0,1,96.5,11H94.73a1.65,1.65,0,0,1-1.65-1.65V7.64A1.65,1.65,0,0,1,94.73,6h1.73a1.65,1.65,0,0,1,1.65,1.65Z" />
+                                        </g>
+                                        <path class="cls-1"
+                                            d="M7.25,17.07c.07.17.14.35.2.53l.21-.53c.07-.17.16-.34.25-.51L12.73,7.8A.5.5,0,0,1,13,7.53a1,1,0,0,1,.39,0h1.42V21.71H13.13V10.8l0-.48-4.87,8.9a.77.77,0,0,1-.7.45H7.31a.75.75,0,0,1-.69-.45l-5-8.93c0,.17,0,.34,0,.5s0,.32,0,.46V21.71H0V7.48H1.42a1.08,1.08,0,0,1,.4,0,.57.57,0,0,1,.27.27L7,16.57A2.92,2.92,0,0,1,7.25,17.07Z" />
+                                        <path class="cls-1"
+                                            d="M22.08,11.49a5.08,5.08,0,0,1,2,.37,4.13,4.13,0,0,1,1.51,1,4.66,4.66,0,0,1,1,1.64,6.9,6.9,0,0,1,0,4.28,4.61,4.61,0,0,1-1,1.63,4.13,4.13,0,0,1-1.51,1,5.71,5.71,0,0,1-4,0,4.21,4.21,0,0,1-1.51-1,4.49,4.49,0,0,1-1-1.63,6.24,6.24,0,0,1-.34-2.14,6.24,6.24,0,0,1,.34-2.14,4.53,4.53,0,0,1,1-1.64,4.21,4.21,0,0,1,1.51-1A5.13,5.13,0,0,1,22.08,11.49Zm0,9a2.57,2.57,0,0,0,2.22-1A4.59,4.59,0,0,0,25,16.69a4.69,4.69,0,0,0-.74-2.81,2.59,2.59,0,0,0-2.22-1,3.09,3.09,0,0,0-1.31.26,2.34,2.34,0,0,0-.93.74,3.33,3.33,0,0,0-.56,1.2,6.61,6.61,0,0,0-.18,1.61,6.52,6.52,0,0,0,.18,1.6,3.16,3.16,0,0,0,.56,1.18,2.26,2.26,0,0,0,.93.74A3,3,0,0,0,22.08,20.47Z" />
+                                        <path class="cls-1"
+                                            d="M34.81,13.31a.4.4,0,0,1-.36.22.71.71,0,0,1-.34-.11l-.46-.25a5.29,5.29,0,0,0-.65-.24,3,3,0,0,0-.9-.12,2.49,2.49,0,0,0-.8.12,1.75,1.75,0,0,0-.61.31,1.41,1.41,0,0,0-.39.46,1.26,1.26,0,0,0-.14.57,1,1,0,0,0,.23.65,1.82,1.82,0,0,0,.59.44,4.94,4.94,0,0,0,.83.34c.32.09.63.2,1,.31s.65.23,1,.36a3.52,3.52,0,0,1,.84.5,2.34,2.34,0,0,1,.59.73,2.18,2.18,0,0,1,.22,1,3.19,3.19,0,0,1-.25,1.29,2.66,2.66,0,0,1-.73,1,3.51,3.51,0,0,1-1.2.68,4.75,4.75,0,0,1-1.62.25,5,5,0,0,1-1.91-.34,4.72,4.72,0,0,1-1.45-.88l.41-.67a.61.61,0,0,1,.19-.2.52.52,0,0,1,.29-.07.62.62,0,0,1,.38.14l.48.3a3.17,3.17,0,0,0,.69.31,2.87,2.87,0,0,0,1,.14,2.77,2.77,0,0,0,.91-.13,1.88,1.88,0,0,0,.64-.36,1.52,1.52,0,0,0,.39-.53,1.69,1.69,0,0,0,.12-.64,1,1,0,0,0-.22-.69,2,2,0,0,0-.59-.47,5.45,5.45,0,0,0-.84-.33l-1-.31a8.56,8.56,0,0,1-1-.36,3.09,3.09,0,0,1-.84-.51,2.27,2.27,0,0,1-.81-1.86,2.63,2.63,0,0,1,.93-2,3.39,3.39,0,0,1,1.12-.64,4.49,4.49,0,0,1,1.52-.24,4.84,4.84,0,0,1,1.79.31,4.32,4.32,0,0,1,1.36.86Z" />
+                                        <path class="cls-1"
+                                            d="M45.07,21.71h-.79a.94.94,0,0,1-.41-.07.44.44,0,0,1-.21-.34l-.2-.94a8.47,8.47,0,0,1-.78.64,4.27,4.27,0,0,1-.79.48,3.86,3.86,0,0,1-.89.29,4.93,4.93,0,0,1-1,.1,3.57,3.57,0,0,1-1.1-.16,2.57,2.57,0,0,1-.89-.49,2.38,2.38,0,0,1-.6-.84,2.87,2.87,0,0,1-.22-1.19A2.21,2.21,0,0,1,37.47,18a2.82,2.82,0,0,1,1.06-1,6.55,6.55,0,0,1,1.91-.7,12.56,12.56,0,0,1,2.89-.28v-.79a2.74,2.74,0,0,0-.5-1.78,1.81,1.81,0,0,0-1.49-.61,3.16,3.16,0,0,0-1.09.17,3.84,3.84,0,0,0-.76.36l-.56.37a.78.78,0,0,1-.46.16.54.54,0,0,1-.31-.09.8.8,0,0,1-.22-.23l-.31-.57a5.37,5.37,0,0,1,3.93-1.6,3.75,3.75,0,0,1,1.5.28,2.91,2.91,0,0,1,1.1.77,3.26,3.26,0,0,1,.68,1.21,5,5,0,0,1,.23,1.55Zm-4.59-1.08a3.76,3.76,0,0,0,.85-.09,4.22,4.22,0,0,0,.73-.27,4.59,4.59,0,0,0,.66-.42,6.45,6.45,0,0,0,.61-.57V17.2a12.13,12.13,0,0,0-2.08.16,6,6,0,0,0-1.39.4,2,2,0,0,0-.78.59,1.29,1.29,0,0,0-.24.76,1.6,1.6,0,0,0,.13.69,1.31,1.31,0,0,0,.34.48,1.51,1.51,0,0,0,.52.27A2.69,2.69,0,0,0,40.48,20.63Z" />
+                                        <path class="cls-1"
+                                            d="M50.12,8.49A1.13,1.13,0,0,1,50,9a1.38,1.38,0,0,1-.28.4,1.23,1.23,0,0,1-.4.27,1.13,1.13,0,0,1-.49.1,1.12,1.12,0,0,1-.48-.1,1.34,1.34,0,0,1-.4-.27,1.56,1.56,0,0,1-.27-.4,1.12,1.12,0,0,1-.1-.48,1.16,1.16,0,0,1,.1-.49A1.46,1.46,0,0,1,48,7.59a1.18,1.18,0,0,1,.4-.27,1.12,1.12,0,0,1,.48-.1,1.13,1.13,0,0,1,.49.1,1.09,1.09,0,0,1,.4.27A1.3,1.3,0,0,1,50,8,1.17,1.17,0,0,1,50.12,8.49Zm-.4,3.16V21.71H48V11.65Z" />
+                                        <path class="cls-1"
+                                            d="M59.7,13.44a.66.66,0,0,1-.16.17.36.36,0,0,1-.22.06.63.63,0,0,1-.33-.13,4.5,4.5,0,0,0-.44-.27A3.64,3.64,0,0,0,57.9,13a2.88,2.88,0,0,0-.94-.13,3.14,3.14,0,0,0-1.3.26,2.6,2.6,0,0,0-.95.76,3.68,3.68,0,0,0-.58,1.21,5.9,5.9,0,0,0-.19,1.58,5.68,5.68,0,0,0,.21,1.62,3.48,3.48,0,0,0,.58,1.19,2.51,2.51,0,0,0,.92.74,2.86,2.86,0,0,0,1.22.25,3.14,3.14,0,0,0,1.06-.15,3.52,3.52,0,0,0,.7-.34,4.18,4.18,0,0,0,.46-.35.56.56,0,0,1,.35-.15.37.37,0,0,1,.34.17l.5.64a3.81,3.81,0,0,1-1.64,1.18,5.81,5.81,0,0,1-2.08.37,4.4,4.4,0,0,1-1.75-.34,4.15,4.15,0,0,1-1.41-1,4.88,4.88,0,0,1-.94-1.63,6.71,6.71,0,0,1-.34-2.19,6.62,6.62,0,0,1,.32-2.08A4.52,4.52,0,0,1,53.35,13a4.14,4.14,0,0,1,1.48-1.08,5,5,0,0,1,2-.39,4.76,4.76,0,0,1,1.87.34,4.52,4.52,0,0,1,1.44,1Z" />
+                                        <path class="cls-1"
+                                            d="M66.19,11.49a5,5,0,0,1,2,.37,4,4,0,0,1,1.51,1,4.68,4.68,0,0,1,1,1.64A6.5,6.5,0,0,1,71,16.68a6.5,6.5,0,0,1-.33,2.14,4.63,4.63,0,0,1-1,1.63,4,4,0,0,1-1.51,1,5.68,5.68,0,0,1-4,0,4.25,4.25,0,0,1-1.52-1,4.63,4.63,0,0,1-1-1.63,6.24,6.24,0,0,1-.34-2.14,6.24,6.24,0,0,1,.34-2.14,4.68,4.68,0,0,1,1-1.64,4.25,4.25,0,0,1,1.52-1A5.08,5.08,0,0,1,66.19,11.49Zm0,9a2.59,2.59,0,0,0,2.23-1,4.6,4.6,0,0,0,.73-2.78,4.69,4.69,0,0,0-.73-2.81,2.61,2.61,0,0,0-2.23-1,3.12,3.12,0,0,0-1.31.26,2.49,2.49,0,0,0-.93.74,3.51,3.51,0,0,0-.56,1.2,6.61,6.61,0,0,0-.18,1.61,6.52,6.52,0,0,0,.18,1.6A3.32,3.32,0,0,0,64,19.47a2.39,2.39,0,0,0,.93.74A3,3,0,0,0,66.19,20.47Z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </label>
+                        <span style="color: #092834; font-size: 20px;">|</span>
+                        <input type="radio" id="r2" name="r-group" value="Tabla" onclick="Visualisaciones(this.value);">
+                        <label class="button px-3 mb-0 " for="r2">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 77.11 30">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #092834;
+                                        }
+                                    </style>
+                                </defs>
+                                <title>Recurso 4</title>
+                                <g id="Capa_2" data-name="Capa 2">
+                                    <g id="Capa_1-2" data-name="Capa 1">
+                                        <path class="cls-1" d="M11.15,8V9.62H6.55V22.24H4.62V9.62H0V8Z" />
+                                        <path class="cls-1"
+                                            d="M17.8,22.24H17a1,1,0,0,1-.42-.08.48.48,0,0,1-.21-.34l-.19-.93c-.27.24-.53.45-.78.64a4,4,0,0,1-.79.47,4.44,4.44,0,0,1-.89.3,5.67,5.67,0,0,1-1.05.1,3.57,3.57,0,0,1-1.1-.17,2.49,2.49,0,0,1-.89-.49,2.43,2.43,0,0,1-.6-.83,2.94,2.94,0,0,1-.22-1.19,2.33,2.33,0,0,1,.32-1.16,3.07,3.07,0,0,1,1.06-1,7.1,7.1,0,0,1,1.91-.7,13.24,13.24,0,0,1,2.9-.28v-.79A2.7,2.7,0,0,0,15.56,14a1.82,1.82,0,0,0-1.48-.61,3.16,3.16,0,0,0-1.09.17,4.24,4.24,0,0,0-.77.37c-.21.13-.4.25-.55.36a.82.82,0,0,1-.46.17.51.51,0,0,1-.32-.1.66.66,0,0,1-.21-.23l-.32-.57a6,6,0,0,1,1.8-1.2A5.66,5.66,0,0,1,14.3,12a3.93,3.93,0,0,1,1.5.28,3.24,3.24,0,0,1,1.1.78,3.36,3.36,0,0,1,.68,1.2,5.09,5.09,0,0,1,.22,1.55Zm-4.59-1.08a3.76,3.76,0,0,0,.86-.1,3,3,0,0,0,.73-.27,3.34,3.34,0,0,0,.66-.42,5.3,5.3,0,0,0,.61-.57V17.73a12.24,12.24,0,0,0-2.08.15,6,6,0,0,0-1.39.41,1.83,1.83,0,0,0-.78.59,1.28,1.28,0,0,0-.25.76,1.84,1.84,0,0,0,.13.69,1.41,1.41,0,0,0,.35.47,1.51,1.51,0,0,0,.52.27A2.2,2.2,0,0,0,13.21,21.16Z" />
+                                        <path class="cls-1"
+                                            d="M20.55,22.24V7.6h1.78v6a5,5,0,0,1,1.43-1.16A3.75,3.75,0,0,1,25.61,12a3.66,3.66,0,0,1,1.58.33,3.34,3.34,0,0,1,1.21,1,4.72,4.72,0,0,1,.76,1.61,8.2,8.2,0,0,1,.27,2.21,6.91,6.91,0,0,1-.3,2.07,4.84,4.84,0,0,1-.86,1.66A3.86,3.86,0,0,1,26.9,22a4,4,0,0,1-1.82.41A3.42,3.42,0,0,1,23.42,22,3.67,3.67,0,0,1,22.24,21l-.09.91a.44.44,0,0,1-.46.38ZM25,13.42a2.92,2.92,0,0,0-1.52.4A4.35,4.35,0,0,0,22.33,15v4.86a2.76,2.76,0,0,0,1.05.93,3.05,3.05,0,0,0,1.3.27,2.57,2.57,0,0,0,2.17-1,4.71,4.71,0,0,0,.75-2.86,7.53,7.53,0,0,0-.17-1.69,3.45,3.45,0,0,0-.51-1.16,1.89,1.89,0,0,0-.8-.66A2.85,2.85,0,0,0,25,13.42Z" />
+                                        <path class="cls-1" d="M33.56,7.6V22.24H31.79V7.6Z" />
+                                        <path class="cls-1"
+                                            d="M44.07,22.24h-.78a1,1,0,0,1-.42-.08.45.45,0,0,1-.21-.34l-.2-.93c-.26.24-.52.45-.77.64a3.81,3.81,0,0,1-.8.47,4,4,0,0,1-.89.3,5.48,5.48,0,0,1-1,.1,3.57,3.57,0,0,1-1.1-.17,2.49,2.49,0,0,1-.89-.49,2.43,2.43,0,0,1-.6-.83,2.94,2.94,0,0,1-.23-1.19,2.25,2.25,0,0,1,.33-1.16,3,3,0,0,1,1.06-1,7.1,7.1,0,0,1,1.91-.7,13.21,13.21,0,0,1,2.89-.28v-.79a2.7,2.7,0,0,0-.5-1.78,1.82,1.82,0,0,0-1.48-.61,3.12,3.12,0,0,0-1.09.17,3.94,3.94,0,0,0-.77.37c-.21.13-.4.25-.55.36a.82.82,0,0,1-.46.17.51.51,0,0,1-.32-.1.66.66,0,0,1-.21-.23l-.32-.57a6,6,0,0,1,1.8-1.2,5.63,5.63,0,0,1,2.14-.4,3.93,3.93,0,0,1,1.5.28,3.24,3.24,0,0,1,1.1.78,3.2,3.2,0,0,1,.67,1.2,4.8,4.8,0,0,1,.23,1.55Zm-4.59-1.08a3.83,3.83,0,0,0,.86-.1,3,3,0,0,0,.73-.27,3.27,3.27,0,0,0,.65-.42,4,4,0,0,0,.61-.57V17.73a12.2,12.2,0,0,0-2.07.15,5.81,5.81,0,0,0-1.39.41,1.83,1.83,0,0,0-.78.59,1.22,1.22,0,0,0-.25.76,1.84,1.84,0,0,0,.13.69,1.29,1.29,0,0,0,.35.47,1.51,1.51,0,0,0,.52.27A2.2,2.2,0,0,0,39.48,21.16Z" />
+                                        <g id="BUENOS">
+                                            <rect class="cls-1" x="63.78" y="16.67" width="5.06" height="6.76"
+                                                rx="1.59" />
+                                            <rect class="cls-1" x="55.28" y="6.64" width="5.06" height="6.76"
+                                                rx="1.59" />
+                                            <path class="cls-1"
+                                                d="M62.11,0a15,15,0,1,0,15,15A15,15,0,0,0,62.11,0ZM54.28,8.23a2.58,2.58,0,0,1,2.59-2.59h1.89a2.61,2.61,0,0,1,2.59,2.59v3.58a2.59,2.59,0,0,1-2.59,2.58H56.87a2.58,2.58,0,0,1-2.59-2.58Zm7.08,13.71a2.51,2.51,0,0,1-2.51,2.51H56.77a2.51,2.51,0,0,1-2.5-2.51V18.2a2.49,2.49,0,0,1,2.48-2.51h2.1a2.51,2.51,0,0,1,2.51,2.51h0Zm8.48-.1a2.59,2.59,0,0,1-2.59,2.58H65.36a2.59,2.59,0,0,1-2.58-2.58V18.26a2.59,2.59,0,0,1,2.58-2.59h1.89a2.59,2.59,0,0,1,2.59,2.59h0Zm0-10a2.51,2.51,0,0,1-2.49,2.51H65.27a2.51,2.51,0,0,1-2.51-2.51h0V8.12a2.49,2.49,0,0,1,2.49-2.5h2.1a2.5,2.5,0,0,1,2.5,2.5Z" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </label>
+                        <span style="color: #092834; font-size: 20px;">|</span>
+                        <input type="radio" id="r3" name="r-group" value="Lista" onclick="Visualisaciones(this.value);">
+                        <label class="button px-3 mb-0 " for="r3">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 72.71 30">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #092834;
+                                        }
+                                    </style>
+                                </defs>
+                                <title>Recurso 7</title>
+                                <g id="Capa_2" data-name="Capa 2">
+                                    <g id="Capa_1-2" data-name="Capa 1">
+                                        <path class="cls-1" d="M1.93,20.1H8.09v1.61H0V7.48H1.93Z" />
+                                        <path class="cls-1"
+                                            d="M12.3,8.49a1.12,1.12,0,0,1-.1.48,1.6,1.6,0,0,1-.28.4,1.18,1.18,0,0,1-.4.27,1.19,1.19,0,0,1-.49.1,1.12,1.12,0,0,1-.48-.1A1.27,1.27,0,0,1,9.88,9a1.12,1.12,0,0,1-.1-.48A1.16,1.16,0,0,1,9.88,8a1.13,1.13,0,0,1,.27-.41,1.34,1.34,0,0,1,.4-.27,1.12,1.12,0,0,1,.48-.1,1.19,1.19,0,0,1,.49.1,1.34,1.34,0,0,1,.4.27A1.49,1.49,0,0,1,12.2,8,1.16,1.16,0,0,1,12.3,8.49Zm-.4,3.16V21.71H10.13V11.65Z" />
+                                        <path class="cls-1"
+                                            d="M20.79,13.31a.41.41,0,0,1-.37.22.74.74,0,0,1-.34-.11c-.13-.07-.28-.16-.46-.24a3.69,3.69,0,0,0-.65-.25,3,3,0,0,0-.9-.12,2.49,2.49,0,0,0-.8.12,1.85,1.85,0,0,0-.61.31,1.41,1.41,0,0,0-.39.46,1.25,1.25,0,0,0-.13.57,1,1,0,0,0,.22.65,2,2,0,0,0,.59.45,6,6,0,0,0,.83.33c.32.09.64.2,1,.31s.65.23,1,.36a3.52,3.52,0,0,1,.84.5,2.34,2.34,0,0,1,.59.73,2.18,2.18,0,0,1,.22,1,3.19,3.19,0,0,1-.25,1.29,2.77,2.77,0,0,1-.73,1,3.62,3.62,0,0,1-1.19.67,4.81,4.81,0,0,1-1.63.25,5,5,0,0,1-1.91-.34,4.84,4.84,0,0,1-1.45-.88L14.6,20a.61.61,0,0,1,.19-.2.52.52,0,0,1,.29-.07.62.62,0,0,1,.38.14l.48.31a3.75,3.75,0,0,0,.69.3,2.93,2.93,0,0,0,1,.14,2.75,2.75,0,0,0,.9-.13,2,2,0,0,0,.65-.36,1.62,1.62,0,0,0,.38-.53,1.69,1.69,0,0,0,.12-.64,1,1,0,0,0-.22-.69,2,2,0,0,0-.59-.47,5.45,5.45,0,0,0-.84-.33l-1-.31a8.56,8.56,0,0,1-1-.36,3.25,3.25,0,0,1-.84-.51,2.27,2.27,0,0,1-.81-1.86,2.63,2.63,0,0,1,.93-2,3.39,3.39,0,0,1,1.12-.64A4.49,4.49,0,0,1,18,11.49a5,5,0,0,1,1.79.31,4.32,4.32,0,0,1,1.36.86Z" />
+                                        <path class="cls-1"
+                                            d="M26.7,21.87a2.45,2.45,0,0,1-1.84-.66,2.71,2.71,0,0,1-.64-1.92V13.13H23a.4.4,0,0,1-.27-.09.39.39,0,0,1-.11-.3V12l1.65-.21.41-3.11a.36.36,0,0,1,.13-.24.37.37,0,0,1,.28-.1H26v3.47h2.88v1.28H26v6a1.24,1.24,0,0,0,.31.94,1,1,0,0,0,.79.31,1.45,1.45,0,0,0,.49-.07,2.28,2.28,0,0,0,.35-.17l.25-.16a.32.32,0,0,1,.19-.07.29.29,0,0,1,.24.16l.52.85a3.28,3.28,0,0,1-1.1.67A3.81,3.81,0,0,1,26.7,21.87Z" />
+                                        <path class="cls-1"
+                                            d="M38.45,21.71h-.78a1,1,0,0,1-.42-.07A.44.44,0,0,1,37,21.3l-.2-.94a8.4,8.4,0,0,1-.77.64,4.71,4.71,0,0,1-.8.48,3.71,3.71,0,0,1-.89.29,4.8,4.8,0,0,1-1.05.1,3.5,3.5,0,0,1-1.09-.16,2.41,2.41,0,0,1-.89-.49,2.15,2.15,0,0,1-.6-.84,2.87,2.87,0,0,1-.23-1.19A2.21,2.21,0,0,1,30.85,18a2.82,2.82,0,0,1,1.06-1,6.55,6.55,0,0,1,1.91-.7,12.56,12.56,0,0,1,2.89-.28v-.79a2.74,2.74,0,0,0-.5-1.78,1.8,1.8,0,0,0-1.49-.61,3.06,3.06,0,0,0-1.08.17,4.63,4.63,0,0,0-.77.36l-.56.37a.76.76,0,0,1-.46.16.54.54,0,0,1-.31-.09.66.66,0,0,1-.21-.23L31,13.07a5.42,5.42,0,0,1,3.93-1.6,3.68,3.68,0,0,1,1.5.28,3.16,3.16,0,0,1,1.11.77,3.47,3.47,0,0,1,.67,1.21,5,5,0,0,1,.23,1.55Zm-4.59-1.08a3.7,3.7,0,0,0,.85-.09,3.94,3.94,0,0,0,.73-.27,4.59,4.59,0,0,0,.66-.42,6.45,6.45,0,0,0,.61-.57V17.2a12.22,12.22,0,0,0-2.08.16,6,6,0,0,0-1.39.4,2.16,2.16,0,0,0-.78.59,1.29,1.29,0,0,0-.24.76,1.6,1.6,0,0,0,.13.69,1.33,1.33,0,0,0,.35.48,1.47,1.47,0,0,0,.51.27A2.69,2.69,0,0,0,33.86,20.63Z" />
+                                        <g id="BUENOS">
+                                            <path class="cls-1"
+                                                d="M50.43,9.26a1.22,1.22,0,1,0,1.2,1.24v0A1.21,1.21,0,0,0,50.43,9.26Z" />
+                                            <path class="cls-1"
+                                                d="M50.43,14a1.23,1.23,0,1,0,1.2,1.26v0A1.21,1.21,0,0,0,50.43,14Z" />
+                                            <path class="cls-1"
+                                                d="M57.71,0a15,15,0,1,0,15,15A15,15,0,0,0,57.71,0ZM50.43,21.88a2,2,0,1,1,2-2h0A2,2,0,0,1,50.43,21.88Zm0-4.71a2,2,0,1,1,2-2h0a2,2,0,0,1-2,2Zm0-4.72a2,2,0,1,1,2-2h0a2,2,0,0,1-2,2Zm16,7.76a.55.55,0,0,1-.56.55h-11a.56.56,0,0,1-.56-.55v-.6a.56.56,0,0,1,.56-.56h11a.56.56,0,0,1,.56.56Zm0-4.73a.55.55,0,0,1-.55.55h-11a.55.55,0,0,1-.56-.54h0v-.6a.56.56,0,0,1,.56-.56h11a.56.56,0,0,1,.56.56Zm0-4.7a.56.56,0,0,1-.56.56h-11a.56.56,0,0,1-.56-.56h0v-.6a.56.56,0,0,1,.56-.55h11a.55.55,0,0,1,.56.55Z" />
+                                            <path class="cls-1"
+                                                d="M50.43,18.69a1.22,1.22,0,1,0,1.2,1.24v0a1.21,1.21,0,0,0-1.2-1.22Z" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </label>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--linea de tiempo rango-->
+
+        <!-- <div class="py-2 px-3 container" >
+                <div class="row d-flex justify-content-between">
+                    <input type="text" id="añoinicio" readonly style="border:0; font-weight:bold; width: 40px;" min="0000" max="20219">
+                    <input type="text" id="añofin" readonly style="border:0; font-weight:bold; width: 40px;" min="0000" max="2019">
+                </div>
+                <div class="" id="slider-range"></div>
+                
+            </div> -->
+
+
+
+        <!--Contenedor-->
+
+        <div class="container p-0 mt-3">
+
+            <div class="row p-0 m-0">
+                <!--MENU Facetador-->
+                <div class="col-sm-0 col-md-0 col-lg-3 px-0">
+                    <div class="nav-side-menu">
+                        <div class="brand px-4 d-block d-lg-none">
+                            Filtrar Búsqueda
+                        </div>
+                        <i class="fas fa-sliders-h fa-2x toggle-btn" data-toggle="collapse"
+                            data-target="#menu-content"></i>
+
+                        <form id="myForm">
+                            <div class="menu-list">
+                                <ul id="menu-content" class="menu-content collapse out bg-transparent">
+
+                                    <li data-toggle="collapse" data-target="#autor"
+                                        class="collapsed facetas px-3 d-flex justify-content-between">
+                                        <a href="#"> Autor </a><a href="#"> + </a>
+                                    </li>
+                                    <ul class="sub-menu collapse" id="autor">
+                                        <form id="myForm">
+
+                                            <li class="py-2">
+                                                <input type="search" class="form-control autor"
+                                                    placeholder="Escriba el nombre del Autor" aria-controls="dataTable">
+                                            </li>
+                                        </form>
+                                        <ul class="sub-menu " id="#filtros">
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 1 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 2 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 3 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 4 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 5 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 6 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+                                            <li class="checkbox_1 d-flex justify-content-between">
+                                                Autor 7 <span style="size: 25px"><svg id="Layer_1" width="15"
+                                                        style="enable-background:new 0 0 128 128;" version="1.1"
+                                                        viewBox="0 0 128 128" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <style type="text/css">
+                                                            .st0 {
+                                                                fill: #C93636;
+                                                            }
+
+                                                            .st1 {
+                                                                fill: #FFFFFF;
+                                                            }
+                                                        </style>
+                                                        <circle class="st0" cx="64" cy="64" r="64" />
+                                                        <path class="st1"
+                                                            d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                    </svg> </span>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </ul>
+                                    <li data-toggle="collapse" data-target="#tipo-de-objeto-digital"
+                                        class="collapsed facetas px-3 d-flex justify-content-between">
+                                        <a href="#"> Tipo de objeto digital</a><a href="#"> + </a>
+                                    </li>
+
+                                    <ul class="sub-menu collapse" id="tipo-de-objeto-digital">
+
+
+                                        <li class="checkbox_1"><input type="checkbox" id="" checked> Imagen
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox" id="" checked> Texto
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox" id="" checked> Video
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox" id="" checked> Audio
+                                        </li>
+
+
+
+
+
+                                    </ul>
+                                    <li data-toggle="collapse" data-target="#tipo-de-objeto"
+                                        class="collapsed facetas px-3 d-flex justify-content-between">
+                                        <a href="#"> Tipo de objeto </a><a href="#"> + </a>
+                                    </li>
+
+                                    <ul class="sub-menu collapse" id="tipo-de-objeto">
+                                        <li class="checkbox_1">
+                                            <div class="checkbox_1  p-0" style="width: 100%;">
+                                                <input type="checkbox" id="selectall" checked> Todo
+                                                <button class="btn btn-light boton_limpiar_formulario px-2 py-1"
+                                                    style="float: right;" id="loadmorebtn">
+
+                                                    Actualizar
+                                                </button>
+                                            </div>
+                                            <hr class="my-1 mt-0" />
+                                        </li>
+                                        <div style="overflow: auto; max-height:280px">
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Imagen
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Texto
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Video
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Audio
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Documento
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Imagen
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Texto
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Video
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Audio
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Documento
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Imagen
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Texto
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Video
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Audio
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Documento
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Imagen
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Texto
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Video
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Audio
+                                            </li>
+                                            <li class="checkbox_1"><input class="case" type="checkbox"
+                                                    aria-label="Checkbox for following text input" checked> Documento
+                                            </li>
+
+                                        </div>
+                                    </ul>
+
+
+
+                                    <li data-toggle="collapse" data-target="#fecha"
+                                        class="collapsed facetas px-3 d-flex justify-content-between">
+                                        <a href="#">Busqueda por fecha</a> <a href="#"> + </a>
+                                    </li>
+                                    <ul class="sub-menu collapse" id="fecha">
+                                        <li class="pt-2">
+
+
+
+
+                                            <span class="filterTitle"><label for="Año inicio">De</label></span>
+                                            <input class="años" type="number" data-ng-value="" name="anneeDebut"
+                                                id="añoinicio" data-ng-required="false" data-ng-model="$ctrl.anneeStart"
+                                                data-ng-change="$ctrl.setPeriodeAnnees()" autocomplete="off"
+                                                placeholder="0000" min="0000" max="2019">
+
+                                            <span class="filterTitle"><label for="Año inicio">a</label></span>
+                                            <input class="años" type="number" data-ng-value="" name="anneeDebut"
+                                                id="añofin" data-ng-required="false" data-ng-model="$ctrl.anneeStart"
+                                                data-ng-change="$ctrl.setPeriodeAnnees()" autocomplete="off"
+                                                placeholder="2019" min="0000" max="2019">
+                                            <button class="btn btn-light boton_limpiar_formulario px-2 py-1"
+                                                style="float: right;" id="loadmorebtn">
+
+                                                Actualizar
+                                            </button>
+
+
+
+
+
+
+
+                                        </li>
+
+
+                                    </ul>
+                                    <li data-toggle="collapse" data-target="#institucion"
+                                        class="collapsed facetas px-3 d-flex justify-content-between"
+                                        style="width: 100%;">
+                                        <a href="#">Institución de procedencia</a> <a href="#"> + </a>
+                                    </li>
+                                    <ul class="sub-menu collapse" id="institucion">
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 1
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 2
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 3
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 4
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 5
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 6
+                                        </li>
+                                        <li class="checkbox_1"><input type="checkbox"
+                                                aria-label="Checkbox for following text input" checked>
+                                            Institución 7
+                                        </li>
+                                    </ul>
+                                    <li data-toggle="collapse" data-target="#derechos"
+                                        class="collapsed facetas px-3 d-flex justify-content-between">
+                                        <a href="#"></i>Derechos de Uso</a> <a href="#"> + </a>
+                                    </li>
+                                    <ul class="sub-menu collapse pb-2" id="derechos">
+                                        <li><select class="custom-select radio_facetador" id="inputGroupSelect01">
+                                                <option selected>Cualquiera</option>
+                                                <option value="1">Derechos Reservados</option>
+                                                <option value="2">Uso Educativo</option>
+                                                <option value="3">Dominio Público</option>
+                                                <option value="4">Uso no restringido o permitido</option>
+                                                <option value="5">Obras de Titular no identificado o identificable
+                                                </option>
+                                                <option value="3">Obras Anónimas</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                    <li data-toggle="collapse" class="collapsed facetas px-3"
+                                        style="background-color: white; width: 100%;">
+
+                                        <button class="btn btn-light boton_limpiar_formulario px-3 py-1"
+                                            style="float: right;" id="loadmorebtn" type="reset"
+                                            value="Limpiar formulario" onclick="formReset()" value="Reset">
+
+                                            Restaurar
+                                        </button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!--Contenedor Resultados-->
+                <div class="col-12 col-lg-9 p-0" id="main" style="width: 100%;">
+                    <div class="row m-1">
+                        <div class="col-0 col-lg-1"></div>
+
+                        <div class="col-12 col-lg-10 p-0">
+                            <div class="row m-0 p-0">
+
+                                <!--Resultados-->
+
+
+
+
+
+
+
+
+
+                                <div class="col-sm-4 col-6 p-2 px-2 px-sm-2 px-md-3 mb-2">
+                                    <div class="card rounded-0">
+                                        <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                            <img class="card-img img-responsiva" alt="" src="recursos/img/Saxofon.jpg"
+                                                style="object-fit: cover;">
+                                            <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                <a class="card-img-overlay" href="cedula.html"></a>
+                                                <span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                    <i class="icono_objetodigital m-0 rounded-circle"
+                                                        aria-hidden="true">&#xe809;</i>
+                                                </span>
+                                                <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                    <a href="#">
+                                                        <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                            <div class="col-12 p-0">
+                                                <svg height="6px" width="33px">
+                                                    <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                </svg>
+                                            </div>
+                                            <div
+                                                style="min-height: 32px; max-height: 32px; overflow: hidden; z-index: 1;">
+                                                <a href="cedula.html" class="card-title titulo_limitado">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                            </div>
+                                            <div class="descripcion-objeto mt-1" style="overflow: hidden; z-index: 1;">
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de
+                                                    Yucatán.Construcción maya en el antiguo sitio arqueológico de Uxmal,
+                                                    en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de
+                                                    Yucatán.Construcción maya en el antiguo sitio arqueológico de Uxmal,
+                                                    en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-6 p-2 px-2 px-sm-2 px-md-3 mb-2">
+                                    <div class="card rounded-0">
+                                        <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                            <img class="card-img img-responsiva" alt="" src="recursos/img/Saxofon.jpg"
+                                                style="object-fit: cover;">
+                                            <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                <a class="card-img-overlay" href="cedula.html"></a>
+                                                <span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                    <i class="icono_objetodigital m-0 rounded-circle"
+                                                        aria-hidden="true">&#xe809;</i>
+                                                </span>
+                                                <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                    <a href="#">
+                                                        <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                            <div class="col-12 p-0">
+                                                <svg height="6px" width="33px">
+                                                    <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                </svg>
+                                            </div>
+                                            <div
+                                                style="min-height: 32px; max-height: 32px; overflow: hidden; z-index: 1;">
+                                                <a href="cedula.html" class="card-title titulo_limitado">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                            </div>
+                                            <div class="descripcion-objeto mt-1" style="overflow: hidden; z-index: 1;">
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de
+                                                    Yucatán.Construcción maya en el antiguo sitio arqueológico de Uxmal,
+                                                    en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de
+                                                    Yucatán.Construcción maya en el antiguo sitio arqueológico de Uxmal,
+                                                    en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-6 p-2 px-2 px-sm-2 px-md-3 mb-2">
+                                    <div class="card rounded-0">
+                                        <div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0">
+                                            <img class="card-img img-responsiva" alt="" src="recursos/img/Saxofon.jpg"
+                                                style="object-fit: cover;">
+                                            <div class="card-img-overlay p-0 d-flex justify-content-between">
+                                                <a class="card-img-overlay" href="cedula.html"></a>
+                                                <span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                    <i class="icono_objetodigital m-0 rounded-circle"
+                                                        aria-hidden="true">&#xe809;</i>
+                                                </span>
+                                                <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                    <a href="#">
+                                                        <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                            <div class="col-12 p-0">
+                                                <svg height="6px" width="33px">
+                                                    <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                                </svg>
+                                            </div>
+                                            <div
+                                                style="min-height: 32px; max-height: 32px; overflow: hidden; z-index: 1;">
+                                                <a href="cedula.html" class="card-title titulo_limitado">
+                                                    <h4>Plan libertador de Morelos </h4>
+                                                </a>
+                                            </div>
+                                            <div class="descripcion-objeto mt-1" style="overflow: hidden; z-index: 1;">
+                                                <p class="card-text limitado">Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de
+                                                    Yucatán.Construcción maya en el antiguo sitio arqueológico de Uxmal,
+                                                    en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en
+                                                    el antiguo sitio arqueológico de Uxmal, en el estado de
+                                                    Yucatán.Construcción maya en el antiguo sitio arqueológico de Uxmal,
+                                                    en el estado de Yucatán. Construcción maya en el antiguo sitio
+                                                    arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+                                <!--lista-->
+
+                                <div class=" m-2 p-0">
+                                    <div class="row  no-gutters">
+
+                                        <div class="card rounded-0 col-3 col-md-2 imagen-superior_lista">
+                                            <div class="d-flex align-self-center p-0" style="overflow: hidden;">
+                                                <img class="card-img" alt="" src="recursos/img/Saxofon.jpg"
+                                                    style="object-fit: cover;">
+                                                <div
+                                                    class="card-img-overlay p-0 d-flex justify-content-between imagen-superior_lista">
+                                                    <a class="card-img-overlay" href="cedula.html"></a>
+                                                    <span
+                                                        class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                        <i class="icono_objetodigital m-0 rounded-circle"
+                                                            aria-hidden="true">&#xe809;</i>
+                                                    </span>
+                                                    <span
+                                                        class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                        <a href="#">
+                                                            <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 col-md-9 px-2">
+                                            <svg height="6px" width="33px">
+                                                <rect width="45px" height="5px" style="fill: #FF026A;" />
+                                            </svg>
+                                            <table class="table table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Título</th>
+                                                        <td class="p-2 pl-3">Manuscrito de Carvajal</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Título atribuído</th>
+                                                        <td class="p-2 pl-3">Manuscrito de Carvajal</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Autor</th>
+                                                        <td class="p-2 pl-3">Anónimo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Fecha de creación
+                                                            del BHC</th>
+                                                        <td class="p-2 pl-3">18 de junio de 1989</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Lugar de creación</th>
+                                                        <td class="p-2 pl-3">México</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Descripción</th>
+                                                        <td class="p-2 pl-3">Pirámide más alta y de mayor relevancia
+                                                            histórica
+                                                            en la zona arqueológica de Palenque, en el estado
+                                                            de Chiapas.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="p-2">Institución
+                                                            que resguarda</th>
+                                                        <td class="p-2 pl-3">Museo Nacional de Antropoligía</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="ident p-2">Identificador</th>
+                                                        <td class="ident p-2 pl-3">AMN38936</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Mosaico-->
+                                <div class="col-sm-4 col-6 p-2 mb-2">
+                                    <div class="card rounded-0">
+                                        <img src="recursos/img/balafon.jpg" class="card-img-top" alt="...">
+                                        <div
+                                            class="card-img-overlay p-0 d-flex justify-content-between imagen-superior_lista">
+                                            <a class="card-img-overlay" href="cedula.html"></a>
+                                            <span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                <i class="icono_objetodigital m-0 rounded-circle"
+                                                    aria-hidden="true">&#xe809;</i>
+                                            </span>
+                                            <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                <a href="#">
+                                                    <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-6 p-2 mb-2">
+                                    <div class="card rounded-0">
+                                        <img src="recursos/img/Oboe.jpg" class="card-img-top" alt="...">
+                                        <div
+                                            class="card-img-overlay p-0 d-flex justify-content-between imagen-superior_lista">
+                                            <a class="card-img-overlay" href="cedula.html"></a>
+                                            <span class="label_objeto badge ml-2 p-1 align-self-start rounded-0">
+                                                <i class="icono_objetodigital m-0 rounded-circle"
+                                                    aria-hidden="true">&#xe809;</i>
+                                            </span>
+                                            <span class="boton_agregar_a_coleccion badge p-1 pr-2  align-self-end">
+                                                <a href="#">
+                                                    <!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> -->
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-0 col-lg-1"></div>
+
+
+                    </div>
+
+                    <!-- Paginador -->
+                    <div class="row d-flex justify-content-center pt-3 m-0 mt-3">
+
+
+                        <div class="paginador">
+                            <div class="pagi">
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">1</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">2</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">3</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">4</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">5</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">6</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">7</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">8</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">9</div>
+                                </div>
+                                <div class="indice d-flex justify-content-center" style="width:40px;">
+                                    <div class="text">10</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Paginador -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <!-- atún sellado de mi casa, y un limón -->
+    <footer class="footer mt-3 py-0">
+        <div class="container p-0" style="border-top: 1px solid #092834;">
+            <!-- SEPARADOR -->
+            <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
+            <div class="col-11"></div>
+            <!-- ---- -->
+            <div class="row p-0 my-4" style="margin-left: 0px; margin-right: 0px;">
+                <div class="col-12 d-flex justify-content-start flex-column">
+                    <ul class="memoria-redes">
+                        <li><a href="#"> <i class="fab fa-facebook-f 3x"></i> </a></li>
+                        <li style="color: #092834">|</li>
+                        <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-12 contenedor-izquierdo">
+                    <ul>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Aviso de privacidad</a></li>
+                        <li><a href="#">Marco jurídico</a></li>
+                        <li><a href="#">Coordinación</a></li>
+                        <li><a href="#">Instituciones vinculadas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-12">
+                    <ul>
+                        <li><a href="#">Documentación técnica</a></li>
+                        <li><a href="#">Cómo usar el sitio</a></li>
+                        <li><a href="#">Mapa de sitio</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 co-12 d-flex justify-content-center align-self-center pt-3">
+                    <img class="img-fluid" src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="60px" />
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- <script src="recursos/js/range_Timeline.js" crossorigin="anonymous"></script> -->
+
+    <!-- Script TIMELINE -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 2019,
+                values: [0, 2019],
+                slide: function (event, ui) {
+                    $("#añoinicio").val(ui.values[0]);
+                    $("#añofin").val(+ui.values[1]);
+                }
+            });
+            $("#añoinicio").val($("#slider-range").slider("values", 0));
+            $("#añofin").val($("#slider-range").slider("values", 1));
+        });
+    </script>
+
+
+    <!-- Script PALOMEAR RESULTADOS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script>
+        // $(function(){
+        // $('#mainObjetos').live('click',function(){
+        // $('.case').attr('checked',($(this).is(':checked')) ? true:false);
+        // });
+        // });
+
+
+        $("#selectall").on("click", function () {
+            $(".case").prop("checked", this.checked);
+        });
+
+        // evento para que cuando se desmarquen uno o más elementos se desmarque también el checkbox superior
+        $(".case").on("click", function () {
+            if ($(".case").length == $(".case:checked").length) {
+                $("#selectall").prop("checked", true);
+            } else {
+                $("#selectall").prop("checked", false);
+            }
+        });
+    </script>
+
+
+    <!-- reductor de texto -->
+    <script type="text/javascript">
+        function shorten(text, maxLength, delimiter, overflow) {
+            delimiter = delimiter || "&hellip;";
+            overflow = overflow || false;
+            var ret = text;
+            if (ret.length > maxLength) {
+                var breakpoint = overflow ? maxLength + ret.substr(maxLength).indexOf(" ") : ret.substr(0, maxLength)
+                    .lastIndexOf(" ");
+                ret = ret.substr(0, breakpoint) + delimiter;
+            }
+            return ret;
+        }
+
+
+        $(document).ready(function () {
+
+
+
+            var $descripcion = $(".limitado");
+            var text = $descripcion.text();
+            $descripcion.text(shorten(text, 100, "...", false));
+        });
+    </script>
+
+
+    <!-- paginador -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.10/flickity.pkgd.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js'></script>
+
+
+    <script type="text/javascript">
+        class Paginador {
+
+            constructor() {
+
+                this.setupDom();
+                this.setupFlickity();
+
+            }
+
+
+            setupDom() {
+                this.dom = {};
+                this.dom.lock = document.querySelector('.lock');
+                this.dom.rows = document.querySelectorAll('.pagi');
+                this.dom.code = document.querySelector('.code');
+                this.dom.status = document.querySelector('.status');
+            }
+
+
+
+            setupFlickity() {
+                for (let i = 0, len = this.dom.rows.length; i < len; i++) {
+                    let pagi = this.dom.rows[i];
+                    let flkty = new Flickity(pagi, {
+                        selectedAttraction: 1,
+                        friction: 0.9,
+                        cellAlign: 'center',
+                        pageDots: false,
+                        wrapAround: true
+                    });
+
+                    flkty.lastIndex = 5;
+
+                    flkty.on('select', () => {
+                        if (flkty.selectedIndex !== flkty.lastIndex) {
+                            this.onChange();
+                        }
+                        flkty.lastIndex = flkty.selectedIndex;
+                    });
+
+
+                }
+
+                this.dom.prevNextBtns = this.dom.lock.querySelectorAll('.flickity-prev-next-button');
+                for (let i = 0, len = this.dom.prevNextBtns.length; i < len; i++) {
+                    let btn = this.dom.prevNextBtns[i];
+
+                    ;
+                }
+            }
+        }
+
+
+
+        let lock = new Paginador();
+    </script>
+
+    <script type="text/javascript">
+        var pista_paginado = document.querySelector(".flickity-slider");
+        var paginador = document.querySelector(".paginador");
+        var pagi = document.querySelector(".pagi");
+        var prev_flecha = document.querySelectorAll(".flickity-prev-next-button");
+        var paginas = document.getElementsByClassName("indice").length;
+        console.log("Hay " + paginas + " elementos");
+
+        switch (paginas) {
+            case 1:
+                paginador.style.width = "250px";
+                pagi.style.width = "250px";
+                console.log("Hay 1 pagina");
+                break;
+            case 2:
+                paginador.style.width = "250px";
+                pagi.style.width = "250px";
+                pista_paginado.style.left = "-32%";
+
+                console.log("Hay 2 pagina");
+                break;
+            case 3:
+                paginador.style.width = "150px";
+                pagi.style.width = "150px";
+                console.log("Hay 3 paginas");
+                break;
+            case 4:
+                paginador.style.width = "150px";
+                pagi.style.width = "150px";
+                console.log("Hay 4 paginas");
+                break;
+            default:
+                paginador.style.width = "300px";
+                pagi.style.width = "300px";
+                console.log("Hay más");
+
+        }
+    </script>
+
+    <!-- paginador -->
+
+</body>
+
+</html>
+<!-- 
+                  ,--.    ,--.
+                 ((O ))--((O ))
+               ,'_`--'____`--'_`.
+              _:  ____________  :_
+             | | ||::::::::::|| | |
+             | | ||::::::::::|| | |
+             | | ||::::::::::|| | |
+             |_| |/__________\| |_|
+               |________________|
+            __..-'            `-..__
+         .-| : .----------------. : |-.
+       ,\ || | |\______________/| | || /.
+      /`.\:| | ||  __  __  __  || | |;/,'\
+     :`-._\;.| || '--''--''--' || |,:/_.-':
+     |    :  | || .----------. || |  :    |
+     |    |  | || '-MALANDRO-' || |  |    |
+     |    |  | ||   _   _   _  || |  |    |
+     :,--.;  | ||  (_) (_) (_) || |  :,--.;
+     (`-'|)  | ||______________|| |  (|`-')
+      `--'   | |/______________\| |   `--'
+             |____________________|
+              `.________________,'
+               (_______)(_______)
+               (_______)(_______)
+               (_______)(_______)
+               (_______)(_______)
+              |        ||        |
+              '--------''--------'
+-->
+
+<!-- listado de resultados -->
+<script>
+    function getItemDOM(item) {
+        if (item) {
+            var listItemContent =
+                '<div class="col-sm-4 col-6 p-2 px-2 px-sm-1 mb-2"><div class="card rounded-0"><div class="imagen-superior col-md-2 col-3 d-flex align-self-center p-0"><img class="card-img img-responsiva" alt="" src="__itemImage__"><div class="card-img-overlay p-0 d-flex justify-content-between"><a class="card-img-overlay" href="__itemUrl__"></a><span class="label_objeto badge ml-2 p-1 align-self-start rounded-0"><i class="icono_objetodigital m-0 rounded-circle" aria-hidden="true"></i></span><span class="boton_agregar_a_coleccion badge p-1 pr-2 align-self-end"><a href="#"><!-- <i class="fas fa-plus-circle fa-2x text-primary" aria-hidden="true"></i> --></a></span></div></div> <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;"> <div class="col-12 p-0"> <svg height="6px" width="33px"> <rect width="45px" height="5px" style="fill: #FF026A;"/> </svg> </div> <a href="__itemUrl__" class="card-title mb-1 titulo_limitado" style="max-height: 35px; overflow: hidden; z-index: 1;"><h4 >__itemTitleTitle__</h4> </a> <p class="card-text limitado" >__itemDescription__</p> </div> </div> </div>';
+            var propmap = {
+                __itemImage__: '/work/models/memorica/recursos/img/placeholder-600x400.png',
+                __itemTitleTitle__: item.bhc.titulo || "",
+                __itemDescription__: item.bhc.descripcion || "",
+                __itemUrl__: item._self || "#"
+            };
+            return memorica.getDOMElement(listItemContent, propmap);
+        }
+    }
+
+    $(document).ready(function () {
+        memorica.search(memorica.requestParams.q, {},
+            function (data) {
+                if (data) {
+                    document.getElementById("searchQuery").innerHTML = '"' + memorica.requestParams.q + '"';
+                    document.getElementById("totalRecords").innerHTML = data.total;
+                    var listElement = document.getElementById("memoricaResultadosBusqueda");
+
+                    data.records.forEach(function (item) {
+                        $(listElement).append(getItemDOM(item));
+                    });
+                }
+            },
+            function (error) {
+                var containerDiv = document.getElementById("memoricaResultadosBusqueda");
+                $(containerDiv).innerHTML = "<p>La curaduría que buscas no existe</p>";
+            });
+    });
+</script>

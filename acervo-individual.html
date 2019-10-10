@@ -9,16 +9,26 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
 		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link rel="stylesheet" href="recursos/css/style.css">
+	
+	<!-- bootstrap table -->
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/filter-control/bootstrap-table-filter-control.css">
+	
+	
 
 	<!-- fuente de íconos -->
 	<link rel="stylesheet" href="recursos/Type/fontello/css/fontello-embedded.css">
+	<!-- paginador -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+	<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/flickity.css'>
+
+	<link rel="stylesheet" href="recursos/css/style.css">
 </head>
 
 <body>
-	<!-- Header con barra y buscador -->
+	<!-- header con barra y buscador -->
 	<header>
-		<!-- Barra de navegación -->
+		<!-- barra de navegación -->
 		<div class="barra-superior"></div>
 		<nav class="navbar navbar-expand-lg navbar-light">
 
@@ -36,7 +46,7 @@
 
 				<div class="col-12 d-flex justify-content-center p-0">
 					<a class="navbar-brand d-none d-lg-block m-0 " href="index.html"><img
-							src="recursos/img/Logos/logo_memorica.svg" height="45px" /></a>
+							src="recursos/img/Logos/logo_memorica.svg" height="45px"></a>
 				</div>
 
 				<div class="container py-3 d-none d-lg-block">
@@ -78,7 +88,7 @@
 			</div>
 		</nav>
 
-		<!--Buscador-->
+		<!--buscador-->
 		<div class="container-fluid memoria-buscador d-flex justify-content-center pt-3 d-block d-lg-none">
 			<div class="row fila-centrada ">
 				<div class="col-0 col-sm-3"></div>
@@ -93,10 +103,10 @@
 		</div>
 	</header>
 
-	<!-- Cuerpo de página -->
+	<!-- cuerpo de página -->
 	<main class="container">
 
-		<!-- Breadcrumb -->
+		<!-- breadcrumb -->
 		<div class="row mt-3 mt-lg-0 mb-2">
 			<div class="col-lg-6 col-md-6 col-12 p-0 d-flex justify-content-lg-start align-items-start">
 				<nav class="p-0 mb-1" aria-label="breadcrumb">
@@ -116,292 +126,197 @@
 		</div>
 		<div class="col-1" style="background-color: #FF026A; height:3px;"></div>
 
-		<!-- Nombre y descripción del acervo -->
+		<!-- nombre y descripción del acervo -->
 		<div class="descripcion card my-3 p-3 border-0">
 			<div class="row no-gutters">
 				<div class="col-md-5">
-					<img class="card-img rounded-0" style="height: 100%;" src="recursos/img/placeholder-600x400.png" alt="">
+					<img class="card-img rounded-0" style="width: 100%;" src="recursos/img/archivo_general_de_la_nacion.jpg" alt="">
 				</div>
 				<div class="col-md-7">
 					<div class="card-body p-0 pt-4 p-md-4">
 						<h2 class="card-title mb-2">Archivo General de la Nación</h2>
 						<div class="col-1" style="background-color: #B2D732; height:5px;"></div>
 						<p id="memoria-texto-descripcion" class="card-text mt-4 mt-md-5">
-							Rerum enim itaque id. Perferendis et itaque molestias. Eum quidem eos
-							aut laudantium officia dolorum. Porro nihil maxime et reprehenderit nesciunt deserunt neque.
-							Provident ipsam rem consequatur qui culpa rerum accusamus. Quo veritatis culpa animi quae
-							natus laborum molestiae.</p>
+							El Archivo General de la Nación (AGN) es el órgano rector de la archivística nacional.
+							Entre sus funciones se encuentra la preservación y la difusión del patrimonio documental de México. La
+							salvaguarda de la memoria nacional y el fortalecimiento de la unidad nacional están entre sus fines
+							fundamentales.
+							Para poner a disposición del público su acervo, el AGN debe custodiar, ordenar, describir y conservar los
+							documentos que resguarda. <br>
+							El primer antecedente del AGN en el México independiente fue la creación del Archivo General y Público de la
+							Nación en 1823 con la idea de ser consultado por cualquier interesado en su documentación. En 1918 pasa a
+							depender de la Secretaría de Gobernación y adquiere su actual denominación: Archivo General de la Nación.
+							Desde 1982 se ubica en la antigua Penitenciaría de la Ciudad de México, construcción conocida como Palacio de
+							Lecumberri. El Archivo resguarda un total de 375 millones de fojas.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Dropdowns de árbol -->
+		<!-- dropdowns de árbol -->
 
-		<form class="row mb-5" style="margin: auto">
-			<div class="col-sm-9 memoria-dropdowns d-flex p-3">
-				<select id="nivel1" class="form-control custom-select dropdown-acervo">
+		<form class="row mb-5 d-sm-flex" style="margin: auto">
+			<div id="dropdowns" class="col-sm-6 memoria-dropdowns d-sm-flex d-block p-3">
+				<select id="nivel1" class="form-control custom-select dropdown-acervo mx-1">
 					<option selected value="">Selecciona un fondo</option>
 					<option value="H_MX09017AGNCL01FO001AYSE001AP">Abasto y Panaderías</option>
 					<option value="H_MX09017AGNCL01FO008RHSE002AL">Alcabalas</option>
 				</select>
 
-				<select id="nivel2" class="form-control custom-select dropdown-acervo">
+				<select id="nivel2" class="d-none form-control custom-select dropdown-acervo mx-1">
 					<option selected value="">Favor de seleccionar un fondo</option>
 				</select>
-
-				<select id="nivel3" class="form-control custom-select dropdown-acervo">
-					<option selected value="">Favor de seleccionar un subfondo</option>
-				</select>
-			</div>
-			<div id="submit" class="col-sm-3">
-				<button id="buscar-fondo" type="submit"
-					class="btn btn-primary d-flex align-items-center justify-content-center">
-					
-					<!-- <i class="demo-icon">&#xe800;</i> -->
-					<i class="fas fa-search pr-2"></i>
-					Ver objetos
-				</button>
 			</div>
 		</form>
 
-		<!-- Cédula colapsable -->
-		<div class="accordion mb-4 rounded-0">
-			<div id="cedula1" class="card d-none border-0 rounded-0 mb-4">
-				<div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
-					id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-					aria-controls="collapseOne">
-					<h2 class="mb-0 btn btn-link cedula1titulo">
-						Título del fondo
-					</h2>
-					<a id="plus-icon-1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-						aria-expanded="true" aria-controls="collapseOne"></a>
-				</div>
-				<div id="collapseOne" class="collapse" aria-labelledby="headingOne">
-					<div class="card-body">
-						<table class="table">
-							<tbody>
-								<tr>
-									<th class="border-right" scope="row">Número identificador</th>
-									<td class="COD_REF"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Título</th>
-									<td class="TITULO"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Autor/Creador</th>
-									<td class="NOMBRE_PRODUCTOR"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Tipo de BHC</th>
-									<td class="NIVEL_DESC"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">ID Fondo/Colección</th>
-									<td class="padre"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de creación</th>
-									<td class="FECHA_EXT_INI"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Descripción</th>
-									<td class="HIST_INSTUTUC"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Institución que resguarda el BHC</th>
-									<td class="LOCALIZ_ORIG"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Dimensiones/Duración</th>
-									<td class="VOL_UNID"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de inicio</th>
-									<td class="FECHA_EXT_INI"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de finalización</th>
-									<td class="FECHA_EXT_FIN"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Nota</th>
-									<td class="NOTAS"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Etiqueta de la declaracion de uso</th>
-									<td class="REGLAS_NORMAS"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Definición de la declaración de uso</th>
-									<td class=""></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Nota</th>
-									<td class="NOTA_ARCHIVERO"></td>
-								</tr>
-							</tbody>
-						</table>
+		<!-- <form class="row mb-5 mx-auto d-flex d-sm-none justify-content-center" action="">
+			<div class="paginador" style="width: 500px">
+				<div class="pagi" style="width: 500px">
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Abasto y Panaderías</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Alcabalas</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Instituciones Coloniales</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">México Contemporáneo</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Archivos Pornográficos</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Archivos en Microfilm</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">México Independiente</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Archivos Gráficos</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Archivos Gráficos 2</div>
+					</div>
+					<div class="indice d-flex justify-content-center" style="width: 200px">
+						<div class="selecter">Otros archivos</div>
 					</div>
 				</div>
 			</div>
+		</form> -->
 
-			<div id="cedula2" class="card d-none border-0 rounded-0 mb-4">
-				<div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
-					id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-					aria-controls="collapseTwo">
-					<h2 class="mb-0 btn btn-link cedula2titulo">
-						Título del subfondo
-					</h2>
-					<a id="plus-icon-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-						aria-expanded="false" aria-controls="collapseTwo"></a>
-				</div>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
-					<div class="card-body">
-						<table class="table">
-							<tbody>
-								<tr>
-									<th class="border-right" scope="row">Número identificador</th>
-									<td class="COD_REF2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Título</th>
-									<td class="TITULO2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Autor/Creador</th>
-									<td class="NOMBRE_PRODUCTOR2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Tipo de BHC</th>
-									<td class="NIVEL_DESC2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">ID Fondo/Colección</th>
-									<td class="padre2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de creación</th>
-									<td class="FECHA_EXT_INI2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Descripción</th>
-									<td class="HIST_INSTUTUC2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Institución que resguarda el BHC</th>
-									<td class="LOCALIZ_ORIG2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Dimensiones/Duración</th>
-									<td class="VOL_UNID2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de inicio</th>
-									<td class="FECHA_EXT_INI2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de finalización</th>
-									<td class="FECHA_EXT_FIN2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Nota</th>
-									<td class="NOTAS2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Etiqueta de la declaracion de uso</th>
-									<td class="REGLAS_NORMAS2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Nota</th>
-									<td class="NOTA_ARCHIVERO2"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+		<!-- descripción de fondo -->
+		<div id="fondo-descripcion" class="d-none mb-5">
+			<h5 class="pb-2 mb-0" style="border-bottom: 1px solid #092834;">Descripción</h5>
+			<div class="col-1 mb-3" style="background-color: #FF026A; height:3px;"></div>
+			<p class="HIST_INSTUTUC"></p>
+		</div>
 
-			<div id="cedula3" class="card d-none border-0 rounded-0 mb-4">
-				<div class="card-header fa border-bottom-0 d-flex align-items-center justify-content-between"
-					id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-					aria-controls="collapseThree">
-					<h2 class="mb-0 btn btn-link cedula3titulo">
-						Título del expediente
-					</h2>
-					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-						aria-expanded="false" aria-controls="collapseThree"></a>
-				</div>
-				<div id="collapseThree" class="collapse" aria-labelledby="headingThree">
-					<div class="card-body">
-						<table class="table">
-							<tbody>
-								<tr>
-									<th class="border-right" scope="row">Número identificador</th>
-									<td class="COD_REF3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Título</th>
-									<td class="TITULO3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Autor/Creador</th>
-									<td class="NOMBRE_PRODUCTOR3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Tipo de BHC</th>
-									<td class="NIVEL_DESC3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">ID Fondo/Colección</th>
-									<td class="padre3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de creación</th>
-									<td class="FECHA_EXT_INI3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Descripción</th>
-									<td class="HIST_INSTUTUC3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Institución que resguarda el BHC</th>
-									<td class="LOCALIZ_ORIG3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Dimensiones/Duración</th>
-									<td class="VOL_UNID3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de inicio</th>
-									<td class="FECHA_EXT_INI3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Fecha de finalización</th>
-									<td class="FECHA_EXT_FIN3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Nota</th>
-									<td class="NOTAS2"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Etiqueta de la declaracion de uso</th>
-									<td class="REGLAS_NORMAS3"></td>
-								</tr>
-								<tr>
-									<th class="border-right" scope="row">Nota</th>
-									<td class="NOTA_ARCHIVERO3"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+		<!-- objetos del acervo -->
+		<div id="objetos" class="container d-none">
+			<table id="table" data-toggle="table" data-show-search-clear-button="true" data-filter-control="true"
+				data-pagination="true" data-pagination-v-align="bottom" data-search-align="right" class="border-0"
+				data-locale="es-MX">
+				<thead id="titulos" class="border-0">
+					<tr class="pb-5">
+						<th data-field="titulo" data-filter-control="select" data-sortable="true">Tipo de objeto</th>
+						<th data-field="ID" data-filter-control="input" data-sortable="true">Identificador</th>
+						<th data-field="tipo" data-filter-control="input" data-sortable="true">Título</th>
+						<th data-field="descripcion" data-filter-control="input">Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714901</td>
+						<td>Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714902</td>
+						<td>Zócalo</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714903</td>
+						<td>San Cosme</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714904</td>
+						<td>Normal</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714905</td>
+						<td>Salto del Agua</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714906</td>
+						<td>Cuatro Caminos</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe812;</i> Video</td>
+						<td>MXNAGN0123714907</td>
+						<td>Portales</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
+						<td>MXNAGN0123714908</td>
+						<td>Pino Suárez</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714909</td>
+						<td>Revolución</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe812;</i> Video</td>
+						<td>MXNAGN0123714910</td>
+						<td>Hidalgo</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714911</td>
+						<td>Xola</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe812;</i> Video</td>
+						<td>MXNAGN0123714912</td>
+						<td>Viaducto</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714913</td>
+						<td>Tacuba</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+					<tr>
+						<td><i class="icono_modos_visualizacion">&#xe811;</i> Documento</td>
+						<td>MXNAGN0123714914</td>
+						<td>Nativitas</td>
+						<td class="limitado">Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</main>
 
-	<!-- Footer -->
+	<!-- footer -->
 	<!-- atún sellado de mi casa, y un limón -->
 	<footer class="footer mt-3 py-0">
 		<div class="container p-0" style="border-top: 1px solid #092834;">
@@ -452,8 +367,161 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!--bootstrap table-->
+	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/export/bootstrap-table-export.js"></script>
+	<script src="recursos/js/bootstrap-table-es-MX.js"></script>
+
 	<script src="recursos/js/main.js"></script>
 	<script src="recursos/js/test.js"></script>
+
+	<!-- reductor de texto -->
+	<script type="text/javascript">
+		function shorten(text, maxLength, delimiter, overflow) {
+			delimiter = delimiter || "&hellip;";
+			overflow = overflow || false;
+			var ret = text;
+			if (ret.length > maxLength) {
+				var breakpoint = overflow ? maxLength + ret.substr(maxLength).indexOf(" ") : ret.substr(0, maxLength).lastIndexOf(" ");
+				ret = ret.substr(0, breakpoint) + delimiter;
+			}
+			return ret;
+		}
+
+		var $descripcion = $(".limitado");
+			var text = $descripcion.text();
+			$descripcion.text(shorten(text, 150, "...", false));
+	</script>
+
+	<!-- paginador -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.10/flickity.pkgd.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js'></script>
+
+
+	<script type="text/javascript">
+		class Paginador {
+
+			constructor() {
+
+				this.setupDom();
+				this.setupFlickity();
+
+			}
+
+
+			setupDom() {
+				this.dom = {};
+				this.dom.lock = document.querySelector('.lock');
+				this.dom.rows = document.querySelectorAll('.pagi');
+				this.dom.code = document.querySelector('.code');
+				this.dom.status = document.querySelector('.status');
+			}
+
+
+
+			setupFlickity() {
+				for (let i = 0, len = this.dom.rows.length; i < len; i++) {
+					let pagi = this.dom.rows[i];
+					let flkty = new Flickity(pagi, {
+						selectedAttraction: 1,
+						friction: 0.9,
+						cellAlign: 'center',
+						pageDots: false,
+						wrapAround: true
+					});
+
+					flkty.lastIndex = 5;
+
+					flkty.on('select', () => {
+						if (flkty.selectedIndex !== flkty.lastIndex) {
+							this.onChange();
+						}
+						flkty.lastIndex = flkty.selectedIndex;
+					});
+
+
+				}
+
+				this.dom.prevNextBtns = this.dom.lock.querySelectorAll('.flickity-prev-next-button');
+				for (let i = 0, len = this.dom.prevNextBtns.length; i < len; i++) {
+					let btn = this.dom.prevNextBtns[i];
+
+					;
+				}
+			}
+		}
+
+
+
+		let lock = new Paginador();
+	</script>
+
+	<script type="text/javascript">
+		var pista_paginado = document.querySelector(".flickity-slider");
+		var paginador = document.querySelector(".paginador");
+		var pagi = document.querySelector(".pagi");
+		var prev_flecha = document.querySelectorAll(".flickity-prev-next-button");
+		var paginas = document.getElementsByClassName("indice").length;
+		console.log("Hay " + paginas + " elementos");
+
+		switch (paginas) {
+			case 1:
+				paginador.style.width = "250px";
+				pagi.style.width = "250px";
+				console.log("Hay 1 pagina");
+				break;
+			case 2:
+				paginador.style.width = "250px";
+				pagi.style.width = "250px";
+				pista_paginado.style.left = "-32%";
+
+				console.log("Hay 2 pagina");
+				break;
+			case 3:
+				paginador.style.width = "150px";
+				pagi.style.width = "150px";
+				console.log("Hay 3 paginas");
+				break;
+			case 4:
+				paginador.style.width = "150px";
+				pagi.style.width = "150px";
+				console.log("Hay 4 paginas");
+				break;
+			default:
+				paginador.style.width = "300px";
+				pagi.style.width = "300px";
+				console.log("Hay más");
+		}
+	</script>
+
+	<!--  
+	              ,  ,
+             / \/ \,'| _
+            ,'    '  ,' |,|
+           ,'           ' |,'|
+          ,'                 ;'| _
+         ,'                    '' |              el barto
+        ,'                        ;-,
+       (___                        /
+     ,'    `.  ___               ,'
+    :       ,`'   `-.           /
+    |-._ o /         \         /
+   (    `-(           )       /
+  ,'`.     \      o  /      ,'
+ /    `     `.     ,'      /
+(             `"""'       /
+ `._                     /
+    `--.______        '"`.
+       \__,__,`---._   '`;
+            ))`-^--')`,-'
+          ,',_____,'  |
+          \_          `).
+           `.      _,'  `
+			/`-._,-'      \
+			
+			-->
 
 </body>
 
