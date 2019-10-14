@@ -402,14 +402,10 @@
 
 	<script type="text/javascript">
 		class Paginador {
-
 			constructor() {
-
 				this.setupDom();
 				this.setupFlickity();
-
 			}
-
 
 			setupDom() {
 				this.dom = {};
@@ -418,8 +414,6 @@
 				this.dom.code = document.querySelector('.code');
 				this.dom.status = document.querySelector('.status');
 			}
-
-
 
 			setupFlickity() {
 				for (let i = 0, len = this.dom.rows.length; i < len; i++) {
@@ -431,29 +425,22 @@
 						pageDots: false,
 						wrapAround: true
 					});
-
 					flkty.lastIndex = 5;
-
 					flkty.on('select', () => {
 						if (flkty.selectedIndex !== flkty.lastIndex) {
 							this.onChange();
 						}
 						flkty.lastIndex = flkty.selectedIndex;
 					});
-
-
 				}
 
 				this.dom.prevNextBtns = this.dom.lock.querySelectorAll('.flickity-prev-next-button');
 				for (let i = 0, len = this.dom.prevNextBtns.length; i < len; i++) {
 					let btn = this.dom.prevNextBtns[i];
-
 					;
 				}
 			}
 		}
-
-
 
 		let lock = new Paginador();
 	</script>
