@@ -158,53 +158,17 @@
 		<form class="row mb-5 d-sm-flex" style="margin: auto">
 			<div id="dropdowns" class="col-sm-6 memoria-dropdowns d-sm-flex d-block p-3">
 				<select id="nivel1" class="form-control custom-select dropdown-acervo mx-1">
-					<option selected value="">Selecciona un fondo</option>
-					<option value="H_MX09017AGNCL01FO001AYSE001AP">Abasto y Panaderías</option>
-					<option value="H_MX09017AGNCL01FO008RHSE002AL">Alcabalas</option>
+					<!-- generateDropdown -->
 				</select>
 
-				<select id="nivel2" class="d-none form-control custom-select dropdown-acervo mx-1">
+				<!-- <select id="nivel2" class="d-none form-control custom-select dropdown-acervo mx-1">
 					<option selected value="">Favor de seleccionar un fondo</option>
-				</select>
+				</select> -->
 			</div>
 		</form>
 
-		<!-- <form class="row mb-5 mx-auto d-flex d-sm-none justify-content-center" action="">
-			<div class="paginador" style="width: 500px">
-				<div class="pagi" style="width: 500px">
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Abasto y Panaderías</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Alcabalas</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Instituciones Coloniales</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">México Contemporáneo</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Archivos Pornográficos</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Archivos en Microfilm</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">México Independiente</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Archivos Gráficos</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Archivos Gráficos 2</div>
-					</div>
-					<div class="indice d-flex justify-content-center" style="width: 200px">
-						<div class="selecter">Otros archivos</div>
-					</div>
-				</div>
-			</div>
-		</form> -->
+		<!-- <input type="file" id="csv-file" name="files" /> -->
+		<!-- <input type="button" value="download JSON" onclick="downloadJSON()"> -->
 
 		<!-- descripción de fondo -->
 		<div id="fondo-descripcion" class="d-none mb-5">
@@ -356,7 +320,7 @@
 		</div>
 	</footer>
 
-	<!-- Scripts -->
+	<!-- scripts -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 	</script>
@@ -368,13 +332,58 @@
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-	<!--bootstrap table-->
+	<!-- papa parse -->
+	<script src="recursos/PapaParse-5.0.2/papaparse.min.js"></script>
+	<!-- <script>
+		function handleFileSelect(evt) {
+			var file = evt.target.files[0];
+
+			var agn = Papa.parse(file, {
+				header: true,
+				dynamicTyping: true,
+				skipEmptyLines: true,
+				download: true,
+				complete: function(results) {
+					data = results;
+					console.log(data);
+				}
+			});
+		}
+
+		// function downloadJSON() {
+		// 	var agn = Papa.parse("recursos/fondos_agn_10112019_diseño.csv", {
+		// 		header: true,
+		// 		dynamicTyping: true,
+		// 		skipEmptyLines: true,
+		// 		download: true,
+		// 		complete: function(results) {
+		// 			data = results;
+		// 			console.log(data);
+		// 		}
+		// 	});
+
+		// 	var agnData = new Blob([JSON], {type: 'text/json'});
+
+		// 	var agnURL = window.URL.createObjectURL(agnData);
+
+		// 	var testLink = document.createElement('a');
+		// 	testLink.href = agnURL;
+		// 	testLink.setAttribute('test', 'test.json');
+		// 	testLink.click();
+		// }
+
+		$(document).ready(function(){
+			$("#csv-file").change(handleFileSelect);
+		});
+	</script> -->
+
+	<!-- bootstrap table -->
 	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
 	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 	<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/export/bootstrap-table-export.js"></script>
 	<script src="recursos/js/bootstrap-table-es-MX.js"></script>
 
-	<script src="recursos/js/main.js"></script>
+	<!-- <script src="recursos/js/main.js"></script> -->
 	<script src="recursos/js/test.js"></script>
 
 	<!-- reductor de texto -->
@@ -395,95 +404,9 @@
 			$descripcion.text(shorten(text, 150, "...", false));
 	</script>
 
-	<!-- paginador -->
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.10/flickity.pkgd.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js'></script>
 
-
-	<script type="text/javascript">
-		class Paginador {
-			constructor() {
-				this.setupDom();
-				this.setupFlickity();
-			}
-
-			setupDom() {
-				this.dom = {};
-				this.dom.lock = document.querySelector('.lock');
-				this.dom.rows = document.querySelectorAll('.pagi');
-				this.dom.code = document.querySelector('.code');
-				this.dom.status = document.querySelector('.status');
-			}
-
-			setupFlickity() {
-				for (let i = 0, len = this.dom.rows.length; i < len; i++) {
-					let pagi = this.dom.rows[i];
-					let flkty = new Flickity(pagi, {
-						selectedAttraction: 1,
-						friction: 0.9,
-						cellAlign: 'center',
-						pageDots: false,
-						wrapAround: true
-					});
-					flkty.lastIndex = 5;
-					flkty.on('select', () => {
-						if (flkty.selectedIndex !== flkty.lastIndex) {
-							this.onChange();
-						}
-						flkty.lastIndex = flkty.selectedIndex;
-					});
-				}
-
-				this.dom.prevNextBtns = this.dom.lock.querySelectorAll('.flickity-prev-next-button');
-				for (let i = 0, len = this.dom.prevNextBtns.length; i < len; i++) {
-					let btn = this.dom.prevNextBtns[i];
-					;
-				}
-			}
-		}
-
-		let lock = new Paginador();
-	</script>
-
-	<script type="text/javascript">
-		var pista_paginado = document.querySelector(".flickity-slider");
-		var paginador = document.querySelector(".paginador");
-		var pagi = document.querySelector(".pagi");
-		var prev_flecha = document.querySelectorAll(".flickity-prev-next-button");
-		var paginas = document.getElementsByClassName("indice").length;
-		console.log("Hay " + paginas + " elementos");
-
-		switch (paginas) {
-			case 1:
-				paginador.style.width = "250px";
-				pagi.style.width = "250px";
-				console.log("Hay 1 pagina");
-				break;
-			case 2:
-				paginador.style.width = "250px";
-				pagi.style.width = "250px";
-				pista_paginado.style.left = "-32%";
-
-				console.log("Hay 2 pagina");
-				break;
-			case 3:
-				paginador.style.width = "150px";
-				pagi.style.width = "150px";
-				console.log("Hay 3 paginas");
-				break;
-			case 4:
-				paginador.style.width = "150px";
-				pagi.style.width = "150px";
-				console.log("Hay 4 paginas");
-				break;
-			default:
-				paginador.style.width = "300px";
-				pagi.style.width = "300px";
-				console.log("Hay más");
-		}
-	</script>
-
-	<!--  
+</body>
+<!--  
 	              ,  ,
              / \/ \,'| _
             ,'    '  ,' |,|
@@ -506,10 +429,5 @@
           ,',_____,'  |
           \_          `).
            `.      _,'  `
-			/`-._,-'      \
-			
-			-->
-
-</body>
-
+			/`-._,-'      \ -->
 </html>

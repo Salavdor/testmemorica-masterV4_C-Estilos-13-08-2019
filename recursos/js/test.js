@@ -1,12 +1,18 @@
-//variables sí
-var vals = [];
-var $nivel1 = $("#nivel1");
-var $nivel2 = $("#nivel2");
+// variables sí
+let $nivel1 = $("#nivel1");
 
-function generateDescription(info) {
-    $(".HIST_INSTUTUC").text(info.HIST_INSTUTUC);
+// llena dropdown con fondos de agn
+function generateDropdown() {
+    $.getJSON("recursos/nuevoagn.json", function(data) {
+        $nivel1.append("<option disabled selected value=\"\">Selecciona un fondo</option>");
+        $.each(data, function (index, value) {
+            $nivel1.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
+        });
+    });
 };
+generateDropdown();
 
+// esto en teoría va a llenar la tabla con los objetos. WIP.
 function generateTable(info) {
     $(".COD_REF").text(info.COD_REF);
     $(".TITULO").text(info.TITULO); // es este?
@@ -23,201 +29,38 @@ function generateTable(info) {
     $(".NOTA_ARCHIVERO").text(info.NOTA_ARCHIVERO);
 };
 
-//cambio en primer dropdown
+// esto escribe la descripción del fondo
+function generateDescription(info) {
+    $(".HIST_INSTUTUC").text(info.HIST_INSTUTUC);
+};
+
+//cambio en dropdown
 $("#nivel1").change(function () {
     var key = $(this).val();
 
-    function generateDropdown(vals) {
-        $nivel2.append("<option selected disabled value=\"\">Selecciona un subfondo</option>");
-        $.each(vals, function (index, value) {
-            $nivel2.append("<option value=\"" + value.yo + "\">" + value.TITULO + "</option>");
-        });
-    };
-
+    // añade el valor de select al url
+    // window.location.hash = "?param=" + key;
+    window.location.hash = key;
+    
     switch (key) {
-        case 'H_MX09017AGNCL01FO001AYSE001AP':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-                $nivel2.empty();
+        case key:
+            $.getJSON("recursos/nuevoagn.json", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i]['yo'] == key) {
+                        console.log('The value is: ' + data[i]['value']);
+                        break;
+                    }
+                };
 
-                vals = data.H_MX09017AGNCL01FO001AYSE001AP.hijos;
-                generateDropdown(vals)
-
-                $("#dropdowns").removeClass("col-sm-6");
-                $("#dropdowns").addClass("col-sm-12");
-
-                $("#nivel2").removeClass("d-none");
-                $("#nivel2").addClass("d-show");
+                // info = data.H_MX09017AGNCL01FO001AYSE001AP;
+                // generateDescription(info);
 
                 $("#fondo-descripcion").removeClass("d-none");
                 $("#fondo-descripcion").addClass("d-show");
 
-                $("#objetos").removeClass("d-show");
-                $("#objetos").addClass("d-none");
-
-                info = data.H_MX09017AGNCL01FO001AYSE001AP;
-                $(".cedula1titulo").text(info.TITULO);
-                generateDescription(info);
-            });
-            break
-        case 'H_MX09017AGNCL01FO008RHSE002AL':
-            $.getJSON("recursos/json/MX09017AGNCL01FO008RHSE002ALSS03ALI22262.json", function (data) {
-                $nivel2.empty();
-
-                vals = data.H_MX09017AGNCL01FO008RHSE002AL.hijos;
-                generateDropdown(vals)
-
-                $("#dropdowns").removeClass("col-sm-6");
-                $("#dropdowns").addClass("col-sm-12");
-
-                $("#nivel2").removeClass("d-none");
-                $("#nivel2").addClass("d-show");
-
-                $("#fondo-descripcion").removeClass("d-none");
-                $("#fondo-descripcion").addClass("d-show");
-
-                $("#objetos").removeClass("d-show");
-                $("#objetos").addClass("d-none");
-
-                info = data.H_MX09017AGNCL01FO008RHSE002AL;
-                $(".cedula1titulo").text(info.TITULO);
-                generateDescription(info);
-            });
-            break
-        case '':
-            $nivel2.empty();
-            vals = ['Favor de seleccionar un fondo'];
-            $nivel2.append("<option>" + vals + "</option>");
-
-            $("#dropdowns").removeClass("col-sm-12");
-            $("#dropdowns").addClass("col-sm-6");
-
-            $("#nivel2").removeClass("d-show");
-            $("#nivel2").addClass("d-none");
-
-            $("#fondo-descripcion").removeClass("d-show");
-            $("#fondo-descripcion").addClass("d-none");
-
-            $("#objetos").removeClass("d-show");
-            $("#objetos").addClass("d-none");
-
-            $('#nivel2').html('<option value="">Favor de seleccionar un fondo</option>');
-            break
-    }
-});
-
-//cambio en segundo dropdown
-$("#nivel2").change(function () {
-    var key = $(this).val();
-
-    //iteración??
-    // let subfondos = [];
-
-    // subfondos.forEach(function (subfondo, index) {
-    //     console.log(`El fondo ${index+1} es ${subfondo}`);
-    // });
-
-    //iteración??
-    // let subfondos = [];
-
-    // subfondos.push(vals);
-
-    // subfondos.forEach(function (subfondo, index) {
-    //     console.log(`El fondo ${index + 1} es ${subfondo}`);
-    // });
-
-
-    switch (key) {
-        case 'H-MX09017AGNCL01FO008RHSE002ALSS01ALV':
-            $.getJSON("recursos/json/MX09017AGNCL01FO008RHSE002ALSS03ALI22262.json", function (data) {
-
                 $("#objetos").removeClass("d-none");
                 $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO008RHSE002AL.hijos.H_MX09017AGNCL01FO008RHSE002ALSS01ALV;
-                // generateTable(info);
             });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI001':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI001;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI002':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI002;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI003':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI003;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI004':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI004;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI005':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI005;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI006':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI006;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI007':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI007;
-                // generateTable(info);
-            });
-            break
-        case 'H-MX09017AGNCL01FO001AYSE001APUI008':
-            $.getJSON("recursos/json/MX09017AGNCL01FO001AYSE001AP8.json", function (data) {
-
-                $("#objetos").removeClass("d-none");
-                $("#objetos").addClass("d-show");
-
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP.hijos.H_MX09017AGNCL01FO001AYSE001APUI008;
-                // generateTable(info);
-            });
-            break
-        case '':
             break
     }
 });
