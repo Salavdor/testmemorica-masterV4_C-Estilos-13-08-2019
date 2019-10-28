@@ -30,8 +30,8 @@ function generateTable(info) {
 };
 
 // esto escribe la descripción del fondo
-function generateDescription(info) {
-    $(".HIST_INSTUTUC").text(info.HIST_INSTUTUC);
+function generateDescription(fondo) {
+    $(".HIST_INSTUTUC").text(fondo.HIST_INSTUTUC);
 };
 
 //cambio en dropdown
@@ -42,22 +42,22 @@ $("#nivel1").change(function () {
     // window.location.hash = "?param=" + key;
     window.location.hash = key;
     
+    // switch de casos de dropdown
     switch (key) {
         case key:
             $.getJSON("recursos/nuevoagn.json", function (data) {
-                for (var i = 0; i < data.length; i++) {
-                    if (data[i]['yo'] == key) {
-                        console.log('The value is: ' + data[i]['value']);
-                        break;
-                    }
-                };
+                // selecciona objeto dentro de arreglo
+                var fondo = data.find(function (v) {
+                    return v.yo === key;
+                });
+                console.log(fondo);
 
-                // info = data.H_MX09017AGNCL01FO001AYSE001AP;
-                // generateDescription(info);
+                // genera descripción de acervo
+                generateDescription(fondo);
 
                 $("#fondo-descripcion").removeClass("d-none");
                 $("#fondo-descripcion").addClass("d-show");
-
+                
                 $("#objetos").removeClass("d-none");
                 $("#objetos").addClass("d-show");
             });

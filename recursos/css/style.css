@@ -65,16 +65,13 @@ p {
 a {
   font-family: 'MerriweatherSans-Bold';
   color: #092834;
+  cursor: pointer;
 }
 
 a:hover {
   text-decoration: none;
   color: #347B98;
 }
-
-
-
-
 
 h5 {
   font-family: 'MerriweatherSans-bold';
@@ -85,8 +82,12 @@ h5 {
 
 /*-------------------------------Header y navegación-------------------------------*/
 /*----------------------------
-	      landing Page
+	      Landing Page
 -----------------------------*/
+
+#landing {
+  background-color: rgba(0, 12, 19, 0.98);
+}
 
 #tracker {
   position: absolute;
@@ -172,14 +173,13 @@ h5 {
 .circulo_buscador {
   z-index: 3;
   min-height: 500px;
-  background-image: url(../img/circulo_buscador_landing.svg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  /* background-image: url(../img/circulo_buscador_landing.svg); */
+  /* background-position: center center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
   /* overflow:hidden;  */
   /* top: 20px; */
 }
-
 
 #bloque {
   display: table-cell;
@@ -245,7 +245,6 @@ h5 {
 .scroll p {
   color: rgb(255, 255, 255);
 }
-
 
 /*----------------------------
             Header
@@ -329,8 +328,6 @@ div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
   /*estilo boton sobre*/
   border-top: 3px solid #FF026A;
 }
-
-
 
 /*-------------------------------Pagina de resultados-------------------------------*/
 
@@ -1044,7 +1041,6 @@ ul.memoria-redes {
 
 ul.memoria-redes li {
   display: inline;
-  padding-left: 5px;
   font-size: 20pt;
 }
 
@@ -1439,10 +1435,7 @@ button {
 
 .destacado{
   border: 2px solid  #092834;
-  
 }
-
-
 
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 1);
@@ -1450,9 +1443,9 @@ button {
 
 .favicom {
   font-size: 25px;
+  width: 25px;
+  height: 25px;
 }
-
-
 
 .fixed {
   position: fixed;
@@ -1465,19 +1458,14 @@ button {
   -webkit-mask: url("ejemplo_basico.svg");
 }
 
-
 .text-container {
   height: 100%;
   width: 100%;
-
 }
 
 .ordernow {
   cursor: pointer;
 }
-
-
-
 
 /*-------------------------------Estilos irreconocibles-------------------------------*/
 .memoria-buscador input {
@@ -1510,7 +1498,6 @@ div.memoria-pestanas {
 section {
 	width: 100%;
 	/* margin: 70px auto; */
-   
 }
 
 /* Simple Slider */
@@ -1592,19 +1579,150 @@ section {
 
 /* ----------------------------------------- modals INICIO---------------------------- */
   
-  .liga-destacada{
-    font-family: 'MerriweatherSans-Bold';
-    color: #ff026a;  
-    font-size: 80%;
-    text-decoration: underline;
+.liga-destacada{
+  font-family: 'MerriweatherSans-Bold';
+  color: #ff026a;  
+  font-size: 80%;
+  text-decoration: underline;
+}
+
+.liga-destacada2{
+  font-family: 'MerriweatherSans-Bold';
+  color: #347b98;  
+  font-size: 85%;
+  font-style: oblique;
+  text-decoration: underline;
+}
+
+/* ----------------------------------------- modals FIN --------------------------- */
+
+/* ---------------------------- NUEVOS ESTILOS DE HOME ---------------------------- */
+
+.home-card {
+  cursor: pointer !important;
+}
+
+h1 a {
+  color: white;
+  font-size: 2.1rem;
+  transition: all .2s ease-in-out;
+}
+
+h3 a {
+  transition: all .2s ease-in-out;
+}
+
+.titulo-acervo a:hover {
+  color: #092834;
+}
+
+a.titulo-misc {
+  color:#092834;
+}
+
+a.titulo-misc:hover {
+  color: #347B98;
+}
+
+button.ver-mas {
+  background-color: white;
+  float: right;
+  border: 0px;
+  min-width: 120px;
+  transition: all .2s ease-in-out;
+}
+
+button.ver-mas:hover {
+  color: #347B98;
+}
+
+a.badger {
+  font-size: 14px;
+  /* cursor: pointer !important; */
+  transition: all .2s ease-in-out;
+}
+
+.white {
+  color: white;
+}
+
+/* ------------------------------ BREAKPOINTS DE HOME ----------------------------- */
+
+/* 1er break */
+
+@media(max-width: 1199px) {
+  h1 a {
+    font-size: 1.7rem;
+    /* line-height: 0 !important; */
   }
 
-  .liga-destacada2{
-    font-family: 'MerriweatherSans-Bold';
-    color: #347b98;  
-    font-size: 85%;
-    font-style: oblique;
-    text-decoration: underline;
+  .titulo-acervo {
+    font-size: 1.3rem;
+    /* line-height: 1.7 !important; */
   }
 
-  /* ----------------------------------------- modals FIN---------------------------- */
+  .titulo-dest {
+    font-size: 1.3rem;
+    /* line-height: 1.3 !important; */
+  }
+
+  a.titulo-misc {
+    font-size: 2rem;
+    /* line-height: 0 !important; */
+  }
+
+  a.subtitulo-misc {
+    /* font-size: 1.5rem; */
+  }
+}
+
+@media(max-width: 991px) {
+  .acervo-chico a:hover {
+    color:#092834;
+  }
+
+  #dest-card {
+    height: 100%;
+  }
+}
+
+@media(max-width: 767px) {
+  h1 a {
+    font-size: 1.5rem;
+    line-height: 1.9rem !important;
+  }
+
+  h1.titulo-tema {
+    font-size: .1rem;
+  }
+
+  h3.titulo-dest a {
+    font-size: 1.05rem;
+  }
+
+  a#line-height {
+    line-height: 0.2rem !important;
+  }
+
+  a.titulo-misc {
+    font-size: 1.2rem;
+  }
+
+  a.subtitulo-misc {
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 575px) {
+  .ver-mas {
+    display: none;
+  }
+
+  #dest-card {
+    height: 100%;
+  }
+
+  #dest-card-body {
+    height: 6rem;
+  }
+}

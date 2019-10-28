@@ -6,9 +6,7 @@
 <!-- Required meta tags -->
     <meta charset="utf-8">
 <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="recursos/css/style.css">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -25,19 +23,17 @@
 
 <!-- Inicio Landing -->
 
-    <div id="landing" class="intro p-0 m-0 d-none d-md-block" style=" overflow:hidden;
-        background: url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;">
-
+    <div id="landing" class="intro p-0 m-0 d-block d-md-block" style="overflow:hidden;">
         <div class="col-12 pt-5 pl-5" style="z-index: 1;">
-            <img class="logo_landing" src="recursos/img/Logos/logo_memorica_bl.svg"/>
+            <img class="logo_landing" src="recursos/img/Logos/logo_memorica_bl.svg">
         </div>
 
-        <div class="col-12 d-flex align-items-center justify-content-center" style="height: 80%">
-            <div id="tracker"></div>
-            
+        <div class="row d-flex align-items-center justify-content-center" style="height: 80%;
+            background: url(recursos/img/fotos_fondo_landing/landing_01.png);
+            background-size: 36rem;
+            background-position: center center;
+            background-repeat: no-repeat;">
+            <!-- <div id="tracker"></div> -->
             <div class="col-1 col-sm-3"></div>
             <div class="col-10 col-sm-6 d-flex justify-content-center circulo_buscador">
                 <form class="input-group with-icon form d-flex justify-content-center"
@@ -57,7 +53,7 @@
         </div>
     </div>
     
-    <div id="landing-chico" class="intro p-0 m-0 d-block d-md-none" style="overflow: hidden;
+    <!-- <div id="landing-chico" class="intro p-0 m-0 d-block d-md-none" style="overflow: hidden;
             background: rgba(0, 0, 0, 1);">
 
         <div class="col-12 pt-4 pl-4" style="z-index: 1;">
@@ -87,7 +83,7 @@
                 <img src="recursos/img/Logos/scroll.svg" style="z-index: 5;" alt="">
             </a>
         </div>
-    </div>
+    </div> -->
 
 <!-- ancla home -->
     
@@ -155,7 +151,7 @@
 
         <!--Buscador-->
         <div class="container-fluid memoria-buscador d-flex justify-content-center pt-3 d-block d-lg-none">
-            <div class="row fila-centrada ">
+            <div class="row fila-centrada">
                 <div class="col-0 col-sm-3"></div>
                 <div class="col-12 col-sm-6 align-self-center">
                     <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html">
@@ -170,117 +166,257 @@
 
     <!-- Inicio espacio para los textos -->
 
-    <main style="z-index: 1000; background-color: #fff;">
-        <div class="container px-2 px-md-0">
+    <main style="z-index: 1; background-color: #fff;">
+        <div class="container pt-5" style="overflow: hidden;">
+            <div class="row p-0 m-0">
+                <div class="col-12 col-lg-9 px-0 pl-lg-2 pr-lg-4" style="min-height: 500px; background-color: #fff;">
+                    
+                    <!-- ------------------ CUANDO MUERE UNA LENGUA ------------------ -->
 
-            <div class="row px-3 px-md-0">
+                    <div class="col-12 p-0 mb-4" style=" background-color:#092834;">
+                        <div class="row p-0 m-0">
+                            <a class="col-6 col-lg-4 p-0 m-0" style="overflow: hidden;" href="Temas?cId=4">
+                                <img class="card-img" src="recursos/img/cuando_muere_una_lengua.jpg" style="width:320px; object-fit:cover;">
+                            </a>
 
-                <div class="col-0 col-sm-0 col-lg-2 col-xl-1 ">
+                            <div class="col-6 col-lg-8 p-0 pl-4 d-flex align-items-center home-card" style="background-color:#092834;" onclick="window.location.href='Temas?cId=4';">
+                                <div class="d-flex align-content-between flex-wrap" style="height: 100%;">
+                                    <div class="d-flex flex-column justify-content-start"
+                                        style="background-color:white; height:29px; width:55px; align-content:center;
+                                        padding-left:5px;">
+                                        <svg height="4px" width="33px">
+                                            <rect width="45px" height="4px" style="fill: #FF026A;" />
+                                        </svg>
+                                        <span>
+                                            <strong>
+                                                <!-- <a class="badger" href="es/memorica/Temas">Tema</a> -->
+                                                Tema
+                                            </strong>
+                                        </span>
+                                    </div>
+                                    <h1 class="d-block align-self-center titulo-tema">
+                                        <strong>
+                                            <a href="">Cuando muere una lengua</a>
+                                        </strong>
+                                    </h1>
+                                    <div style="width:100%;">
+                                        <button class="ver-mas" onclick="window.location.href='Temas?cId=4';">
+                                            <strong>ver m&aacute;s +</strong>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row pr-0 m-0">
+
+                        <!-- -----------------EXPO ZAPATA----------------- -->
+
+                        <div class="col-12 col-sm-8 mb-4 px-0  home-card" style="overflow: hidden; max-height: 350px;" onclick="window.location.href= '/es/memorica/exposicion_01';">
+                            <div class="overlay" style="position: absolute; width:100%; height: 100%;">
+                                <div class="d-flex flex-column justify-content-start" style="background-color:white; height:29px; width:100px; align-content:center; padding-left:5px;">
+                                    <svg height="4px" width="33px">
+                                        <rect width="45px" height="4px" style="fill: #FF026A;" />
+                                    </svg>
+                                    <span style="z-index: 2;">
+                                        <strong>
+                                            Exposici&oacute;n
+                                        </strong>
+                                    </span>
+                                </div>
+                                <div class="d-flex align-items-end flex-row-reverse" style="width:100%; height: 100%; position: absolute;top:-0%;">
+                                    <button class="ver-mas" onclick="window.location.href= '/es/memorica/exposicion_01';" style="background-color:white; border:0px; min-width: 120px;">
+                                        <strong>ver m&aacute;s +</strong>
+                                    </button>
+                                </div>
+                            </div>
+                            <img style="height: 100%;" alt="" class="card-img rounded-0" src="recursos/img/miniatura_expo_zapata.gif"
+                                style="width:100%; object-fit:cover;">
+                        </div>
+
+                        <!-- -----------------ADOLESCENTE HUASTECO----------------- -->
+
+                        <div class="col-12 col-sm-4 mb-4 pl-0 pl-sm-4 pr-0" style="max-height: 350px;">
+                            <div id="dest-card" class="card rounded-0 home-card" style="border: 4px solid #b2d732;"
+                                onclick="window.location.href='/es/memorica/destacado_1911';">
+                                <img class="card-img-top rounded-0" src="recursos/img/el_adolecente_huasteco3.jpg">
+                                
+                                <div id="dest-card-body" class="card-body p-0 d-flex align-content-between flex-wrap">
+                                    <div class="d-flex flex-column justify-content-start"
+                                        style="background-color: white; height: 29px; width: 100px; align-content:center; padding-left:5px;">
+                                        <svg height="4px" width="33px">
+                                            <rect width="45px" height="4px" style="fill: #FF026A;">
+                                        </svg>
+                                        <span style="z-index: 2;">
+                                            <strong>
+                                                Destacado
+                                            </strong>
+                                        </span>
+                                    </div>
+                                    <h3 class="mx-3 my-2 align-self-center titulo-dest">
+                                        <strong>
+                                            <a href="/es/memorica/destacado_1911">Adolescente Huasteco</a>
+                                        </strong>
+                                    </h3>
+                                    <div class="d-flex align-items-end flex-row-reverse mb-n1 mr-n1"
+                                        style="position: relative; bottom: 0%; width: 110%;">
+                                        <button class="p-0 ver-mas"
+                                            onclick="window.location.href='/es/memorica/destacado_1911';"
+                                            style="background-color:white;  border:0px; min-width: 120px;">
+                                            <strong>ver m&aacute;s +</strong>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="col-12 col-sm-12 col-lg-8 col-xl-10 pt-5">
-                    <p style="text-align:justify">También denominados como Condiciones Generales de Uso, son un
-                        documento diseñado para aquellas personas que van a crear o administrar una página o sitio web,
-                        en el cual se establecen las condiciones bajo las cuales los usuarios ingresarán y harán uso del
-                        sitio web.
+                <!-- -----------------ARCHIVO GENERAL DE LA NACIÓN----------------- -->
 
-                        El documento se encuentra diseñado para sitios que sean operados o manejados por personas o
-                        empresas que tengan su domicilio en la República Mexicana o que estén destinados a personas que
-                        habitan en este país, no obstante, su contenido hace referencia a disposiciones civiles comunes
-                        en la mayoría de los países del mundo.
+                <div class="col-12 col-lg-3 m-0 mb-4 pr-sm-2 p-0 home-card acervo-grande d-lg-block d-none"                   style="min-height: 500px; overflow: hidden;"
+                    onclick="window.location.href= '/es/memorica/Archivo_General_de_la_Nacion';">
+                    <div class="p-2 pb-0" style="background-color: #347b98; height: 100%; width: 95%;">
+                        <img class="card-img mt-3 pb-0 rounded-0" src="recursos/img/archivo_general_de_la_nacion.jpg" style="max-height 200px: ; width:500px; object-fit:cover;">
 
-                        Este documento es utilizado para regular las condiciones y reglas a las que se someten tanto los
-                        usuarios de un sitio web como su propietario y/o administrador, en lo referente al acceso y
-                        utilización del sitio web. De igual manera, hace referencia a las políticas de privacidad,
-                        protección de datos personales, enlaces, etc., que se tomarán para proteger la privacidad de los
-                        usuarios.
+                        <div class="d-flex flex-column justify-content-start"
+                            style="background-color: white; height:29px; width:70px; align-content:center; padding-left:5px;">
+                            <svg height="4px" width="33px">
+                                <rect width="45px" height="4px" style="fill: #FF026A;">
+                            </svg>
+                            <span style="z-index: 2;">
+                                <strong>
+                                    Acervo
+                                </strong>
+                            </span>
+                        </div>
 
-                        Dichas reglas y principios aportan un mayor nivel de confianza y seguridad jurídica a los
-                        usuarios del sitio web así como a sus propietarios y/o administradores, puesto que también se
-                        establece el tipo de personas a las que va dirigido y las responsabilidades que estos adquieren
-                        al hacer uso del sitio o de los servicios que en él son ofrecidos.
+                        <h1 class="d-block m-2 titulo-acervo" style="color: white;">
+                            <strong>
+                                <a href="">Archivo General de la Naci&oacute;n</a>
+                            </strong>
+                        </h1>
 
-                        Existe además otro documento conocido generalmente como "Condiciones Generales de Venta" que se
-                        utiliza para regular la adquisición de productos o servicios a través de internet, no obstante,
-                        este último no debe ser confundido con el presente documento, puesto que el presente sólo se
-                        limita a regular el acceso, funcionamiento e interacción del usuario con el sitio web, sin que
-                        se incluya las condiciones bajo las cuales se formalizará la adquisición de productos o
-                        servicios que tengan un costo o que requieran una licencia; y que se puedan obtener o adquirir a
-                        través del mismo sitio web.
-                        </br> </br>
-
-                        <strong>¿Cómo utilizar este documento? </strong></br> </br>
-
-                        El modelo incluye diversos supuestos que se pueden presentar con relación a los contenidos,
-                        productos y/o servicios se encuentren disponibles dentro del sitio, y se adapta en función de
-                        las necesidades y características del sitio web, por tanto la persona que desee utilizarlo
-                        deberá tomar en cuenta entre otras cosas, lo siguiente:
-
-                        El tipo de público al que se encuentra dirigido el sitio web, esto es, si es para todo tipo de
-                        público o si es solamente para mayores de edad;
-
-                        Si el acceso al sitio web requerirá de un registro del usuario, o por el contrario se encontrará
-                        disponible para todo público sin necesidad de registro;
-
-                        Si será necesario el pago de una contraprestación para hacer uso del sitio web, o bien este será
-                        de carácter gratuito;
-                        El modelo incluye los aspectos que resultan necesarios en materia de protección de datos
-                        personales en posesión de particulares e incluso se puede especificar el Aviso de Privacidad, en
-                        caso de que este se tenga disponible a través del mismo sitio web, todo esto aporta un gran
-                        nivel de confianza y seguridad jurídica, por lo que sería recomendable que este tipo de
-                        documentos se elaboren para todos y cada uno de los sitios web que se encuentran en internet,
-                        puesto que los mismos se consideran aceptados por el usuario al hacer uso del sitio y/o acceder
-                        a sus contenidos.
-
-                        El documento deberá estar de disponible en la ventana principal del sitio web (usualmente desde
-                        el archivo .index), no obstante, lo recomendable es que sea accesible desde cualquier parte del
-                        sitio web, a fin de que pueda ser consultado en todo momento por el usuario.
-
-                        En caso de que por el tipo de contenido, productos y/o servicios que se encuentren disponibles
-                        en el sitio web, se considere necesaria la aceptación expresa del usuario de los términos y
-                        condiciones; se deberá de tomar en cuenta que el usuario debe tener la posibilidad de visualizar
-                        el documento de forma íntegra; y se debe habilitar un medio para que el usuario exprese que se
-                        encuentra de acuerdo con los mismos (usualmente a través de un formulario).
-
-
-                        Derecho aplicable
-
-                        Capitulo segundo de la Ley Federal de Protección de Datos Personales en Posesión de
-                        Particulares.
-
-                        Código Civil Federal.
-
-                        ¿Cómo modificar el modelo?
-
-                        Completas un formulario. El documento se va redactando ante tus ojos, en base a tus respuestas.
-
-                        Al finalizar, lo recibirás en los formatos Word y PDF. Puedes modificarlo y volver a utilizarlo
-                    </p> </br>
+                        <div class="d-flex align-items-end flex-row-reverse" style="width:100%; height: 5.25%;">
+                            <button class="p-0 ver-mas mb-n1 mr-n2" onclick="window.location.href= '/es/memorica/Archivo_General_de_la_Nacion';"
+                                style="background-color:white; border:0px; min-width: 120px;">
+                                <strong>ver m&aacute;s +</strong>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-0 col-sm-0 col-lg-2 col-xl-1">
+                <div class="col-12 p-0 mb-4 home-card acervo-chico d-block d-lg-none" style=" background-color:#092834;">
+                    <div class="row p-0 m-0">
+                        <a class="col-6 col-lg-4 p-0 m-0" style="overflow: hidden;" href="Temas?cId=4">
+                            <img class="card-img" src="recursos/img/archivo_general_de_la_nacion.jpg"
+                                style="width: 100%; object-fit:cover;">
+                        </a>
+
+                        <div class="col-6 col-lg-8 p-0 pl-4 d-flex align-items-center home-card"
+                            style="background-color:#347b98;" onclick="window.location.href='Temas?cId=4';">
+                            <div class="d-flex align-content-between align-items-start flex-wrap" style="height: 100%;">
+                                <div class="d-flex flex-column justify-content-start" style="background-color:white; height:29px; width:55px; align-content:center;
+                                        padding-left:5px;">
+                                    <svg height="4px" width="33px">
+                                        <rect width="45px" height="4px" style="fill: #FF026A;" />
+                                    </svg>
+                                    <span>
+                                        <strong>
+                                            <!-- <a class="badger" href="es/memorica/Temas">Tema</a> -->
+                                            Tema
+                                        </strong>
+                                    </span>
+                                </div>
+                                <h1 class="d-block titulo-tema">
+                                    <strong>
+                                        <a href="">Archivo General de la Naci&oacute;n</a>
+                                    </strong>
+                                </h1>
+                                <div style="width:100%;">
+                                    <button class="ver-mas" onclick="window.location.href='Temas?cId=4';">
+                                        <strong>ver m&aacute;s +</strong>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
+
+            <!-- -----------------GUIA ZAPATA----------------- -->
+
+            <div class="row m-0 pl-0 home-card"
+                style=" border: 4px solid #FF026A; background-color:rgb(255, 255, 255); z-index:1"
+                onclick="window.location.href= '/es/memorica/Miscelanea';">
+                <div class="col-12 col-sm-6 m-0 pb-2 pl-0">
+                    <div class="overlay" style="position: absolute; width:100%; height: 100%;">
+                        <div class="d-flex flex-column justify-content-start" style="background-color:#092834; height:29px; width:100px; align-content:center; padding-left:5px;">
+                            <svg height="4px" width="33px">
+                                <rect width="45px" height="4px" style="fill: #347b98;" />
+                            </svg>
+                            <span style="color: white;">
+                                <strong>
+                                    Miscel&aacute;nea
+                                </strong>
+                            </span>
+                        </div>
+                        
+                        <h1 class="d-block m-3 my-1 my-md-3">
+                            <strong>
+                                <a id="line-height" class="titulo-misc" href="">&iquest;Qui&eacute;n era<br>Emiliano Zapata?</a>
+                            </strong>
+                        </h1>
+                        <h3 class="d-block m-3 my-1 my-md-3" style="color:#092834;">
+                            <a class="subtitulo-misc" href="">Gu&iacute;a de trabajo N&deg;1</a>
+                        </h3>
+                        
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 p-0 m-0" style="max-height: 250px; background-color:rgb(255, 255, 255); overflow: hidden;">
+                    <img class="card-img rounded-0" src="recursos/img/zapata3.png" style="height: 100%; width: 100%;">
+                    <div class="d-flex align-items-end flex-row-reverse" style="width:100%; height: 100%;">
+                        <button class="ver-mas" onclick="window.location.href= '/es/memorica/Miscelanea';" style="background-color:white; border:0px; min-width: 120px;">
+                            <strong>ver m&aacute;s +</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-12" style="max-height: 250px;">&nbsp;</div>
         </div>
     </main>
 
 <!-- Footer -->
 
     <footer class="footer mt-3 py-0" style="z-index: 1;">
-        <div class="container p-0" style="border-top: 1px solid #092834;">
+        <div class="container" style="">
+            <div style="border-top: 1px solid #092834; width: 100%;"></div>
             <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
-            <div class="col-11"></div>
-            <div class="row  pt-2 pb-5">
+            
+            <div class="row pt-2 pb-5 px-0">
                 <div class="col-12 d-flex justify-content-start flex-column">
-                    <ul class="memoria-redes">
-                        <li><a class="favicom" href="#"> <i class="fab fa-facebook-f 5x "></i> </a></li>
-                        <li style="color: #092834">|</li>
-                        <li><a class="favicom" href="#"> <i class="fab fa-twitter"></i> </a></li>
+                    <ul class="memoria-redes pl-0">
+                        <!-- <li><a class="favicom" href="#"> <i class="fab fa-facebook-f 5x "></i> </a></li> -->
+                        <!-- <li style="color: #092834">|</li> -->
+                        <li>
+                            <svg aria-hidden="true" focusable="false" class="favicom" role="img" viewBox="0 0 512 512">
+                                <path fill="currentColor"
+                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                </path>
+                            </svg>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-md-3 col-12 contenedor-izquierdo pr-0">
-                    <ul>
+                <div class="col-md-3 col-12">
+                    <ul class="pl-0 contenedor-izquierdo">
                         <li><a href="terminos_condiciones.html">Términos y condiciones</a></li>
                         <li><a href="aviso_privacidad.html">Aviso de privacidad</a></li>
                         <li><a href="marco_juridico.html">Marco jurídico</a></li>
@@ -289,17 +425,18 @@
                     </ul>
                 </div>
                 <div class="col-md-5 col-12">
-                    <ul>
+                    <ul class="pl-0">
                         <li><a href="documentacion_tecnica.html">Documentación técnica</a></li>
                         <li><a href="como_usar_sitio.html">Cómo usar el sitio</a></li>
                         <li><a href="mapa_sitio.html">Mapa de sitio</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 co-12 d-flex justify-content-center  pt-3">
-                    <img src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="70px" />
+                <div class="col-md-4 col-12 d-flex justify-content-end pt-3 ">
+                    <img src="recursos/img/Logos/Gobierno_de_mexico-02.svg" height="70px" class="pr-0">
                 </div>
             </div>
+
         </div>
     </footer>
 
@@ -493,7 +630,7 @@
             function run() {
                 let phrases = [
                     "México, haz memoria",
-                    "La Mémorica de México",
+                    "La Memórica de México",
                     "Haz memoria",
                     "¿Qué quieres encontrar?"
                 ];
