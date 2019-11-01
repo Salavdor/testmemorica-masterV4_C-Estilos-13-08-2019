@@ -325,6 +325,480 @@
                             <div class="col-0 col-lg-1"></div>
 
                             <div class="col-12 col-lg-10 p-0">
+
+                                <!-- texto para cuando es una búsqueda en blanco -->
+                                <div class="p-3" style="width: 100%; border-bottom: 1px solid #092834;">
+                                    <p
+                                        style="font-family: 'MerriweatherSans-Regular'; color: #092834; font-size: 14px;">
+                                        Mostrando <span class="facetadorbarradenavegacion">[]</span> objetos disponibles en Memórica
+                                        </p>
+                                    <ul
+                                        style="font-family: 'MerriweatherSans-Regular'; color: #092834; font-size: 14px;">
+                                        <li>Para encontrar algo más específico, introduce palabras en el buscador
+                                            principal, arriba.</li>
+                                        <li>También puedes eliminar criteros en los filtros del lado izquierdo; ahí
+                                            aparece sólo lo disponible.</li>
+                                        <li>Lo que escribas en el campo "Autor" se buscará exclusivamente en ese campo.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- texto para cuando es una búsqueda desde la barra de buscador -->
+                                <div class="p-3" style="width: 100%; border-bottom: 1px solid #092834;">
+                                    <p
+                                        style="font-family: 'MerriweatherSans-Regular'; color: #092834; font-size: 14px;">
+                                        Mostrando <span class="facetadorbarradenavegacion">[]</span> objetos bajo la
+                                        búsqueda en todos los campos:</p>
+                                    <ul class="criterios-busqueda">
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            termino 
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15"
+                                                    style="enable-background:new 0 0 128 128;" version="1.1"
+                                                    viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            de
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            búsqueda
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            con
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            x
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- texto para búsqueda en campo de autor a partir de búsqueda en blanco -->
+                                <div class="p-3" style="width: 100%; border-bottom: 1px solid #092834;">
+                                    <p
+                                        style="font-family: 'MerriweatherSans-Regular'; color: #092834; font-size: 14px;">
+                                        Mostrando <span class="facetadorbarradenavegacion">[]</span> objetos bajo la
+                                        búsqueda exclusivamente dentro del campo
+                                        "Autor":</p>
+                                    <ul class="criterios-busqueda">
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            termino
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            de
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            búsqueda
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            con
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            x
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- texto para búsqueda en campo de autor a partir de búsqueda de barra de buscador -->
+                                <div class="p-3" style="width: 100%; border-bottom: 1px solid #092834;">
+                                    <p style="font-family: 'MerriweatherSans-Regular'; color: #092834; font-size: 14px;">
+                                        Mostrando <span class="facetadorbarradenavegacion">[]</span> objetos bajo la
+                                        búsqueda en todos los campos:</p>
+                                    <ul class="criterios-busqueda">
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            termino
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            de
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            búsqueda
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            con
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            x
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                    </ul>
+
+                                    <p style="font-family: 'MerriweatherSans-Regular'; color: #092834; font-size: 14px; margin-top: 1rem;">Además se muestran resultados de las palabras buscadas exclusivamente dentro del campo "Autor":</p>
+
+                                    <ul class="criterios-busqueda">
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            termino
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            de
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            búsqueda
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            con
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <li class="checkbox_1 d-flex justify-content-between rounded-pill">
+                                            x
+                                            <span style="size: 25px">
+                                                <svg id="Layer_1" width="15" style="enable-background:new 0 0 128 128;"
+                                                    version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #FF026A;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #FFFFFF;
+                                                        }
+                                                    </style>
+                                                    <circle class="st0" cx="64" cy="64" r="64" />
+                                                    <path class="st1"
+                                                        d="M100.3,90.4L73.9,64l26.3-26.4c0.4-0.4,0.4-1,0-1.4l-8.5-8.5c-0.4-0.4-1-0.4-1.4,0L64,54.1L37.7,27.8  c-0.4-0.4-1-0.4-1.4,0l-8.5,8.5c-0.4,0.4-0.4,1,0,1.4L54,64L27.7,90.3c-0.4,0.4-0.4,1,0,1.4l8.5,8.5c0.4,0.4,1.1,0.4,1.4,0L64,73.9  l26.3,26.3c0.4,0.4,1.1,0.4,1.5,0.1l8.5-8.5C100.7,91.4,100.7,90.8,100.3,90.4z" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
                                 <div class="row m-0 p-0">
 
                                     <!--Resultados-->
@@ -346,16 +820,15 @@
                                             </div>
                                             
                                             
-                                                <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
-                                                    <div class="col-12 p-0">
-                                                        <svg height="6px" width="33px">
-                                                            <rect width="45px" height="5px"  style="fill: #FF026A;"/>
-                                                        </svg>
-                                                    </div>
-                                                    <a href="cedula.html" class="card-title mb-1 titulo_limitado" style="max-height: 35px; overflow: hidden; z-index: 1;"><h4 >Plan libertador de Morelos </h4> </a>
-                                                    <p class="card-text limitado" >Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            <div class="px-sm-3 px-2 pt-0 pb-2" style="min-height: auto;">
+                                                <div class="col-12 p-0">
+                                                    <svg height="6px" width="33px">
+                                                        <rect width="45px" height="5px"  style="fill: #FF026A;"/>
+                                                    </svg>
                                                 </div>
-                                           
+                                                <a href="cedula.html" class="card-title mb-1 titulo_limitado" style="max-height: 35px; overflow: hidden; z-index: 1;"><h4 >Plan libertador de Morelos </h4> </a>
+                                                <p class="card-text limitado" >Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán. Construcción maya en el antiguo sitio arqueológico de Uxmal, en el estado de Yucatán.</p>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -669,6 +1142,8 @@
                     $descripcion.text(shorten(text, 100, "...", false));
                 });
         </script>
+
+        
         
 
     </body>
@@ -737,4 +1212,5 @@
                 $(containerDiv).innerHTML = "<p>La curaduría que buscas no existe</p>";
             });
     });
+
 </script>

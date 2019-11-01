@@ -24,25 +24,21 @@
 <!-- Inicio Landing -->
 
     <div id="landing" class="intro p-0 m-0 d-block d-md-block" style="overflow:hidden;">
-        <div class="col-12 pt-5 pl-5" style="z-index: 1;">
+        <div class="col-12 pt-4 pl-4 pt-sm-5 pl-sm-5" style="z-index: 1;">
             <img class="logo_landing" src="recursos/img/Logos/logo_memorica_bl.svg">
         </div>
 
-        <div class="row d-flex align-items-center justify-content-center" style="height: 80%;
-            background: url(recursos/img/fotos_fondo_landing/landing_01.png);
-            background-size: 36rem;
-            background-position: center center;
-            background-repeat: no-repeat;">
+        <div class="landing-background row d-flex align-items-center justify-content-center">
             <!-- <div id="tracker"></div> -->
-            <div class="col-1 col-sm-3"></div>
-            <div class="col-10 col-sm-6 d-flex justify-content-center circulo_buscador">
+            <div class="d-none d-md-block col-sm-3"></div>
+            <div class="col-12 col-sm-6 d-flex justify-content-center circulo_buscador">
                 <form class="input-group with-icon form d-flex justify-content-center"
                     action="/{user@getLanguage}/{topic@getWebSiteId}/Resultados" style="position: relative; top:220px;">
-                    <input id="usersSearch" name="q" class="form-control rounded-pill inputbuscador2" type="text"
+                    <input id="usersSearch" name="q" class="form-control rounded-0 inputbuscador2" type="text"
                         placeholder="México, haz memoria" aria-label="Search">
                 </form>
             </div>
-            <div class="col-1 col-sm-3"></div>
+            <div class="d-none d-md-block col-sm-3"></div>
         </div>
 
         <div class="row d-flex justify-content-center">
@@ -156,7 +152,7 @@
                 <div class="col-12 col-sm-6 align-self-center">
                     <form class="input-group with-icon form d-flex justify-content-center" action="resultados.html">
                         <input id="usersSearch" class="form-control rounded-pill ui-autocomplete-input inputbuscador" type="text" placeholder="México, haz memoria" aria-label="Search">
-                        <img src="/recursos/img/Logos/lupita.svg" alt="lupa" style="left: -22px">
+                        <img src="recursos/img/Logos/lupita.svg" alt="lupa" style="left: -22px">
                     </form>
                 </div>
                 <div class="col-0 col-sm-3"></div>
@@ -167,16 +163,18 @@
     <!-- Inicio espacio para los textos -->
 
     <main style="z-index: 1; background-color: #fff;">
-        <div class="container pt-5" style="overflow: hidden;">
+        <div class="container pt-5">
             <div class="row p-0 m-0">
-                <div class="col-12 col-lg-9 px-0 pl-lg-2 pr-lg-4" style="min-height: 500px; background-color: #fff;">
+                <div class="col-12 col-lg-9 px-0 pl-lg-0 pr-lg-4" style="min-height: 500px; background-color: #fff;">
                     
                     <!-- ------------------ CUANDO MUERE UNA LENGUA ------------------ -->
 
                     <div class="col-12 p-0 mb-4" style=" background-color:#092834;">
                         <div class="row p-0 m-0">
                             <a class="col-6 col-lg-4 p-0 m-0" style="overflow: hidden;" href="Temas?cId=4">
-                                <img class="card-img" src="recursos/img/cuando_muere_una_lengua.jpg" style="width:320px; object-fit:cover;">
+                                <img class="card-img"
+                                    src="recursos/img/cuando_muere_una_lengua.jpg"
+                                    style="width:320px; object-fit:cover;">
                             </a>
 
                             <div class="col-6 col-lg-8 p-0 pl-4 d-flex align-items-center home-card" style="background-color:#092834;" onclick="window.location.href='Temas?cId=4';">
@@ -232,16 +230,18 @@
                                     </button>
                                 </div>
                             </div>
-                            <img style="height: 100%;" alt="" class="card-img rounded-0" src="recursos/img/miniatura_expo_zapata.gif"
+                            <img style="height: 100%;" alt="" class="card-img rounded-0"
+                                src="recursos/img/miniatura_expo_zapata.gif"
                                 style="width:100%; object-fit:cover;">
                         </div>
 
                         <!-- -----------------ADOLESCENTE HUASTECO----------------- -->
 
-                        <div class="col-12 col-sm-4 mb-4 pl-0 pl-sm-4 pr-0" style="max-height: 350px;">
+                        <div class="col-12 col-sm-4 mb-4 pl-0 pl-sm-4 pr-0" style="">
                             <div id="dest-card" class="card rounded-0 home-card" style="border: 4px solid #b2d732;"
                                 onclick="window.location.href='/es/memorica/destacado_1911';">
-                                <img class="card-img-top rounded-0" src="recursos/img/el_adolecente_huasteco3.jpg">
+                                <img class="card-img-top rounded-0"
+                                    src="recursos/img/el_adolecente_huasteco3.jpg">
                                 
                                 <div id="dest-card-body" class="card-body p-0 d-flex align-content-between flex-wrap">
                                     <div class="d-flex flex-column justify-content-start"
@@ -255,7 +255,7 @@
                                             </strong>
                                         </span>
                                     </div>
-                                    <h3 class="mx-3 my-2 align-self-center titulo-dest">
+                                    <h3 class="ml-5 mt-2 mb-5 mb-sm-2 ml-sm-4 my-2 align-self-center titulo-dest">
                                         <strong>
                                             <a href="/es/memorica/destacado_1911">Adolescente Huasteco</a>
                                         </strong>
@@ -269,6 +269,7 @@
                                         </button>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
 
@@ -280,7 +281,9 @@
                 <div class="col-12 col-lg-3 m-0 mb-4 pr-sm-2 p-0 home-card acervo-grande d-lg-block d-none"                   style="min-height: 500px; overflow: hidden;"
                     onclick="window.location.href= '/es/memorica/Archivo_General_de_la_Nacion';">
                     <div class="p-2 pb-0" style="background-color: #347b98; height: 100%; width: 95%;">
-                        <img class="card-img mt-3 pb-0 rounded-0" src="recursos/img/archivo_general_de_la_nacion.jpg" style="max-height 200px: ; width:500px; object-fit:cover;">
+                        <img class="card-img mt-3 pb-0 rounded-0"
+                            src="recursos/img/archivo_general_de_la_nacion.jpg"
+                            style="max-height 200px: ; width:500px; object-fit:cover;">
 
                         <div class="d-flex flex-column justify-content-start"
                             style="background-color: white; height:29px; width:70px; align-content:center; padding-left:5px;">
@@ -312,14 +315,15 @@
                 <div class="col-12 p-0 mb-4 home-card acervo-chico d-block d-lg-none" style=" background-color:#092834;">
                     <div class="row p-0 m-0">
                         <a class="col-6 col-lg-4 p-0 m-0" style="overflow: hidden;" href="Temas?cId=4">
-                            <img class="card-img" src="recursos/img/archivo_general_de_la_nacion.jpg"
-                                style="width: 100%; object-fit:cover;">
+                            <img class="card-img"
+                                src="recursos/img/archivo_general_de_la_nacion.jpg"
+                                style="width: 100%; height: 100%; object-fit:cover;">
                         </a>
 
                         <div class="col-6 col-lg-8 p-0 pl-4 d-flex align-items-center home-card"
                             style="background-color:#347b98;" onclick="window.location.href='Temas?cId=4';">
                             <div class="d-flex align-content-between align-items-start flex-wrap" style="height: 100%;">
-                                <div class="d-flex flex-column justify-content-start" style="background-color:white; height:29px; width:55px; align-content:center;
+                                <div class="d-flex flex-column justify-content-start" style="background-color:white; height:29px; width:70px; align-content:center;
                                         padding-left:5px;">
                                     <svg height="4px" width="33px">
                                         <rect width="45px" height="4px" style="fill: #FF026A;" />
@@ -327,11 +331,11 @@
                                     <span>
                                         <strong>
                                             <!-- <a class="badger" href="es/memorica/Temas">Tema</a> -->
-                                            Tema
+                                            Acervo
                                         </strong>
                                     </span>
                                 </div>
-                                <h1 class="d-block titulo-tema">
+                                <h1 class="d-block titulo-acervo">
                                     <strong>
                                         <a href="">Archivo General de la Naci&oacute;n</a>
                                     </strong>
@@ -351,11 +355,11 @@
 
             <!-- -----------------GUIA ZAPATA----------------- -->
 
-            <div class="row m-0 pl-0 home-card"
+            <div class="row m-0 pl-0 home-card card-misc"
                 style=" border: 4px solid #FF026A; background-color:rgb(255, 255, 255); z-index:1"
                 onclick="window.location.href= '/es/memorica/Miscelanea';">
-                <div class="col-12 col-sm-6 m-0 pb-2 pl-0">
-                    <div class="overlay" style="position: absolute; width:100%; height: 100%;">
+                <div class="col-12 col-sm-7 m-0 pb-2 pl-0">
+                    <div style="width:100%; height: 100%;">
                         <div class="d-flex flex-column justify-content-start" style="background-color:#092834; height:29px; width:100px; align-content:center; padding-left:5px;">
                             <svg height="4px" width="33px">
                                 <rect width="45px" height="4px" style="fill: #347b98;" />
@@ -367,20 +371,21 @@
                             </span>
                         </div>
                         
-                        <h1 class="d-block m-3 my-1 my-md-3">
+                        <h1 class="d-block ml-5 mt-3 ">
                             <strong>
                                 <a id="line-height" class="titulo-misc" href="">&iquest;Qui&eacute;n era<br>Emiliano Zapata?</a>
                             </strong>
                         </h1>
-                        <h3 class="d-block m-3 my-1 my-md-3" style="color:#092834;">
+                        <h3 class="d-block ml-5 my-0 my-lg-3" style="color:#092834;">
                             <a class="subtitulo-misc" href="">Gu&iacute;a de trabajo N&deg;1</a>
                         </h3>
                         
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 p-0 m-0" style="max-height: 250px; background-color:rgb(255, 255, 255); overflow: hidden;">
-                    <img class="card-img rounded-0" src="recursos/img/zapata3.png" style="height: 100%; width: 100%;">
+                <div class="col-12 col-sm-5 p-0 m-0" style="max-height: 250px; background-color:rgb(255, 255, 255); overflow: hidden;">
+                    <img class="card-img rounded-0" src="recursos/img/zapata3.png"
+                        style="height: 100%; width: 100%;">
                     <div class="d-flex align-items-end flex-row-reverse" style="width:100%; height: 100%;">
                         <button class="ver-mas" onclick="window.location.href= '/es/memorica/Miscelanea';" style="background-color:white; border:0px; min-width: 120px;">
                             <strong>ver m&aacute;s +</strong>
@@ -388,6 +393,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="row pb-5">
             <div class="col-12" style="max-height: 250px;">&nbsp;</div>
@@ -398,7 +404,49 @@
 
     <footer class="footer mt-3 py-0" style="z-index: 1;">
         <div class="container" style="">
-            <div style="border-top: 1px solid #092834; width: 100%;"></div>
+
+            <div class="col-12 d-flex flex-row-reverse pb-1 pr-0">
+                <a href="" data-toggle="modal" data-target="#Compartir_seccion" title="Compartir" style="font-size: 13px;">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="compartir" width="20"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                        <path fill="currentColor"
+                            d="M23.16,8.14h0l-3.4-.88L16.5,6.42l-.2,0a.77.77,0,0,0-.58.26.78.78,0,0,0-.16.8l.14.42a1.73,1.73,0,0,1-.61,2l-1.32,1a12.5,12.5,0,0,0-4.14,7.59,1.78,1.78,0,0,0,0,.54.71.71,0,0,0,.27.47.81.81,0,0,0,.62.14.76.76,0,0,0,.51-.32,16.4,16.4,0,0,1,5.63-4.42,1.75,1.75,0,0,1,2.41.87.78.78,0,0,0,.71.48.75.75,0,0,0,.73-.44L23.7,9.29a.82.82,0,0,0,0-.7A.83.83,0,0,0,23.16,8.14Z" />
+                        <path fill="currentColor"
+                            d="M15,0A15,15,0,1,0,30,15,15,15,0,0,0,15,0ZM8,24a1.6,1.6,0,1,1,1.58-1.59A1.59,1.59,0,0,1,8,24ZM24.59,9.74l-3.22,6.47a1.8,1.8,0,0,1-3.26-.1.75.75,0,0,0-.43-.41.76.76,0,0,0-.61,0,15.45,15.45,0,0,0-5.28,4.12,1.72,1.72,0,0,1-1.13.72,1.63,1.63,0,0,1-.31,0,1.82,1.82,0,0,1-1.08-.36,1.73,1.73,0,0,1-.68-1.16,3,3,0,0,1,.05-.83,13.51,13.51,0,0,1,4.48-8.17l.16-.13,1.22-.9a.75.75,0,0,0,.26-.85l-.15-.42A1.75,1.75,0,0,1,15,6a1.77,1.77,0,0,1,1.77-.53L20,6.3l3.39.87a1.83,1.83,0,0,1,1.22,1A1.8,1.8,0,0,1,24.59,9.74Z" />
+                    </svg>
+                    Compartir
+                </a>
+            </div>
+
+            <!-- Modal Compartir-->
+            <div class="modal fade" id="Compartir_seccion" tabindex="-1" role="dialog"
+                aria-labelledby="Compartir_seccionTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Compartir</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body d-flex justify-content-around">
+                            <!-- Facebook -->
+                            <RESOURCE TYPE="JSPEditor" STYPE="FBShareButton" />
+
+                            <!-- Twitter -->
+                            <RESOURCE TYPE="JSPEditor" STYPE="TWShareButton" />
+
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEPARADOR -->
+
+            <div class="col-12 p-0 m-0" style="background-color: #092834; height:1px;"></div>
             <div class="col-1" style="background-color: #FF026A; height:3px;"></div>
             
             <div class="row pt-2 pb-5 px-0">
@@ -417,19 +465,25 @@
                 </div>
                 <div class="col-md-3 col-12">
                     <ul class="pl-0 contenedor-izquierdo">
-                        <li><a href="terminos_condiciones.html">Términos y condiciones</a></li>
-                        <li><a href="aviso_privacidad.html">Aviso de privacidad</a></li>
-                        <li><a href="marco_juridico.html">Marco jurídico</a></li>
-                        <li><a href="coordinacion.html">Coordinación</a></li>
-                        <li><a href="instituciones_vinculadas.html">Instituciones vinculadas</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Terminos_y_condiciones">Términos y
+                                condiciones</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Aviso_de_privacidad">Aviso de
+                                privacidad</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Marco_juridico">Marco jurídico</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Coordinacion">Coordinación</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Directorio">Directorio</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Instituciones">Instituciones
+                                vinculadas</a></li>
                     </ul>
                 </div>
                 <div class="col-md-5 col-12">
                     <ul class="pl-0">
-                        <li><a href="documentacion_tecnica.html">Documentación técnica</a></li>
-                        <li><a href="como_usar_sitio.html">Cómo usar el sitio</a></li>
-                        <li><a href="mapa_sitio.html">Mapa de sitio</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Documentacion_tecnica">Documentación
+                                técnica</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Como_usar_el_sitio">Cómo usar el sitio</a>
+                        </li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Mapa_de_sitio">Mapa de sitio</a></li>
+                        <li><a href="/{user@getLanguage}/{topic@getWebSiteId}/Contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-12 d-flex justify-content-end pt-3 ">
@@ -630,15 +684,36 @@
             function run() {
                 let phrases = [
                     "México, haz memoria",
-                    "La Memórica de México",
-                    "Haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
+                    "¿Qué quieres encontrar?",
+                    "México, haz memoria",
                     "¿Qué quieres encontrar?"
                 ];
-
                 printPhrases(phrases, $('#usersSearch'));
+
+                // loop para texto en contenedor
+                // for (i = 0; i < 10; i++) {
+                //     printPhrases(phrases, $('#usersSearch'));
+                // }
             }
 
             run();
+            
     </script>
     
     <!--Cambio de foto Landing -->

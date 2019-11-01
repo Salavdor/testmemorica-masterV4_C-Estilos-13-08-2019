@@ -181,13 +181,13 @@
 				data-locale="es-MX">
 				<thead id="titulos" class="border-0">
 					<tr class="pb-5">
-						<th data-field="titulo" data-filter-control="select" data-sortable="true">Tipo de objeto</th>
-						<th data-field="ID" data-filter-control="input" data-sortable="true">Identificador</th>
-						<th data-field="tipo" data-filter-control="input" data-sortable="true">Título</th>
+						<th data-field="titulo" data-filter-control="input" data-sortable="true">Identificador</th>
+						<th data-field="ID" data-filter-control="input" data-sortable="true">Título</th>
+						<th data-field="tipo" data-filter-control="input" data-sortable="true">Título atribuido</th>
 						<th data-field="descripcion" data-filter-control="input">Descripción</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="gable">
 					<tr>
 						<td><i class="icono_modos_visualizacion">&#xe809;</i> Imagen</td>
 						<td>MXNAGN0123714901</td>
@@ -399,6 +399,42 @@
 		var $descripcion = $(".limitado");
 			var text = $descripcion.text();
 			$descripcion.text(shorten(text, 150, "...", false));
+	</script>
+
+	<script>
+		(function (window) {
+			var jq = window.jQuery;
+			window.acervos = {
+				getData: function (ispartof, mapid, callback, errorcallback) {
+					if (jq) {
+						var url = '/es/memorica/Archivo_General_de_la_Nacion/_rid/143/_mto/3/_mod/m_getdata';
+						if (url.includes("?")) {
+							url = url + '&isPartOf=' + ispartof;
+						} else {
+							url = url + '?isPartOf=' + ispartof;
+						}
+						if (mapid) {
+							if (url.includes("?")) {
+								url = url + '&mapId=true';
+							} else {
+								url = url + '?mapId=true';
+							}
+						}
+						jq.ajax({
+							url: url
+						}).done(function (data) {
+							if (callback && typeof callback === "function") {
+								callback(data);
+							}
+						}).fail(function (err) {
+							if (errorcallback && typeof errorcallback === "function") {
+								errorcallback(data);
+							}
+						});
+					}
+				}
+			};
+		})(window);
 	</script>
 
 
