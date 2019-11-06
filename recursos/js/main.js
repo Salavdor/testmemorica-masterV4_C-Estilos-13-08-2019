@@ -13,22 +13,6 @@ $(document).ready(function () {
         }
     });
 
-    // búsqueda coqueta
-    $('#searchButton').click(function () {
-        var search = $('#usersSearch').val();
-        $.post('../searchusers.php', {
-            search: search
-        }, function (response) {
-            $('#userSearchResultsTable').html(response);
-        });
-    })
-
-    $('#usersSearch').keypress(function (e) {
-        if (e.which == 13) { //Enter key pressed
-            $('#searchButton').click(); //Trigger search button click event
-        }
-    });
-
     // agrega icono de menos para elementos colapsables que están abiertos por default
     // $(".collapse.show").each(function () {
     //     $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");

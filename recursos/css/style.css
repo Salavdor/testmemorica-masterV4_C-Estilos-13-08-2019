@@ -92,9 +92,9 @@ h5 {
   background-color: rgba(0, 12, 19, 0.98);
 }
 
-.landing-background {
+#landing-background {
   height: 80%;
-  background: url(../img/fotos_fondo_landing/landing_01.png);
+  /* background-image: url(../img/fotos_fondo_landing/landing_01.png); */
   background-size: 36rem;
   background-position: center center;
   background-repeat: no-repeat;
@@ -323,7 +323,7 @@ padding-right: 1.7rem;
 }
 
 /*----------------------------
-	     menu de secciones 
+	      menu de secciones 
 -----------------------------*/
 
 div.botones-pestanas { /*aplica la linea superior del menu y controla el alto*/
@@ -1214,6 +1214,15 @@ footer a:hover {
   color: #347B98;
 }
 
+a.share {
+  fill: #347B98;
+}
+
+a.share:hover {
+  fill: #092834;
+  color: #092834;
+}
+
 footer li {
   margin-bottom: 1px;
 }
@@ -1865,7 +1874,7 @@ section {
       font-size: 1rem;
     }
 
-    div.landing-background {
+    div#landing-background {
       background-size: 33rem;
     }
   }
@@ -1897,7 +1906,7 @@ section {
       display: none;
     }
 
-    div.landing-background {
+    div#landing-background {
       background-size: 27rem;
     }
   }
@@ -1928,8 +1937,8 @@ section {
       flex-direction: column-reverse;
     }
 
-    div.landing-background {
-      background-size: 21rem;
+    div#landing-background {
+      background-size: 21rem;+
     }
   }
 
@@ -1940,6 +1949,7 @@ section {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
   }
@@ -1961,16 +1971,5 @@ section {
     background-color: #eee;
   }
 
-  /* Style the close button (span) */
-  .close {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    padding: 12px 16px;
-    transform: translate(0%, -50%);
-  }
+  /* ------------------------- BOTONES DE MOSAICO TABLA Y LISTA ------------------------- */
 
-  .close:hover {
-    background: #bbb;
-  }

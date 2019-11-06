@@ -28,7 +28,7 @@
             <img class="logo_landing" src="recursos/img/Logos/logo_memorica_bl.svg">
         </div>
 
-        <div class="landing-background row d-flex align-items-center justify-content-center">
+        <div id="landing-background" class="row d-flex align-items-center justify-content-center">
             <!-- <div id="tracker"></div> -->
             <div class="d-none d-md-block col-sm-3"></div>
             <div class="col-12 col-sm-6 d-flex justify-content-center circulo_buscador">
@@ -91,7 +91,7 @@
         <div class="barra-superior"></div>
         <nav class="navbar navbar-expand-lg navbar-light">
 
-            <a class="navbar-brand d-lg-none" href="index.html" alt="logotipo Memórica">
+            <a class="scroll-back navbar-brand d-lg-none" href="#landing" alt="logotipo Memórica">
                 <img src="recursos/img/Logos/logo_memorica.svg" height="20px" />
             </a>
 
@@ -104,7 +104,7 @@
             <div class="collapse navbar-collapse flex-column" id="menu">
 
                 <div class="col-12 d-flex justify-content-center p-0">
-                    <a class="navbar-brand d-none d-lg-block m-0 " href="index.html"><img
+                    <a class="scroll-back navbar-brand d-none d-lg-block m-0 " href="#landing"><img
                             src="recursos/img/Logos/logo_memorica.svg" height="45px" /></a>
                 </div>
 
@@ -237,7 +237,7 @@
 
                         <!-- -----------------ADOLESCENTE HUASTECO----------------- -->
 
-                        <div class="col-12 col-sm-4 mb-4 pl-0 pl-sm-4 pr-0" style="">
+                        <div class="col-12 col-sm-4 mb-4 pl-0 pl-sm-4 pr-0">
                             <div id="dest-card" class="card rounded-0 home-card" style="border: 4px solid #b2d732;"
                                 onclick="window.location.href='/es/memorica/destacado_1911';">
                                 <img class="card-img-top rounded-0"
@@ -278,12 +278,13 @@
 
                 <!-- -----------------ARCHIVO GENERAL DE LA NACIÓN----------------- -->
 
-                <div class="col-12 col-lg-3 m-0 mb-4 pr-sm-2 p-0 home-card acervo-grande d-lg-block d-none"                   style="min-height: 500px; overflow: hidden;"
+                <div class="col-12 col-lg-3 m-0 mb-4 pr-sm-2 p-0 home-card acervo-grande d-lg-block d-none"
+                    style="min-height: 500px; overflow: hidden;"
                     onclick="window.location.href= '/es/memorica/Archivo_General_de_la_Nacion';">
                     <div class="p-2 pb-0" style="background-color: #347b98; height: 100%; width: 95%;">
                         <img class="card-img mt-3 pb-0 rounded-0"
                             src="recursos/img/archivo_general_de_la_nacion.jpg"
-                            style="max-height 200px: ; width:500px; object-fit:cover;">
+                            style="max-height 200px; width:500px; object-fit:cover;">
 
                         <div class="d-flex flex-column justify-content-start"
                             style="background-color: white; height:29px; width:70px; align-content:center; padding-left:5px;">
@@ -403,15 +404,15 @@
 <!-- Footer -->
 
     <footer class="footer mt-3 py-0" style="z-index: 1;">
-        <div class="container" style="">
+        <div class="container">
 
             <div class="col-12 d-flex flex-row-reverse pb-1 pr-0">
-                <a href="" data-toggle="modal" data-target="#Compartir_seccion" title="Compartir" style="font-size: 13px;">
+                <a class="share" href="" data-toggle="modal" data-target="#Compartir_seccion" title="Compartir" style="font-size: 13px;">
                     <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="compartir" width="20"
                         role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-                        <path fill="currentColor"
+                        <path 
                             d="M23.16,8.14h0l-3.4-.88L16.5,6.42l-.2,0a.77.77,0,0,0-.58.26.78.78,0,0,0-.16.8l.14.42a1.73,1.73,0,0,1-.61,2l-1.32,1a12.5,12.5,0,0,0-4.14,7.59,1.78,1.78,0,0,0,0,.54.71.71,0,0,0,.27.47.81.81,0,0,0,.62.14.76.76,0,0,0,.51-.32,16.4,16.4,0,0,1,5.63-4.42,1.75,1.75,0,0,1,2.41.87.78.78,0,0,0,.71.48.75.75,0,0,0,.73-.44L23.7,9.29a.82.82,0,0,0,0-.7A.83.83,0,0,0,23.16,8.14Z" />
-                        <path fill="currentColor"
+                        <path 
                             d="M15,0A15,15,0,1,0,30,15,15,15,0,0,0,15,0ZM8,24a1.6,1.6,0,1,1,1.58-1.59A1.59,1.59,0,0,1,8,24ZM24.59,9.74l-3.22,6.47a1.8,1.8,0,0,1-3.26-.1.75.75,0,0,0-.43-.41.76.76,0,0,0-.61,0,15.45,15.45,0,0,0-5.28,4.12,1.72,1.72,0,0,1-1.13.72,1.63,1.63,0,0,1-.31,0,1.82,1.82,0,0,1-1.08-.36,1.73,1.73,0,0,1-.68-1.16,3,3,0,0,1,.05-.83,13.51,13.51,0,0,1,4.48-8.17l.16-.13,1.22-.9a.75.75,0,0,0,.26-.85l-.15-.42A1.75,1.75,0,0,1,15,6a1.77,1.77,0,0,1,1.77-.53L20,6.3l3.39.87a1.83,1.83,0,0,1,1.22,1A1.8,1.8,0,0,1,24.59,9.74Z" />
                     </svg>
                     Compartir
@@ -575,7 +576,13 @@
         // scroll button
         $(".scroll").click(function () {
             $('html,body').animate({
-                scrollTop: $(".ancla").offset().top
+                scrollTop: $("#home").offset().top
+            }, 'slow');
+        });
+
+        $(".scroll-back").click(function () {
+            $('html,body').animate({
+                scrollTop: $("#landing").offset().top
             }, 'slow');
         });
 
@@ -584,9 +591,9 @@
     </script>
 
     <!-- Dependencias del landing -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSRulePlugin.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSRulePlugin.min.js'></script> -->
     <!-- <script  src="./script.js"></script> -->
 
     <!-- <script type="text/javascript">
@@ -713,53 +720,46 @@
             }
 
             run();
-            
     </script>
     
     <!--Cambio de foto Landing -->
     <!-- <script type="text/javascript">
         $(function () {
-            var landing = $('#landing');
-            var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)',
-                'url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'
+            var landing = $('#landing-background');
+            var backgrounds = ['url(recursos/img/fotos_fondo_landing/landing_01.png)',
+                'url(recursos/img/fotos_fondo_landing/landing_02.png)',
+                'url(recursos/img/fotos_fondo_landing/landing_03.png)',
+                'url(recursos/img/fotos_fondo_landing/landing_04.png)'
             ];
             var current = 0;
 
             function nextBackground() {
                 landing.css(
-                    'background',
+                    'background-image',
                     backgrounds[current = ++current % backgrounds.length]
                 );
-                landing.css('background-size', 'cover');
+                
                 setTimeout(nextBackground, 4000);
             }
             setTimeout(nextBackground, 4000);
-            landing.css('background', backgrounds[0]);
-            landing.css('background-size', 'cover');
+            landing.css('background-image', backgrounds[0]);
+            
         });
     </script> -->
-   
 
-   <!-- <script type="text/javascript">
-       $(function () {
-           var landing = $('#landing');
-           var backgrounds = ['url(recursos/img/fotos_fondo_landing/revolucion_1.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_4.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_2.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_3.jpg)',
-                'url(recursos/img/fotos_fondo_landing/revolucion_6.jpg)',
-                'url(recursos/img/fotos_fondo_landing/villa_a_caballo.jpg)'
+    <script type="text/javascript">
+        $(function () {
+            var landing = $('#landing-background');
+            var backgrounds = ['url(recursos/img/fotos_fondo_landing/landing_01.png)',
+                'url(recursos/img/fotos_fondo_landing/landing_02.png)',
+                'url(recursos/img/fotos_fondo_landing/landing_03.png)',
+                'url(recursos/img/fotos_fondo_landing/landing_04.png)'
             ];
 
-           var bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-           landing.css('background', bg);
-           landing.css('background-size', 'cover');
-       });
-   </script> -->
+            var bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            landing.css('background-image', bg);
+        });
+    </script>
 
 </body>
 
